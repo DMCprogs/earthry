@@ -5,9 +5,9 @@ import "./globals.css";
 import { Inter } from "next/font/google";
 import React, { FC, ReactNode, useEffect, useRef } from "react";
 import { DivContentSC, DivWrapperSC } from "./styles.page";
-import Footer from "./components/footer/footer";
 import Header from "./components/header";
 import { IRefObj } from "./interfaces/interfaces";
+import Footer from "./components/footer";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -66,23 +66,18 @@ const RootLayout: FC<{ children: ReactNode }> = (props) => {
     bottomRefAbout?.current?.scrollIntoView({ behavior: "smooth" });
   };
   const onClickScrollLeaderboard = () => {
-    // console.log("..,.,.,.,.,as.,.,asd", bottomRefCalculator)
     bottomRefLeaderboard?.current?.scrollIntoView({ behavior: "smooth" });
   };
   const onClickScrollNFT = () => {
-    // console.log("..,.,.,.,.,as.,.,asd", bottomRefCalculator)
     bottomRefNFT?.current?.scrollIntoView({ behavior: "smooth" });
   };
   const onClickScrollBlog = () => {
-    // console.log("..,.,.,.,.,as.,.,asd", bottomRefCalculator)
     bottomRefBlog?.current?.scrollIntoView({ behavior: "smooth" });
   };
   const onClickScrollFAQ = () => {
-    // console.log("..,.,.,.,.,as.,.,asd", bottomRefCalculator)
     bottomRefFAQ?.current?.scrollIntoView({ behavior: "smooth" });
   };
   const onClickScrollExchange = () => {
-    // console.log("..,.,.,.,.,as.,.,asd", bottomRefCalculator)
     bottomRefExchange?.current?.scrollIntoView({ behavior: "smooth" });
   };
 

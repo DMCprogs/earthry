@@ -1,8 +1,18 @@
 "use client";
-import React from "react";
+import React, { MutableRefObject } from "react";
 import { DivContentSC, DivSectionsContainerSC } from "@/app/styles.page";
 
-const Landing = () => {
+const Landing = (props: any) => {
+  const {
+    bottomRefHome,
+    bottomRefTokenomics,
+    bottomRefAbout,
+    bottomRefLeaderboard,
+    bottomRefNFT,
+    bottomRefBlog,
+    bottomRefFAQ,
+    bottomRefExchange,
+  } = props;
   return (
     <DivContentSC>
       {/* <Section1/> */}

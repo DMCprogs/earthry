@@ -25,7 +25,7 @@ export const DivContentSC = styled.div`
 export const DivSectionsContainerSC = styled.div`
   display: grid;
   justify-self: center;
-  grid-auto-rows: repeat(9, max-content);
+  grid-auto-rows: repeat(7, max-content);
   gap: 120px;
   max-width: 1400px;
   width: 90vw;

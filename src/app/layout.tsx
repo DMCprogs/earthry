@@ -3,10 +3,11 @@
 import StyledComponentsRegistry from "@/lib/registry";
 import "./globals.css";
 import { Inter } from "next/font/google";
-import React, { FC, ReactNode } from "react";
+import React, { FC, ReactNode, useEffect, useRef } from "react";
 import { DivContentSC, DivWrapperSC } from "./styles.page";
-import Header from "./components/header/header";
 import Footer from "./components/footer/footer";
+import Header from "./components/header";
+import { IRefObj } from "./interfaces/interfaces";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -17,12 +18,131 @@ const metadata = {
 
 const RootLayout: FC<{ children: ReactNode }> = (props) => {
   const { children } = props;
+  let bottomRefHome = useRef<any>();
+  let bottomRefTokenomics = useRef<any>();
+  let bottomRefAbout = useRef<any>();
+  let bottomRefLeaderboard = useRef<any>();
+  let bottomRefNFT = useRef<any>();
+  let bottomRefBlog = useRef<any>();
+  let bottomRefFAQ = useRef<any>();
+  let bottomRefExchange = useRef<any>();
+
+  function getRef(refs: IRefObj) {
+    // console.log(`Hello from  the child`, refs);
+    bottomRefHome = refs.bottomRefHome;
+    bottomRefTokenomics = refs.bottomRefTokenomics;
+    bottomRefAbout = refs.bottomRefAbout;
+    bottomRefLeaderboard = refs.bottomRefLeaderboard;
+    bottomRefNFT = refs.bottomRefNFT;
+    bottomRefBlog = refs.bottomRefBlog;
+    bottomRefFAQ = refs.bottomRefFAQ;
+    bottomRefExchange = refs.bottomRefExchange;
+  }
+
+  useEffect(() => {
+    window.onscroll = onScroll;
+  }, []);
+
+  const onScroll = () => {
+    var winScroll =
+      document.body.scrollTop || document.documentElement.scrollTop;
+    var height =
+      document.documentElement.scrollHeight -
+      document.documentElement.clientHeight;
+    var scrolled = (winScroll / height) * 100;
+    if (document.getElementById("myBar")) {
+      document.getElementById("myBar")!.style.width = scrolled + "%";
+    }
+  };
+  const onClickScrollHome = () => {
+    console.log("><>>>>>>>");
+    bottomRefHome?.current?.scrollIntoView({ behavior: "smooth" });
+  };
+  const onClickScrollTokenomics = () => {
+    console.log("><>>>>>>>");
+    bottomRefTokenomics?.current?.scrollIntoView({ behavior: "smooth" });
+  };
+  const onClickScrollAbout = () => {
+    bottomRefAbout?.current?.scrollIntoView({ behavior: "smooth" });
+  };
+  const onClickScrollLeaderboard = () => {
+    // console.log("..,.,.,.,.,as.,.,asd", bottomRefCalculator)
+    bottomRefLeaderboard?.current?.scrollIntoView({ behavior: "smooth" });
+  };
+  const onClickScrollNFT = () => {
+    // console.log("..,.,.,.,.,as.,.,asd", bottomRefCalculator)
+    bottomRefNFT?.current?.scrollIntoView({ behavior: "smooth" });
+  };
+  const onClickScrollBlog = () => {
+    // console.log("..,.,.,.,.,as.,.,asd", bottomRefCalculator)
+    bottomRefBlog?.current?.scrollIntoView({ behavior: "smooth" });
+  };
+  const onClickScrollFAQ = () => {
+    // console.log("..,.,.,.,.,as.,.,asd", bottomRefCalculator)
+    bottomRefFAQ?.current?.scrollIntoView({ behavior: "smooth" });
+  };
+  const onClickScrollExchange = () => {
+    // console.log("..,.,.,.,.,as.,.,asd", bottomRefCalculator)
+    bottomRefExchange?.current?.scrollIntoView({ behavior: "smooth" });
+  };
+
+  // const childrenWithProps = React.Children.map(children, (child) => {
+  //     // Checking isValidElement is the safe way and avoids a
+  //     // typescript error too.
+  //     if (React.isValidElement(child)) {
+  //         return React.cloneElement(child, {
+  //             getRef,
+  //             onClickScrollTokenomics,
+  //             onClickScrollAbout,
+  //             onClickScrollRoudmap,
+  //             onClickScrollHowToBy,
+  //             onClickScrollFAQ,
+  //             onClickScrollContacts,
+  //             onClickScrollExchange
+  //         });
+  //     }
+  //     return child;
+  // });
+
+  useEffect(
+    () =>
+      getRef({
+        bottomRefHome,
+        bottomRefTokenomics,
+        bottomRefAbout,
+        bottomRefLeaderboard,
+        bottomRefNFT,
+        bottomRefBlog,
+        bottomRefFAQ,
+        bottomRefExchange,
+      }),
+
+    [
+      bottomRefHome,
+      bottomRefTokenomics,
+      bottomRefAbout,
+      bottomRefLeaderboard,
+      bottomRefNFT,
+      bottomRefBlog,
+      bottomRefFAQ,
+      bottomRefExchange,
+    ]
+  );
 
   return (
     <html lang="en">
       <body className={inter.className}>
         <DivWrapperSC>
-          <Header />
+          <Header
+            onClickScrollHome={onClickScrollHome}
+            onClickScrollTokenomics={onClickScrollTokenomics}
+            onClickScrollAbout={onClickScrollAbout}
+            onClickScrollLeaderboard={onClickScrollLeaderboard}
+            onClickScrollNFT={onClickScrollNFT}
+            onClickScrollFAQ={onClickScrollFAQ}
+            onClickScrollBlog={onClickScrollBlog}
+            onClickScrollExchange={onClickScrollExchange}
+          />
           <StyledComponentsRegistry>{children}</StyledComponentsRegistry>
           <Footer />
         </DivWrapperSC>

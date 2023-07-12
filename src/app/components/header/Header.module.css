@@ -1,0 +1,148 @@
+
+
+/* скрываем чекбокс */
+#menu__toggle {
+    opacity: 0;
+    display: none;
+}
+
+/* стилизуем кнопку */
+.menu__btn {
+    display: grid; /* используем flex для центрирования содержимого */
+    align-items: center; /* центрируем содержимое кнопки */
+    position: absolute;
+    top: 28px;
+    right: 20px;
+    width: 26px;
+    height: 26px;
+    cursor: pointer;
+    color: #1a1a1b;
+    z-index: 100;
+}
+
+/* добавляем "гамбургер" */
+.menu__btn > span,
+.menu__btn > span::before,
+.menu__btn > span::after {
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-color: #1a1a1b;
+}
+
+.menu__btn > span::before {
+    content: "";
+    top: -8px;
+}
+
+.menu__btn > span::after {
+    content: "";
+    top: 8px;
+}
+
+/* контейнер меню */
+.menu__box {
+    display: block;
+    position: fixed;
+    visibility: hidden;
+    top: 0;
+    right: -100%;
+    width: 250px;
+    height: 100vh;
+    margin: 0;
+    padding: 80px 0;
+    list-style: none;
+    z-index: 10;
+    text-align: center;
+    background: #ffffff;
+    box-shadow: 0px 0px 24px rgba(0, 0, 0, 0.1);
+}
+
+.menu__item {
+    display: block;
+    padding: 15px 24px;
+    color: #1a1a1b;
+    font-family: "Poppins", sans-serif;
+    font-size: 20px;
+    font-weight: 600;
+    text-decoration: none;
+    left: 100;
+    cursor: pointer;
+}
+
+.menu__item:hover {
+}
+
+#menu__toggle:checked ~ .menu__btn > span {
+    transform: rotate(45deg);
+}
+
+#menu__toggle:checked ~ .menu__btn > span::before {
+    top: 0;
+    transform: rotate(0);
+}
+
+#menu__toggle:checked ~ .menu__btn > span::after {
+    top: 0;
+    transform: rotate(90deg);
+}
+
+#menu__toggle:checked ~ .menu__box {
+    visibility: visible;
+    right: 0;
+}
+#menu__close:checked ~ .menu__item > span {
+    transform: rotate(45deg);
+}
+
+#menu__close:checked ~ .menu__item > span::before {
+    top: 0;
+    transform: rotate(0);
+}
+
+#menu__close:checked ~ .menu__item > span::after {
+    top: 0;
+    transform: rotate(90deg);
+}
+
+#menu__close:checked ~ .menu__box {
+    visibility: hidden;
+    right: 0;
+}
+
+.menu__btn > span,
+.menu__btn > span::before,
+.menu__btn > span::after {
+    transition-duration: 0.25s;
+}
+
+.menu__box {
+    transition-duration: 0.25s;
+}
+
+.menu__item {
+    transition-duration: 0.25s;
+}
+
+.hamburger_menu {
+    display: none;
+    z-index: 10;
+    height: max-content;
+}
+
+@media (max-width: 1300px) {
+    .hamburger_menu {
+        display: grid;
+    }
+}
+
+.display {
+    display: grid;
+}
+
+@media (max-width: 1300px) {
+    .display {
+        display: none;
+    }
+}

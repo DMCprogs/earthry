@@ -4,9 +4,9 @@ import Image from "next/image";
 
 export const DivRowsWrapSC = styled.div`
   width: 100%;
-  max-width: 1240px;
+  max-width: 1235px;
   display: grid;
-  grid-template-rows: repeat(8, max-content);
+  grid-template-rows: repeat(6, max-content);
   gap: 96px;
   justify-self: center;
   @media (max-width: 1000px) {
@@ -22,7 +22,7 @@ export const DivRowsWrapSC = styled.div`
 
 export const TitleNonProfitSC = styled.div`
   width: 100%;
-  max-width: 1180px;
+  max-width: 1030px;
   color: #000;
   text-align: center;
   font-family: Montserrat;
@@ -38,8 +38,8 @@ export const TitleNonProfitSC = styled.div`
     letter-spacing: 0.072px;
   }
   @media (max-width: 360px) {
-    font-size: 30px;
-    letter-spacing: 0.06px;
+    font-size: 28px;
+    letter-spacing: 0.056px;
   }
 `;
 
@@ -60,82 +60,90 @@ export const DivColumnsContentSC = styled.div`
   }
 `;
 
-export const ImageDocEcologySC = styled.div<{
-  path: string;
-  alt: string;
-}>`
-  display: grid;
-  justify-self: center;
-  width: 100%;
-  max-width: 1078px;
-  height: 611px;
-  background: url(${({ path }) => path});
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
-  border-radius: 30px;
-  @media (max-width: 1000px) {
-    height: 544px;
-  }
-  @media (max-width: 768px) {
-    height: 412px;
-  }
-  @media (max-width: 480px) {
-    height: 249px;
-  }
-  @media (max-width: 360px) {
-    height: 181px;
-  }
-`;
-
-export const ImageEcologySC = styled.div<{
+export const ImageEatEcologySC = styled.div<{
   path: string;
   alt: string;
 }>`
   display: grid;
   width: 100%;
   max-width: 527px;
-  height: 340px;
+  height: 527px;
   background: url(${({ path }) => path});
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
-  border-radius: 20px;
+  align-self: center;
+  border-radius: 30px;
   @media (max-width: 1000px) {
-    height: 304px;
+    height: 393px;
+  }
+  @media (max-width: 900px) {
+    justify-self: center;
   }
   @media (max-width: 768px) {
-    height: 338px;
+    height: 413px;
   }
   @media (max-width: 480px) {
-    height: 284px;
+    height: 440px;
   }
   @media (max-width: 360px) {
-    height: 207px;
+    height: 320px;
   }
 `;
 
-export const ImagePeopleEcologySC = styled.div<{
+export const ImageWorldEcologySC = styled.div<{
+  path: string;
+  alt: string;
+}>`
+  display: grid;
+  justify-self: center;
+  width: 100%;
+  max-width: 527px;
+  height: 518px;
+  background: url(${({ path }) => path});
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: 30px;
+  align-self: center;
+  @media (max-width: 1000px) {
+    height: 386px;
+  }
+  @media (max-width: 768px) {
+    height: 406px;
+  }
+  @media (max-width: 480px) {
+    height: 433px;
+  }
+  @media (max-width: 360px) {
+    height: 315px;
+  }
+`;
+
+export const ImageDropEcologySC = styled.div<{
   path: string;
   alt: string;
 }>`
   display: grid;
   width: 100%;
-  max-width: 900px;
-  height: 812px;
+  max-width: 545px;
+  height: 734px;
   background: url(${({ path }) => path});
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
   justify-self: center;
   @media (max-width: 1000px) {
-    height: 593px;
+    height: 589px;
+  }
+  @media (max-width: 768px) {
+    height: 476px;
   }
   @media (max-width: 480px) {
-    height: 397px;
+    height: 406px;
   }
   @media (max-width: 360px) {
-    height: 289px;
+    height: 294px;
   }
 `;
 
@@ -147,21 +155,13 @@ export const DivBoldTextSC = styled.div<{
   font-size: 36px;
   font-style: normal;
   font-weight: 600;
-  line-height: 55px; /* 152.778% */
+  line-height: 150%;
   letter-spacing: 0.2px;
   width: 100%;
   text-align: ${({ positionText }) => positionText};
-  @media (max-width: 1000px) {
-    font-size: 30px;
-    line-height: 47px; /* 156.667% */
-  }
-  @media (max-width: 480px) {
-    font-size: 24px;
-    line-height: 45px; /* 187.5% */
-  }
+
   @media (max-width: 360px) {
-    font-size: 20px;
-    line-height: 37px; /* 187.5% */
+    font-size: 28px;
   }
 `;
 
@@ -171,20 +171,27 @@ export const DivNormalTextSC = styled.div`
   font-size: 36px;
   font-style: normal;
   font-weight: 400;
-  line-height: 55px;
+  line-height: 150%;
   letter-spacing: 0.2px;
   @media (max-width: 1000px) {
     font-size: 30px;
-    line-height: 47px;
     letter-spacing: 0.06px;
   }
   @media (max-width: 480px) {
     font-size: 24px;
-    line-height: 45px;
     letter-spacing: 0.048px;
   }
   @media (max-width: 480px) {
     font-size: 20px;
-    line-height: 37px;
+    letter-spacing: 0.04px;
+  }
+`;
+export const DivRowsTextSC = styled.div`
+  width: 100%;
+  display: grid;
+  grid-template-rows: repeat(2, max-content);
+  gap: 25px;
+  @media (max-width: 1000px) {
+    gap: 20px;
   }
 `;

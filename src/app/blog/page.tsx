@@ -1,3 +1,4 @@
+
 import { FC } from "react";
 import Link from "next/link";
 import {DivDefaultContainerSC } from "../styles.page";
@@ -13,8 +14,9 @@ const Blog: FC = () => (
     <h1>Blog</h1>
     <DivContentSC>
       <BlogCard/>      
-    {/* <Link href="/">Landing</Link> */}
+    <Link href="/">Landing</Link>
     </DivContentSC>
+
 
     </DivBlogContainerSC>
   </DivDefaultContainerSC>

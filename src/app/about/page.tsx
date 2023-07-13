@@ -42,7 +42,7 @@ const About: FC = () => (
    <DivJoinSC>
    <DivH1SC >Join our community</DivH1SC>
    <DivH1SC style={{fontWeight: '400'}} >Ready to improve the environment with us?</DivH1SC>
-   <div style={{width:'100%',height:'100%',display:'grid',justifyItems:'center'}}> <Link href={'https://www.linkedin.com/'}><ButtonJoinSC>View serv on Linkedin <BsArrowRight color={'white'} size={24}/> </ButtonJoinSC></Link> </div>
+   <div style={{width:'100%',height:'100%',display:'grid',justifyItems:'center'}}> <Link href={'https://www.linkedin.com/'}><ButtonJoinSC>Join the community <BsArrowRight color={'white'} size={24}/> </ButtonJoinSC></Link> </div>
    </DivJoinSC>
    </DivContainerTeamSC>
    

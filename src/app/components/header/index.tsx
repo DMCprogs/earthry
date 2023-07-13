@@ -285,7 +285,7 @@ const Header = (props: any) => {
                   <DivBoxLinkSC href={"#"}>Leaderboard</DivBoxLinkSC>
                   <DivBoxLinkSC href={"#"}>NFT</DivBoxLinkSC>
                   <DivBoxLinkSC href={"#"}>Blog</DivBoxLinkSC>
-                  <DivBoxLinkSC href={"#"}>FAQ</DivBoxLinkSC>
+                  <DivBoxLinkSC href={"/faq"}>FAQ</DivBoxLinkSC>
                 </DivBoxTabsSC>
               </motion.div>
             ) : (
@@ -296,7 +296,7 @@ const Header = (props: any) => {
                 <DivBoxLinkSC href={"#"}>Leaderboard</DivBoxLinkSC>
                 <DivBoxLinkSC href={"#"}>NFT</DivBoxLinkSC>
                 <DivBoxLinkSC href={"#"}>Blog</DivBoxLinkSC>
-                <DivBoxLinkSC href={"#"}>FAQ</DivBoxLinkSC>
+                <DivBoxLinkSC href={"/faq"}>FAQ</DivBoxLinkSC>
               </DivBoxTabsSC>
             )}
 

@@ -316,16 +316,16 @@ const Header = (props: any) => {
               }}
             >
               <DivBoxButtonsSC>
-                <ButtonWrapper
-                  onClick={onClickScrollExchange}
-                  width={222}
-                  primary={true}
-                  directionRadius="center"
-                  height={64}
-                >
-                  <span> Buy on Uniswap</span>
-                </ButtonWrapper>
-
+                <Link href="#">
+                  <ButtonWrapper
+                    width={222}
+                    primary={true}
+                    directionRadius="center"
+                    height={64}
+                  >
+                    <span> Buy on Uniswap</span>
+                  </ButtonWrapper>
+                </Link>
                 <ButtonWrapper
                   width={222}
                   primary={true}
@@ -351,15 +351,16 @@ const Header = (props: any) => {
                   <DivBoxLinkSC href={"#"}>Blog</DivBoxLinkSC>
                   <DivBoxLinkSC href={"#"}>FAQ</DivBoxLinkSC>
                   <DivBoxButtonsMenuSC>
-                    <ButtonWrapper
-                      width={222}
-                      primary={true}
-                      directionRadius="center"
-                      height={64}
-                      onClick={onClickScrollExchange}
-                    >
-                      <span> Buy on Uniswap</span>
-                    </ButtonWrapper>
+                    <Link href="#">
+                      <ButtonWrapper
+                        width={222}
+                        primary={true}
+                        directionRadius="center"
+                        height={64}
+                      >
+                        <span> Buy on Uniswap</span>
+                      </ButtonWrapper>
+                    </Link>
                     <ButtonWrapper
                       width={222}
                       primary={true}

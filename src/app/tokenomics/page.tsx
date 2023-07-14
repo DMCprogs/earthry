@@ -14,7 +14,7 @@ import {
   ImagePlanetTokenSC,
   DivWrapImgTitleSC,
 } from "./styles.tokenomics";
-import Image from "../images/chart.png";
+import Image from "../images/chart.svg";
 import Image2 from "../images/planet_token.svg";
 import { SpanTextSC } from "./styles.tokenomics";
 import ButtonWrapper from "../components/custom_button";

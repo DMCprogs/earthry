@@ -1,11 +1,15 @@
 import styled from "styled-components";
-import ImgBlog from "../images/BlogDetail.jpg";
-export const DivBackgroundImgSC = styled.div`
+import { StaticImageData } from 'next/image';
+
+type Props = {
+  images: StaticImageData;
+}
+export const DivBackgroundImgSC = styled.div.attrs<Props>(() => ({}))<Props>`
   width: 100%;
   display: grid;
   height: 100%;
   min-height: 75px;
-  background-image: url(${ImgBlog.src});
+  background-image: url(${props => props.images.src});
   background-size: cover;
   @media(min-width: 720px){
     min-height: 200px;

@@ -5,6 +5,7 @@ import { DivDefaultContainerSC } from "../styles.page";
 import YouTube, { YouTubeProps } from "react-youtube";
 import BlogCard from "../components/blog/BlogCard";
 import image from "../images/ItemBlogExample.png";
+import ImgBlog from "../images/BlogDetail.jpg";
 
 import { 
     DivBackgroundImgSC,
@@ -42,7 +43,7 @@ const BlogDetail: FC = () => (
     
    
   <DivDefaultContainerSC style={{marginTop:'83px',maxWidth:'none',width:'100%',}}>
-  <DivBackgroundImgSC/>
+  <DivBackgroundImgSC  images={ImgBlog} />
   <DivDetailContentSC>
   <ContainerSC>
     <DivBlogInfoSC>

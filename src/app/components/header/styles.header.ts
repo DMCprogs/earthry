@@ -1,12 +1,16 @@
 "use client";
 import Image from "next/image";
+import Link from "next/link";
 import styled from "styled-components";
 
-export const DivBoxHeaderSC = styled.div`
+export const DivBoxHeaderSC = styled.div<{
+  isBgColor: boolean;
+}>`
   width: 100%;
   display: grid;
   height: 82px;
-  background: #4affc9;
+  background-color: ${({ isBgColor }) =>
+    isBgColor ? " #4affc9" : "rgba(255, 255, 255, 0.70)"};
   padding: 0px 25px 0px 25px;
   position: fixed;
   z-index: 999;
@@ -61,6 +65,16 @@ export const DivBoxTabsSC = styled.div`
 `;
 
 export const DivBoxTabSC = styled.div`
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 19px;
+  line-height: 23px;
+  color: #201e1c;
+  cursor: pointer;
+`;
+
+export const DivBoxLinkSC = styled(Link)`
   font-family: "Montserrat";
   font-style: normal;
   font-weight: 400;

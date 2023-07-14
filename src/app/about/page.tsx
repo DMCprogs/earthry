@@ -29,7 +29,7 @@ const About: FC = () => (
       </DivDetailTextSC>
     </ContainerSC>
     <DivContainerTeamSC>
-      <DivH1SC>Our team</DivH1SC>
+      <DivH1SC >Our team</DivH1SC>
       <DivTeamSC>
         <CardTeam
           images={teamLogo}
@@ -83,8 +83,8 @@ const About: FC = () => (
       </div>
 
       <DivJoinSC>
-        <DivH1SC>Join our community</DivH1SC>
-        <DivH1SC style={{ fontWeight: "400" }}>
+        <DivH1SC style={{marginBottom:'10px'}}>Join our community</DivH1SC>
+        <DivH1SC style={{ fontWeight: "400",margin:'10px 0' }}>
           Ready to improve the environment with us?
         </DivH1SC>
         <div

@@ -47,12 +47,14 @@ const Blog: FC = () => {
         </DivContentSC>
         <DivH1SC>Subscribe for updates</DivH1SC>
         <ButtonWrapper
+         directionRadius="center"
           styles={styles}
           primary={true}
           height={84}
           width={260}
           onClick={() => router.push('/')}
-        >Subscribe
+        >
+         <span> Subscribe </span>
         </ButtonWrapper>
       </DivBlogContainerSC>
 

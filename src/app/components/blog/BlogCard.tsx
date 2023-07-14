@@ -15,8 +15,11 @@ import Link from "next/link";
 
 type BlogCardProps = {
   img: any;
+  title: string;
+  description: string;
+
 }
-const BlogCard: FC<BlogCardProps> = ({ img }) => {
+const BlogCard: FC<BlogCardProps> = ({ img, title, description }) => {
   const router = useRouter();
 
   const styles = {
@@ -28,8 +31,8 @@ const BlogCard: FC<BlogCardProps> = ({ img }) => {
     <BlogCardContainerSC>
       <BlogCardImageSC img={img} />
       <DivProductContentSC>
-        <BlogCardTitleSC>Lorem ipsum dolor sit amet, consectetur adipiscing elit</BlogCardTitleSC>
-        <BlogCardDescriptionSC>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis.</BlogCardDescriptionSC>
+        <BlogCardTitleSC>{title}</BlogCardTitleSC>
+        <BlogCardDescriptionSC>{description}</BlogCardDescriptionSC>
         <ButtonWrapper
           styles={styles}
           directionRadius="center"

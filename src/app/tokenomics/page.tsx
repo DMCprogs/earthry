@@ -3,7 +3,6 @@ import React, { useEffect, useState } from "react";
 import {
   DivWrapperCellImageSC,
   DivWrapperContentSC,
-  DivBoxText1SC,
   H4SC,
   TitleTokenomicsSC,
   DivBoxOptionsTokensSC,

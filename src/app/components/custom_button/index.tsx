@@ -2,6 +2,7 @@
 import React, { FC, ReactElement } from "react";
 
 import { ButtonWrapperSC } from "@/app/components/custom_button/styles.custom_button";
+import Link from "next/link";
 
 const ButtonWrapper: FC<{
   children: ReactElement;
@@ -14,8 +15,11 @@ const ButtonWrapper: FC<{
   onClick?: () => void | null;
   disabled?: boolean;
   type?: string | null;
+  styles?: any;
+
 }> = (props) => {
   const {
+    styles,
     children,
     width,
     weight = 600,
@@ -35,7 +39,8 @@ const ButtonWrapper: FC<{
   };
 
   return (
-    <ButtonWrapperSC
+    <ButtonWrapperSC 
+      style={styles}
       height={height}
       width={width}
       weight={weight}

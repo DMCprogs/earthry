@@ -35,9 +35,9 @@ export const ButtonWrapperSC = styled.button<{
     background: ${({ primary, colorButton }) =>
     primary ? (colorButton ? '#646464' : "rgba(25, 89, 70, 0.5)") : "rgba(0, 175, 121, 0.25)"};
   }
-
   color: ${({ primary }) => (primary ? "white" : "#201E1C")};
   justify-items: center;
+
   align-items: center;
   ${({ directionRadius }) =>
     directionRadius === "left"
@@ -46,8 +46,9 @@ export const ButtonWrapperSC = styled.button<{
       : directionRadius === "center" ?`border-radius: 25px` : `border-top-right-radius: 30px 30px;
   border-bottom-right-radius: 30px 30px;`}
 
-  
+
 `;
+
 
 
 

@@ -43,7 +43,10 @@ export const ButtonWrapperSC = styled.button<{
     directionRadius === "left"
       ? `border-top-left-radius: 30px 30px;
   border-bottom-left-radius: 30px 30px;`
-      : directionRadius === "center" ?`border-radius: 25px` : `border-top-right-radius: 30px 30px;
+      : directionRadius === "center" ?`border-radius: 25px`
+      : directionRadius === "ltr" ? `border-radius: 0px 35px`
+      : directionRadius === "rtr" ? `border-radius: 35px 0px`
+      : `border-top-right-radius: 30px 30px;
   border-bottom-right-radius: 30px 30px;`}
 
 

@@ -47,6 +47,7 @@ const Header = (props: any) => {
       case "/non_profit2":
       case "/about":
       case "/faq":
+      case "/tokenomics":
         setIsBgColor(false);
         setIsScrollFooter(false);
         break;
@@ -55,6 +56,7 @@ const Header = (props: any) => {
       pathname === "/non_profit1" ||
       pathname === "/non_profit2" ||
       pathname === "/faq" ||
+      pathname === "/tokenomics" ||
       pathname === "/about"
     ) {
       setIsScrollFooter(false);
@@ -282,7 +284,7 @@ const Header = (props: any) => {
                 {" "}
                 <DivBoxTabsSC>
                   <DivBoxLinkSC href={"/"}>Home</DivBoxLinkSC>
-                  <DivBoxLinkSC href={"#"}>Tokenomics</DivBoxLinkSC>
+                  <DivBoxLinkSC href={"/tokenomics"}>Tokenomics</DivBoxLinkSC>
                   <DivBoxLinkSC href={"/about"}>About</DivBoxLinkSC>
                   <DivBoxLinkSC href={"#"}>Leaderboard</DivBoxLinkSC>
                   <DivBoxLinkSC href={"#"}>NFT</DivBoxLinkSC>
@@ -328,14 +330,16 @@ const Header = (props: any) => {
                     <span> Buy on Uniswap</span>
                   </ButtonWrapper>
                 </Link>
-                <ButtonWrapper
-                  width={222}
-                  primary={true}
-                  directionRadius="center"
-                  height={64}
-                >
-                  <span>Buy with card</span>
-                </ButtonWrapper>
+                <Link href="#">
+                  <ButtonWrapper
+                    width={222}
+                    primary={true}
+                    directionRadius="center"
+                    height={64}
+                  >
+                    <span>Buy with card</span>
+                  </ButtonWrapper>
+                </Link>
               </DivBoxButtonsSC>
             </motion.div>
             <div className={styles.hamburger_menu}>
@@ -346,7 +350,7 @@ const Header = (props: any) => {
               <div className={styles.menu__box}>
                 <DivBoxBurgerSC className={styles.menu}>
                   <DivBoxLinkSC href={"#"}>Home</DivBoxLinkSC>
-                  <DivBoxLinkSC href={"#"}>Tokenomics</DivBoxLinkSC>
+                  <DivBoxLinkSC href={"/tokenomics"}>Tokenomics</DivBoxLinkSC>
                   <DivBoxLinkSC href={"/about"}>About</DivBoxLinkSC>
                   <DivBoxLinkSC href={"#"}>Leaderboard</DivBoxLinkSC>
                   <DivBoxLinkSC href={"#"}>NFT</DivBoxLinkSC>
@@ -363,14 +367,16 @@ const Header = (props: any) => {
                         <span> Buy on Uniswap</span>
                       </ButtonWrapper>
                     </Link>
-                    <ButtonWrapper
-                      width={222}
-                      primary={true}
-                      directionRadius="center"
-                      height={64}
-                    >
-                      <span>Buy with card</span>
-                    </ButtonWrapper>
+                    <Link href="#">
+                      <ButtonWrapper
+                        width={222}
+                        primary={true}
+                        directionRadius="center"
+                        height={64}
+                      >
+                        <span>Buy with card</span>
+                      </ButtonWrapper>
+                    </Link>
                   </DivBoxButtonsMenuSC>
                 </DivBoxBurgerSC>
               </div>

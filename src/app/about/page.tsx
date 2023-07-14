@@ -15,7 +15,7 @@ import teamLogo from "../images/Team.jpg";
 import CardTeam from "./cardTeam";
 import { BsArrowRight } from "react-icons/bs";
 const About: FC = () => (
-  <DivDefaultContainerSC>
+  <DivDefaultContainerSC style={{ marginTop: "140px" }}>
     <DivH1SC>Our vision and motivation</DivH1SC>
     <ContainerSC>
       <DivDetailTextSC>

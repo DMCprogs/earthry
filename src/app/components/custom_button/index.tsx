@@ -4,7 +4,7 @@ import React, { FC, ReactElement } from "react";
 import { ButtonWrapperSC } from "@/app/components/custom_button/styles.custom_button";
 
 const ButtonWrapper: FC<{
-  children: ReactElement;
+  children?: ReactElement;
   weight?: number;
   width: number;
   height?: number;

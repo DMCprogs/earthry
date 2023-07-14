@@ -117,10 +117,11 @@ export const SpanTextSC = styled.span`
 color: #000;
 text-align: center;
 font-family: Montserrat;
-font-size: 28px;
+font-size: 30px;
 font-style: normal;
 font-weight: 400;
 line-height: 130%;
+max-width: 1030px;
 @media (max-width: 480px) {
     font-size: 22px;
   }

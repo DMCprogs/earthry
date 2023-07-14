@@ -39,7 +39,7 @@ const BlogCard: FC<BlogCardProps> = ({ img, title, description }) => {
           primary={true}
           height={50}
           width={50}
-          onClick={() => router.push('/')}
+          onClick={() => router.push('/blog_detail')}
         >
           <HiOutlineArrowNarrowRight size={"1.3rem"} />
         </ButtonWrapper>

@@ -8,8 +8,8 @@ type Props = {
 }
 
 export const DivH1SC = styled.div`
-margin-top: 10px;
-margin-bottom: 10px;
+margin-top: 100px;
+margin-bottom: 70px;
   width: 100%;
   display: grid;
   height: 100%;

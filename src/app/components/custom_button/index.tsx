@@ -5,7 +5,7 @@ import { ButtonWrapperSC } from "@/app/components/custom_button/styles.custom_bu
 import Link from "next/link";
 
 const ButtonWrapper: FC<{
-  children: ReactElement;
+  children?: ReactElement;
   weight?: number;
   width: number;
   height?: number;

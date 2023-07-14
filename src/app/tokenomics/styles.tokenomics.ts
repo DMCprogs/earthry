@@ -99,7 +99,6 @@ font-style: normal;
 font-weight: 600;
 line-height: normal;
 letter-spacing: 0.2px;
-padding-bottom: 40px;
 
 @media (max-width: 480px) {
     font-size: 38px;

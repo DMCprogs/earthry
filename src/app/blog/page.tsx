@@ -1,24 +1,28 @@
-
 import { FC } from "react";
 import Link from "next/link";
-import {DivDefaultContainerSC } from "../styles.page";
+import { DivDefaultContainerSC } from "../styles.page";
+import image from "../images/ItemBlogExample.png";
+
 import { 
-  DivBlogContainerSC,
   DivContentSC,
+  DivBlogContainerSC,
  } from "./styles.blog";
+import teamLogo from "../images/Team.jpg";
 import BlogCard from "../components/blog/BlogCard";
-
+import { DivH1SC } from "../about/styles.about";
 const Blog: FC = () => (
-  <DivDefaultContainerSC>
+  <DivDefaultContainerSC style={{ marginTop: '140px' }}>
     <DivBlogContainerSC>
-    <h1>Blog</h1>
+
+     <DivH1SC>Blog</DivH1SC>
     <DivContentSC>
-      <BlogCard/>      
-    <Link href="/">Landing</Link>
+      <BlogCard img={image}/>
+      <BlogCard img={image}/>
+      <BlogCard img={image}/>
+  
     </DivContentSC>
-
-
     </DivBlogContainerSC>
+
   </DivDefaultContainerSC>
 );
 

@@ -46,6 +46,7 @@ const Header = (props: any) => {
       case "/non_profit1":
       case "/non_profit2":
       case "/about":
+      case "/faq":
         setIsBgColor(false);
         setIsScrollFooter(false);
         break;
@@ -53,6 +54,7 @@ const Header = (props: any) => {
     if (
       pathname === "/non_profit1" ||
       pathname === "/non_profit2" ||
+      pathname === "/faq" ||
       pathname === "/about"
     ) {
       setIsScrollFooter(false);
@@ -349,7 +351,7 @@ const Header = (props: any) => {
                   <DivBoxLinkSC href={"#"}>Leaderboard</DivBoxLinkSC>
                   <DivBoxLinkSC href={"#"}>NFT</DivBoxLinkSC>
                   <DivBoxLinkSC href={"#"}>Blog</DivBoxLinkSC>
-                  <DivBoxLinkSC href={"#"}>FAQ</DivBoxLinkSC>
+                  <DivBoxLinkSC href={"/faq"}>FAQ</DivBoxLinkSC>
                   <DivBoxButtonsMenuSC>
                     <Link href="#">
                       <ButtonWrapper

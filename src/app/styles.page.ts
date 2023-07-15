@@ -35,4 +35,6 @@ export const DivDefaultContainerSC = styled.div`
   justify-self: center;
   max-width: 1400px;
   width: 90vw;
+  height: fit-content;
+  gap: 24px;
 `;

@@ -8,6 +8,7 @@ export const DivRowsWrapSC = styled.div`
   display: grid;
   grid-template-rows: repeat(8, max-content);
   gap: 96px;
+  margin-top: clamp(140px,20vw, 170px);
   justify-self: center;
   @media (max-width: 1000px) {
     gap: 72px;

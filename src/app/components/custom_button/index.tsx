@@ -43,10 +43,10 @@ const ButtonWrapper: FC<{
       style={styles}
       height={height}
       width={width}
-      weight={weight}
-      primary={primary}
-      colorButton={colorButton}
-      directionRadius={directionRadius}
+      $weight={weight}
+      $primary={primary}
+      $colorButton={colorButton}
+      $directionRadius={directionRadius}
       onClick={_onClick}
       disabled={disabled}
     >

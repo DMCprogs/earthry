@@ -48,6 +48,8 @@ const Header = (props: any) => {
       case "/about":
       case "/faq":
       case "/tokenomics":
+      case "/airdrop":
+      case "/airdrop/success":
         setIsBgColor(false);
         setIsScrollFooter(false);
         break;
@@ -57,7 +59,9 @@ const Header = (props: any) => {
       pathname === "/non_profit2" ||
       pathname === "/faq" ||
       pathname === "/tokenomics" ||
-      pathname === "/about"
+      pathname === "/about" ||
+      pathname === "/airdrop" ||
+      pathname === "/airdrop/success"
     ) {
       setIsScrollFooter(false);
     } else {
@@ -294,8 +298,8 @@ const Header = (props: any) => {
               </motion.div>
             ) : (
               <DivBoxTabsSC>
-                <DivBoxLinkSC href={"#"}>Home</DivBoxLinkSC>
-                <DivBoxLinkSC href={"#"}>Tokenomics</DivBoxLinkSC>
+                <DivBoxLinkSC href={"/"}>Home</DivBoxLinkSC>
+                <DivBoxLinkSC href={"/tokenomics"}>Tokenomics</DivBoxLinkSC>
                 <DivBoxLinkSC href={"/about"}>About</DivBoxLinkSC>
                 <DivBoxLinkSC href={"#"}>Leaderboard</DivBoxLinkSC>
                 <DivBoxLinkSC href={"#"}>NFT</DivBoxLinkSC>
@@ -349,7 +353,7 @@ const Header = (props: any) => {
               </label>
               <div className={styles.menu__box}>
                 <DivBoxBurgerSC className={styles.menu}>
-                  <DivBoxLinkSC href={"#"}>Home</DivBoxLinkSC>
+                  <DivBoxLinkSC href={"/"}>Home</DivBoxLinkSC>
                   <DivBoxLinkSC href={"/tokenomics"}>Tokenomics</DivBoxLinkSC>
                   <DivBoxLinkSC href={"/about"}>About</DivBoxLinkSC>
                   <DivBoxLinkSC href={"#"}>Leaderboard</DivBoxLinkSC>

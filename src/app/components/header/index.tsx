@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect, useState, useLayoutEffect } from "react";
+import React, { useEffect, useState } from "react";
 import styles from "./Header.module.css";
 import {
   DivBoxHeaderSC,
@@ -30,9 +30,7 @@ const Header = (props: any) => {
     onClickScrollBlog,
     onClickScrollExchange,
   } = props;
-  const [isChosen, setIsChosen] = useState();
   const [isScrollFooter, setIsScrollFooter] = useState(true);
-  const [valueTab, setValueTab] = useState<string>("About");
   const [width, setWidth] = useState<number>(0);
   const [isBgColor, setIsBgColor] = useState<boolean>(true);
   const pathname = usePathname();
@@ -75,34 +73,12 @@ const Header = (props: any) => {
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, []);
-  const onTabSelect = (event: any, data: any) => {
-    setValueTab(data.value);
-    setIsChosen(data.value);
-    switch (data.value) {
-      case "Home":
-        return onClickScrollHome();
-      case "Tokenomics":
-        return onClickScrollTokenomics();
-      case "About":
-        return onClickScrollAbout();
-      case "Leaderboard":
-        return onClickScrollLeaderboard();
-      case "Howtoby":
-        return onClickScrollNFT();
-      case "NFT":
-        return onClickScrollFAQ();
-      case "Blog":
-        return onClickScrollBlog();
-      case "Exchange":
-        return onClickScrollExchange();
-    }
-  };
   const handleResize = () => {
     setWidth(window.outerWidth);
   };
 
   return (
-    <DivBoxHeaderSC isBgColor={isBgColor}>
+    <DivBoxHeaderSC $isBgColor={isBgColor}>
       <DivBoxColumnsSC>
         <motion.div
           initial="hidden"
@@ -141,14 +117,8 @@ const Header = (props: any) => {
                 }}
               >
                 {" "}
-                <DivBoxTabsSC
-                  onTabSelect={onTabSelect}
-                  selectedValue={valueTab}
-                  {...props}
-                >
-                  <DivBoxTabSC onClick={onClickScrollTokenomics}>
-                    Home
-                  </DivBoxTabSC>
+                <DivBoxTabsSC>
+                  <DivBoxTabSC onClick={onClickScrollHome}>Home</DivBoxTabSC>
                   <DivBoxTabSC onClick={onClickScrollTokenomics}>
                     Tokenomics
                   </DivBoxTabSC>
@@ -162,14 +132,8 @@ const Header = (props: any) => {
                 </DivBoxTabsSC>
               </motion.div>
             ) : (
-              <DivBoxTabsSC
-                onTabSelect={onTabSelect}
-                selectedValue={valueTab}
-                {...props}
-              >
-                <DivBoxTabSC onClick={onClickScrollTokenomics}>
-                  Home
-                </DivBoxTabSC>
+              <DivBoxTabsSC>
+                <DivBoxTabSC onClick={onClickScrollHome}>Home</DivBoxTabSC>
                 <DivBoxTabSC onClick={onClickScrollTokenomics}>
                   Tokenomics
                 </DivBoxTabSC>
@@ -225,15 +189,8 @@ const Header = (props: any) => {
                 <span></span>
               </label>
               <div className={styles.menu__box}>
-                <DivBoxBurgerSC
-                  onTabSelect={onTabSelect}
-                  selectedValue={valueTab}
-                  className={styles.menu}
-                  {...props}
-                >
-                  <DivBoxTabSC onClick={onClickScrollTokenomics}>
-                    Home
-                  </DivBoxTabSC>
+                <DivBoxBurgerSC className={styles.menu}>
+                  <DivBoxTabSC onClick={onClickScrollHome}>Home</DivBoxTabSC>
                   <DivBoxTabSC onClick={onClickScrollTokenomics}>
                     Tokenomics
                   </DivBoxTabSC>
@@ -299,7 +256,7 @@ const Header = (props: any) => {
             ) : (
               <DivBoxTabsSC>
                 <DivBoxLinkSC href={"/"}>Home</DivBoxLinkSC>
-                <DivBoxLinkSC href={"/tokenomics"}>Tokenomics</DivBoxLinkSC>
+                <DivBoxLinkSC href={"#"}>Tokenomics</DivBoxLinkSC>
                 <DivBoxLinkSC href={"/about"}>About</DivBoxLinkSC>
                 <DivBoxLinkSC href={"#"}>Leaderboard</DivBoxLinkSC>
                 <DivBoxLinkSC href={"#"}>NFT</DivBoxLinkSC>

@@ -15,7 +15,6 @@ import doc_ecology from "../images/doc_ecology.jpg";
 import people_ecology from "../images/people_ecology.jpg";
 const Non_profit1 = () => {
   return (
-    <DivDefaultContainerSC>
       <DivRowsWrapSC>
         <TitleNonProfitSC>
           Non-profit adaptation of environmental and charitable projects.
@@ -69,7 +68,6 @@ const Non_profit1 = () => {
           transparent values and beliefs.
         </DivBoldTextSC>
       </DivRowsWrapSC>
-    </DivDefaultContainerSC>
   );
 };
 

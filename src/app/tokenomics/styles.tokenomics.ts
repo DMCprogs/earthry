@@ -81,7 +81,7 @@ export const DivWrapperContentSC = styled.div`
   min-height: 100vh;
   height: max-content;
   width: 97%;
-  //border: 1px solid red;
+  border: 1px solid red;
   margin-top: clamp(160px,20vw, 170px);
 
   grid-template-rows: repeat(8, max-content);

@@ -88,33 +88,17 @@ export const BoxContentSC = styled.div`
   width: 100%;
   display: grid;
   position: relative;
-  grid-template-rows: auto;
-  gap: 120px;
   // border: 1px solid red;
-`;
+  &::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 80%;
+    border-radius: 927.596px;
+    background: rgba(74, 255, 201, 0.60);
+    filter: blur(315px);
+    transform: rotate(-32.49deg);
+    z-index: -1;
 
-export const ShadowSC = styled.div`
-  display: grid;
-  left: 250px;
-  top: 100px;
-  z-index: -1;
-  background: #4affc9;
-  filter: blur(1625px);
-  transform: rotate(-32.49deg);
-  position: absolute;
-  width: 715px;
-  height: 827px;
-  @media (max-width: 1190px) {
-    width: 515px;
-    height: 90vh;
-  }
-  @media (max-width: 1000px) {
-    height: 80vh;
-    left: 50px;
-    top: 300px;
-  }
-  @media (max-width: 740px) {
-    width: 0px;
-    height: 0px;
   }
 `;

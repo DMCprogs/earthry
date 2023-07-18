@@ -1,7 +1,8 @@
 "use client";
 import React, { MutableRefObject } from "react";
 import { DivContentSC, DivSectionsContainerSC } from "@/app/styles.page";
-import Informations from "./components/section2/Informations";
+import Section9 from "./components/section9/LatestNews";
+import Section2 from "./components/section2/Informations";
 import Section11 from "./components/section11/Contacts";
 import Section10 from "./components/section10/Form";
 
@@ -20,7 +21,8 @@ const Landing = (props: any) => {
         <DivContentSC>
             {/* <Section1/> */}
             <DivSectionsContainerSC>
-                <Informations/>
+                <Section2/>
+                <Section9/>
                 <Section10/>
                 <Section11/>
             </DivSectionsContainerSC>

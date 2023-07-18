@@ -2,6 +2,7 @@
 import React, { MutableRefObject } from "react";
 import { DivContentSC, DivSectionsContainerSC } from "@/app/styles.page";
 import Informations from "./components/section2/Informations";
+import Section4 from "./components/section4/WaysToAchieve"
 import Section11 from "./components/section11/Contacts";
 import Section10 from "./components/section10/Form";
 
@@ -21,6 +22,7 @@ const Landing = (props: any) => {
             {/* <Section1/> */}
             <DivSectionsContainerSC>
                 <Informations/>
+                <Section4/>
                 <Section10/>
                 <Section11/>
             </DivSectionsContainerSC>

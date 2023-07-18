@@ -9,7 +9,6 @@ import {
     DivRowBoxInputTitleSC,
     TitleFormSC,
     BoxContentSC,
-    ShadowSC
 } from "./styles.form";
 import ButtonWrapper from "../custom_button/index";
 
@@ -38,7 +37,6 @@ const Form = () => {
 
     return (
         <BoxContentSC>
-            <ShadowSC />
             <DivContainerFormSC>
                 <TitleFormSC>
                         Get in touch</TitleFormSC>

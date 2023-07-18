@@ -46,6 +46,7 @@ gap: 20px;
  
 `;
 export const ButtonReadMoreSC = styled.button`
+cursor: pointer;
  display: inline-flex;
 padding: 25px 40px;
 justify-content: center;

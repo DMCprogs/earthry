@@ -29,6 +29,7 @@ const Non_profit2 = () => {
     };
 
     return (
+        <DivDefaultContainerSC>
             <DivRowsWrapSC>
                 <TitleNonProfitSC>
                     Tools For Non-Porfits, Charities and People to make a difference
@@ -46,11 +47,11 @@ const Non_profit2 = () => {
                                 world.
                             </DivNormalTextSC>
                         </DivRowsTextSC>
-                        <ImageEatEcologySC path={eat_ecology.src} alt="ecology"/>
+                        <ImageEatEcologySC $path={eat_ecology.src} alt="ecology"/>
                     </DivColumnsContentSC>
                 ) : (
                     <DivColumnsContentSC>
-                        <ImageEatEcologySC path={eat_ecology.src} alt="ecology"/>
+                        <ImageEatEcologySC $path={eat_ecology.src} alt="ecology"/>
                         <DivRowsTextSC>
                             <DivBoldTextSC>Global market</DivBoldTextSC>
                             <DivNormalTextSC>
@@ -88,11 +89,11 @@ const Non_profit2 = () => {
                                 meaningful contributions to their communities.
                             </DivNormalTextSC>
                         </DivRowsTextSC>
-                        <ImageWorldEcologySC path={world_ecology.src} alt="ecology"/>
+                        <ImageWorldEcologySC $path={world_ecology.src} alt="ecology"/>
                     </DivColumnsContentSC>
                 ) : (
                     <DivColumnsContentSC>
-                        <ImageWorldEcologySC path={world_ecology.src} alt="ecology"/>
+                        <ImageWorldEcologySC $path={world_ecology.src} alt="ecology"/>
                         <DivRowsTextSC>
                             <DivBoldTextSC>Support for creative initiatives</DivBoldTextSC>
                             <DivNormalTextSC>
@@ -128,11 +129,11 @@ const Non_profit2 = () => {
                                 have a positive experience with the platform.
                             </DivNormalTextSC>
                         </DivRowsTextSC>
-                        <ImageDropEcologySC path={drop_ecology.src} alt="ecology"/>
+                        <ImageDropEcologySC $path={drop_ecology.src} alt="ecology"/>
                     </DivColumnsContentSC>
                 ) : (
                     <DivColumnsContentSC>
-                        <ImageDropEcologySC path={drop_ecology.src} alt="ecology"/>
+                        <ImageDropEcologySC $path={drop_ecology.src} alt="ecology"/>
                         <DivRowsTextSC>
                             <DivBoldTextSC>Community Engagement</DivBoldTextSC>
                             <DivNormalTextSC>
@@ -146,6 +147,7 @@ const Non_profit2 = () => {
                     </DivColumnsContentSC>
                 )}
             </DivRowsWrapSC>
+        </DivDefaultContainerSC>
     );
 };
 

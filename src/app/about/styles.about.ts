@@ -141,6 +141,11 @@ display: grid;
  
 `;
 export const ButtonLinkenInSC  = styled.button`
+display: inline-flex;
+padding: 30px 50px;
+align-items: center;
+gap: 10px;
+background-color: white;
 cursor: pointer;
 display: grid;
  width: 100%;
@@ -149,12 +154,16 @@ display: grid;
  margin: 10px 0;
  border-radius: 35px 0px;
 border: 2px solid #000;
-max-width: 234px;
-max-height: 24px;
- display: inline-flex;
-padding: 30px 50px;
-align-items: center;
-gap: 10px;
+
+max-height: 80px;
+
+color: #201E1C;
+font-family: Montserrat;
+font-size: 20px;
+font-style: normal;
+font-weight: 600;
+line-height: 24px; /* 120% */
+letter-spacing: 0.2px;
 `;
 export const ButtonJoinSC  = styled.button`
 cursor: pointer;
@@ -164,8 +173,8 @@ display: grid;
  justify-items: center;
  margin: 10px 0;
 border: 2px solid #195946;
-max-width: 234px;
-max-height: 24px;
+
+max-height: 82px;
  display: inline-flex;
 padding: 30px 50px;
 align-items: center;
@@ -174,6 +183,13 @@ border-radius: 35px 0px;
 background: #195946;
 color: white;
 grid-template-columns: max-content max-content;
+color: #FFF;
+font-family: Montserrat;
+font-size: 20px;
+font-style: normal;
+font-weight: 600;
+line-height: 24px; /* 120% */
+letter-spacing: 0.2px;
 `;
 
 

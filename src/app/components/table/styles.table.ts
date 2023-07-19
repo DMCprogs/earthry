@@ -21,60 +21,82 @@ export const DivTableBoxSC = styled.div`
   gap: 23px;
 `
 
-export const DivHeaderTableSC = styled.div<{
-    listColumn:string[]
-}>`
-  display: grid;
-  grid-template-columns: repeat(${({listColumn}) => (listColumn.length)}, 1fr);
-  grid-template-rows: 100%;
-  width: min-content;
-  height: 100%;
+export const DivHeaderTableSC = styled.thead`
+ 
+  //width: min-content;
+  
   border-radius: 16px;
   background: #C8FFEF;
   gap: 63px;
   min-width: 100%;
   padding-left: 20px;
   padding-right: 20px;
+  border: none;
+  height: 63px;
 `
 
-export const DivCellSC = styled.div`
+export const DivCellSC = styled.th`
   color: #201E1C;
   font-family: Montserrat;
   font-size: 19px;
   font-style: normal;
   font-weight: 600;
   line-height: normal;
-  display: grid;
-  justify-items: center;
-  align-items: center;
+  //justify-items: center;
+  //align-items: center;
   width: max-content;
+  border: none;
+  text-align: left;
+  padding-left: 15px;
+  min-width: max-content;
+  white-space: nowrap;
 `
 
-export const DivRowTableSC = styled.div<{
-    listColumn:string[]
-}>`
-  display: grid;
-  grid-template-columns: repeat(${({listColumn}) => (listColumn.length)}, 1fr);
-  grid-template-rows: 100%;
-  width: min-content;
-  height: 100%;
+export const DivRowTableSC = styled.tr`
+  
+  //width: min-content;
+  //height: 100%;
   border-radius: 16px;
   background: #F8F8F8;
-  gap: 63px;
+  height: 63px;
   min-width: 100%;
   padding-left: 20px;
   padding-right: 20px;
+  border: none;
 `
 
-export const DivCell2SC = styled.div`
+export const DivCell2SC = styled.td`
   color: #201E1C;
   font-family: Montserrat;
   font-size: 19px;
   font-style: normal;
   font-weight: 400;
   line-height: normal;
-  display: grid;
-  justify-items: center;
-  align-items: center;
+  //display: grid;
+  //justify-items: center;
+  //align-items: center;
   width: max-content;
+  border: none;
+  padding-left: 15px;
+  min-width: max-content;
+  white-space: nowrap;
+`
+
+export const TableSC = styled.table`
+  border-spacing: 0px 24px;
+  & thead tr th:first-child{
+    border-radius:10px 0 0 10px;
+  }
+
+  & thead tr th:last-child{
+    border-radius:0 10px 10px 0;
+  }
+
+  & tbody tr td:first-child{
+    border-radius:10px 0 0 10px;
+  }
+
+  & tbody tr td:last-child{
+    border-radius:0 10px 10px 0;
+  }
 `

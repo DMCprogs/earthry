@@ -5,7 +5,7 @@ import {
     DivHeaderTableSC,
     DivRowTableSC,
     DivTableBoxSC,
-    DivTableWrapperSC
+    DivTableWrapperSC, TableSC
 } from "@/app/components/table/styles.table";
 
 
@@ -59,7 +59,6 @@ const Table = (props:IProps) => {
         return (
             <DivRowTableSC
                 key={`fsfgdsdaf${i}`}
-                listColumn={listColumn}
             >
                 {nodeCell}
             </DivRowTableSC>
@@ -68,14 +67,26 @@ const Table = (props:IProps) => {
 
     return (
         <DivTableWrapperSC>
-            <DivTableBoxSC>
-                <DivHeaderTableSC
-                    listColumn={listColumn}
-                >
-                    {nodeColumns}
+            <TableSC style={{width: '100%'}}>
+                <DivHeaderTableSC>
+                    <tr>
+                        {nodeColumns}
+                    </tr>
                 </DivHeaderTableSC>
+                <tbody>
                 {nodeRows}
-            </DivTableBoxSC>
+                </tbody>
+
+
+            </TableSC>
+            {/*<DivTableBoxSC>*/}
+            {/*    <DivHeaderTableSC*/}
+            {/*        listColumn={listColumn}*/}
+            {/*    >*/}
+            {/*        {nodeColumns}*/}
+            {/*    </DivHeaderTableSC>*/}
+            {/*    {nodeRows}*/}
+            {/*</DivTableBoxSC>*/}
         </DivTableWrapperSC>
     );
 };

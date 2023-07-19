@@ -1,45 +1,41 @@
-import React, { useState, useEffect } from "react";
-import { FaArrowCircleUp } from "react-icons/fa";
-import { HiArrowUp } from "react-icons/hi";
-import { IconLogoSC } from "@/app/components/header/styles.header";
-import logo from "@/app/images/Logo.svg";
-import { motion } from "framer-motion";
-import { BoxArrowSC, Button } from "./styles.footer";
+"use client"
+import React, {useState, useEffect} from 'react';
+import {HiArrowUp} from "react-icons/hi";
+import {BoxArrowSC, Button} from "@/app/components/footer/styles.footer";
 
-const ScrollButton = () => {
-  const [visible, setVisible] = useState(false);
+const ScrollButton = () =>{
+
+  const [visible, setVisible] = useState(false)
   useEffect(() => {
-    window.addEventListener("scroll", toggleVisible);
-  });
+    window.addEventListener('scroll', toggleVisible);
+  })
 
   const toggleVisible = () => {
     const scrolled = document.documentElement.scrollTop;
-    if (scrolled > 600) {
-      setVisible(true);
-    } else if (scrolled <= 600) {
+    if (scrolled > 600){
+      setVisible(true)
+    }
+    else if (scrolled <= 600){
       setVisible(false);
     }
   };
 
-  const scrollToTop = () => {
+  const scrollToTop = () =>{
     window.scrollTo({
       top: 0,
-      behavior: "smooth",
-      /* you can also use 'auto' behaviour
-               in place of 'smooth' */
+      behavior: 'smooth'
     });
   };
 
+
+
   return (
-    <Button
-      onClick={scrollToTop}
-      style={{ display: visible ? "inline" : "none" }}
-    >
-      <BoxArrowSC>
-        <HiArrowUp />
-      </BoxArrowSC>
-    </Button>
+      <Button onClick={scrollToTop} style={{display: visible ? 'inline' : 'none'}}>
+        <BoxArrowSC>
+          <HiArrowUp />
+        </BoxArrowSC>
+      </Button>
   );
-};
+}
 
 export default ScrollButton;

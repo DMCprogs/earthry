@@ -90,12 +90,12 @@ export const DivRoadMapElSC = styled.div<{
     max-width: 574px;
     padding: 36px 31px;
   }
-  @media(max-width: 480px) {
+  @media(max-width: 610px) {
     height: 383px;
   }
   @media (max-width: 400px) {
-    /* width: 320px; */
     padding: 20px 20px;
+    height: 400px;
   }
 
   h3 {

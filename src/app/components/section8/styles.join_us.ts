@@ -4,12 +4,9 @@ import { styled } from "styled-components";
 export const DivWrapperGlobalSection3SC = styled.div`
   display: grid;
   width: 100%;
-  height: max-content;
-  grid-template-columns: 100%;
-  grid-template-rows: 100px auto;
-  gap: 80px;
+  grid-template-rows: repeat(4, auto);
+  gap: 50px;
   box-sizing: border-box;
-  //padding-top: 82px;
   justify-items: center;
   //border: 1px solid red;
   @media (max-width: 850px) {
@@ -17,22 +14,18 @@ export const DivWrapperGlobalSection3SC = styled.div`
   }
 `;
 
-export const H4SC = styled.h4`
-  display: grid;
-  font-family: "Montserrat";
+export const H1SC = styled.h4`
+  color: #000;
+  font-family: Montserrat;
+  font-size: 48px;
   font-style: normal;
   font-weight: 600;
-  font-size: 32px;
-  line-height: 39px;
-  align-items: center;
-  letter-spacing: 0.2px;
+  line-height: normal;
   text-align: center;
-  @media (max-width: 850px) {
-    width: 100%;
-    font-size: 26px;
+  @media (max-width: 480px) {
+    font-size: 36px;
   }
-  color: #323232;
-  //margin-bottom: 16px;
+
 `;
 
 export const SpanH4SC = styled.span`
@@ -95,23 +88,28 @@ export const SpanSC = styled.span`
 
 export const DivBoxText1SC = styled.div`
   display: grid;
-  grid-template-columns: 100%;
-  grid-template-rows: 50px max-content;
+  grid-template-rows: repeat(2, auto);
   justify-items: center;
-  gap: 35px;
+  gap: 20px;
 `;
 
 export const SpanTextSC = styled.span`
-  display: grid;
-  width: 100%;
-  max-width: 939px;
-  color: #201e1c;
-  text-align: center;
-  font-size: 28px;
+  color: #000;
   font-family: Montserrat;
+  font-size: 36px;
   font-style: normal;
   font-weight: 400;
-  line-height: 135%;
+  line-height: normal;
+  text-align: center;
+  @media (max-width: 768px) {
+    font-size: 32px;
+  }
+  @media (max-width: 480px) {
+    font-size: 28px;
+  }
+  @media (max-width: 360px) {
+    font-size: 24px;
+  }
 `;
 
 export const DivWrapperGallerySC = styled.div`
@@ -121,13 +119,14 @@ export const DivWrapperGallerySC = styled.div`
   grid-template-columns: 100%;
   grid-template-rows: 1fr 1fr 1fr;
   gap: 48px;
+  padding: 70px 0 10px 0;
   @media (max-width: 850px) {
     gap: 20px;
   }
 `;
 
 export const DivItemGellarySC = styled.div<{
-    direct: string;
+    $direct: string;
 }>`
   display: grid;
   width: 100%;
@@ -135,13 +134,15 @@ export const DivItemGellarySC = styled.div<{
   grid-template-rows: 100%;
   grid-template-columns: 1.5fr 1fr;
   gap: 24px;
-  direction: ${({ direct }) => direct};
+  direction: ${({ $direct }) => $direct};
   @media (max-width: 1000px) {
     height: 290px;
   }
   @media (max-width: 850px) {
     grid-template-rows: 1fr 1fr;
     grid-template-columns: 100%;
+    max-width: 515px;
+    justify-self: center;
     gap: 20px;
     height: 655px;
   }
@@ -180,17 +181,21 @@ export const DivWrapper2SC = styled.div`
   right: 0;
 `;
 export const DivWrapperImageSC = styled.div<{
-    // src: string;
-    direct: string;
-    bgSize: string;
+    $src: string;
+    $direct: string;
 }>`
   display: grid;
-  width: 100%;
-  height: 100%;
-  /* background-image: url(//({ src }) => src}) no-repeat;/*
-  background-color: #4affc9;
+  background-image: url(${({ $src }) => $src});
+  border: 4px solid #5F9F8C;
   background-position: center;
-  background-size: ${({ bgSize }) => bgSize};
-  border-radius: ${({ direct }) =>
-    direct === "ltr" ? "0px 40px 40px 40px" : "40px 40px 0px 40px"};
+  background-repeat: no-repeat;
+  background-size: 60%;
+  border-radius: ${({ $direct }) =>
+    $direct === "ltr" ? "0px 40px 40px 40px" : "40px 40px 0px 40px"};
+  @media (max-width: 1070px) {
+    background-size: 80%;
+  }
+  @media (max-width: 850px) {
+    background-size: 60%;
+  }
 `;

@@ -25,10 +25,10 @@ const Landing = (props: any) => {
             {/* <Section1/> */}
             <DivSectionsContainerSC>
                 <Section2/>
-                <Section9/>
                 <Section4/>
                 <Section7/>
-                {/*<Section8/>*/}
+                <Section8/>
+                <Section9/>
                 <Section10/>
                 <Section11/>
             </DivSectionsContainerSC>

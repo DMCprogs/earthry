@@ -24,13 +24,15 @@ export const InputFormSC = styled.input`
   gap: 10px;
   background: #ffffff;
   border: 2px solid #a6a6a6;
-  border-radius: 8px;
+  border-radius: 16px;
   font-family: "Montserrat";
   font-style: normal;
   font-weight: 400;
   font-size: 20px;
   line-height: 24px;
-  color: #969696;
+  color:  #111111;
+  user-select: none;
+  outline: none;
   @media (max-width: 390px) {
     padding: 15px;
     font-size: 18px;
@@ -42,16 +44,18 @@ export const TextAreaFormSC = styled.textarea`
   padding: 20px;
   gap: 10px;
   width: 100%;
-  max-height: 192px;
+  min-height: 192px;
   background: #ffffff;
   border: 2px solid #a6a6a6;
-  border-radius: 8px;
+  border-radius: 16px;
   font-family: "Montserrat";
   font-style: normal;
   font-weight: 400;
   font-size: 20px;
   line-height: 24px;
   resize: none;
+  user-select: none;
+  outline: none;
   color: #969696;
 `;
 export const DivTitleInputSC = styled.div`
@@ -92,12 +96,15 @@ export const BoxContentSC = styled.div`
   &::before {
     content: "";
     position: absolute;
-    width: 100%;
+    display: grid;
+    justify-self: center;
+    width: 60%;
     height: 80%;
+    transform: rotate(45deg);
+    flex-shrink: 0;
     border-radius: 927.596px;
     background: rgba(74, 255, 201, 0.60);
     filter: blur(315px);
-    transform: rotate(-32.49deg);
     z-index: -1;
 
   }

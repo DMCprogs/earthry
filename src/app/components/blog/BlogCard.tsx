@@ -29,7 +29,7 @@ const BlogCard: FC<BlogCardProps> = ({ img, title, description }) => {
 
 
     <BlogCardContainerSC>
-      <BlogCardImageSC img={img} />
+      <BlogCardImageSC $img={img} />
       <DivProductContentSC>
         <BlogCardTitleSC>{title}</BlogCardTitleSC>
         <BlogCardDescriptionSC>{description}</BlogCardDescriptionSC>

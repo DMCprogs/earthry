@@ -10,6 +10,7 @@ import {
 } from "./styles.LatestNews";
 import image from "../../images/ItemBlogExample.png";
 import Link from "next/link";
+import ButtonWrapper from "../custom_button";
 const LatestNews = () => {
 
    
@@ -32,8 +33,14 @@ const LatestNews = () => {
             description={"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis."} />
         </DivGridSC>
         <Link href={"/blog"}>
-          <ButtonReadMoreSC>Read more</ButtonReadMoreSC>
-        </Link>
+                <ButtonWrapper
+                    primary={true}
+                    width={187}
+                    height={74}
+                    directionRadius={"center"}>
+                    <span>Read more</span>
+                </ButtonWrapper>
+            </Link>
       </DivContainerBlogSC>
      </DivContainerSectionSC>
     );

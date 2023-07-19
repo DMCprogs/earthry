@@ -174,7 +174,7 @@ display: grid;
  margin: 10px 0;
 border: 2px solid #195946;
 
-max-height: 82px;
+max-height: 84px;
  display: inline-flex;
 padding: 30px 50px;
 align-items: center;
@@ -185,7 +185,7 @@ color: white;
 grid-template-columns: max-content max-content;
 color: #FFF;
 font-family: Montserrat;
-font-size: 20px;
+font-size: 18px;
 font-style: normal;
 font-weight: 600;
 line-height: 24px; /* 120% */

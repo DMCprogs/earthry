@@ -7,8 +7,8 @@ export const BlogCardContainerSC = styled.div`
   border-radius: 30px;
   border: 1px solid var(--color-green);
   box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.25);
-  /* max-width: 397px;
-  max-height: 573px; */
+  /* max-width: 397px !important; */
+  /* max-height: 573px; */
   transition: 0.1s;
   width: 100%;
   height: 100%;

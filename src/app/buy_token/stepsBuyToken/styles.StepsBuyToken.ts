@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const DivStepsWrapperSC = styled.div`
-    width: 320px;
+    width: 100%;
     margin: 70px auto 46px;
 `;
 

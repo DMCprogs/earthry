@@ -6,7 +6,7 @@ margin: 70px auto 0;
     flex-direction: column;
 
     @media(min-width: 480px){
-  margin-top: 96px;
+  margin-top: 45px;
 }
 `;
 

@@ -1,13 +1,44 @@
 import { styled } from "styled-components";
 
 export const DivWrapperContentSC = styled.div`
-  // display: grid;
+  display: grid;
   // justify-content: center;
   // justify-self: center;
   // justify-items: center;
   // min-height: 100vh;
   // height: max-content;
   margin-top: clamp(138px,20vw, 200px);
+  position: relative;
+
+  &::after {
+    content: "";
+    position: absolute;
+    display: grid;
+    justify-self: center;
+    width: 410px;
+    height: 624px;
+    flex-shrink: 0;
+    background-color: #4AFFC9;
+    filter: blur(225px);
+    z-index: -1;
+    top: 200px;
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    display: grid;
+    justify-self: center;
+    width: 163px;
+height: 779px;
+transform: rotate(-90deg);
+flex-shrink: 0;
+border-radius: 779px;
+background: #4AFFC9;
+filter: blur(225px);
+    z-index: -1;
+    top: 2700px;
+  }
 `;
 
 export const H2SC = styled.h2`
@@ -93,11 +124,10 @@ line-height: normal;
 letter-spacing: 0.2px;
 //margin-left: 20px;
 //margin-bottom: 35px;
+text-align: center;
 `;
 
 export const DivForButtonContain = styled.div`
   display: grid;
   justify-items: center;
-
-
 `;

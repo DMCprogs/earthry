@@ -10,6 +10,7 @@ export const DivConvertDiagramWrapperSC = styled.div`
 
     @media(min-width: 480px){
     max-width: 434px;
+    margin-bottom: 60px;
 }
 `;
 

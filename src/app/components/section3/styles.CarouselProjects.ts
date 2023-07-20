@@ -147,6 +147,7 @@ export const DivCustomArrowsSC = styled.div`
   justify-content: space-between;
   align-content: center;
   margin-top: -250px;
+  justify-self: center;
 
   @media (max-width: 1000px) {
     margin-top: 50px;

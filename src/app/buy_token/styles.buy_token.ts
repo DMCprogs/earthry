@@ -96,7 +96,9 @@ margin-bottom: 35px;
 `;
 
 export const DivForButtonContain = styled.div`
-  margin: 35px auto 0;
+  // margin-top: 35px;
+display: gtid;
+justify-content: center;
 
 
 `;

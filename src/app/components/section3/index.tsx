@@ -99,9 +99,9 @@ const section3: FC = () => {
 
       carouselArray.map((item, i) => {
         return (
-          <div style={{ padding: '0 10px' }}>
+          <div key={`ssssadasda${i}`} style={{ padding: '0 10px' }}>
 
-            <CarouselProjects key={`ssssadasda${i}`}
+            <CarouselProjects
 
               title={item.title}
               description={item.description}

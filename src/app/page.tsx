@@ -8,6 +8,7 @@ import Section11 from "./components/section11/Contacts";
 import Section10 from "./components/section10/Form";
 import Section7 from "./components/section7/Roadmap";
 import Section8 from "./components/section8/JoinUs"
+import Section6 from "./components/section6/Airdrop";
 
 const Landing = (props: any) => {
     const {
@@ -25,10 +26,11 @@ const Landing = (props: any) => {
             {/* <Section1/> */}
             <DivSectionsContainerSC>
                 <Section2/>
-                <Section9/>
                 <Section4/>
+                <Section6/>
                 <Section7/>
-                {/*<Section8/>*/}
+                <Section8/>
+                <Section9/>
                 <Section10/>
                 <Section11/>
             </DivSectionsContainerSC>

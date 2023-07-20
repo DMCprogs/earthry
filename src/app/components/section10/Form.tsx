@@ -30,7 +30,7 @@ const Form = () => {
         {
             placeholder: "+123456789",
             name: "phone",
-            type: "number",
+            type: "tel",
             title: "Phone",
         },
     ]);
@@ -72,6 +72,7 @@ const Form = () => {
                             width={233}
                             directionRadius="right"
                             type="submit"
+                            height={64}
                         >
                             <span>Send message</span>
                         </ButtonWrapper>

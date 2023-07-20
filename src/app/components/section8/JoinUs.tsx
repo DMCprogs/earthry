@@ -1,16 +1,18 @@
 /* eslint-disable react/no-unescaped-entities */
-import React, { FC, MutableRefObject, useState, useEffect } from "react";
+import React, {FC, MutableRefObject, useState, useEffect} from "react";
 import {
     DivWrapperGlobalSection3SC,
     DivBoxText1SC,
-    H4SC,
+    H1SC,
     SpanTextSC,
     DivWrapperGallerySC,
 } from "./styles.join_us";
 import ItemGellary from "./components/itemGellary";
-// import Image1 from "../../images/wal.jpeg";
-// import Image2 from "../../images/ecolo.png";
-// import Image3 from "../../images/wal3.png";
+import Image1 from "../../images/img1_section8.svg";
+import Image2 from "../../images/img2_section8.svg";
+import Image3 from "../../images/img3_section8.svg";
+import ButtonWrapper from "@/app/components/custom_button";
+import Link from "next/link";
 
 const JoinUs = () => {
     const [direction, setDirection] = useState<boolean>(false);
@@ -20,18 +22,24 @@ const JoinUs = () => {
 
     return (
         <DivWrapperGlobalSection3SC>
-
-                <DivBoxText1SC>
-                    <H4SC>A total of 3,000,000 dollars will be issued</H4SC>
-                    <SpanTextSC>
-                        This money will be used to develop the earthy platform and fund its
-                        development, after which the mainnet tokens will be airdropped to
-                        the wallet which purchased the dev tokens
-                    </SpanTextSC>
-                </DivBoxText1SC>
+            <DivBoxText1SC>
+                <H1SC>Join our community</H1SC>
+                <SpanTextSC>
+                    Forem ipsum dolor sit amet, consectetur adipiscing elit.
+                </SpanTextSC>
+            </DivBoxText1SC>
+            <Link href={"#"}>
+            <ButtonWrapper
+                primary={true}
+                width={326}
+                height={84}
+                directionRadius={"rtl"}>
+                  <span>Join the community</span>
+            </ButtonWrapper>
+            </Link>
             <DivWrapperGallerySC>
                 <ItemGellary
-                    // image={Image1.src}
+                    image={Image1.src}
                     textTitle={"Unleashing an Impactful Ecosystem: "}
                     direct={"ltr"}
                     text={
@@ -39,8 +47,7 @@ const JoinUs = () => {
                     }
                 />
                 <ItemGellary
-                    // image={Image2.src}
-                    bgSize={"50%"}
+                    image={Image2.src}
                     textTitle={"Revolutionary Architecture: "}
                     direct={"rtl"}
                     text={
@@ -48,7 +55,7 @@ const JoinUs = () => {
                     }
                 />
                 <ItemGellary
-                    // image={Image3.src}
+                    image={Image3.src}
                     direct={"ltr"}
                     textTitle={"Shaping the Future: "}
                     text={
@@ -56,6 +63,15 @@ const JoinUs = () => {
                     }
                 />
             </DivWrapperGallerySC>
+            <Link href={"https://discord.gg/C2RmpabE"}>
+                <ButtonWrapper
+                    primary={true}
+                    width={187}
+                    height={74}
+                    directionRadius={"center"}>
+                    <span>Buy token</span>
+                </ButtonWrapper>
+            </Link>
         </DivWrapperGlobalSection3SC>
     );
 };

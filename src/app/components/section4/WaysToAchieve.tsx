@@ -203,7 +203,7 @@ const WaysToAchieve = () => {
                 opacity: 0,
               },
               visible: {
-                x: 100,
+                x: 0,
                 scale: 1,
                 opacity: 1,
                 transition: { duration: 0.7, delay: 0.5 },
@@ -289,7 +289,7 @@ const WaysToAchieve = () => {
               opacity: 0,
             },
             visible: {
-              x: width >= 1000 ? 0 : 100,
+              x: 0,
               scale: width >= 1000 ? 1 : 1.5,
               opacity: 1,
               transition: { duration: 0.7, delay: 0.5 },

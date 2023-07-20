@@ -7,12 +7,11 @@ export const CarouselItemContainerSC = styled.div`
   display: grid;
   border-radius: 18px;
   background: #e7fff8;
-  /* max-width: 397px;
-  max-height: 573px; */
+  /* max-width: 397px; */
+  /* max-height: 573px; */
   transition: 0.1s;
   width: 100%;
   height: 100%;
-
   grid-template-rows: max-content max-content;
 `;
 
@@ -108,17 +107,16 @@ export const DivCustomArrowRight = styled(TbChevronRight)`
   background-color: #195946;
   border-radius: 40px;
   color: #fff;
-  padding-left: 10px;
-  position: absolute;
+  /* padding-left: 10px; */
+  /* position: absolute; */
   /* right: calc(50vw - 800px); */
-  right: 0;
+  /* right: 0; */
   z-index: 100;
   cursor: pointer;
-  align-self: center;
-  @media (max-width: 1000px) {
+  /* @media (max-width: 1000px) {
     margin-top: 60%;
     right: 40%;
-  }
+  } */
 `;
 
 export const DivCustomArrowLeft = styled(TbChevronLeft)`
@@ -131,20 +129,37 @@ export const DivCustomArrowLeft = styled(TbChevronLeft)`
   border-radius: 40px;
   /* left: calc(50vw - 800px); */
   color: #fff;
-  position: absolute;
-  margin-right: 100px !important;
+  /* position: relative; */
   z-index: 100;
+  justify-self: left;
   cursor: pointer;
-  @media (max-width: 1000px) {
+  /* @media (max-width: 1000px) {
     margin-top: 60%;
     left: 40%;
+  } */
+`;
+
+export const DivCustomArrowsSC = styled.div`
+  align-self: start;
+  display: flex;
+  grid-template-columns: repeat(2, 1fr);
+  width: 110%;
+  justify-content: space-between;
+  align-content: center;
+  margin-top: -250px;
+
+  @media (max-width: 1000px) {
+    margin-top: 50px;
+    width: 200px;
+
   }
 `;
-export const DivExSC = styled.div`
-  display: grid;
-  justify-self: center;
-  position: absolute;
-  max-width: 1540px;
-  justify-content: left;
 
+export const DivSection3SC = styled.div`
+  display: grid;
+  justify-content: center;
+  justify-self:center;
+  justify-items: center;
+  width: 100%;
+  max-width: 1660px;
 `;

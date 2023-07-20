@@ -1,5 +1,5 @@
 "use client";
-import { FC } from "react";
+import { FC, useState } from "react";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import { TbChevronRight, TbChevronLeft } from "react-icons/tb";
@@ -9,12 +9,18 @@ import { DivH1SC } from "@/app/about/styles.about";
 import {
   DivBlogContainerSC,
   DivContentSC,
-  
+
 } from "@/app/blog/styles.blog";
 import CarouselProjects from "./FundedProjectCard";
 import image from "../../images/ItemBlogExample.png";
 import image2 from "../../images/Greenpeace.png";
-import { DivCustomArrowLeft, DivCustomArrowRight, DivExSC } from "./styles.CarouselProjects";
+import {
+  DivCustomArrowLeft,
+  DivCustomArrowRight,
+  DivCustomArrowsSC,
+  DivSection3SC
+} from "./styles.CarouselProjects";
+import CarouselCustom from "./Carousel";
 type BlogCardProps = {
   onClick: void;
   title: string;
@@ -44,90 +50,84 @@ const section3: FC<BlogCardProps> = ({ onClick }) => {
 
   };
 
-  const CustomRightArrow = ({ onClick, ...rest }) => {
-    const {
-      onMove,
-      carouselState: { currentSlide, deviceType },
-    } = rest;
-    return <DivCustomArrowRight onClick={() => onClick()} />;
-  };
+  const CarouselItems = () => {
 
-  const CustomLeftArrow = ({ onClick, ...rest }) => {
-    const {
-      onMove,
-      carouselState: { currentSlide, deviceType },
-    } = rest;
-    return <DivCustomArrowLeft onClick={() => onClick()} />;
+    const [carouselArray, setCarouselArray] = useState([
+
+      {
+        title: "Initiative",
+        description: "Lorem ipsum dolor sit amet consectetur. Cras eget rhoncus.",
+        img: image,
+        raised: 64332,
+        investors: 49,
+        min_investment: "1 Earthy token",
+        additional_image: image2
+      },
+      {
+        title: "Initiative",
+        description: "asaa ipsum dolor sit amet consectetur. Cras eget rhoncus.",
+        img: image,
+        raised: 64332,
+        investors: 49,
+        min_investment: "1 Earthy token",
+        additional_image: image2
+      },
+      {
+        title: "sdasdsa",
+        description: "Lorem ipsum dolor sit amet consectetur. Cras eget rhoncus.",
+        img: image,
+        raised: 64332,
+        investors: 49,
+        min_investment: "1 Earthy token",
+        additional_image: image2
+      },
+      {
+        title: "sdasdsa",
+        description: "Lorem ipsum dolor sit amet consectetur. Cras eget rhoncus.",
+        img: image,
+        raised: 64332,
+        investors: 49,
+        min_investment: "1 Earthy token",
+        additional_image: image2
+      },
+      {
+        title: "sdasdsa",
+        description: "Lorem ipsum dolor sit amet consectetur. Cras eget rhoncus.",
+        img: image,
+        raised: 64332,
+        investors: 49,
+        min_investment: "1 Earthy token",
+        additional_image: image2
+      },
+    ]);
+    return (
+
+      carouselArray.map((item, i) => {
+        return (
+
+          <CarouselProjects key={`ssssadasda${i}`}
+
+            title={item.title}
+            description={item.description}
+            img={item.img}
+            raised={item.raised}
+            investors={item.investors}
+            min_investment={item.min_investment}
+            additional_image={item.additional_image}
+          />
+        );
+      })
+
+    );
+
   };
   return (
-    <DivBlogContainerSC>
+    <DivSection3SC>
       <DivH1SC style={{}}>Funded projects that are already in partnership with us</DivH1SC>
-      <Carousel
-        containerClass="carousel-containerProjects"
-        responsive={responsive}
-        customRightArrow={<CustomRightArrow />}
-        customLeftArrow={<CustomLeftArrow />}
-        itemClass="carousel-itemProjects"
-        sliderClass="carousel-sliderProjects"
-      >
 
-
-        <CarouselProjects
-          title={"Initiative"}
-          description={"Lorem ipsum dolor sit amet consectetur. Cras eget rhoncus."}
-          img={image}
-          raised={64332}
-          investors={49}
-          min_investment={"1 Earthy token"}
-          additional_image={image2}
-        />
-        <CarouselProjects
-          title={"Initiative"}
-          description={"Lorem ipsum dolor sit amet consectetur. Cras eget rhoncus."}
-          img={image}
-          raised={64332}
-          investors={49}
-          min_investment={"1 Earthy token"}
-          additional_image={image2}
-        />
-        <CarouselProjects
-          title={"Initiative"}
-          description={"Lorem ipsum dolor sit amet consectetur. Cras eget rhoncus."}
-          img={image}
-          raised={64332}
-          investors={49}
-          min_investment={"1 Earthy token"}
-          additional_image={image2}
-        />
-        <CarouselProjects
-          title={"Initiative"}
-          description={"Lorem ipsum dolor sit amet consectetur. Cras eget rhoncus."}
-          img={image}
-          raised={64332}
-          investors={49}
-          min_investment={"1 Earthy token"}
-          additional_image={image2}
-        />
-        <CarouselProjects
-          title={"Initiative"}
-          description={"Lorem ipsum dolor sit amet consectetur. Cras eget rhoncus."}
-          img={image}
-          raised={64332}
-          investors={49}
-          min_investment={"1 Earthy token"}
-          additional_image={image2}
-        />
-        <CarouselProjects
-          title={"Initiative"}
-          description={"Lorem ipsum dolor sit amet consectetur. Cras eget rhoncus."}
-          img={image}
-          raised={64332}
-          investors={49}
-          min_investment={"1 Earthy token"}
-          additional_image={image2}
-        />
-      </Carousel>
-    </DivBlogContainerSC>
+      <CarouselCustom responsive={responsive} 
+      items={CarouselItems()} />
+    </DivSection3SC>
   );
 };
 

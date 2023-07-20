@@ -2,8 +2,9 @@
 
 import React, {MutableRefObject} from "react";
 import {DivContentSC, DivSectionsContainerSC} from "@/app/styles.page";
+import Section1 from "./components/section1/Earthy"
 import Section2 from "./components/section2/Informations";
-import Section3 from "./components/section3";
+import Section3 from "./components/section3/";
 import Section4 from "./components/section4/WaysToAchieve"
 import Section5 from "./components/section5/Tokenomic";
 import Section6 from "./components/section6/Airdrop";
@@ -27,7 +28,7 @@ const Landing = (props: any) => {
     } = props;
     return (
         <DivContentSC>
-            {/* <Section1/> */}
+            <Section1/>
             <DivSectionsContainerSC>
                 <Section2/>
                 <Section3/>

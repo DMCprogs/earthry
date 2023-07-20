@@ -9,7 +9,7 @@ export const DivWrapperSC = styled.div`
 `;
 export const DivContentSC = styled.div`
   display: grid;
-  margin-top: 140px;
+  margin-top: 0px;
 `;
 
 export const DivSectionsContainerSC = styled.div`

@@ -20,7 +20,7 @@ import {
   DivCustomArrowsSC,
   DivSection3SC
 } from "./styles.CarouselProjects";
-import CarouselCustom from "./Carousel";
+import CarouselCustom from "../сustom_carousel";
 
 const section3: FC = () => {
   const responsive = {

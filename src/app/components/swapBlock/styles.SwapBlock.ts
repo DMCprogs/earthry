@@ -8,6 +8,7 @@ export const DivSwapBlockSC = styled.div`
   border-radius: 20px;
   background-color: #fff;
   margin: 0 auto;
+  border: 2px solid #a6a6a6;
 `;
 
 export const H3SwapBlockHeaderSC = styled.h3`

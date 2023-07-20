@@ -5,7 +5,6 @@ export const DivContainerAirdrop = styled.div`
   height: 100%;
   display: grid;
   grid-template-rows: max-content max-content max-content;
-  gap: 50px;
   @media(max-width:780px){
     justify-items: center;
 }

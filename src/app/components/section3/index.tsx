@@ -21,13 +21,8 @@ import {
   DivSection3SC
 } from "./styles.CarouselProjects";
 import CarouselCustom from "./Carousel";
-type BlogCardProps = {
-  onClick: void;
-  title: string;
-  description: string;
 
-}
-const section3: FC<BlogCardProps> = ({ onClick }) => {
+const section3: FC = () => {
   const responsive = {
     desktop: {
       // the naming can be any, depends on you.
@@ -104,17 +99,19 @@ const section3: FC<BlogCardProps> = ({ onClick }) => {
 
       carouselArray.map((item, i) => {
         return (
+          <div style={{padding: '0 10px'}}>
 
-          <CarouselProjects key={`ssssadasda${i}`}
+            <CarouselProjects key={`ssssadasda${i}`}
 
-            title={item.title}
-            description={item.description}
-            img={item.img}
-            raised={item.raised}
-            investors={item.investors}
-            min_investment={item.min_investment}
-            additional_image={item.additional_image}
-          />
+              title={item.title}
+              description={item.description}
+              img={item.img}
+              raised={item.raised}
+              investors={item.investors}
+              min_investment={item.min_investment}
+              additional_image={item.additional_image}
+            />
+          </div>
         );
       })
 
@@ -125,8 +122,8 @@ const section3: FC<BlogCardProps> = ({ onClick }) => {
     <DivSection3SC>
       <DivH1SC style={{}}>Funded projects that are already in partnership with us</DivH1SC>
 
-      <CarouselCustom responsive={responsive} 
-      items={CarouselItems()} />
+      <CarouselCustom responsive={responsive}
+        items={CarouselItems()} />
     </DivSection3SC>
   );
 };

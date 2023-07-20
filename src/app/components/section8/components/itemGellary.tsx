@@ -8,7 +8,7 @@ import {
 } from "../styles.join_us";
 
 type Props = {
-    // image: string;
+    image: string;
     textTitle: string;
     text: string;
     direct: string;
@@ -16,16 +16,15 @@ type Props = {
 };
 const ItemGellary = (props: Props) => {
     const {
-        // image,
+        image,
         textTitle,
         text,
         direct,
-        bgSize = 'cover'
     } = props
 
     return (
         <DivItemGellarySC
-            direct={direct}
+            $direct={direct}
         >
             <DivWrapperTextParentSC>
                 <DivWrapper1SC></DivWrapper1SC>
@@ -36,9 +35,8 @@ const ItemGellary = (props: Props) => {
                 </SpanSC>
             </DivWrapperTextParentSC>
             <DivWrapperImageSC
-                // src={image}
-                direct={direct}
-                bgSize={bgSize}
+                $src={image}
+                $direct={direct}
             >
 
             </DivWrapperImageSC>

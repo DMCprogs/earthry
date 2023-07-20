@@ -7,16 +7,19 @@ import {
     DivTitleTables,
     DivTextTabsSC,
     DivTitleTablesSC,
+    DivHideX,
 } from "./styles.leaderboard";
 import LeaderBoardRow from "../components/leaderboard_row";
+import teamLogo from "../images/Team.jpg";
 const Leaderboard: FC = () => (
     <DivDefaultContainerSC style={{ marginTop: "140px", justifyItems: 'center', }} >
         <DivTitleSC> Leaderboard</DivTitleSC>
+        <DivHideX>
         <DivContainerTagsTabSC>
             
-            <DivTitleTables style={{ gap:'180px',  }}>
+            <DivTitleTables style={{ gap:'150px',  }}>
                 <DivTextTabsSC>Nickname</DivTextTabsSC>
-                <DivTextTabsSC>Adress</DivTextTabsSC>
+                <DivTextTabsSC>Address</DivTextTabsSC>
             </DivTitleTables>
             <DivTitleTablesSC>
                 <DivTextTabsSC>Tokens now</DivTextTabsSC>
@@ -24,8 +27,9 @@ const Leaderboard: FC = () => (
             </DivTitleTablesSC>
         </DivContainerTagsTabSC>
         {Array.from({ length: 8 }, (_, index) => (
-        <LeaderBoardRow nickname={'Vasya007'} adress={'0x99b5bfCc1f48bc0Be23695B1543208C624BF96A7'} tokensNow={11000000} tokensAfter={33000000} />
+        <LeaderBoardRow images={teamLogo} nickname={'Vasya007'} adress={'0x99b5bfCc1f48bc0Be23695B1543208C624BF96A7'} tokensNow={11000000} tokensAfter={33000000} />
       ))}
+      </DivHideX>
         
     </DivDefaultContainerSC>
 );

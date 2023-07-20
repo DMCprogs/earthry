@@ -11,10 +11,10 @@ letter-spacing: 0.2px;
   display: grid;
   justify-content: center;
   width: 100%;
-  @media(max-width: 480px){ justify-content: left;}
+ 
 `;
 export const DivContainerTagsTabSC = styled.div`
-gap: 200px;
+gap: 185px;
 width: 100%;
 height: fit-content;
 max-width: 1030px;
@@ -46,5 +46,19 @@ export const DivTitleTablesSC = styled.div`
 display: flex;
 flex-direction: row;
 justify-content: space-between;
+
+`;
+export const DivHideX = styled.div`
+width: 100%;
+height: 100%;
+display: grid;
+grid-template-rows: max-content max-content;
+justify-content: center;
+gap: 30px;
+@media(max-width: 988px){
+  overflow-x: auto;
+  justify-content: left;
+}
+
 
 `;

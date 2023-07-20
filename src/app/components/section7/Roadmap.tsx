@@ -7,7 +7,9 @@ import {
     DivBoxTitleSC,
     DivBoxRoadMapElSC,
     ImageRoadmapSC,
-    TitleRoadmapSC
+    TitleRoadmapSC,
+    DivBigBoxRoadMapElSC,
+    ImgBigElSC
 } from "./styles.roadmap";
 import {TypeRoadMapItem, roadMapData} from "./data";
 
@@ -35,31 +37,35 @@ const Roadmap = () => {
                         {roadMapData.map((item: TypeRoadMapItem, index: number) => {
                             if (index % 2 === 1) {
                                 return (
-                                    <DivRoadMapElSC
-                                        right={true}
-                                        back={item.back}
-                                        font={item.font}
-                                        key={index}
-                                    >
-                                        <div>
-                                            <h3>{item.title}</h3>
-                                            <p>{item.desc}</p>
-                                        </div>
-                                    </DivRoadMapElSC>
+                                    <DivBigBoxRoadMapElSC key={index} $right={true}>
+                                        <ImgBigElSC $imgBig={item.imgBig} $isChangePosition={item.isChangePosition}/>
+                                        <DivRoadMapElSC
+                                            $back={item.back}
+                                            $right={true}
+                                            $font={item.font}
+                                        >
+                                            <div>
+                                                <h3>{item.title}</h3>
+                                                <p>{item.desc}</p>
+                                            </div>
+                                        </DivRoadMapElSC>
+                                    </DivBigBoxRoadMapElSC>
                                 );
                             } else {
                                 return (
-                                    <DivRoadMapElSC
-                                        left={true}
-                                        back={item.back}
-                                        font={item.font}
-                                        key={index}
-                                    >
-                                        <div>
-                                            <h3>{item.title}</h3>
-                                            <p>{item.desc}</p>
-                                        </div>
-                                    </DivRoadMapElSC>
+                                    <DivBigBoxRoadMapElSC key={index} $left={true}>
+                                        <DivRoadMapElSC
+                                            $left={true}
+                                            $back={item.back}
+                                            $font={item.font}
+                                        >
+                                            <div>
+                                                <h3>{item.title}</h3>
+                                                <p>{item.desc}</p>
+                                            </div>
+                                        </DivRoadMapElSC>
+                                        <ImgBigElSC $imgBig={item.imgBig} $isChangePosition={item.isChangePosition}/>
+                                    </DivBigBoxRoadMapElSC>
                                 );
                             }
                         })}
@@ -71,9 +77,9 @@ const Roadmap = () => {
                                 return (
                                     <DivBoxRoadMapElSC key={index}>
                                         <DivRoadMapElSC
-                                            right={true}
-                                            back={item.back}
-                                            font={item.font}
+                                            $right={true}
+                                            $back={item.back}
+                                            $font={item.font}
 
                                         >
                                             <div>
@@ -81,23 +87,25 @@ const Roadmap = () => {
                                                 <p>{item.desc}</p>
                                             </div>
                                         </DivRoadMapElSC>
-                                        <ImageRoadmapSC isChangeHeight={item.isChangeHeight} img={item.img}></ImageRoadmapSC>
+                                        <ImageRoadmapSC $isChangeHeight={item.isChangeHeight}
+                                                        $img={item.$img}></ImageRoadmapSC>
                                     </DivBoxRoadMapElSC>
                                 );
                             } else {
                                 return (
                                     <DivBoxRoadMapElSC key={index}>
                                         <DivRoadMapElSC
-                                            right={true}
-                                            back={item.back}
-                                            font={item.font}
+                                            $right={true}
+                                            $back={item.back}
+                                            $font={item.font}
                                         >
                                             <div>
                                                 <h3>{item.title}</h3>
                                                 <p>{item.desc}</p>
                                             </div>
                                         </DivRoadMapElSC>
-                                        <ImageRoadmapSC isChangeHeight={item.isChangeHeight} img={item.img}></ImageRoadmapSC>
+                                        <ImageRoadmapSC $isChangeHeight={item.isChangeHeight}
+                                                        $img={item.$img}></ImageRoadmapSC>
                                     </DivBoxRoadMapElSC>
                                 );
                             }

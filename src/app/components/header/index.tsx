@@ -168,12 +168,12 @@ const Header = (props: any) => {
                             <DivBoxButtonsSC>
                                 <ButtonWrapper
                                     onClick={onClickScrollExchange}
-                                    width={222}
+                                    width={233}
                                     primary={true}
                                     directionRadius="center"
                                     height={64}
                                 >
-                                    <span> Buy on Uniswap</span>
+                                    <span>Buy Earthy token</span>
                                 </ButtonWrapper>
 
                                 <ButtonWrapper
@@ -216,7 +216,7 @@ const Header = (props: any) => {
                                             height={64}
                                             onClick={onClickScrollExchange}
                                         >
-                                            <span> Buy on Uniswap</span>
+                                            <span>Buy Earthy token</span>
                                         </ButtonWrapper>
                                         <ButtonWrapper
                                             width={222}
@@ -295,7 +295,7 @@ const Header = (props: any) => {
                                         directionRadius="center"
                                         height={64}
                                     >
-                                        <span> Buy on Uniswap</span>
+                                        <span>Buy Earthy token</span>
                                     </ButtonWrapper>
                                 </Link>
                                 <Link href="#">
@@ -332,7 +332,7 @@ const Header = (props: any) => {
                                                 directionRadius="center"
                                                 height={64}
                                             >
-                                                <span> Buy on Uniswap</span>
+                                                <span>Buy Earthy token</span>
                                             </ButtonWrapper>
                                         </Link>
                                         <Link href="#">

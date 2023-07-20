@@ -1,6 +1,6 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import {
-    DivBoxAvatarAndInputSC,
+    DivBoxAvatarAndInputSC, DivTempBoxSC,
     DivWrapperInputsSC,
     DivWrapperProfileAvatarSC,
     InputSC,
@@ -10,6 +10,31 @@ import Image from "@/app/images/vedmak.webp";
 import ButtonWrapper from "@/app/components/custom_button";
 
 const Section1 = () => {
+    const [
+        dataLayout,
+        setData
+    ] = useState({
+        w: 0,
+        h: 0
+    })
+
+    useEffect(() => {
+        setData({
+            w: window.outerWidth,
+            h: window.outerHeight
+        })
+        window.addEventListener('resize', resize)
+    }, [])
+
+    const resize = (e: any) => {
+        console.log('>>>>>>>>>>>>>>>>>>>>', e)
+        setData({
+            w: e.target.outerWidth,
+            h: e.target.outerHeight
+        })
+    }
+
+
     return (
         <DivBoxAvatarAndInputSC>
             <DivWrapperProfileAvatarSC
@@ -25,16 +50,19 @@ const Section1 = () => {
                     placeholder={'Nickname'}
                 />
             </DivWrapperInputsSC>
-            <ButtonWrapper
-                directionRadius="center"
-                // styles={styles}
-                primary={true}
-                height={64}
-                width={250}
-                // onClick={() => router.push('/')}
-            >
-                <span> Subscribe </span>
-            </ButtonWrapper>
+            <DivTempBoxSC>
+                <ButtonWrapper
+                    directionRadius="center"
+                    // styles={styles}
+                    primary={true}
+                    height={64}
+                    width={ dataLayout.w >= 768 ? 107 : 250}
+                    // onClick={() => router.push('/')}
+                >
+                    <span> Save </span>
+                </ButtonWrapper>
+            </DivTempBoxSC>
+
         </DivBoxAvatarAndInputSC>
     );
 };

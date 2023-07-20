@@ -36,9 +36,17 @@ export const DivBoxAvatarAndInputSC = styled.div`
   display: grid;
   width: 100%;
   height: max-content;
-  @media (max-width: 768px) {
+  @media (max-width: 767px) {
     grid-template-rows: repeat(2, max-content);
     grid-template-columns: 100%;
+    justify-items: center;
+    align-items: center;
+    gap: 25px;
+  }
+  justify-content: center;
+  @media (min-width: 768px) {
+    grid-template-rows: 100%;
+    grid-template-columns: repeat(2, max-content) 107px ;
     justify-items: center;
     align-items: center;
     gap: 25px;
@@ -105,7 +113,7 @@ export const H5SC = styled.h5`
   font-weight: 500;
   line-height: normal;
   letter-spacing: 0.2px;
-  @media (max-width: 1000px) {
+  @media (max-width: 767px) {
     text-align: center;
   }
 `
@@ -114,10 +122,20 @@ export const DivWrapperTwoSectionsSC = styled.div`
   display: grid;
   width: 100%;
   height: max-content;
-  @media (max-width: 768px) {
+  @media (max-width: 767px) {
     gap: 75px;
     grid-template-rows: max-content max-content;
     grid-template-columns: 100%;
+  }
+  @media (min-width: 768px) {
+    gap: 75px;
+    grid-template-rows: 100%;
+    grid-template-columns: max-content max-content;
+  }
+  @media (min-width: 1000px) {
+    gap: 175px;
+    grid-template-rows: 100%;
+    grid-template-columns: max-content max-content;
   }
 `
 
@@ -172,4 +190,16 @@ export const SpanNumSC = styled.span`
   font-weight: 500;
   line-height: normal;
   letter-spacing: 0.2px;
+`
+
+export const DivTempBoxSC = styled.div`
+  display: grid;
+  
+  @media (min-width: 768px) {
+    grid-template-columns: 100%;
+    grid-template-rows: 100%;
+    width: 100%;
+    height: 100%;
+    padding-top: 82px;
+  }
 `

@@ -1,3 +1,4 @@
+"use client";
 import {
     DivStepsWrapperSC,
     H2StepsTitleSC,

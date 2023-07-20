@@ -10,7 +10,7 @@ import {
     PTextDestinationSC,
     H2LeaderboardTitleSC,
     DivForButtonContain
-  } from "./styles.buy_token";
+} from "./styles.buy_token";
 
 import { DivDefaultContainerSC } from "../styles.page";
 import ButtonWrapper from "../components/custom_button";
@@ -27,7 +27,7 @@ import StepsBuyToken from "./stepsBuyToken/StepsBuyToken";
 
 const BuyToken = () => {
   return (
-  <DivDefaultContainerSC>
+  <DivWrapperContentSC>
     <DivWrapperGradientSC>
       <H2SC>You can purchase these tokens to invest in the development  of the Earthy platform</H2SC>
       <SwapBlock />
@@ -42,21 +42,21 @@ const BuyToken = () => {
     <DivWrapperGradientLightSC>
       <PTextDestinationSC>This money will be used to develop the Earthy platform and fund its development, after which the mainnet tokens will be airdropped to the wallet which purchased the dev tokens</PTextDestinationSC>
       <EstimatedPrice />
-      <H2LeaderboardTitleSC>Leaderboard</H2LeaderboardTitleSC>
+      {/* <H2LeaderboardTitleSC>Leaderboard</H2LeaderboardTitleSC> */}
     </DivWrapperGradientLightSC>
 
-      <DivForButtonContain>
-    <ButtonWrapper
-        width={202}
-        height={84}
-        directionRadius={"ltr"}
-        primary={true}
-      >
-        <span>View all</span>
-    </ButtonWrapper>
-    </DivForButtonContain>
-    
-    <StepsBuyToken />
+            <DivForButtonContain>
+                <ButtonWrapper
+                    width={202}
+                    height={84}
+                    directionRadius={"ltr"}
+                    primary={true}
+                >
+                    <span>View all</span>
+                </ButtonWrapper>
+            </DivForButtonContain>
+
+            <StepsBuyToken/>
 
     <div>
       <ButtonWrapper
@@ -67,7 +67,7 @@ const BuyToken = () => {
         <span>Buy Earthy Token</span>
       </ButtonWrapper>
     </div>
-  </DivDefaultContainerSC>
+  </DivWrapperContentSC>
 )
 };
 

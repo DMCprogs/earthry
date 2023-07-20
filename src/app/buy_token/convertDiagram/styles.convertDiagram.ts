@@ -74,7 +74,7 @@ export const PConvertDiagramTextSC = styled.p`
     }
 `;
 
-export const PConvertDiagramCaptionSC = styled.p`
+export const PConvertDiagramCaptionSC = styled.span`
 display: block;
 margin-top: -5px;
 color: #000;

@@ -67,6 +67,8 @@ export const DivTitleInputSC = styled.div`
   /* identical to box height, or 35px */
 
   color: #111111;
+  display: grid;
+  grid-template-columns: repeat(2, max-content);
 `;
 export const DivRowBoxInputTitleSC = styled.div`
   display: grid;

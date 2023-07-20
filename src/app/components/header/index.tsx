@@ -55,21 +55,6 @@ const Header = (props: any) => {
                 setIsScrollFooter(false);
                 break;
         }
-        if (
-            pathname === "/non_profit1" ||
-            pathname === "/non_profit2" ||
-            pathname === "/faq" ||
-            pathname === "/tokenomics" ||
-            pathname === "/about" ||
-            pathname === "/airdrop" ||
-            pathname === "/airdrop/success" ||
-            pathname === "/profile" ||
-            pathname === "/projects"
-        ) {
-            setIsScrollFooter(false);
-        } else {
-            setIsScrollFooter(true);
-        }
     }, [pathname]);
 
     useEffect(() => {

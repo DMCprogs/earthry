@@ -94,7 +94,7 @@ export const InputFormSC = styled.input`
   gap: 10px;
   background: #ffffff;
   border: 2px solid #a6a6a6;
-  border-radius: 8px;
+  border-radius: 16px;
   font-family: "Montserrat";
   font-style: normal;
   font-weight: 400;

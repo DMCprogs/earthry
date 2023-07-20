@@ -3,7 +3,7 @@ import React, { FC, ReactElement } from "react";
 
 import { ButtonWrapperSC } from "@/app/components/custom_button/styles.custom_button";
 import Link from "next/link";
-
+import { motion } from "framer-motion";
 const ButtonWrapper: FC<{
   children?: ReactElement;
   weight?: number;
@@ -16,7 +16,6 @@ const ButtonWrapper: FC<{
   disabled?: boolean;
   type?: string | null;
   styles?: any;
-
 }> = (props) => {
   const {
     styles,
@@ -39,19 +38,25 @@ const ButtonWrapper: FC<{
   };
 
   return (
-    <ButtonWrapperSC 
-      style={styles}
-      height={height}
-      width={width}
-      weight={weight}
-      primary={primary}
-      colorButton={colorButton}
-      directionRadius={directionRadius}
-      onClick={_onClick}
-      disabled={disabled}
+    <motion.div
+      whileHover={{ scale: 1.1 }}
+      whileTap={{ scale: 0.9 }}
+      transition={{ type: "spring", stiffness: 400, damping: 17 }}
     >
-      {children}
-    </ButtonWrapperSC>
+      <ButtonWrapperSC
+        style={styles}
+        height={height}
+        width={width}
+        $weight={weight}
+        $primary={primary}
+        $colorButton={colorButton}
+        $directionRadius={directionRadius}
+        onClick={_onClick}
+        disabled={disabled}
+      >
+        {children}
+      </ButtonWrapperSC>
+    </motion.div>
   );
 };
 

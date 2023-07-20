@@ -4,13 +4,13 @@ import Link from "next/link";
 import styled from "styled-components";
 
 export const DivBoxHeaderSC = styled.div<{
-  isBgColor: boolean;
+  $isBgColor: boolean;
 }>`
   width: 100%;
   display: grid;
   height: 82px;
-  background-color: ${({ isBgColor }) =>
-    isBgColor ? " #4affc9" : "rgba(255, 255, 255, 0.70)"};
+  background-color: ${({ $isBgColor }) =>
+    $isBgColor ? " #4affc9" : "rgba(255, 255, 255, 0.70)"};
   padding: 0px 25px 0px 25px;
   position: fixed;
   top: 0;
@@ -56,7 +56,7 @@ export const DivBoxTabsButtonsSC = styled.div`
 export const DivBoxTabsSC = styled.div`
   width: 100%;
   display: grid;
-  grid-template-columns: repeat(7, auto);
+  grid-template-columns: repeat(6, auto);
   gap: 20px;
   height: max-content;
   @media (max-width: 1300px) {
@@ -100,7 +100,7 @@ export const DivBoxBurgerSC = styled.div`
   align-items: start;
   grid-template-rows: repeat(6, max-content);
   gap: 20px;
-  padding: 50px, 20px;
+  padding: 50px 20px;
   @media (max-width: 900px) {
     grid-template-rows: repeat(7, max-content);
   }

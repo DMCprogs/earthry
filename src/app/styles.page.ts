@@ -9,6 +9,7 @@ export const DivWrapperSC = styled.div`
 `;
 export const DivContentSC = styled.div`
   display: grid;
+  margin-top: 140px;
 `;
 
 export const DivSectionsContainerSC = styled.div`
@@ -35,4 +36,6 @@ export const DivDefaultContainerSC = styled.div`
   justify-self: center;
   max-width: 1400px;
   width: 90vw;
+  height: fit-content;
+  gap: 24px;
 `;

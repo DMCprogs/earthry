@@ -1,4 +1,5 @@
-import React from "react";
+"use client"
+import React, {useEffect, useState} from "react";
 import { DivDefaultContainerSC } from "../styles.page";
 import {
   DivRowsWrapSC,
@@ -14,20 +15,42 @@ import ecology from "../images/ecology.jpg";
 import doc_ecology from "../images/doc_ecology.jpg";
 import people_ecology from "../images/people_ecology.jpg";
 const Non_profit1 = () => {
+    const [width, setWidth] = useState<number>(0);
+    useEffect(() => {
+        window.onload = handleResize;
+        setWidth(window.innerWidth);
+        window.addEventListener("resize", handleResize);
+        return () => window.removeEventListener("resize", handleResize);
+    }, []);
+    const handleResize = () => {
+        setWidth(window.innerWidth);
+    };
   return (
-    <DivDefaultContainerSC>
+      <DivDefaultContainerSC>
       <DivRowsWrapSC>
         <TitleNonProfitSC>
           Non-profit adaptation of environmental and charitable projects.
         </TitleNonProfitSC>
-        <DivColumnsContentSC>
-          <ImageEcologySC path={ecology.src} alt="ecology" />
-          <DivBoldTextSC>
-            The onboarding process is designed to ensure that all organizations
-            listed on the Earthy platform are trustworthy and committed to
-            making a positive impact on the world.
-          </DivBoldTextSC>
-        </DivColumnsContentSC>
+          {width >= 900 ? (
+              <DivColumnsContentSC>
+                  <ImageEcologySC path={ecology.src} alt="ecology" />
+                  <DivBoldTextSC>
+                      The onboarding process is designed to ensure that all organizations
+                      listed on the Earthy platform are trustworthy and committed to
+                      making a positive impact on the world.
+                  </DivBoldTextSC>
+              </DivColumnsContentSC>
+          ) : (
+              <DivColumnsContentSC>
+                  <DivBoldTextSC>
+                      The onboarding process is designed to ensure that all organizations
+                      listed on the Earthy platform are trustworthy and committed to
+                      making a positive impact on the world.
+                  </DivBoldTextSC>
+                  <ImageEcologySC path={ecology.src} alt="ecology" />
+              </DivColumnsContentSC>
+          )}
+
         <DivColumnsContentSC>
           <DivNormalTextSC>
             1.  Non-profit organizations interested in registering and listing
@@ -63,13 +86,13 @@ const Non_profit1 = () => {
           </DivNormalTextSC>
         </DivColumnsContentSC>
         <ImagePeopleEcologySC path={people_ecology.src} alt="ecology" />
-        <DivBoldTextSC positionText={"center"}>
+        <DivBoldTextSC $positionText={"center"}>
           By investing their Earthy tokens in these organizations, the community
           can be sure that they are supporting initiatives that are in line with
           transparent values and beliefs.
         </DivBoldTextSC>
       </DivRowsWrapSC>
-    </DivDefaultContainerSC>
+      </DivDefaultContainerSC>
   );
 };
 

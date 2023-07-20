@@ -8,6 +8,7 @@ export const DivRowsWrapSC = styled.div`
   display: grid;
   grid-template-rows: repeat(8, max-content);
   gap: 96px;
+  margin-top: clamp(140px,20vw, 170px);
   justify-self: center;
   @media (max-width: 1000px) {
     gap: 72px;
@@ -69,7 +70,7 @@ export const ImageDocEcologySC = styled.div<{
   width: 100%;
   max-width: 1078px;
   height: 611px;
-  background: url(${({ path }) => path});
+  background-image: url(${({ path }) => path});
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
@@ -96,13 +97,16 @@ export const ImageEcologySC = styled.div<{
   width: 100%;
   max-width: 527px;
   height: 340px;
-  background: url(${({ path }) => path});
+  background-image: url(${({ path }) => path});
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
   border-radius: 20px;
   @media (max-width: 1000px) {
     height: 304px;
+  }
+  @media (max-width: 900px) {
+    justify-self: center;
   }
   @media (max-width: 768px) {
     height: 338px;
@@ -123,7 +127,7 @@ export const ImagePeopleEcologySC = styled.div<{
   width: 100%;
   max-width: 900px;
   height: 812px;
-  background: url(${({ path }) => path});
+  background-image: url(${({ path }) => path});
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
@@ -140,7 +144,7 @@ export const ImagePeopleEcologySC = styled.div<{
 `;
 
 export const DivBoldTextSC = styled.div<{
-  positionText?: string;
+  $positionText?: string;
 }>`
   color: #000;
   font-family: Montserrat;
@@ -150,7 +154,7 @@ export const DivBoldTextSC = styled.div<{
   line-height: 55px; /* 152.778% */
   letter-spacing: 0.2px;
   width: 100%;
-  text-align: ${({ positionText }) => positionText};
+  text-align: ${({ $positionText }) => $positionText};
   @media (max-width: 1000px) {
     font-size: 30px;
     line-height: 47px; /* 156.667% */

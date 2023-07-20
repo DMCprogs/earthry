@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect, useState, useLayoutEffect } from "react";
+import React, { useEffect, useState } from "react";
 import styles from "./Header.module.css";
 import {
   DivBoxHeaderSC,
@@ -30,9 +30,7 @@ const Header = (props: any) => {
     onClickScrollBlog,
     onClickScrollExchange,
   } = props;
-  const [isChosen, setIsChosen] = useState();
   const [isScrollFooter, setIsScrollFooter] = useState(true);
-  const [valueTab, setValueTab] = useState<string>("About");
   const [width, setWidth] = useState<number>(0);
   const [isBgColor, setIsBgColor] = useState<boolean>(true);
   const pathname = usePathname();
@@ -48,6 +46,9 @@ const Header = (props: any) => {
       case "/about":
       case "/faq":
       case "/tokenomics":
+      case "/buy_token":
+      case "/airdrop":
+      case "/airdrop/success":
         setIsBgColor(false);
         setIsScrollFooter(false);
         break;
@@ -57,7 +58,9 @@ const Header = (props: any) => {
       pathname === "/non_profit2" ||
       pathname === "/faq" ||
       pathname === "/tokenomics" ||
-      pathname === "/about"
+      pathname === "/about" ||
+      pathname === "/airdrop" ||
+      pathname === "/airdrop/success"
     ) {
       setIsScrollFooter(false);
     } else {
@@ -71,34 +74,12 @@ const Header = (props: any) => {
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, []);
-  const onTabSelect = (event: any, data: any) => {
-    setValueTab(data.value);
-    setIsChosen(data.value);
-    switch (data.value) {
-      case "Home":
-        return onClickScrollHome();
-      case "Tokenomics":
-        return onClickScrollTokenomics();
-      case "About":
-        return onClickScrollAbout();
-      case "Leaderboard":
-        return onClickScrollLeaderboard();
-      case "Howtoby":
-        return onClickScrollNFT();
-      case "NFT":
-        return onClickScrollFAQ();
-      case "Blog":
-        return onClickScrollBlog();
-      case "Exchange":
-        return onClickScrollExchange();
-    }
-  };
   const handleResize = () => {
     setWidth(window.outerWidth);
   };
 
   return (
-    <DivBoxHeaderSC isBgColor={isBgColor}>
+    <DivBoxHeaderSC $isBgColor={isBgColor}>
       <DivBoxColumnsSC>
         <motion.div
           initial="hidden"
@@ -116,7 +97,9 @@ const Header = (props: any) => {
           }}
         >
           {" "}
-          <IconLogoSC src={logo} alt="logo"></IconLogoSC>
+          <Link href={"/"}>
+            <IconLogoSC src={logo} alt="logo"></IconLogoSC>
+          </Link>
         </motion.div>
         {isScrollFooter ? (
           <DivBoxTabsButtonsSC>
@@ -137,14 +120,8 @@ const Header = (props: any) => {
                 }}
               >
                 {" "}
-                <DivBoxTabsSC
-                  onTabSelect={onTabSelect}
-                  selectedValue={valueTab}
-                  {...props}
-                >
-                  <DivBoxTabSC onClick={onClickScrollTokenomics}>
-                    Home
-                  </DivBoxTabSC>
+                <DivBoxTabsSC>
+                  <DivBoxTabSC onClick={onClickScrollHome}>Home</DivBoxTabSC>
                   <DivBoxTabSC onClick={onClickScrollTokenomics}>
                     Tokenomics
                   </DivBoxTabSC>
@@ -152,20 +129,13 @@ const Header = (props: any) => {
                   <DivBoxTabSC onClick={onClickScrollLeaderboard}>
                     Leaderboard
                   </DivBoxTabSC>
-                  <DivBoxTabSC onClick={onClickScrollNFT}>NFT</DivBoxTabSC>
                   <DivBoxTabSC onClick={onClickScrollBlog}>Blog</DivBoxTabSC>
                   <DivBoxTabSC onClick={onClickScrollFAQ}>FAQ</DivBoxTabSC>
                 </DivBoxTabsSC>
               </motion.div>
             ) : (
-              <DivBoxTabsSC
-                onTabSelect={onTabSelect}
-                selectedValue={valueTab}
-                {...props}
-              >
-                <DivBoxTabSC onClick={onClickScrollTokenomics}>
-                  Home
-                </DivBoxTabSC>
+              <DivBoxTabsSC>
+                <DivBoxTabSC onClick={onClickScrollHome}>Home</DivBoxTabSC>
                 <DivBoxTabSC onClick={onClickScrollTokenomics}>
                   Tokenomics
                 </DivBoxTabSC>
@@ -173,7 +143,6 @@ const Header = (props: any) => {
                 <DivBoxTabSC onClick={onClickScrollLeaderboard}>
                   Leaderboard
                 </DivBoxTabSC>
-                <DivBoxTabSC onClick={onClickScrollNFT}>NFT</DivBoxTabSC>
                 <DivBoxTabSC onClick={onClickScrollBlog}>Blog</DivBoxTabSC>
                 <DivBoxTabSC onClick={onClickScrollFAQ}>FAQ</DivBoxTabSC>
               </DivBoxTabsSC>
@@ -195,16 +164,17 @@ const Header = (props: any) => {
               }}
             >
               <DivBoxButtonsSC>
-                <ButtonWrapper
-                  onClick={onClickScrollExchange}
-                  width={222}
-                  primary={true}
-                  directionRadius="center"
-                  height={64}
-                >
-                  <span> Buy on Uniswap</span>
-                </ButtonWrapper>
-
+                <Link href={"/buy_token"}>
+                  <ButtonWrapper
+                    onClick={onClickScrollExchange}
+                    width={233}
+                    primary={true}
+                    directionRadius="center"
+                    height={64}
+                  >
+                    <span>Buy Earthy token</span>
+                  </ButtonWrapper>
+                </Link>
                 <ButtonWrapper
                   width={222}
                   primary={true}
@@ -221,15 +191,8 @@ const Header = (props: any) => {
                 <span></span>
               </label>
               <div className={styles.menu__box}>
-                <DivBoxBurgerSC
-                  onTabSelect={onTabSelect}
-                  selectedValue={valueTab}
-                  className={styles.menu}
-                  {...props}
-                >
-                  <DivBoxTabSC onClick={onClickScrollTokenomics}>
-                    Home
-                  </DivBoxTabSC>
+                <DivBoxBurgerSC className={styles.menu}>
+                  <DivBoxTabSC onClick={onClickScrollHome}>Home</DivBoxTabSC>
                   <DivBoxTabSC onClick={onClickScrollTokenomics}>
                     Tokenomics
                   </DivBoxTabSC>
@@ -241,15 +204,17 @@ const Header = (props: any) => {
                   <DivBoxTabSC onClick={onClickScrollBlog}>Blog</DivBoxTabSC>
                   <DivBoxTabSC onClick={onClickScrollFAQ}>FAQ</DivBoxTabSC>
                   <DivBoxButtonsMenuSC>
-                    <ButtonWrapper
-                      width={222}
-                      primary={true}
-                      directionRadius="center"
-                      height={64}
-                      onClick={onClickScrollExchange}
-                    >
-                      <span> Buy on Uniswap</span>
-                    </ButtonWrapper>
+                    <Link href={"/buy_token"}>
+                      <ButtonWrapper
+                        width={222}
+                        primary={true}
+                        directionRadius="center"
+                        height={64}
+                        onClick={onClickScrollExchange}
+                      >
+                        <span>Buy Earthy token</span>
+                      </ButtonWrapper>
+                    </Link>
                     <ButtonWrapper
                       width={222}
                       primary={true}
@@ -287,18 +252,16 @@ const Header = (props: any) => {
                   <DivBoxLinkSC href={"/tokenomics"}>Tokenomics</DivBoxLinkSC>
                   <DivBoxLinkSC href={"/about"}>About</DivBoxLinkSC>
                   <DivBoxLinkSC href={"#"}>Leaderboard</DivBoxLinkSC>
-                  <DivBoxLinkSC href={"#"}>NFT</DivBoxLinkSC>
                   <DivBoxLinkSC href={"#"}>Blog</DivBoxLinkSC>
                   <DivBoxLinkSC href={"/faq"}>FAQ</DivBoxLinkSC>
                 </DivBoxTabsSC>
               </motion.div>
             ) : (
               <DivBoxTabsSC>
-                <DivBoxLinkSC href={"#"}>Home</DivBoxLinkSC>
+                <DivBoxLinkSC href={"/"}>Home</DivBoxLinkSC>
                 <DivBoxLinkSC href={"#"}>Tokenomics</DivBoxLinkSC>
                 <DivBoxLinkSC href={"/about"}>About</DivBoxLinkSC>
                 <DivBoxLinkSC href={"#"}>Leaderboard</DivBoxLinkSC>
-                <DivBoxLinkSC href={"#"}>NFT</DivBoxLinkSC>
                 <DivBoxLinkSC href={"#"}>Blog</DivBoxLinkSC>
                 <DivBoxLinkSC href={"/faq"}>FAQ</DivBoxLinkSC>
               </DivBoxTabsSC>
@@ -320,14 +283,14 @@ const Header = (props: any) => {
               }}
             >
               <DivBoxButtonsSC>
-                <Link href="#">
+                <Link href="/buy_token">
                   <ButtonWrapper
                     width={222}
                     primary={true}
                     directionRadius="center"
                     height={64}
                   >
-                    <span> Buy on Uniswap</span>
+                    <span>Buy Earthy token</span>
                   </ButtonWrapper>
                 </Link>
                 <Link href="#">
@@ -349,7 +312,7 @@ const Header = (props: any) => {
               </label>
               <div className={styles.menu__box}>
                 <DivBoxBurgerSC className={styles.menu}>
-                  <DivBoxLinkSC href={"#"}>Home</DivBoxLinkSC>
+                  <DivBoxLinkSC href={"/"}>Home</DivBoxLinkSC>
                   <DivBoxLinkSC href={"/tokenomics"}>Tokenomics</DivBoxLinkSC>
                   <DivBoxLinkSC href={"/about"}>About</DivBoxLinkSC>
                   <DivBoxLinkSC href={"#"}>Leaderboard</DivBoxLinkSC>
@@ -357,14 +320,14 @@ const Header = (props: any) => {
                   <DivBoxLinkSC href={"#"}>Blog</DivBoxLinkSC>
                   <DivBoxLinkSC href={"/faq"}>FAQ</DivBoxLinkSC>
                   <DivBoxButtonsMenuSC>
-                    <Link href="#">
+                    <Link href="/buy_token">
                       <ButtonWrapper
                         width={222}
                         primary={true}
                         directionRadius="center"
                         height={64}
                       >
-                        <span> Buy on Uniswap</span>
+                        <span>Buy Earthy token</span>
                       </ButtonWrapper>
                     </Link>
                     <Link href="#">

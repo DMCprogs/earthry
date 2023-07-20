@@ -14,7 +14,7 @@ import {
   ImagePlanetTokenSC,
   DivWrapImgTitleSC,
 } from "./styles.tokenomics";
-import Image from "../images/chart.png";
+import Image from "../images/chart.svg";
 import Image2 from "../images/planet_token.svg";
 import { SpanTextSC } from "./styles.tokenomics";
 import ButtonWrapper from "../components/custom_button";
@@ -46,7 +46,7 @@ const Tokenomics = () => {
         directionRadius={"center"}
         primary={true}
       >
-        <span>Buy on Uniswap</span>
+        <span>Buy Earthy Token</span>
       </ButtonWrapper>
       <H4SC positionText={"center"}>
         A total of 1,000,000,000 Earthy tokens will be issued

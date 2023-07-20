@@ -9,6 +9,7 @@ export const DivRowsWrapSC = styled.div`
   grid-template-rows: repeat(6, max-content);
   gap: 96px;
   justify-self: center;
+  margin-top: clamp(140px,20vw, 170px);
   @media (max-width: 1000px) {
     gap: 72px;
   }
@@ -61,14 +62,14 @@ export const DivColumnsContentSC = styled.div`
 `;
 
 export const ImageEatEcologySC = styled.div<{
-  path: string;
+  $path: string;
   alt: string;
 }>`
   display: grid;
   width: 100%;
   max-width: 527px;
   height: 527px;
-  background: url(${({ path }) => path});
+  background-image: url(${({ $path }) => $path});
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
@@ -92,7 +93,7 @@ export const ImageEatEcologySC = styled.div<{
 `;
 
 export const ImageWorldEcologySC = styled.div<{
-  path: string;
+  $path: string;
   alt: string;
 }>`
   display: grid;
@@ -100,7 +101,7 @@ export const ImageWorldEcologySC = styled.div<{
   width: 100%;
   max-width: 527px;
   height: 518px;
-  background: url(${({ path }) => path});
+  background-image: url(${({ $path }) => $path});
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
@@ -121,14 +122,14 @@ export const ImageWorldEcologySC = styled.div<{
 `;
 
 export const ImageDropEcologySC = styled.div<{
-  path: string;
+  $path: string;
   alt: string;
 }>`
   display: grid;
   width: 100%;
   max-width: 545px;
   height: 734px;
-  background: url(${({ path }) => path});
+  background-image: url(${({ $path }) => $path});
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;

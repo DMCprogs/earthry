@@ -82,6 +82,7 @@ const BlogDetail: FC = () => (
       <DivContainerAllBlogSC>
         <DivTexLatest>Latest posts</DivTexLatest>
         <Link href={"/blog"}>
+          
           <ButtonJoin>
             ALL POSTS<BsArrowRight color={"white"} size={24} />{" "}
           </ButtonJoin>

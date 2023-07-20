@@ -121,7 +121,7 @@ const BuyToken = () => {
 
                 <StepsBuyToken/>
 
-                <div>
+                <DivForButtonContain>
                     <ButtonWrapper
                         width={281}
                         height={74}
@@ -129,7 +129,7 @@ const BuyToken = () => {
                         primary={true}>
                         <span>Buy Earthy Token</span>
                     </ButtonWrapper>
-                </div>
+                </DivForButtonContain>
             </DivWrapperContentSC>
         </DivDefaultContainerSC>
 

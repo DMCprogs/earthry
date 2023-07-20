@@ -27,6 +27,7 @@ export const H4SC = styled.h4`
   font-weight: 600;
   line-height: normal;
   letter-spacing: 0.2px;
+  text-align: center;
   @media (max-width: 1000px) {
     text-align: center;
   }
@@ -202,4 +203,13 @@ export const DivTempBoxSC = styled.div`
     height: 100%;
     padding-top: 82px;
   }
+`
+
+export const DivImageCenterSC = styled.div<{
+    $img: string
+}>`
+  width: 16px;
+  height: 19px;
+  display: grid;
+  background: url(${({$img}) => ($img)});
 `

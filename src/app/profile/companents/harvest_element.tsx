@@ -1,6 +1,14 @@
 import React from 'react';
-import {DivDash2SC, DivDashSC, DivLogoSC, DivWrapperHarvestSC, SpanNumSC} from "@/app/profile/styles.profile";
+import {
+    DivDash2SC,
+    DivDashSC,
+    DivImageCenterSC,
+    DivLogoSC,
+    DivWrapperHarvestSC,
+    SpanNumSC
+} from "@/app/profile/styles.profile";
 import Image from '../../images/eth_logo.svg'
+import Image2 from '../../images/rvno.svg'
 const HarvestElement = () => {
     return (
         <DivWrapperHarvestSC>
@@ -13,7 +21,9 @@ const HarvestElement = () => {
                     120
                 </SpanNumSC>
             </DivDashSC>
-            <div></div>
+            <DivImageCenterSC
+                $img={Image2.src}
+            ></DivImageCenterSC>
             <DivDash2SC>
                 <SpanNumSC>
                     $12,000

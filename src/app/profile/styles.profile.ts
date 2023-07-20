@@ -149,6 +149,9 @@ export const DivWrapperHarvestSC = styled.div`
   justify-items: center;
   align-items: center;
   gap: 27px;
+  @media (min-width: 1000px) {
+    padding-top: 37px;
+  }
 `
 
 export const DivDashSC = styled.div`

@@ -56,14 +56,15 @@ const BuyToken = () => {
 
     <StepsBuyToken />
 
-    <ButtonWrapper
-      width={281}
-      height={74}
-      directionRadius={"center"}
-      primary={true}>
-      <span>Buy Earthy Token</span>
-    </ButtonWrapper>
-    
+    <div>
+      <ButtonWrapper
+        width={281}
+        height={74}
+        directionRadius={"center"}
+        primary={true}>
+        <span>Buy Earthy Token</span>
+      </ButtonWrapper>
+    </div>
   </DivWrapperContentSC>
 )
 };

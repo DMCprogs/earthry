@@ -42,10 +42,10 @@ export const DivBoxTabsButtonsSC = styled.div`
   height: max-content;
   align-items: center;
   align-self: center;
-  @media (max-width: 1400px) {
+  @media (max-width: 1550px) {
     gap: 30px;
   }
-  @media (max-width: 1300px) {
+  @media (max-width: 1420px) {
     display: block;
   }
   @media (max-width: 900px) {
@@ -56,10 +56,10 @@ export const DivBoxTabsButtonsSC = styled.div`
 export const DivBoxTabsSC = styled.div`
   width: 100%;
   display: grid;
-  grid-template-columns: repeat(7, auto);
+  grid-template-columns: repeat(8, auto);
   gap: 20px;
   height: max-content;
-  @media (max-width: 1300px) {
+  @media (max-width: 1420px) {
     gap: 10px;
     display: none;
   }
@@ -98,11 +98,11 @@ export const DivBoxButtonsSC = styled.div`
 export const DivBoxBurgerSC = styled.div`
   display: grid;
   align-items: start;
-  grid-template-rows: repeat(6, max-content);
+  grid-template-rows: repeat(8, max-content);
   gap: 20px;
   padding: 50px 20px;
   @media (max-width: 900px) {
-    grid-template-rows: repeat(7, max-content);
+    grid-template-rows: repeat(9, max-content);
   }
 `;
 

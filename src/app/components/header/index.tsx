@@ -47,6 +47,10 @@ const Header = (props: any) => {
             case "/faq":
             case "/tokenomics":
             case "/buy_token":
+            case "/airdrop":
+            case "/airdrop/success":
+            case "/profile":
+            case "/projects":
                 setIsBgColor(false);
                 setIsScrollFooter(false);
                 break;
@@ -56,7 +60,11 @@ const Header = (props: any) => {
             pathname === "/non_profit2" ||
             pathname === "/faq" ||
             pathname === "/tokenomics" ||
-            pathname === "/about"
+            pathname === "/about" ||
+            pathname === "/airdrop" ||
+            pathname === "/airdrop/success" ||
+            pathname === "/profile" ||
+            pathname === "/projects"
         ) {
             setIsScrollFooter(false);
         } else {
@@ -93,7 +101,9 @@ const Header = (props: any) => {
                     }}
                 >
                     {" "}
-                    <IconLogoSC src={logo} alt="logo"></IconLogoSC>
+                    <Link href={"/"}>
+                        <IconLogoSC src={logo} alt="logo"></IconLogoSC>
+                    </Link>
                 </motion.div>
                 {isScrollFooter ? (
                     <DivBoxTabsButtonsSC>
@@ -114,11 +124,9 @@ const Header = (props: any) => {
                                 }}
                             >
                                 {" "}
-                                <DivBoxTabsSC
-                                >
-                                    <DivBoxTabSC onClick={onClickScrollHome}>
-                                        Home
-                                    </DivBoxTabSC>
+                                <DivBoxTabsSC>
+                                    <DivBoxTabSC onClick={onClickScrollHome}>Home</DivBoxTabSC>
+                                    <DivBoxLinkSC href={"/projects"}>Projects</DivBoxLinkSC>
                                     <DivBoxTabSC onClick={onClickScrollTokenomics}>
                                         Tokenomics
                                     </DivBoxTabSC>
@@ -126,17 +134,15 @@ const Header = (props: any) => {
                                     <DivBoxTabSC onClick={onClickScrollLeaderboard}>
                                         Leaderboard
                                     </DivBoxTabSC>
-                                    <DivBoxTabSC onClick={onClickScrollNFT}>NFT</DivBoxTabSC>
                                     <DivBoxTabSC onClick={onClickScrollBlog}>Blog</DivBoxTabSC>
                                     <DivBoxTabSC onClick={onClickScrollFAQ}>FAQ</DivBoxTabSC>
+                                    <DivBoxLinkSC href={"/profile"}>Profile</DivBoxLinkSC>
                                 </DivBoxTabsSC>
                             </motion.div>
                         ) : (
-                            <DivBoxTabsSC
-                            >
-                                <DivBoxTabSC onClick={onClickScrollHome}>
-                                    Home
-                                </DivBoxTabSC>
+                            <DivBoxTabsSC>
+                                <DivBoxTabSC onClick={onClickScrollHome}>Home</DivBoxTabSC>
+                                <DivBoxLinkSC href={"/projects"}>Projects</DivBoxLinkSC>
                                 <DivBoxTabSC onClick={onClickScrollTokenomics}>
                                     Tokenomics
                                 </DivBoxTabSC>
@@ -144,9 +150,9 @@ const Header = (props: any) => {
                                 <DivBoxTabSC onClick={onClickScrollLeaderboard}>
                                     Leaderboard
                                 </DivBoxTabSC>
-                                <DivBoxTabSC onClick={onClickScrollNFT}>NFT</DivBoxTabSC>
                                 <DivBoxTabSC onClick={onClickScrollBlog}>Blog</DivBoxTabSC>
                                 <DivBoxTabSC onClick={onClickScrollFAQ}>FAQ</DivBoxTabSC>
+                                <DivBoxLinkSC href={"/profile"}>Profile</DivBoxLinkSC>
                             </DivBoxTabsSC>
                         )}
 
@@ -166,16 +172,17 @@ const Header = (props: any) => {
                             }}
                         >
                             <DivBoxButtonsSC>
-                                <ButtonWrapper
-                                    onClick={onClickScrollExchange}
-                                    width={233}
-                                    primary={true}
-                                    directionRadius="center"
-                                    height={64}
-                                >
-                                    <span>Buy Earthy token</span>
-                                </ButtonWrapper>
-
+                                <Link href={"/buy_token"}>
+                                    <ButtonWrapper
+                                        onClick={onClickScrollExchange}
+                                        width={233}
+                                        primary={true}
+                                        directionRadius="center"
+                                        height={64}
+                                    >
+                                        <span>Buy Earthy token</span>
+                                    </ButtonWrapper>
+                                </Link>
                                 <ButtonWrapper
                                     width={222}
                                     primary={true}
@@ -192,12 +199,9 @@ const Header = (props: any) => {
                                 <span></span>
                             </label>
                             <div className={styles.menu__box}>
-                                <DivBoxBurgerSC
-                                    className={styles.menu}
-                                >
-                                    <DivBoxTabSC onClick={onClickScrollHome}>
-                                        Home
-                                    </DivBoxTabSC>
+                                <DivBoxBurgerSC className={styles.menu}>
+                                    <DivBoxTabSC onClick={onClickScrollHome}>Home</DivBoxTabSC>
+                                    <DivBoxLinkSC href={"/projects"}>Projects</DivBoxLinkSC>
                                     <DivBoxTabSC onClick={onClickScrollTokenomics}>
                                         Tokenomics
                                     </DivBoxTabSC>
@@ -205,19 +209,21 @@ const Header = (props: any) => {
                                     <DivBoxTabSC onClick={onClickScrollLeaderboard}>
                                         Leaderboard
                                     </DivBoxTabSC>
-                                    <DivBoxTabSC onClick={onClickScrollNFT}>NFT</DivBoxTabSC>
                                     <DivBoxTabSC onClick={onClickScrollBlog}>Blog</DivBoxTabSC>
                                     <DivBoxTabSC onClick={onClickScrollFAQ}>FAQ</DivBoxTabSC>
+                                    <DivBoxLinkSC href={"/profile"}>Profile</DivBoxLinkSC>
                                     <DivBoxButtonsMenuSC>
-                                        <ButtonWrapper
-                                            width={222}
-                                            primary={true}
-                                            directionRadius="center"
-                                            height={64}
-                                            onClick={onClickScrollExchange}
-                                        >
-                                            <span>Buy Earthy token</span>
-                                        </ButtonWrapper>
+                                        <Link href={"/buy_token"}>
+                                            <ButtonWrapper
+                                                width={222}
+                                                primary={true}
+                                                directionRadius="center"
+                                                height={64}
+                                                onClick={onClickScrollExchange}
+                                            >
+                                                <span>Buy Earthy token</span>
+                                            </ButtonWrapper>
+                                        </Link>
                                         <ButtonWrapper
                                             width={222}
                                             primary={true}
@@ -252,23 +258,25 @@ const Header = (props: any) => {
                                 {" "}
                                 <DivBoxTabsSC>
                                     <DivBoxLinkSC href={"/"}>Home</DivBoxLinkSC>
+                                    <DivBoxLinkSC href={"/projects"}>Projects</DivBoxLinkSC>
                                     <DivBoxLinkSC href={"/tokenomics"}>Tokenomics</DivBoxLinkSC>
                                     <DivBoxLinkSC href={"/about"}>About</DivBoxLinkSC>
                                     <DivBoxLinkSC href={"#"}>Leaderboard</DivBoxLinkSC>
-                                    <DivBoxLinkSC href={"#"}>NFT</DivBoxLinkSC>
                                     <DivBoxLinkSC href={"#"}>Blog</DivBoxLinkSC>
                                     <DivBoxLinkSC href={"/faq"}>FAQ</DivBoxLinkSC>
+                                    <DivBoxLinkSC href={"/profile"}>Profile</DivBoxLinkSC>
                                 </DivBoxTabsSC>
                             </motion.div>
                         ) : (
                             <DivBoxTabsSC>
                                 <DivBoxLinkSC href={"/"}>Home</DivBoxLinkSC>
+                                <DivBoxLinkSC href={"/projects"}>Projects</DivBoxLinkSC>
                                 <DivBoxLinkSC href={"#"}>Tokenomics</DivBoxLinkSC>
                                 <DivBoxLinkSC href={"/about"}>About</DivBoxLinkSC>
                                 <DivBoxLinkSC href={"#"}>Leaderboard</DivBoxLinkSC>
-                                <DivBoxLinkSC href={"#"}>NFT</DivBoxLinkSC>
                                 <DivBoxLinkSC href={"#"}>Blog</DivBoxLinkSC>
                                 <DivBoxLinkSC href={"/faq"}>FAQ</DivBoxLinkSC>
+                                <DivBoxLinkSC href={"/profile"}>Profile</DivBoxLinkSC>
                             </DivBoxTabsSC>
                         )}
 
@@ -288,7 +296,7 @@ const Header = (props: any) => {
                             }}
                         >
                             <DivBoxButtonsSC>
-                                <Link href="#">
+                                <Link href="/buy_token">
                                     <ButtonWrapper
                                         width={222}
                                         primary={true}
@@ -318,14 +326,15 @@ const Header = (props: any) => {
                             <div className={styles.menu__box}>
                                 <DivBoxBurgerSC className={styles.menu}>
                                     <DivBoxLinkSC href={"/"}>Home</DivBoxLinkSC>
+                                    <DivBoxLinkSC href={"/projects"}>Projects</DivBoxLinkSC>
                                     <DivBoxLinkSC href={"/tokenomics"}>Tokenomics</DivBoxLinkSC>
                                     <DivBoxLinkSC href={"/about"}>About</DivBoxLinkSC>
                                     <DivBoxLinkSC href={"#"}>Leaderboard</DivBoxLinkSC>
-                                    <DivBoxLinkSC href={"#"}>NFT</DivBoxLinkSC>
                                     <DivBoxLinkSC href={"#"}>Blog</DivBoxLinkSC>
                                     <DivBoxLinkSC href={"/faq"}>FAQ</DivBoxLinkSC>
+                                    <DivBoxLinkSC href={"/profile"}>Profile</DivBoxLinkSC>
                                     <DivBoxButtonsMenuSC>
-                                        <Link href="#">
+                                        <Link href="/buy_token">
                                             <ButtonWrapper
                                                 width={222}
                                                 primary={true}

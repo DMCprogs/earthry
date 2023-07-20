@@ -30,7 +30,7 @@ const Airdrop = () => {
       alt="Picture of the author"/>
     </DivContainerGif>
 </DivInfoAirdrop>
-<Link href={"https://discord.gg/C2RmpabE"}>
+<Link style={{width:'fit-content'}} href={"/airdrop"}>
                 <ButtonWrapper
                     primary={true}
                     width={187}

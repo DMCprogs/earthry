@@ -106,3 +106,26 @@ a {
     color-scheme: dark;
   }
 }
+
+
+@media (max-width: 768px) {
+
+}
+.carousel-sliderProjects {
+  /* width: max-content !important; */
+  /* display: grid; */
+  /* grid-auto-rows: max-content; */
+}
+.carousel-itemProjects {
+  /* max-width: 397px !important; */
+  display: grid;
+  width: calc(max-content);
+  /* grid-row-gap: 10px; */
+}
+.carousel-containerProjects{
+  width: calc(100% + 30px);
+  height: max-content;
+  justify-self: center;
+  max-width: 1240px !important;
+  position:static !important;
+}

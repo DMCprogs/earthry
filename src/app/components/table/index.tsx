@@ -2,10 +2,10 @@ import React, { useEffect, useState } from 'react';
 import {
     DivCell2SC,
     DivCellSC,
-    DivHeaderTableSC,
+    DivHeaderTableSC, DivImageAvatarSC,
     DivRowTableSC,
     DivTableBoxSC,
-    DivTableWrapperSC, TableSC
+    DivTableWrapperSC, DivWrapperCellFirstSC, TableSC
 } from "@/app/components/table/styles.table";
 
 
@@ -50,7 +50,17 @@ const Table = (props: IProps) => {
                 <DivCell2SC
                     key={`fsfgddwwsdaf${i2}`}
                 >
-                    {item[item2]}
+                    { item[item2].img ?
+                        <DivWrapperCellFirstSC>
+                            <DivImageAvatarSC
+                                $img={item[item2].img}
+                            >
+
+                            </DivImageAvatarSC>
+                            <span>{item[item2].text}</span>
+                        </DivWrapperCellFirstSC> :
+                        item[item2].text
+                    }
                 </DivCell2SC>
             )
         })

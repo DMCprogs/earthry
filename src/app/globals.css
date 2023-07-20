@@ -106,3 +106,22 @@ a {
     color-scheme: dark;
   }
 }
+
+
+@media (max-width: 1000px) {
+
+
+}
+.carousel-sliderProjects {
+  /* width: max-content !important; */
+}
+.carousel-itemProjects {
+  /* max-width: 397px !important; */
+}
+.carousel-containerProjects{
+  width: 100%;
+  height: max-content;
+  justify-self: center;
+  /* max-width: 1240px !important; */
+  position:static !important;
+}

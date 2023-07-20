@@ -128,20 +128,20 @@ const RootLayout: FC<{ children: ReactNode }> = (props) => {
         <html lang="en">
         <body className={inter.className}>
         <StyledComponentsRegistry>
-        <DivWrapperSC>
-            <Header
-                onClickScrollHome={onClickScrollHome}
-                onClickScrollTokenomics={onClickScrollTokenomics}
-                onClickScrollAbout={onClickScrollAbout}
-                onClickScrollLeaderboard={onClickScrollLeaderboard}
-                onClickScrollNFT={onClickScrollNFT}
-                onClickScrollFAQ={onClickScrollFAQ}
-                onClickScrollBlog={onClickScrollBlog}
-                onClickScrollExchange={onClickScrollExchange}
-            />
-           {children}
-            <Footer/>
-        </DivWrapperSC>
+            <DivWrapperSC>
+                <Header
+                    onClickScrollHome={onClickScrollHome}
+                    onClickScrollTokenomics={onClickScrollTokenomics}
+                    onClickScrollAbout={onClickScrollAbout}
+                    onClickScrollLeaderboard={onClickScrollLeaderboard}
+                    onClickScrollNFT={onClickScrollNFT}
+                    onClickScrollFAQ={onClickScrollFAQ}
+                    onClickScrollBlog={onClickScrollBlog}
+                    onClickScrollExchange={onClickScrollExchange}
+                />
+                {children}
+                <Footer/>
+            </DivWrapperSC>
         </StyledComponentsRegistry>
         </body>
         </html>

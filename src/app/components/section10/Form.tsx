@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, {useState} from "react";
 import {
     DivBoxFormSC,
     DivContainerFormSC,
@@ -11,6 +11,7 @@ import {
     BoxContentSC,
 } from "./styles.form";
 import ButtonWrapper from "../custom_button/index";
+import MobilePhone from "@/app/components/MobilePhone";
 
 const Form = () => {
     type Input = {
@@ -20,18 +21,12 @@ const Form = () => {
         type: string;
     };
     const [inputs, setInputs] = useState<Input[]>([
-        { placeholder: "John", name: "name", type: "text", title: "Full name" },
+        {placeholder: "John", name: "name", type: "text", title: "Full name"},
         {
             placeholder: "example@mail.com",
             name: "email",
             type: "email",
             title: "Email",
-        },
-        {
-            placeholder: "+123456789",
-            name: "phone",
-            type: "tel",
-            title: "Phone",
         },
     ]);
 
@@ -39,7 +34,7 @@ const Form = () => {
         <BoxContentSC>
             <DivContainerFormSC>
                 <TitleFormSC>
-                        Get in touch</TitleFormSC>
+                    Get in touch</TitleFormSC>
                 <form
                     action="https://formsubmit.co/admin@cyberzenlabs.com"
                     method="POST"
@@ -59,6 +54,9 @@ const Form = () => {
                                 </DivRowBoxInputTitleSC>
                             );
                         })}
+                        <MobilePhone
+                        title={"Phone"}
+                        />
                         <DivRowBoxInputTitleSC>
                             <DivTitleInputSC>Message</DivTitleInputSC>
                             <TextAreaFormSC

@@ -95,6 +95,22 @@ body {
   background: rgba(255, 255, 255, 0.70);
   backdrop-filter: blur(26px);
 }
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #195946 #d1d4d4;
+}
+*::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+  background-color: #fff;
+}
+*::-webkit-scrollbar-track {
+  background: #d1d4d4;
+}
+*::-webkit-scrollbar-thumb {
+  background-color: rgb(229, 234, 239);
+  border-radius: 5px;
+}
 
 a {
   color: inherit;

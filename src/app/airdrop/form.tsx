@@ -7,6 +7,7 @@ import {
   InputFormSC,
 } from "./styles.airdrop";
 import { FaStarOfLife } from "react-icons/fa";
+import MobilePhone from "@/app/components/MobilePhone";
 
 const Form = () => {
   type Input = {
@@ -28,12 +29,6 @@ const Form = () => {
       type: "text",
       title: "Crypto wallet address",
     },
-    {
-      placeholder: "+123456789",
-      name: "phone",
-      type: "text",
-      title: "Phone",
-    },
   ]);
 
   return (
@@ -53,6 +48,7 @@ const Form = () => {
               </DivRowBoxInputTitleSC>
             );
           })}
+          <MobilePhone title={"Phone"} ico={<FaStarOfLife size={12} color="#195946"/>}/>
         </DivBoxFormSC>
       </form>
     </>

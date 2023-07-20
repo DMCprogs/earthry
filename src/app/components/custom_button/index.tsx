@@ -16,6 +16,7 @@ const ButtonWrapper: FC<{
   disabled?: boolean;
   type?: string | null;
   styles?: any;
+  id?: string;
 
 }> = (props) => {
   const {
@@ -30,6 +31,7 @@ const ButtonWrapper: FC<{
     onClick = null,
     disabled = false,
     type = null,
+    id,
   } = props;
 
   const _onClick = (e: any) => {
@@ -49,6 +51,7 @@ const ButtonWrapper: FC<{
       $directionRadius={directionRadius}
       onClick={_onClick}
       disabled={disabled}
+      id={id}
     >
       {children}
     </ButtonWrapperSC>

@@ -42,7 +42,7 @@ const WaysToAchieve = () => {
                             the platform are legitimate and have proven experience of making a positive impact on the
                             world.
                             Here's how this process works:</TextNormalSC>
-                        <Link href={"/non_profit1"}>
+                        <Link style={{width:'fit-content'}} href={"/non_profit1"}>
                             <ButtonWrapper directionRadius={"center"} width={201} height={74}
                                            primary={true}><span>Learn more</span></ButtonWrapper></Link>
 
@@ -75,7 +75,7 @@ const WaysToAchieve = () => {
                         participation in local and global projects. Verified companies can offer tokens and NFTs to
                         volunteers, fostering a community committed to kindness.</TextNormalSC>
                     <DivBoxButtonSC>
-                        <Link href={"/non_profit2"}>
+                        <Link style={{width:'fit-content'}} href={"/non_profit2"}>
                             <ButtonWrapper directionRadius={"center"} width={201} height={74}
                                            primary={true}><span>Learn more</span></ButtonWrapper></Link></DivBoxButtonSC>
                 </DivBoxRowsTextSC>

@@ -17,10 +17,10 @@ export const BlogCardContainerSC = styled.div`
 `;
 
 type Props = {
-  img: any;
+  $img: any;
 };
 export const BlogCardImageSC = styled.div<Props>`
-  background: url(${(props) => props.img.src});
+  background: url(${(props) => props.$img.src});
   border-radius: 30px 30px 0px 0px;
 
   display: grid;

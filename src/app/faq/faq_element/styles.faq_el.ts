@@ -23,11 +23,11 @@ export const DivIconBoxSC = styled.div`
   justify-content: center;
 `;
 
-export const IconPlusSC = styled(HiOutlinePlus)<{ hide: boolean }>`
+export const IconPlusSC = styled(HiOutlinePlus)<{   $hide: boolean }>`
   height: 30px;
   width: 30px;
-  ${({ hide }) =>
-    !hide
+  ${({ $hide }) =>
+    !$hide
       ? css`
           transform: rotate(45deg);
         `
@@ -58,10 +58,10 @@ const fade = keyframes`
     }
 `;
 
-export const DivAnswerSC = styled.div<{ hide?: boolean }>`
+export const DivAnswerSC = styled.div<{ $hide?: boolean }>`
   display: grid;
-  ${({ hide }) =>
-    hide
+  ${({ $hide }) =>
+    $hide
       ? css`
           grid-template-rows: 0fr;
           transition: grid-template-rows 0.7s ease;

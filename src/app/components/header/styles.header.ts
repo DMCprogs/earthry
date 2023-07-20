@@ -56,7 +56,7 @@ export const DivBoxTabsButtonsSC = styled.div`
 export const DivBoxTabsSC = styled.div`
   width: 100%;
   display: grid;
-  grid-template-columns: repeat(7, auto);
+  grid-template-columns: repeat(6, auto);
   gap: 20px;
   height: max-content;
   @media (max-width: 1300px) {

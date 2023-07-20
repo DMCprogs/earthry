@@ -9,7 +9,6 @@ import {
     DivRowBoxInputTitleSC,
     TitleFormSC,
     BoxContentSC,
-    ShadowSC
 } from "./styles.form";
 import ButtonWrapper from "../custom_button/index";
 
@@ -31,14 +30,13 @@ const Form = () => {
         {
             placeholder: "+123456789",
             name: "phone",
-            type: "number",
+            type: "tel",
             title: "Phone",
         },
     ]);
 
     return (
         <BoxContentSC>
-            <ShadowSC />
             <DivContainerFormSC>
                 <TitleFormSC>
                         Get in touch</TitleFormSC>
@@ -74,6 +72,7 @@ const Form = () => {
                             width={233}
                             directionRadius="right"
                             type="submit"
+                            height={64}
                         >
                             <span>Send message</span>
                         </ButtonWrapper>

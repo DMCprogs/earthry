@@ -26,10 +26,10 @@ const FAQElement: FC<{
                 <DivQuestionSC onClick={hideAnswer}>
                     <h3>{item.question}</h3>
                     <DivIconBoxSC>
-                        <IconPlusSC hide={hide} />
+                        <IconPlusSC $hide={hide} />
                     </DivIconBoxSC>
                 </DivQuestionSC>
-                <DivAnswerSC hide={hide}>
+                <DivAnswerSC $hide={hide}>
                     <div
                         dangerouslySetInnerHTML={{
                             __html: item.answer,

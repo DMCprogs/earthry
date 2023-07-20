@@ -46,7 +46,7 @@ const Tokenomics = () => {
         directionRadius={"center"}
         primary={true}
       >
-        <span>Buy on Uniswap</span>
+        <span>Buy Earthy Token</span>
       </ButtonWrapper>
       <H4SC positionText={"center"}>
         A total of 1,000,000,000 Earthy tokens will be issued

@@ -1,8 +1,12 @@
 import React, { ReactElement } from "react";
-import { DivContainerSec6SC, DivContentSC, DivTitleSC, DivWrapSec6SC } from "./styles.section6";
+import {
+  DivContainerSec6SC,
+  DivContentSC,
+  DivTitleSC,
+  DivWrapSec6SC,
+} from "./styles.section6";
 import { FAQs, questionAnswer } from "./data";
 import FAQElement from "./faq_element";
-
 
 const FAQ = () => {
   return (

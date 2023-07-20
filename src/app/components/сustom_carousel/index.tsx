@@ -7,10 +7,10 @@ import {
   DivCustomArrowRight,
   DivCustomArrowsSC,
   DivSection3SC
-} from "./styles.CarouselProjects";
+} from "../section3/styles.CarouselProjects";
 import image from "../../images/ItemBlogExample.png";
 import image2 from "../../images/Greenpeace.png";
-import CarouselProjects from "./FundedProjectCard";
+import CarouselProjects from "../section3/FundedProjectCard";
 
 type CarouselProps = {
   items?: any;

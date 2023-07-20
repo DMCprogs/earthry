@@ -1,21 +1,13 @@
 import { styled } from "styled-components";
 
 export const DivWrapperContentSC = styled.div`
-  display: grid;
-  justify-content: center;
-  justify-self: center;
-  justify-items: center;
-  min-height: 100vh;
-  height: max-content;
+  // display: grid;
+  // justify-content: center;
+  // justify-self: center;
+  // justify-items: center;
+  // min-height: 100vh;
+  // height: max-content;
   margin-top: clamp(138px,20vw, 200px);
-`;
-
-export const DivWrapperGradientSC = styled.div`
-  background: linear-gradient(0deg, rgb(255, 255, 255), rgb(74, 255, 201), rgb(255, 255, 255));
-`;
-
-export const DivWrapperGradientLightSC = styled.div`
-  background: linear-gradient(0deg, rgb(255, 255, 255), rgb(200, 255, 239), rgb(255, 255, 255));
 `;
 
 export const H2SC = styled.h2`
@@ -65,7 +57,7 @@ export const PTextRewardSC = styled.p`
   line-height: 135%;
   letter-spacing: 0.048px;
   width: 100%;
-  padding: 0 23px 0 17px;
+  // padding: 0 23px 0 17px;
 
   @media(min-width: 480px){
   font-size: 27px;
@@ -82,7 +74,7 @@ export const PTextDestinationSC = styled.p`
   line-height: 135%;
   letter-spacing: 0.044px;
   width: 100%;
-  padding: 0 23px 0 17px;
+  // padding: 0 23px 0 17px;
   margin-bottom: 20px;
 
   @media(min-width: 480px){
@@ -104,5 +96,7 @@ margin-bottom: 35px;
 `;
 
 export const DivForButtonContain = styled.div`
-  margin-top: 35px;
+  margin: 35px auto 0;
+
+
 `;

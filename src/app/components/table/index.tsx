@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, { useEffect, useState } from 'react';
 import {
     DivCell2SC,
     DivCellSC,
@@ -13,7 +13,7 @@ interface IProps {
     columns: string[],
     data: any[]
 }
-const Table = (props:IProps) => {
+const Table = (props: IProps) => {
     const {
         columns,
         data
@@ -34,9 +34,9 @@ const Table = (props:IProps) => {
 
     const nodeColumns = listColumn.map((item, i) => {
 
-        return(
+        return (
             <DivCellSC
-            key={`fsfgaf${i}`}
+                key={`fsfgaf${i}`}
             >
                 {item}
             </DivCellSC>
@@ -46,7 +46,7 @@ const Table = (props:IProps) => {
     const nodeRows = data.map((item, i) => {
 
         const nodeCell = listColumn.map((item2, i2) => {
-            return(
+            return (
                 <DivCell2SC
                     key={`fsfgddwwsdaf${i2}`}
                 >
@@ -67,14 +67,14 @@ const Table = (props:IProps) => {
 
     return (
         <DivTableWrapperSC>
-            <TableSC style={{width: '100%'}}>
+            <TableSC style={{ width: '100%' }}>
                 <DivHeaderTableSC>
                     <tr>
                         {nodeColumns}
                     </tr>
                 </DivHeaderTableSC>
                 <tbody>
-                {nodeRows}
+                    {nodeRows}
                 </tbody>
 
 

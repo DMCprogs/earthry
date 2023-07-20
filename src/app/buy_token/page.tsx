@@ -15,13 +15,12 @@ import {
 // import { DivDefaultContainerSC } from "../styles.page";
 import ButtonWrapper from "../components/custom_button";
 
-import SwapBlock from "./swapBlock/SwapBlock";
+import SwapBlock from "../components/swapBlock/SwapBlock";
 import EarthyCourse from "./earthyCourse/EarthyCourse";
 import ChainConvert from "./chainConvert/ChainConvert";
 import ConvertDiagram from "./convertDiagram/ConvertDiagram";
 import EstimatedPrice from "./estimatedPrice/EstimatedPrice";
 // import LeaderBoardRow from "../components/leaederboard_row";
-import Leaderboard from "../leaderboard/page";
 
 import earthyImg from '../images/eth_logo.svg';
 import StepsBuyToken from "./stepsBuyToken/StepsBuyToken";
@@ -46,9 +45,7 @@ const BuyToken = () => {
       {/* <H2LeaderboardTitleSC>Leaderboard</H2LeaderboardTitleSC> */}
     </DivWrapperGradientLightSC>
 
-    <Leaderboard></Leaderboard>
-
-    <DivForButtonContain>
+      <DivForButtonContain>
     <ButtonWrapper
         width={202}
         height={84}

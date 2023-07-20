@@ -1,4 +1,4 @@
-import ButtonWrapper from "../../components/custom_button";
+import ButtonWrapper from "../custom_button";
 import ethImage from '../../images/eth_logo.svg';
 import maticImg from '../../images/matic.svg';
 import exchangeImg from '../../images/exchange.svg';

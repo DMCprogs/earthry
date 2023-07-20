@@ -48,6 +48,7 @@ export const DivCellSC = styled.th`
   border: none;
   text-align: left;
   padding-left: 15px;
+  padding-right: 15px;
   min-width: max-content;
   white-space: nowrap;
 `
@@ -58,7 +59,7 @@ export const DivRowTableSC = styled.tr`
   //height: 100%;
   border-radius: 16px;
   background: #F8F8F8;
-  height: 63px;
+  height: 90px;
   min-width: 100%;
   padding-left: 20px;
   padding-right: 20px;
@@ -99,4 +100,31 @@ export const TableSC = styled.table`
   & tbody tr td:last-child{
     border-radius:0 10px 10px 0;
   }
+
+  & tbody tr td:not(:first-child, :last-child){
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+`
+
+export const DivImageAvatarSC = styled.div<{
+    $img: string
+}>`
+  display: grid;
+  background: url(${({$img}) => ($img)});
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-size: 100%;
+  background-position: center;
+`
+
+export const DivWrapperCellFirstSC = styled.div`
+  display: grid;
+  width: 100%;
+  height: 100%;
+  grid-template-rows: 100%;
+  grid-template-columns: 1fr 1.5fr;
+  align-items: center;
+  gap: 12px;
 `

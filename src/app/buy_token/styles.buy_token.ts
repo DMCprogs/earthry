@@ -91,14 +91,13 @@ font-style: normal;
 font-weight: 600;
 line-height: normal;
 letter-spacing: 0.2px;
-margin-left: 20px;
-margin-bottom: 35px;
+//margin-left: 20px;
+//margin-bottom: 35px;
 `;
 
 export const DivForButtonContain = styled.div`
-  // margin-top: 35px;
-display: gtid;
-justify-content: center;
+  display: grid;
+  justify-items: center;
 
 
 `;

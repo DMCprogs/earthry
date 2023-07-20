@@ -41,6 +41,7 @@ const ButtonWrapper: FC<{
         <motion.div
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
+            style={styles}
             transition={{ type: "spring", stiffness: 400, damping: 17 }}
         >
             <ButtonWrapperSC

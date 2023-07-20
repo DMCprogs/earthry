@@ -1,5 +1,5 @@
 "use client";
-import { FC } from "react";
+import React, { FC } from "react";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import {
@@ -11,30 +11,35 @@ import {
 import image from "../../images/ItemBlogExample.png";
 import image2 from "../../images/Greenpeace.png";
 import CarouselProjects from "./FundedProjectCard";
+
 type CarouselProps = {
-  items: any;
-  responsive: any;
+  items?: any;
+  responsive?: any;
+  carouselState?: any;
 }
-const CarouselCustom: FC<CarouselProps> = ({ items, responsive }) => {
 
+type ButtonGroupProps = {
+  next?: any;
+  previous?: any;
+  goToSlide?: any;
+  carouselState?: any;
+}
 
-  const ButtonGroup = ({ next, previous, goToSlide, ...rest }) => {
-    const { carouselState: { currentSlide } } = rest;
-    return (
-      <DivCustomArrowsSC>
-        <DivCustomArrowLeft className={currentSlide === 0 ? 'disable' : ''} onClick={() => previous()} />
-        <DivCustomArrowRight className="disable" onClick={() => next()} />
-      </DivCustomArrowsSC>
-    );
-  };
-  console.log(items);
-
+const ButtonGroup: FC<ButtonGroupProps> = ({ carouselState, next, previous, goToSlide, ...rest }) => {
+  const { currentSlide } = carouselState;
   return (
+    <DivCustomArrowsSC>
+      <DivCustomArrowLeft className={currentSlide === 0 ? 'disable' : ''} onClick={() => previous()} />
+      <DivCustomArrowRight className="disable" onClick={() => next()} />
+    </DivCustomArrowsSC>
+  );
+};
 
-
+const CarouselCustom: FC<CarouselProps> = ({ carouselState, items, responsive }) => {
+  return (
     <Carousel
-      customButtonGroup={<ButtonGroup />}
-      renderButtonGroupOutside={true}
+      customButtonGroup={<ButtonGroup carouselState={carouselState} />}
+      renderButtonGroupOutside
       containerClass="carousel-containerProjects"
       responsive={responsive}
       arrows={false}
@@ -44,8 +49,6 @@ const CarouselCustom: FC<CarouselProps> = ({ items, responsive }) => {
       {items}
     </Carousel>
   );
-
-
 };
 
 export default CarouselCustom;

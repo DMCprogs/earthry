@@ -109,3 +109,43 @@ export const H5SC = styled.h5`
     text-align: center;
   }
 `
+
+export const DivWrapperTwoSectionsSC = styled.div`
+  display: grid;
+  width: 100%;
+  height: max-content;
+  @media (max-width: 768px) {
+    gap: 75px;
+    grid-template-rows: max-content max-content;
+    grid-template-columns: 100%;
+  }
+`
+
+export const DivWrapperHarvestSC = styled.div`
+  display: grid;
+  width: 100%;
+  height: max-content;
+  grid-template-columns: 100%;
+  grid-template-rows: 139px 19px 139px;
+  justify-items: center;
+  align-items: center;
+  gap: 27px;
+`
+
+export const DivDashSC = styled.div`
+  display: grid;
+  width: 320px;
+  height: 139px;
+  border-radius: 20px;
+  background: #DBFFF4;
+  grid-template-rows: 100%;
+  grid-template-columns: 26px auto;
+`
+
+export const DivDash2SC = styled.div`
+  display: grid;
+  width: 320px;
+  height: 139px;
+  border-radius: 20px;
+  background: #DBFFF4;
+`

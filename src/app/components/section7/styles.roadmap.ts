@@ -10,7 +10,7 @@ export const DivContainerSec4SC = styled.div`
   grid-auto-rows: max-content;
   row-gap: 90px;
   justify-items: center;
-  border: 1px solid red;
+  //border: 1px solid red;
   @media (max-width: 768px) {
     padding: 0px 0px;
   }

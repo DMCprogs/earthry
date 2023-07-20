@@ -1,3 +1,4 @@
+'use client'
 import ButtonWrapper from "../custom_button";
 import ethImage from "../../images/eth_logo.svg";
 import maticImg from "../../images/matic.svg";

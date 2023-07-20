@@ -23,7 +23,7 @@ const Leaderboard: FC = () => (
                 <DivTextTabsSC>Tokens after launch</DivTextTabsSC>
             </DivTitleTablesSC>
         </DivContainerTagsTabSC>
-        {Array.from({ length: 8 }, (_, index) => (
+        {Array.from({ length: 3 }, (_, index) => (
         <LeaderBoardRow nickname={'Vasya007'} adress={'0x99b5bfCc1f48bc0Be23695B1543208C624BF96A7'} tokensNow={11000000} tokensAfter={33000000} />
       ))}
         

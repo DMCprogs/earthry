@@ -1,7 +1,6 @@
 "use client";
 
 import {
-    DivBlancSC,
     DivWrapperContentSC,
     H2SC,
     DivWrapperGradientSC,
@@ -9,9 +8,11 @@ import {
     DivEarthyBigImgSC,
     PTextRewardSC,
     PTextDestinationSC,
-    H2LeaderboardTitleSC
+    // H2LeaderboardTitleSC,
+    DivForButtonContain
   } from "./styles.buy_token";
 
+// import { DivDefaultContainerSC } from "../styles.page";
 import ButtonWrapper from "../components/custom_button";
 
 import SwapBlock from "./swapBlock/SwapBlock";
@@ -19,6 +20,8 @@ import EarthyCourse from "./earthyCourse/EarthyCourse";
 import ChainConvert from "./chainConvert/ChainConvert";
 import ConvertDiagram from "./convertDiagram/ConvertDiagram";
 import EstimatedPrice from "./estimatedPrice/EstimatedPrice";
+// import LeaderBoardRow from "../components/leaederboard_row";
+import Leaderboard from "../leaderboard/page";
 
 import earthyImg from '../images/eth_logo.svg';
 import StepsBuyToken from "./stepsBuyToken/StepsBuyToken";
@@ -40,20 +43,22 @@ const BuyToken = () => {
     <DivWrapperGradientLightSC>
       <PTextDestinationSC>This money will be used to develop the Earthy platform and fund its development, after which the mainnet tokens will be airdropped to the wallet which purchased the dev tokens</PTextDestinationSC>
       <EstimatedPrice />
-      <H2LeaderboardTitleSC>Leaderboard</H2LeaderboardTitleSC>
+      {/* <H2LeaderboardTitleSC>Leaderboard</H2LeaderboardTitleSC> */}
     </DivWrapperGradientLightSC>
 
-    <DivBlancSC></DivBlancSC>
+    <Leaderboard></Leaderboard>
 
+    <DivForButtonContain>
     <ButtonWrapper
         width={202}
         height={84}
-        directionRadius={"rtr"}
+        directionRadius={"ltr"}
         primary={true}
       >
         <span>View all</span>
     </ButtonWrapper>
-
+    </DivForButtonContain>
+    
     <StepsBuyToken />
 
     <div>

@@ -1,9 +1,13 @@
 import styled from "styled-components";
 
 export const DivEstimatedPriceWrapperSC = styled.div`
-margin: 70px auto 3px;
+margin: 70px auto 0;
     display: flex;
     flex-direction: column;
+
+    @media(min-width: 480px){
+  margin-top: 96px;
+}
 `;
 
 export const H2EstimatedPriceTitileSC = styled.h2`
@@ -26,6 +30,11 @@ margin: 40px auto 70px;
     padding: 22px;
     background-color: #fff;
     border-radius: 20px;
+
+    @media(min-width: 480px){
+        width: 440px;
+        padding-top: 19px;
+}
 `;
 
 export const DivEstimatedPriceTitleContainerSC = styled.div`

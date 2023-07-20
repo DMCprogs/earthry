@@ -7,7 +7,7 @@ export const DivChainConvertWrapperSC = styled.div`
     position: relative;
     max-width: 292px;
     width: 100%;
-    position: relative;
+    position: relative;  
 `;
 
 export const DivChainConvertBlockSC = styled.div`

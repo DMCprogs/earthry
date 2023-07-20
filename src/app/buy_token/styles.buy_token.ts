@@ -1,9 +1,5 @@
 import { styled } from "styled-components";
 
-export const DivBlancSC = styled.div`
-  height: 335px;
-`;
-
 export const DivWrapperContentSC = styled.div`
   display: grid;
   justify-content: center;
@@ -35,6 +31,13 @@ margin: 0;
   /* height: fit-content; */
   text-align: center;
   margin-bottom: 60px;
+
+  @media(min-width: 480px){
+  text-align: center;
+  font-size: 36px;
+  line-height: 50px;
+  margin-top: 10px;
+}
 `;
 
 export const DivEarthyBigImgSC = styled.div<{
@@ -47,6 +50,10 @@ export const DivEarthyBigImgSC = styled.div<{
     background-repeat: no-repeat;
     background-position: center;
     margin: 55px auto 70px;
+
+    @media(min-width: 480px){
+    margin-top: 80px;
+}
 `;
 
 export const PTextRewardSC = styled.p`
@@ -59,6 +66,11 @@ export const PTextRewardSC = styled.p`
   letter-spacing: 0.048px;
   width: 100%;
   padding: 0 23px 0 17px;
+
+  @media(min-width: 480px){
+  font-size: 27px;
+  letter-spacing: 0.054px;
+}
 `;
 
 export const PTextDestinationSC = styled.p`
@@ -72,7 +84,12 @@ export const PTextDestinationSC = styled.p`
   width: 100%;
   padding: 0 23px 0 17px;
   margin-bottom: 20px;
-`
+
+  @media(min-width: 480px){
+  font-size: 24px;
+  letter-spacing: 0.048px;
+}
+`;
 
 export const H2LeaderboardTitleSC = styled.h2`
 color: #201E1C;
@@ -84,4 +101,8 @@ line-height: normal;
 letter-spacing: 0.2px;
 margin-left: 20px;
 margin-bottom: 35px;
+`;
+
+export const DivForButtonContain = styled.div`
+  margin-top: 35px;
 `;

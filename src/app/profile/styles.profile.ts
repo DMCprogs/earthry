@@ -140,6 +140,8 @@ export const DivDashSC = styled.div`
   background: #DBFFF4;
   grid-template-rows: 100%;
   grid-template-columns: 26px auto;
+  align-items: center;
+  padding: 35px;
 `
 
 export const DivDash2SC = styled.div`
@@ -148,4 +150,14 @@ export const DivDash2SC = styled.div`
   height: 139px;
   border-radius: 20px;
   background: #DBFFF4;
+  
+`
+
+export const DivLogoSC = styled.div<{
+    $image: string
+}>`
+  display: grid;
+  width: 26px;
+  height: 38px;
+  background: url(${({$image}) => ($image)}) no-repeat;
 `

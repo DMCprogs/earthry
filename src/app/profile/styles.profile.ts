@@ -142,6 +142,7 @@ export const DivDashSC = styled.div`
   grid-template-columns: 26px auto;
   align-items: center;
   padding: 35px;
+  gap: 7px;
 `
 
 export const DivDash2SC = styled.div`
@@ -150,7 +151,8 @@ export const DivDash2SC = styled.div`
   height: 139px;
   border-radius: 20px;
   background: #DBFFF4;
-  
+  align-items: center;
+  padding: 35px;
 `
 
 export const DivLogoSC = styled.div<{
@@ -160,4 +162,14 @@ export const DivLogoSC = styled.div<{
   width: 26px;
   height: 38px;
   background: url(${({$image}) => ($image)}) no-repeat;
+`
+
+export const SpanNumSC = styled.span`
+  color: #000;
+  font-family: Montserrat;
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  letter-spacing: 0.2px;
 `

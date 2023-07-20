@@ -12,6 +12,7 @@ import Image from '../images/vedmak.webp'
 import ButtonWrapper from "@/app/components/custom_button";
 import Section1 from "@/app/profile/companents/section1";
 import Section2 from "@/app/profile/companents/section2";
+import ProjectsList from "@/app/components/projects_list";
 
 const Profile = () => {
     return (
@@ -25,7 +26,7 @@ const Profile = () => {
                 <Section2/>
 
                 <DivSection1SC>
-                    <H5SC>Harvest</H5SC>
+                    <ProjectsList/>
 
                 </DivSection1SC>
                 <DivSection1SC>

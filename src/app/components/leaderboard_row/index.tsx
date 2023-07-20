@@ -11,13 +11,17 @@ import {
     DivTitleTables,
     DivTextTabsSC,
     DivTitleTablesSC,
+    DivLogoSC,
+    DivUserInfo,
  } from "./styles.leaderboard_row";
+import { StaticImageData } from "next/image";
 
 type RowProps = {
   nickname: string;
   adress: string;
   tokensNow: number;
   tokensAfter:number;
+  images:StaticImageData,
 
 }
 // Определим функцию
@@ -31,7 +35,7 @@ const formatAddress = (address:string) => {
 
 
 
-const LeaderBoardRow: FC<RowProps> = ({ nickname, adress, tokensNow,tokensAfter }) => {
+const LeaderBoardRow: FC<RowProps> = ({ nickname, adress, tokensNow,tokensAfter,images }) => {
  
   return (
 
@@ -40,7 +44,10 @@ const LeaderBoardRow: FC<RowProps> = ({ nickname, adress, tokensNow,tokensAfter 
     
     <DivContainerTagsTabSC>
         <DivTitleTables>
+          <DivUserInfo>
+          <DivLogoSC logo={images}/>
             <DivTextTabsSC>{nickname}</DivTextTabsSC>
+            </DivUserInfo>
             <DivTextTabsSC>{formatAddress(adress)}</DivTextTabsSC>
         </DivTitleTables>
         <DivTitleTablesSC style={{ gap:'120px',  }}>

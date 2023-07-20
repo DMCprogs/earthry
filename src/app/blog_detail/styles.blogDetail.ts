@@ -179,15 +179,14 @@ export const DivContainerAllBlogSC = styled.div`
 export const ButtonJoin  = styled.button`
 cursor: pointer;
 display: none;
-grid-template-rows: 1fr 1fr;
+grid-template-rows: max-content max-content;
  width: 100%;
  height: 100%;
  justify-items: center;
  margin: 10px 0;
 border: 2px solid #195946;
-max-width: 182px;
-max-height: 72px;
-padding: 30px 50px;
+width: 141px;
+height: 72px;
 align-items: center;
 align-content:center ;
 border-radius: 35px 0px;

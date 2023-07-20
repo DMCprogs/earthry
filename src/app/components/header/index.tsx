@@ -46,6 +46,7 @@ const Header = (props: any) => {
       case "/about":
       case "/faq":
       case "/tokenomics":
+      case "/buy_token":
       case "/airdrop":
       case "/airdrop/success":
         setIsBgColor(false);
@@ -96,7 +97,9 @@ const Header = (props: any) => {
           }}
         >
           {" "}
-          <IconLogoSC src={logo} alt="logo"></IconLogoSC>
+          <Link href={"/"}>
+            <IconLogoSC src={logo} alt="logo"></IconLogoSC>
+          </Link>
         </motion.div>
         {isScrollFooter ? (
           <DivBoxTabsButtonsSC>
@@ -126,7 +129,6 @@ const Header = (props: any) => {
                   <DivBoxTabSC onClick={onClickScrollLeaderboard}>
                     Leaderboard
                   </DivBoxTabSC>
-                  <DivBoxTabSC onClick={onClickScrollNFT}>NFT</DivBoxTabSC>
                   <DivBoxTabSC onClick={onClickScrollBlog}>Blog</DivBoxTabSC>
                   <DivBoxTabSC onClick={onClickScrollFAQ}>FAQ</DivBoxTabSC>
                 </DivBoxTabsSC>
@@ -141,7 +143,6 @@ const Header = (props: any) => {
                 <DivBoxTabSC onClick={onClickScrollLeaderboard}>
                   Leaderboard
                 </DivBoxTabSC>
-                <DivBoxTabSC onClick={onClickScrollNFT}>NFT</DivBoxTabSC>
                 <DivBoxTabSC onClick={onClickScrollBlog}>Blog</DivBoxTabSC>
                 <DivBoxTabSC onClick={onClickScrollFAQ}>FAQ</DivBoxTabSC>
               </DivBoxTabsSC>
@@ -163,16 +164,17 @@ const Header = (props: any) => {
               }}
             >
               <DivBoxButtonsSC>
-                <ButtonWrapper
-                  onClick={onClickScrollExchange}
-                  width={233}
-                  primary={true}
-                  directionRadius="center"
-                  height={64}
-                >
-                  <span>Buy Earthy token</span>
-                </ButtonWrapper>
-
+                <Link href={"/buy_token"}>
+                  <ButtonWrapper
+                    onClick={onClickScrollExchange}
+                    width={233}
+                    primary={true}
+                    directionRadius="center"
+                    height={64}
+                  >
+                    <span>Buy Earthy token</span>
+                  </ButtonWrapper>
+                </Link>
                 <ButtonWrapper
                   width={222}
                   primary={true}
@@ -202,15 +204,17 @@ const Header = (props: any) => {
                   <DivBoxTabSC onClick={onClickScrollBlog}>Blog</DivBoxTabSC>
                   <DivBoxTabSC onClick={onClickScrollFAQ}>FAQ</DivBoxTabSC>
                   <DivBoxButtonsMenuSC>
-                    <ButtonWrapper
-                      width={222}
-                      primary={true}
-                      directionRadius="center"
-                      height={64}
-                      onClick={onClickScrollExchange}
-                    >
-                      <span>Buy Earthy token</span>
-                    </ButtonWrapper>
+                    <Link href={"/buy_token"}>
+                      <ButtonWrapper
+                        width={222}
+                        primary={true}
+                        directionRadius="center"
+                        height={64}
+                        onClick={onClickScrollExchange}
+                      >
+                        <span>Buy Earthy token</span>
+                      </ButtonWrapper>
+                    </Link>
                     <ButtonWrapper
                       width={222}
                       primary={true}
@@ -248,7 +252,6 @@ const Header = (props: any) => {
                   <DivBoxLinkSC href={"/tokenomics"}>Tokenomics</DivBoxLinkSC>
                   <DivBoxLinkSC href={"/about"}>About</DivBoxLinkSC>
                   <DivBoxLinkSC href={"#"}>Leaderboard</DivBoxLinkSC>
-                  <DivBoxLinkSC href={"#"}>NFT</DivBoxLinkSC>
                   <DivBoxLinkSC href={"#"}>Blog</DivBoxLinkSC>
                   <DivBoxLinkSC href={"/faq"}>FAQ</DivBoxLinkSC>
                 </DivBoxTabsSC>
@@ -259,7 +262,6 @@ const Header = (props: any) => {
                 <DivBoxLinkSC href={"#"}>Tokenomics</DivBoxLinkSC>
                 <DivBoxLinkSC href={"/about"}>About</DivBoxLinkSC>
                 <DivBoxLinkSC href={"#"}>Leaderboard</DivBoxLinkSC>
-                <DivBoxLinkSC href={"#"}>NFT</DivBoxLinkSC>
                 <DivBoxLinkSC href={"#"}>Blog</DivBoxLinkSC>
                 <DivBoxLinkSC href={"/faq"}>FAQ</DivBoxLinkSC>
               </DivBoxTabsSC>
@@ -281,7 +283,7 @@ const Header = (props: any) => {
               }}
             >
               <DivBoxButtonsSC>
-                <Link href="#">
+                <Link href="/buy_token">
                   <ButtonWrapper
                     width={222}
                     primary={true}
@@ -318,7 +320,7 @@ const Header = (props: any) => {
                   <DivBoxLinkSC href={"#"}>Blog</DivBoxLinkSC>
                   <DivBoxLinkSC href={"/faq"}>FAQ</DivBoxLinkSC>
                   <DivBoxButtonsMenuSC>
-                    <Link href="#">
+                    <Link href="/buy_token">
                       <ButtonWrapper
                         width={222}
                         primary={true}

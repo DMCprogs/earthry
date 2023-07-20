@@ -6,6 +6,7 @@ export const DivBlogContainerSC = styled.div`
   justify-content: center;
   justify-self:center;
   grid-row-gap: 60px;
+  justify-items: center;
 `;
 
 export const DivContentSC = styled.div`

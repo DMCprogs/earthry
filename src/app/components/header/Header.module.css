@@ -131,7 +131,7 @@
     height: max-content;
 }
 
-@media (max-width: 1300px) {
+@media (max-width: 1420px) {
     .hamburger_menu {
         display: grid;
     }

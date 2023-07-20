@@ -8,6 +8,8 @@ import {
   DivBoxRoadMapElSC,
   ImageRoadmapSC,
   TitleRoadmapSC,
+  DivBigBoxRoadMapElSC,
+  ImgBigElSC,
 } from "./styles.roadmap";
 import { TypeRoadMapItem, roadMapData } from "./data";
 import { motion } from "framer-motion";
@@ -25,9 +27,26 @@ const Roadmap = () => {
   return (
     <div>
       <DivContainerSec4SC>
+         <motion.div 
+                    initial="hidden"
+                    whileInView="visible"
+                    variants={{
+                      hidden: {
+                        scale: 1,
+                        y: -100,
+                        opacity: 0,
+                      },
+                      visible: {
+                        scale: 1,
+                        y: 0,
+                        opacity: 1,
+                        transition: { duration: 0.5, delay: 0.3 },
+                      },
+                    }}
+                  >
         <DivBoxTitleSC>
           <TitleRoadmapSC>Platform creation roadmap</TitleRoadmapSC>
-        </DivBoxTitleSC>
+        </DivBoxTitleSC></motion.div>
         {width >= 1000 ? (
           <DivBranchBoxSC>
             {roadMapData.map((item: TypeRoadMapItem, index: number) => {
@@ -40,28 +59,33 @@ const Roadmap = () => {
                     variants={{
                       hidden: {
                         scale: 1,
-                        x: 1000,
+                        x: 700,
                         opacity: 0,
                       },
                       visible: {
                         scale: 1,
-                        x: 260,
+                        x:300,
                         opacity: 1,
                         transition: { duration: 0.5, delay: index * 0.3 },
                       },
                     }}
                   >
-                    <DivRoadMapElSC
-                      right={true}
-                      back={item.back}
-                      font={item.font}
-                      key={index}
-                    >
-                      <div>
-                        <h3>{item.title}</h3>
-                        <p>{item.desc}</p>
-                      </div>
-                    </DivRoadMapElSC>
+                    <DivBigBoxRoadMapElSC key={index} $right={true}>
+                      <ImgBigElSC
+                        $imgBig={item.imgBig}
+                        $isChangePosition={item.isChangePosition}
+                      />
+                      <DivRoadMapElSC
+                        $back={item.back}
+                        $right={true}
+                        $font={item.font}
+                      >
+                        <div>
+                          <h3>{item.title}</h3>
+                          <p>{item.desc}</p>
+                        </div>
+                      </DivRoadMapElSC>
+                    </DivBigBoxRoadMapElSC>
                   </motion.div>
                 );
               } else {
@@ -73,27 +97,33 @@ const Roadmap = () => {
                     variants={{
                       hidden: {
                         scale: 1,
-                        x: -1000,
+                        x: -400,
                         opacity: 0,
                       },
                       visible: {
                         scale: 1,
-                        x: -260,
+                        x: 0,
                         opacity: 1,
                         transition: { duration: 0.5, delay: index * 0.3 },
                       },
                     }}
                   >
-                    <DivRoadMapElSC
-                      left={true}
-                      back={item.back}
-                      font={item.font}
-                    >
-                      <div>
-                        <h3>{item.title}</h3>
-                        <p>{item.desc}</p>
-                      </div>
-                    </DivRoadMapElSC>
+                    <DivBigBoxRoadMapElSC key={index} $left={true}>
+                      <DivRoadMapElSC
+                        $left={true}
+                        $back={item.back}
+                        $font={item.font}
+                      >
+                        <div>
+                          <h3>{item.title}</h3>
+                          <p>{item.desc}</p>
+                        </div>
+                      </DivRoadMapElSC>
+                      <ImgBigElSC
+                        $imgBig={item.imgBig}
+                        $isChangePosition={item.isChangePosition}
+                      />
+                    </DivBigBoxRoadMapElSC>
                   </motion.div>
                 );
               }
@@ -111,7 +141,7 @@ const Roadmap = () => {
                     variants={{
                       hidden: {
                         scale: 1,
-                        x: 500,
+                        x: 200,
                         opacity: 0,
                       },
                       visible: {
@@ -124,9 +154,9 @@ const Roadmap = () => {
                   >
                     <DivBoxRoadMapElSC key={index}>
                       <DivRoadMapElSC
-                        right={true}
-                        back={item.back}
-                        font={item.font}
+                        $right={true}
+                        $back={item.back}
+                        $font={item.font}
                       >
                         <div>
                           <h3>{item.title}</h3>
@@ -134,8 +164,8 @@ const Roadmap = () => {
                         </div>
                       </DivRoadMapElSC>
                       <ImageRoadmapSC
-                        isChangeHeight={item.isChangeHeight}
-                        img={item.img}
+                        $isChangeHeight={item.isChangeHeight}
+                        $img={item.$img}
                       ></ImageRoadmapSC>
                     </DivBoxRoadMapElSC>
                   </motion.div>
@@ -149,7 +179,7 @@ const Roadmap = () => {
                     variants={{
                       hidden: {
                         scale: 1,
-                        x: -500,
+                        x: -200,
                         opacity: 0,
                       },
                       visible: {
@@ -162,9 +192,9 @@ const Roadmap = () => {
                   >
                     <DivBoxRoadMapElSC key={index}>
                       <DivRoadMapElSC
-                        right={true}
-                        back={item.back}
-                        font={item.font}
+                        $right={true}
+                        $back={item.back}
+                        $font={item.font}
                       >
                         <div>
                           <h3>{item.title}</h3>
@@ -172,8 +202,8 @@ const Roadmap = () => {
                         </div>
                       </DivRoadMapElSC>
                       <ImageRoadmapSC
-                        isChangeHeight={item.isChangeHeight}
-                        img={item.img}
+                        $isChangeHeight={item.isChangeHeight}
+                        $img={item.$img}
                       ></ImageRoadmapSC>
                     </DivBoxRoadMapElSC>
                   </motion.div>

@@ -35,7 +35,7 @@ const WaysToAchieve = () => {
         variants={{
           hidden: {
             scale: 1,
-            y: -200,
+            y: -100,
             opacity: 0,
           },
           visible: {
@@ -58,7 +58,7 @@ const WaysToAchieve = () => {
             variants={{
               hidden: {
                 scale: 1,
-                x: -200,
+                x: -100,
                 opacity: 0,
               },
               visible: {
@@ -78,7 +78,7 @@ const WaysToAchieve = () => {
               variants={{
                 hidden: {
                   scale: 1,
-                  x: 200,
+                  x: 100,
                   opacity: 0,
                 },
                 visible: {
@@ -108,7 +108,7 @@ const WaysToAchieve = () => {
               variants={{
                 hidden: {
                   scale: 1,
-                  y: 200,
+                  y: 100,
                   opacity: 0,
                 },
                 visible: {
@@ -141,7 +141,7 @@ const WaysToAchieve = () => {
               variants={{
                 hidden: {
                   scale: 1,
-                  x: 200,
+                  x: 100,
                   opacity: 0,
                 },
                 visible: {
@@ -198,7 +198,7 @@ const WaysToAchieve = () => {
             whileInView="visible"
             variants={{
               hidden: {
-                x: -350,
+                x: -250,
                 scale: 1,
                 opacity: 0,
               },
@@ -223,7 +223,7 @@ const WaysToAchieve = () => {
             variants={{
               hidden: {
                 scale: 1,
-                x: width >= 1000 ? -200 : 200,
+                x: width >= 1000 ? -100 : 100,
                 opacity: 0,
               },
               visible: {
@@ -254,7 +254,7 @@ const WaysToAchieve = () => {
             variants={{
               hidden: {
                 scale: width >= 1000 ? 1 : 0,
-                y: width >= 1000 ? 200 : 0,
+                y: width >= 1000 ? 100 : 0,
                 opacity: 0,
               },
               visible: {
@@ -284,7 +284,7 @@ const WaysToAchieve = () => {
           whileInView="visible"
           variants={{
             hidden: {
-              x: width >= 1000 ? 200 : -350,
+              x: width >= 1000 ? 100 : -250,
               scale: width >= 1000 ? 1 : 1.5,
               opacity: 0,
             },

@@ -46,6 +46,7 @@ const Header = (props: any) => {
             case "/about":
             case "/faq":
             case "/tokenomics":
+            case "/buy_token":
                 setIsBgColor(false);
                 setIsScrollFooter(false);
                 break;

@@ -109,6 +109,7 @@ const Header = (props: any) => {
                 animate="visible"
                 variants={{
                   hidden: {
+                    y: -85,
                     opacity: 1,
                   },
                   visible: {
@@ -134,18 +135,18 @@ const Header = (props: any) => {
                 </DivBoxTabsSC>
               </motion.div>
             ) : (
-              <DivBoxTabsSC>
-                <DivBoxTabSC onClick={onClickScrollHome}>Home</DivBoxTabSC>
-                <DivBoxTabSC onClick={onClickScrollTokenomics}>
-                  Tokenomics
-                </DivBoxTabSC>
-                <DivBoxTabSC onClick={onClickScrollAbout}>About</DivBoxTabSC>
-                <DivBoxTabSC onClick={onClickScrollLeaderboard}>
-                  Leaderboard
-                </DivBoxTabSC>
-                <DivBoxTabSC onClick={onClickScrollBlog}>Blog</DivBoxTabSC>
-                <DivBoxTabSC onClick={onClickScrollFAQ}>FAQ</DivBoxTabSC>
-              </DivBoxTabsSC>
+                <DivBoxTabsSC>
+                  <DivBoxTabSC onClick={onClickScrollHome}>Home</DivBoxTabSC>
+                  <DivBoxTabSC onClick={onClickScrollTokenomics}>
+                    Tokenomics
+                  </DivBoxTabSC>
+                  <DivBoxTabSC onClick={onClickScrollAbout}>About</DivBoxTabSC>
+                  <DivBoxTabSC onClick={onClickScrollLeaderboard}>
+                    Leaderboard
+                  </DivBoxTabSC>
+                  <DivBoxTabSC onClick={onClickScrollBlog}>Blog</DivBoxTabSC>
+                  <DivBoxTabSC onClick={onClickScrollFAQ}>FAQ</DivBoxTabSC>
+                </DivBoxTabsSC>
             )}
 
             <motion.div

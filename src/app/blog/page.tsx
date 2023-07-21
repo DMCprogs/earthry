@@ -27,7 +27,7 @@ const Blog: FC = () => {
     <DivDefaultContainerSC style={{ marginTop: "140px" }}>
       <DivBlogContainerSC>
 
-        <DivH1SC>Blog</DivH1SC>
+        <DivH1SC style={{margin: '0px'}}>Blog</DivH1SC>
         <DivContentSC>
           <BlogCard
             title={"Lorem ipsum dolor sit amet, consectetur adipiscing elit"}

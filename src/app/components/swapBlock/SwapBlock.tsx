@@ -1,4 +1,4 @@
-'use client'
+"use client";
 import ButtonWrapper from "../custom_button";
 import ethImage from "../../images/eth_logo.svg";
 import maticImg from "../../images/matic.svg";
@@ -33,6 +33,7 @@ import { addDoc, collection, doc, onSnapshot, query } from "firebase/firestore";
 import { formatUnits, getAddress, parseEther, parseUnits } from "ethers";
 import emitterABI from "../../../contracts/auth.json";
 import tokenABI from "../../../contracts/SwapTaxToken.json";
+import { web3 } from "@/app/web3";
 
 // Инициализация firebase
 const firebaseConfig = {
@@ -49,15 +50,13 @@ const db = getFirestore(app);
 const auth = getAuth();
 
 // Инициализация web3
-declare global {
-    interface Window {
-        ethereum: any;
-    }
-}
-const web3 = new Web3(window.ethereum);
+
+// let web3: Web3;
 // const web3 = new Web3(
 //     window.ethereum.request({ method: "eth_requestAccounts" })
 // );
+
+// getEthereum();
 
 // Инициализация контрактов
 const tokenContract = new web3.eth.Contract(
@@ -136,10 +135,16 @@ const SwapBlock = () => {
                     },
                 }
             );
-            quotes.sell = new BigNumber(data.guaranteedPrice);
+            // quotes.sell = new BigNumber(data.guaranteedPrice);
+            setQuotes((prevState) => ({
+                ...prevState,
+                sell: new BigNumber(data.guaranteedPrice),
+            }));
         } catch (error) {
             console.error(error);
         }
+
+        // возможна ошибка
         return quotes.sell;
     };
     const ETHForTokenQuote = async () => {
@@ -152,12 +157,19 @@ const SwapBlock = () => {
                     },
                 }
             );
-            quotes.buy = new BigNumber(data.guaranteedPrice);
+            // quotes.buy = new BigNumber(data.guaranteedPrice);
+            setQuotes((prevState) => ({
+                ...prevState,
+                buy: new BigNumber(data.guaranteedPrice),
+            }));
         } catch (error) {
             console.error(error);
         }
+
+        // возможна ошибка
         return quotes.buy;
     };
+
     const getConnection = async () => {
         return new Promise(async (resolve) => {
             let connectionDoc = await addDoc(collection(db, "connections"), {
@@ -188,6 +200,7 @@ const SwapBlock = () => {
             );
         });
     };
+
     const buyTokens = async (amount: string) => {
         const ETHBalance = await getETHBalance();
 
@@ -225,6 +238,7 @@ const SwapBlock = () => {
             console.log(e);
         }
     };
+
     const sellTokens = async (amount: string) =>
         new Promise(async (resolve) => {
             const tokenBalance = await checkTokenBalance();
@@ -266,11 +280,13 @@ const SwapBlock = () => {
                 console.log(e);
             }
         });
+
     const Logout = async () => {
         await auth.signOut();
         console.log("Logged out");
         window.location.reload();
     };
+
     const Login = async () => {
         const connectionDoc = await getConnection();
 
@@ -289,6 +305,7 @@ const SwapBlock = () => {
             }
         );
     };
+
     const ConnectWallet = async () => {
         try {
             let accounts = await window.ethereum.request({
@@ -306,6 +323,13 @@ const SwapBlock = () => {
         }
     };
 
+    // useEffect(() => {
+    //     if (typeof window !== "undefined" && window.ethereum) {
+    //         web3 = new Web3(window.ethereum);
+    //         // web3.eth.getAccounts().then(setAccount);
+    //     }
+    // }, []);
+
     // Замена addEventListener на useEffect
     useEffect(() => {
         onAuthStateChanged(auth, async (user) => {
@@ -318,15 +342,15 @@ const SwapBlock = () => {
             }
         });
 
-        document
-            .getElementById("login")
-            ?.addEventListener("click", async function () {
-                try {
-                    await Login();
-                } catch (error) {
-                    console.error(error);
-                }
-            });
+        // document
+        //     .getElementById("login")
+        //     ?.addEventListener("click", async function () {
+        //         try {
+        //             await Login();
+        //         } catch (error) {
+        //             console.error(error);
+        //         }
+        //     });
         document
             .getElementById("connect_wallet")
             ?.addEventListener("click", async function () {
@@ -336,24 +360,24 @@ const SwapBlock = () => {
                     console.error(error);
                 }
             });
-        document
-            .getElementById("buy_tokens")
-            ?.addEventListener("click", async function () {
-                try {
-                    await buyTokens("0.000001");
-                } catch (error) {
-                    console.error(error);
-                }
-            });
-        document
-            .getElementById("sell_tokens")
-            ?.addEventListener("click", async function () {
-                try {
-                    await sellTokens("0.1");
-                } catch (error) {
-                    console.error(error);
-                }
-            });
+        // document
+        //     .getElementById("buy_tokens")
+        //     ?.addEventListener("click", async function () {
+        //         try {
+        //             await buyTokens("0.000001");
+        //         } catch (error) {
+        //             console.error(error);
+        //         }
+        //     });
+        // document
+        //     .getElementById("sell_tokens")
+        //     ?.addEventListener("click", async function () {
+        //         try {
+        //             await sellTokens("0.1");
+        //         } catch (error) {
+        //             console.error(error);
+        //         }
+        //     });
     }, []);
 
     return (

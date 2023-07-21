@@ -1,6 +1,7 @@
 import { styled } from "styled-components";
 
 export const DivSwapBlockSC = styled.div`
+  /* grid-area: a; */
   position: relative;
   height: 422px;
   max-width: 320px;

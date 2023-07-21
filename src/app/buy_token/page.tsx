@@ -1,10 +1,14 @@
 "use client";
+import { useState, useEffect } from "react";
 
 import {
     DivWrapperContentSC,
     H2SC,
+    DivUpperGridblockSC,
+    DivUpperBlockInnerWrapper,
     DivEarthyBigImgSC,
     PTextRewardSC,
+    DivDiagramWrapperBlock,
     PTextDestinationSC,
     H2LeaderboardTitleSC,
     DivForButtonContain
@@ -62,35 +66,68 @@ const listColumn: string[] = [
 ]
 
 const BuyToken = () => {
+
+    const [
+        dataLayout,
+        setData
+    ] = useState({
+        w: 0,
+        h: 0
+    })
+
+    useEffect(() => {
+        setData({
+            w: window.outerWidth,
+            h: window.outerHeight
+        })
+        window.addEventListener('resize', resize)
+    }, [])
+
+    const resize = (e: any) => {
+        // console.log('>>>>>>>>>>>>>>>>>>>>', dataLayout.w)
+        setData({
+            w: e.target.outerWidth,
+            h: e.target.outerHeight
+        })
+    }
+
     return (
         <DivDefaultContainerSC>
             <DivWrapperContentSC>
             
                 <H2SC>You can purchase these tokens to invest in the development of the Earthy platform</H2SC>
-                <SwapBlock/>
-                <EarthyCourse/>
-                <ChainConvert/>
 
-                <DivEarthyBigImgSC path={earthyImg.src}></DivEarthyBigImgSC>
+                <DivUpperGridblockSC>
+                    <SwapBlock/>
+                    {dataLayout.w > 750 && <DivEarthyBigImgSC path={earthyImg.src}></DivEarthyBigImgSC>}
+                    <DivUpperBlockInnerWrapper>
+                    <EarthyCourse/>
+                    <ChainConvert/>
+                    {dataLayout.w <= 750 && <DivEarthyBigImgSC path={earthyImg.src}></DivEarthyBigImgSC>}
+                    </DivUpperBlockInnerWrapper>
+                </DivUpperGridblockSC>     
+
                 <PTextRewardSC>When the Earthy Chain is launched, Earthy token holders will receive 20% of the Earthy
                     mainnet tokens allocated from the general pool (main reserve), as an encouragement and reward for
                     their continued support and commitment to the project. </PTextRewardSC>
 
-                <ConvertDiagram/>
 
-                <PTextDestinationSC>These 20% of Earthy Chain will be distributed in proportion to the number of Earthy
-                    tokens among their holders.</PTextDestinationSC>
+                <DivDiagramWrapperBlock>
+                    <ConvertDiagram/>
+                    <div>
+                        <PTextDestinationSC>These 20% of Earthy Chain will be distributed in proportion to the number of Earthy tokens among their holders.</PTextDestinationSC>
+                        <PTextDestinationSC>This money will be used to develop the Earthy platform and fund its development, after which the mainnet tokens will be airdropped to the wallet which purchased the dev tokens</PTextDestinationSC>
+                    </div>
+                </DivDiagramWrapperBlock>
+                
 
-                <PTextDestinationSC>This money will be used to develop the Earthy platform and fund its development,
-                    after which the mainnet tokens will be airdropped to the wallet which purchased the dev
-                    tokens</PTextDestinationSC>
-                <EstimatedPrice/>
+                {/* <EstimatedPrice/> */}
 
-                <H2LeaderboardTitleSC>
+                {/* <H2LeaderboardTitleSC>
                     Leaderboard
-                </H2LeaderboardTitleSC>
+                </H2LeaderboardTitleSC> */}
 
-                <div
+                {/* <div
                     style={{
                         display: 'grid',
                         maxWidth: '100%'
@@ -100,10 +137,10 @@ const BuyToken = () => {
                         columns={listColumn}
                         data={listData}
                     />
-                </div>
+                </div> */}
 
 
-                <DivForButtonContain>
+                {/* <DivForButtonContain>
                     <ButtonWrapper
                         width={202}
                         height={84}
@@ -112,11 +149,11 @@ const BuyToken = () => {
                     >
                         <span>View all</span>
                     </ButtonWrapper>
-                </DivForButtonContain>
+                </DivForButtonContain> */}
 
-                <StepsBuyToken/>
+                {/* <StepsBuyToken/> */}
 
-                <DivForButtonContain>
+                {/* <DivForButtonContain>
                     <ButtonWrapper
                         width={281}
                         height={74}
@@ -124,7 +161,7 @@ const BuyToken = () => {
                         primary={true}>
                         <span>Buy Earthy Token</span>
                     </ButtonWrapper>
-                </DivForButtonContain>
+                </DivForButtonContain> */}
 
             </DivWrapperContentSC>
         </DivDefaultContainerSC>

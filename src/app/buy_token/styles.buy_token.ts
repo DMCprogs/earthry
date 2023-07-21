@@ -161,9 +161,10 @@ letter-spacing: 0.054px;
      margin-top: 70px;
 }
 
-@media(max-width: 520px){
+@media(max-width: 479px){
      margin-top: 70px;
      font-size: 24px;
+     max-width: 440px;
 }
 
 `;
@@ -183,6 +184,12 @@ export const DivDiagramWrapperBlock = styled.div`
   row-gap: 56px;
 }
 
+@media(max-width: 479px){
+    grid-template-columns: auto;
+  grid-template-rows: auto auto;
+  row-gap: 56px;
+}
+
 
 `;
 
@@ -199,9 +206,9 @@ export const PTextDestinationSC = styled.p`
   // padding: 0 23px 0 17px;
   margin-bottom: 20px;
 
-  @media(min-width: 480px){
-  font-size: 24px;
-  letter-spacing: 0.048px;
+  @media(max-width: 480px){
+  font-size: 22px;
+  /* letter-spacing: 0.048px; */
 }
 `;
 
@@ -215,10 +222,50 @@ line-height: normal;
 letter-spacing: 0.2px;
 //margin-left: 20px;
 //margin-bottom: 35px;
+margin-top: 71px;
 text-align: center;
 `;
+
+// export const DivLeaderBoardTableSC = styled.div`
+//   max-width: 999px;
+// `;
 
 export const DivForButtonContain = styled.div`
   display: grid;
   justify-items: center;
+  margin-top: 40px;
+
+  @media(max-width: 1000px){
+  margin-top: 35px;
+}
+`;
+
+export const DivForStepsWrapper = styled.div`
+  display: grid;
+  grid-template-columns: auto auto;
+  column-gap: 62px;
+
+  @media(max-width: 1039px){
+    grid-template-columns: auto;
+}
+`;
+
+export const H2StepsTitleSC = styled.h2`
+    color: #201E1C;
+text-align: center;
+font-family: Montserrat;
+font-size: 40px;
+font-style: normal;
+font-weight: 600;
+line-height: normal;
+margin-top: 120px;
+/* margin-bottom: 50px; */
+
+@media(max-width: 1000px){
+  margin-top: 100px;
+}
+
+@media(max-width: 768px){
+  margin-top: 70px;
+}
 `;

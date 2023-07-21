@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const DivConvertDiagramWrapperSC = styled.div`
     display: grid;
-    width: 564px;
+    max-width: 564px;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: max-content 1fr;
     position: relative;
@@ -18,7 +18,19 @@ export const DivConvertDiagramWrapperSC = styled.div`
 
 @media(max-width: 1050px){
       width: 525px;
+      /* width: 100%; */
   }
+
+  @media(max-width: 580px){
+      max-width: 408px;
+      /* width: 100%; */
+  }
+
+  @media(max-width: 479px){
+      max-width: 300px;
+      /* width: 100%; */
+  }
+
 `;
 
 export const DivConvertDiagramTokensSC = styled.div`
@@ -28,6 +40,14 @@ export const DivConvertDiagramTokensSC = styled.div`
 
     /* flex-direction: column; */
     position: relative;
+
+    @media(max-width: 580px){
+      grid-template-rows: 217px max-content;
+}
+
+@media(max-width: 479px){
+      grid-template-rows: 157px max-content;
+}
 `;
 
 export const DivRoundConvertDiagramBigSC = styled.div`
@@ -40,6 +60,17 @@ export const DivRoundConvertDiagramBigSC = styled.div`
       width: 279px;
     height: 279px;
   }
+
+  @media(max-width: 580px){
+      width: 217px;
+    height: 217px;
+  }
+
+  @media(max-width: 479px){
+      width: 157px;
+    height: 157px;
+  }
+
 `;
 
 export const DivRoundConvertDiagramSmallSC = styled.div`
@@ -55,6 +86,17 @@ export const DivRoundConvertDiagramSmallSC = styled.div`
     @media(max-width: 1050px){
       width: 130px;
     height: 130px;
+  }
+
+  @media(max-width: 580px){
+      width: 101px;
+    height: 101px;
+  }
+
+  @media(max-width: 479px){
+      width: 73px;
+    height: 73px;
+    margin-top: 50px;
   }
 `;
 
@@ -81,10 +123,14 @@ export const PConvertDiagramTextSC = styled.p`
     line-height: 135%;
     letter-spacing: 0.056px;
 
-    /* @media(min-width: 480px){
+    @media(max-width: 580px){
     font-size: 34px;
     letter-spacing: 0.068px;
-    } */
+    }
+
+    @media(max-width: 479px){
+    font-size: 28px;
+    }
 `;
 
 export const PConvertDiagramCaptionSC = styled.span`
@@ -98,10 +144,14 @@ font-weight: 400;
 line-height: 135%;
 letter-spacing: 0.03px;
 
-/* @media(min-width: 480px){
+@media(max-width: 580px){
     font-size: 18px;
     letter-spacing: 0.036px;
-} */
+}
+
+@media(max-width: 479px){
+    font-size: 15px;
+    }
 `;
 
 export const DivConvertDiagramLeftLogoSC = styled.div<{
@@ -126,6 +176,16 @@ export const DivConvertDiagramLeftLogoSC = styled.div<{
 @media(max-width: 1050px){
   width: 57px;
   height: 87px;
+  }
+
+  @media(max-width: 580px){
+  width: 44px;
+  height: 68px;
+  }
+
+  @media(max-width: 479px){
+  width: 32px;
+  height: 49px;
   }
 `;
 
@@ -153,6 +213,16 @@ export const DivConvertDiagramRightLogoSC = styled.div<{
 @media(max-width: 1050px){
   width: 57px;
   height: 87px;
+  }
+
+  @media(max-width: 580px){
+  width: 44px;
+  height: 68px;
+  }
+
+  @media(max-width: 479px){
+  width: 32px;
+  height: 49px;
   }
 `;
 
@@ -203,4 +273,14 @@ export const DivConvertDiagramArrowSC = styled.div<{
     top: 130px;
   left: 300px;
 }
+
+@media(max-width: 580px){
+    top: 110px;
+  left: 230px;
+}
+
+@media(max-width: 479px){
+  top: 70px;
+  left: 165px;
+  }
 `;

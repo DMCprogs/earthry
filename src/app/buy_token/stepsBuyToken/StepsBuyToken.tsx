@@ -1,7 +1,7 @@
 "use client";
 import {
     DivStepsWrapperSC,
-    H2StepsTitleSC,
+    // H2StepsTitleSC,
     DivStepContainerSC,
     DivStepsBlockSC,
     H3StepTitleSC,
@@ -11,7 +11,6 @@ import {
 const StepsBuyToken = () => {
   return (
     <DivStepsWrapperSC>
-        <H2StepsTitleSC>How to buy Earthy token?</H2StepsTitleSC>
         <DivStepsBlockSC>
             <DivStepContainerSC>
                 <H3StepTitleSC>Step 1</H3StepTitleSC>

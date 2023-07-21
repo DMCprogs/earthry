@@ -11,7 +11,9 @@ import {
     DivDiagramWrapperBlock,
     PTextDestinationSC,
     H2LeaderboardTitleSC,
-    DivForButtonContain
+    DivForButtonContain,
+    DivForStepsWrapper,
+    H2StepsTitleSC
 } from "./styles.buy_token";
 
 import {DivDefaultContainerSC} from "../styles.page";
@@ -75,8 +77,16 @@ const BuyToken = () => {
         h: 0
     })
 
+    
+    let directionRadius = 'right';
+    if (dataLayout.w < 480) {
+        directionRadius = 'center'
+    }
+
+
     useEffect(() => {
-        setData({
+
+         setData({
             w: window.outerWidth,
             h: window.outerHeight
         })
@@ -121,13 +131,13 @@ const BuyToken = () => {
                 </DivDiagramWrapperBlock>
                 
 
-                {/* <EstimatedPrice/> */}
+                <EstimatedPrice/>
 
-                {/* <H2LeaderboardTitleSC>
+                <H2LeaderboardTitleSC>
                     Leaderboard
-                </H2LeaderboardTitleSC> */}
+                </H2LeaderboardTitleSC>
 
-                {/* <div
+                <div
                     style={{
                         display: 'grid',
                         maxWidth: '100%'
@@ -137,10 +147,10 @@ const BuyToken = () => {
                         columns={listColumn}
                         data={listData}
                     />
-                </div> */}
+                </div>
 
 
-                {/* <DivForButtonContain>
+                <DivForButtonContain>
                     <ButtonWrapper
                         width={202}
                         height={84}
@@ -149,19 +159,25 @@ const BuyToken = () => {
                     >
                         <span>View all</span>
                     </ButtonWrapper>
-                </DivForButtonContain> */}
+                </DivForButtonContain>
 
-                {/* <StepsBuyToken/> */}
+                <H2StepsTitleSC>How to buy Earthy token?</H2StepsTitleSC>
+                <DivForStepsWrapper>
+                    {dataLayout.w > 1040 && <DivEarthyBigImgSC path={earthyImg.src}></DivEarthyBigImgSC>}  
+                    <StepsBuyToken/>
+                </DivForStepsWrapper>
+                
+                
 
-                {/* <DivForButtonContain>
+                <DivForButtonContain>
                     <ButtonWrapper
-                        width={281}
+                        width={265}
                         height={74}
-                        directionRadius={"center"}
+                        directionRadius={directionRadius}
                         primary={true}>
                         <span>Buy Earthy Token</span>
                     </ButtonWrapper>
-                </DivForButtonContain> */}
+                </DivForButtonContain>
 
             </DivWrapperContentSC>
         </DivDefaultContainerSC>

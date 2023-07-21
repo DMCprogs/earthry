@@ -9,14 +9,39 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@motionone/utils": "^10.15.1",
+    "@types/firebase": "^3.2.1",
     "@types/node": "20.4.1",
+    "@types/ramda": "^0.29.3",
     "@types/react": "18.2.14",
     "@types/react-dom": "18.2.6",
+    "@types/react-redux": "^7.1.25",
+    "@types/web3": "^1.2.2",
+    "axios": "^1.4.0",
+    "babel-plugin-macros": "^3.1.0",
+    "bignumber.js": "^9.1.1",
     "eslint": "8.44.0",
     "eslint-config-next": "13.4.9",
+    "ethers": "^6.6.4",
+    "firebase": "^10.0.0",
+    "framer-motion": "^10.12.18",
     "next": "13.4.9",
+    "ramda": "^0.29.0",
     "react": "18.2.0",
     "react-dom": "18.2.0",
-    "typescript": "5.1.6"
+    "react-icons": "^4.10.1",
+    "react-multi-carousel": "^2.8.4",
+    "react-phone-input-2": "^2.15.1",
+    "react-quill": "^2.0.0",
+    "react-redux": "^8.1.1",
+    "react-scroll-top": "^1.0.4",
+    "react-youtube": "^10.1.0",
+    "styled-components": "^6.0.3",
+    "typescript": "5.1.6",
+    "web3": "^4.0.3"
+  },
+  "devDependencies": {
+    "@types/styled-components": "^5.1.26",
+    "babel-plugin-styled-components": "^2.1.4"
   }
 }

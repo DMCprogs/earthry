@@ -1,0 +1,38 @@
+
+  .progress {
+    position: fixed;
+    left: 0;
+    right: 0;
+    height: 5px;
+    bottom: 100px;
+  }
+  
+  .parallax {
+    overflow: hidden;
+    letter-spacing: -2px;
+    line-height: normal;
+
+    white-space: nowrap;
+    display: flex;
+    flex-wrap: nowrap;
+    height: 44px;
+  
+  }
+  
+  .parallax .scroller {
+    font-weight: 600;
+    font-family: "Montserrat";
+    font-size: 40px;
+    display: flex;
+    white-space: nowrap;
+    display: flex;
+    flex-wrap: nowrap;
+  }
+  
+  .parallax span {
+    display: block;
+    margin-right: 24px;
+    color: #AFEFDC;
+    
+  }
+  

@@ -12,18 +12,22 @@ export const DivWrapperContentSC = styled.div`
   width: 100%;
 
 
-  /* &::after {
+   &::after {
     content: "";
     position: absolute;
     display: grid;
-    justify-self: center;
-    width: 410px;
-    height: 624px;
-    flex-shrink: 0;
-    background-color: #4AFFC9;
-    filter: blur(225px);
+    /* justify-self: center; */
+    width: 386.434px;
+height: 578.948px;
+transform: rotate(-55.885deg);
+flex-shrink: 0;
+border-radius: 578.948px;
+/* border: 3px solid red; */
+background: #4AFFC9;
+filter: blur(270px);
     z-index: -1;
-    top: 200px;
+    top: 100px;
+    left: 0;
   }
 
   &::before {
@@ -39,8 +43,8 @@ border-radius: 779px;
 background: #4AFFC9;
 filter: blur(225px);
     z-index: -1;
-    top: 2700px;
-  } */
+    top: 1100px;
+  } 
 `;
 
 export const H2SC = styled.h2`

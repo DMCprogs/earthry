@@ -8,6 +8,7 @@ import {
   DivPhotoSC,
   DivSectionSC,
   DivTextSC,
+  DivContentSectionSC,
 } from "./styles.earthy";
 import coin from "./../../images/coin.gif";
 import Image from "next/image";
@@ -16,6 +17,7 @@ import ButtonWrapper from "../custom_button";
 import { DivOneRowSC } from "@/app/airdrop/styles.airdrop";
 import { AiOutlineArrowRight } from "react-icons/ai";
 import { motion } from "framer-motion";
+import ParallaxText from "../ParallaxText";
 const Earthy = () => {
   const [width, setWidth] = useState<number>(0);
   useEffect(() => {
@@ -28,6 +30,7 @@ const Earthy = () => {
     setWidth(window.innerWidth);
   };
   return (
+    <DivContentSectionSC>
     <DivSectionSC>
       <DivContentWrapSC>
         <DivLeftBlockSC>
@@ -114,6 +117,9 @@ const Earthy = () => {
         <DivGifSC src={coin} alt="Picture of the author" />
       </DivContentWrapSC>
     </DivSectionSC>
+    <ParallaxText baseVelocity={-1}>EARTHY</ParallaxText>
+      <ParallaxText baseVelocity={1}>EARTHY</ParallaxText>
+    </DivContentSectionSC>
   );
 };
 

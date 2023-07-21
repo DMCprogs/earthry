@@ -55,21 +55,6 @@ const Header = (props: any) => {
                 setIsScrollFooter(false);
                 break;
         }
-        if (
-            pathname === "/non_profit1" ||
-            pathname === "/non_profit2" ||
-            pathname === "/faq" ||
-            pathname === "/tokenomics" ||
-            pathname === "/about" ||
-            pathname === "/airdrop" ||
-            pathname === "/airdrop/success" ||
-            pathname === "/profile" ||
-            pathname === "/projects"
-        ) {
-            setIsScrollFooter(false);
-        } else {
-            setIsScrollFooter(true);
-        }
     }, [pathname]);
 
     useEffect(() => {
@@ -130,7 +115,7 @@ const Header = (props: any) => {
                                     <DivBoxTabSC onClick={onClickScrollTokenomics}>
                                         Tokenomics
                                     </DivBoxTabSC>
-                                    <DivBoxTabSC onClick={onClickScrollAbout}>About</DivBoxTabSC>
+                                    <DivBoxLinkSC href={"/about"}>About</DivBoxLinkSC>
                                     <DivBoxTabSC onClick={onClickScrollLeaderboard}>
                                         Leaderboard
                                     </DivBoxTabSC>
@@ -146,7 +131,7 @@ const Header = (props: any) => {
                                 <DivBoxTabSC onClick={onClickScrollTokenomics}>
                                     Tokenomics
                                 </DivBoxTabSC>
-                                <DivBoxTabSC onClick={onClickScrollAbout}>About</DivBoxTabSC>
+                                <DivBoxLinkSC href={"/about"}>About</DivBoxLinkSC>
                                 <DivBoxTabSC onClick={onClickScrollLeaderboard}>
                                     Leaderboard
                                 </DivBoxTabSC>
@@ -205,7 +190,7 @@ const Header = (props: any) => {
                                     <DivBoxTabSC onClick={onClickScrollTokenomics}>
                                         Tokenomics
                                     </DivBoxTabSC>
-                                    <DivBoxTabSC onClick={onClickScrollAbout}>About</DivBoxTabSC>
+                                    <DivBoxLinkSC href={"/about"}>About</DivBoxLinkSC>
                                     <DivBoxTabSC onClick={onClickScrollLeaderboard}>
                                         Leaderboard
                                     </DivBoxTabSC>
@@ -261,8 +246,8 @@ const Header = (props: any) => {
                                     <DivBoxLinkSC href={"/projects"}>Projects</DivBoxLinkSC>
                                     <DivBoxLinkSC href={"/tokenomics"}>Tokenomics</DivBoxLinkSC>
                                     <DivBoxLinkSC href={"/about"}>About</DivBoxLinkSC>
-                                    <DivBoxLinkSC href={"#"}>Leaderboard</DivBoxLinkSC>
-                                    <DivBoxLinkSC href={"#"}>Blog</DivBoxLinkSC>
+                                    <DivBoxLinkSC href={"/leaderboard"}>Leaderboard</DivBoxLinkSC>
+                                    <DivBoxLinkSC href={"/blog"}>Blog</DivBoxLinkSC>
                                     <DivBoxLinkSC href={"/faq"}>FAQ</DivBoxLinkSC>
                                     <DivBoxLinkSC href={"/profile"}>Profile</DivBoxLinkSC>
                                 </DivBoxTabsSC>
@@ -271,10 +256,10 @@ const Header = (props: any) => {
                             <DivBoxTabsSC>
                                 <DivBoxLinkSC href={"/"}>Home</DivBoxLinkSC>
                                 <DivBoxLinkSC href={"/projects"}>Projects</DivBoxLinkSC>
-                                <DivBoxLinkSC href={"#"}>Tokenomics</DivBoxLinkSC>
+                                <DivBoxLinkSC href={"/tokenomics"}>Tokenomics</DivBoxLinkSC>
                                 <DivBoxLinkSC href={"/about"}>About</DivBoxLinkSC>
-                                <DivBoxLinkSC href={"#"}>Leaderboard</DivBoxLinkSC>
-                                <DivBoxLinkSC href={"#"}>Blog</DivBoxLinkSC>
+                                <DivBoxLinkSC href={"/leaderboard"}>Leaderboard</DivBoxLinkSC>
+                                <DivBoxLinkSC href={"/blog"}>Blog</DivBoxLinkSC>
                                 <DivBoxLinkSC href={"/faq"}>FAQ</DivBoxLinkSC>
                                 <DivBoxLinkSC href={"/profile"}>Profile</DivBoxLinkSC>
                             </DivBoxTabsSC>
@@ -329,8 +314,8 @@ const Header = (props: any) => {
                                     <DivBoxLinkSC href={"/projects"}>Projects</DivBoxLinkSC>
                                     <DivBoxLinkSC href={"/tokenomics"}>Tokenomics</DivBoxLinkSC>
                                     <DivBoxLinkSC href={"/about"}>About</DivBoxLinkSC>
-                                    <DivBoxLinkSC href={"#"}>Leaderboard</DivBoxLinkSC>
-                                    <DivBoxLinkSC href={"#"}>Blog</DivBoxLinkSC>
+                                    <DivBoxLinkSC href={"/leaderboard"}>Leaderboard</DivBoxLinkSC>
+                                    <DivBoxLinkSC href={"/blog"}>Blog</DivBoxLinkSC>
                                     <DivBoxLinkSC href={"/faq"}>FAQ</DivBoxLinkSC>
                                     <DivBoxLinkSC href={"/profile"}>Profile</DivBoxLinkSC>
                                     <DivBoxButtonsMenuSC>

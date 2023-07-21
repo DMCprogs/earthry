@@ -40,9 +40,11 @@ export const DivWrapperContentSC = styled.div<{
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: ${({$isGap}) => $isGap ? "50px" : "0px"};
+  justify-items: normal;
   @media(max-width: 1000px) {
     gap: ${({$isGap}) => $isGap ? "30px" : "0px"};
     grid-template-columns: 100%;
+    justify-items: center;
   }
 `;
 export const Image1SC = styled.div<{
@@ -58,6 +60,7 @@ export const Image1SC = styled.div<{
   background-repeat: no-repeat;
   background-position: center;
   @media (max-width: 1000px) {
+     width: 60vw;
     height: 373px;
     justify-self: center;
   }
@@ -75,6 +78,7 @@ export const Image2SC = styled.div<{
     $path: string;
     alt: string;
 }>`
+  //border: 1px solid red;
   display: grid;
   width: 100%;
   max-width: 723px;
@@ -85,7 +89,8 @@ export const Image2SC = styled.div<{
   background-position: center;
   padding-top: 48px;
   @media (max-width: 1000px) {
-    height: 313px;
+    width: 60vw;
+    height: 413px;
     justify-self: center;
   }
   @media (max-width: 900px) {

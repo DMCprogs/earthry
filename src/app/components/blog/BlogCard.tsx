@@ -33,19 +33,19 @@ const BlogCard: FC<BlogCardProps> = ({ img, title, description }) => {
       <DivProductContentSC>
         <BlogCardTitleSC>{title}</BlogCardTitleSC>
         <BlogCardDescriptionSC>{description}</BlogCardDescriptionSC>
-        <ButtonWrapper
-          styles={styles}
-          directionRadius="center"
-          primary={true}
-          height={50}
-          width={50}
-          onClick={() => router.push('/blog_detail')}
-        >
-          <HiOutlineArrowNarrowRight size={"1.3rem"} />
-        </ButtonWrapper>
+        <Link style={styles} href={'/blog_detail'}>
+          <ButtonWrapper
+            directionRadius="center"
+            primary={true}
+            height={50}
+            width={50}
+          >
+            <HiOutlineArrowNarrowRight size={"1.3rem"} />
+          </ButtonWrapper>
+        </Link>
       </DivProductContentSC>
 
-    </BlogCardContainerSC>
+    </BlogCardContainerSC >
   );
 
 

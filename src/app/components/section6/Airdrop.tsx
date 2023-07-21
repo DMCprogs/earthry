@@ -8,13 +8,14 @@ import {
     DivTextAirdrop,
     DivContainerGif,
 } from "./styles.airdrop";
+import Modal from "../modal/modal";
 import image from "../../images/ItemBlogExample.png";
 import coin2 from "../../images/coin2.gif";
 import Link from "next/link";
 import Image from 'next/image'
 import ButtonWrapper from "../custom_button";
 const Airdrop = () => {
-
+   
    
     return (
     <DivContainerAirdrop>
@@ -38,9 +39,12 @@ const Airdrop = () => {
                     directionRadius={"center"}>
                     <span>Register Now</span>
                 </ButtonWrapper>
+                
             </Link>
     </DivContainerAirdrop>
     );
 };
 
 export default Airdrop;
+
+

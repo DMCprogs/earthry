@@ -1,7 +1,6 @@
 "use client";
 import {
     DivStepsWrapperSC,
-    // H2StepsTitleSC,
     DivStepContainerSC,
     DivStepsBlockSC,
     H3StepTitleSC,

@@ -27,6 +27,7 @@ import EstimatedPrice from "./estimatedPrice/EstimatedPrice";
 import Table from "../components/table";
 
 import earthyImg from "../images/eth_logo.svg";
+import coin from '../images/coin.gif';
 import StepsBuyToken from "./stepsBuyToken/StepsBuyToken";
 import Image from '../images/Team.jpg'
 
@@ -94,7 +95,6 @@ const BuyToken = () => {
     }, [])
 
     const resize = (e: any) => {
-        // console.log('>>>>>>>>>>>>>>>>>>>>', dataLayout.w)
         setData({
             w: e.target.outerWidth,
             h: e.target.outerHeight
@@ -109,11 +109,11 @@ const BuyToken = () => {
 
                 <DivUpperGridblockSC>
                     <SwapBlock/>
-                    {dataLayout.w > 750 && <DivEarthyBigImgSC path={earthyImg.src}></DivEarthyBigImgSC>}
+                    {dataLayout.w > 750 && <DivEarthyBigImgSC path={coin.src}></DivEarthyBigImgSC>}
                     <DivUpperBlockInnerWrapper>
                     <EarthyCourse/>
                     <ChainConvert/>
-                    {dataLayout.w <= 750 && <DivEarthyBigImgSC path={earthyImg.src}></DivEarthyBigImgSC>}
+                    {dataLayout.w <= 750 && <DivEarthyBigImgSC path={coin.src}></DivEarthyBigImgSC>}
                     </DivUpperBlockInnerWrapper>
                 </DivUpperGridblockSC>     
 
@@ -163,7 +163,7 @@ const BuyToken = () => {
 
                 <H2StepsTitleSC>How to buy Earthy token?</H2StepsTitleSC>
                 <DivForStepsWrapper>
-                    {dataLayout.w > 1040 && <DivEarthyBigImgSC path={earthyImg.src}></DivEarthyBigImgSC>}  
+                    {dataLayout.w > 1040 && <DivEarthyBigImgSC path={coin.src}></DivEarthyBigImgSC>}  
                     <StepsBuyToken/>
                 </DivForStepsWrapper>
                 

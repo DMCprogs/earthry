@@ -19,8 +19,7 @@ import {
     DivBoxConclusionSC,
     DivBoxColumnCalcColcSC,
     DivInputConclusionSC,
-    InputTokensSC,
-    DivBoxBoxOptionSC
+    DivBoxBoxOptionSC, InputTokensSC
 } from "./styles.project";
 import ButtonWrapper from "@/app/components/custom_button";
 import Link from "next/link";
@@ -46,6 +45,9 @@ interface ArrayInfo {
 }
 
 const Project: React.FC = () => {
+    // const [result, setResult] = useState<number>(0);
+    const [countTokens, setCountTokens] = useState<string>("0");
+    const [countDays, setCountDays] = useState<string>("14");
     const [graph, setGraph] = useState(Math.trunc((10 * 40 * 775) / 30));
     const [trackData, setTrackData] = useState(14);
     const [data, setDataChart] = useState<
@@ -82,6 +84,20 @@ const Project: React.FC = () => {
         {img: image},
         {img: image},
     ]);
+    // const handleInputChange = (event: ChangeEvent<HTMLInputElement>): void => {
+    //     setCountTokens(event.target.value);
+    //     setCountDays(event.target.value);
+    // }
+    // const hanInputChange = (event: ChangeEvent<HTMLInputElement>): void => {
+    //     const newVal = event.target.value;
+    //     setCountTokens(newVal);
+    //     // Проверка на то что введенное значение является числом
+    //     if (!isNaN(Number(newVal))) {
+    //         setResult(Number(newVal) * 0.08);
+    //     } else {
+    //         setResult(0);
+    //     }
+    // }
     const responsive = {
         desktop: {
             // the naming can be any, depends on you.
@@ -210,9 +226,11 @@ const Project: React.FC = () => {
                 <DivBoxBoxOptionSC>
                 <DivBoxOptionSC>
                     <InputTokensSC
-                        placeholder={"0"}
-                        type={"tel"}
-                        name={"count_tokens"}
+                        placeholder="0"
+                        type="tel"
+                        name="count_tokens"
+                        value={countTokens}
+                        // onChange={handleInputChange}
                     />
                     <RadioButton group="group1" width={"124px"} label={"10 %"}></RadioButton>
                     <RadioButton group="group1" width={"127px"} label={"25 %"}></RadioButton>
@@ -224,7 +242,11 @@ const Project: React.FC = () => {
                         <InputTokensSC
                             type="text"
                             placeholder={"14"}
-                            name={"count_tokens"}
+                            name={"count_days"}
+                            value={countDays}
+                            // onChange={() => {(
+                            //     handleInputChange,
+                            //     hanInputChange)}}
                         />
                         <RadioButton  group="group2" width={"120px"} label={"30d"}></RadioButton>
                         <RadioButton  group="group2" width={"121px"} label={"90d"}></RadioButton>

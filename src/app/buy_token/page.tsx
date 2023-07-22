@@ -13,7 +13,8 @@ import {
     H2LeaderboardTitleSC,
     DivForButtonContain,
     DivForStepsWrapper,
-    H2StepsTitleSC
+    H2StepsTitleSC,
+    DivForThirdGradientSC
 } from "./styles.buy_token";
 
 import {DivDefaultContainerSC} from "../styles.page";
@@ -26,8 +27,8 @@ import ConvertDiagram from "./convertDiagram/ConvertDiagram";
 import EstimatedPrice from "./estimatedPrice/EstimatedPrice";
 import Table from "../components/table";
 
-import earthyImg from "../images/eth_logo.svg";
 import coin from '../images/coin.gif';
+import coin2 from '../images/coin2.gif';
 import StepsBuyToken from "./stepsBuyToken/StepsBuyToken";
 import Image from '../images/Team.jpg'
 
@@ -150,22 +151,25 @@ const BuyToken = () => {
                 </div>
 
 
-                <DivForButtonContain>
-                    <ButtonWrapper
-                        width={202}
-                        height={84}
-                        directionRadius={"rtl"}
-                        primary={true}
-                    >
-                        <span>View all</span>
-                    </ButtonWrapper>
-                </DivForButtonContain>
+                <DivForThirdGradientSC>
+                    <DivForButtonContain>
+                        <ButtonWrapper
+                            width={202}
+                            height={84}
+                            directionRadius={"rtl"}
+                            primary={true}
+                        >
+                            <span>View all</span>
+                        </ButtonWrapper>
+                    </DivForButtonContain>
 
-                <H2StepsTitleSC>How to buy Earthy token?</H2StepsTitleSC>
-                <DivForStepsWrapper>
-                    {dataLayout.w > 1040 && <DivEarthyBigImgSC path={coin.src}></DivEarthyBigImgSC>}  
-                    <StepsBuyToken/>
-                </DivForStepsWrapper>
+                    <H2StepsTitleSC>How to buy Earthy token?</H2StepsTitleSC>
+                    <DivForStepsWrapper>
+                        {dataLayout.w > 1040 && <DivEarthyBigImgSC path={coin2.src}></DivEarthyBigImgSC>}  
+                        <StepsBuyToken/>
+                    </DivForStepsWrapper>
+                </DivForThirdGradientSC>
+                
                 
                 
 

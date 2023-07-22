@@ -23,7 +23,7 @@ export const DivWrapperContentSC = styled.div`
         filter: blur(270px);
         z-index: -1;
         top: 100px;
-        left: 0;
+        left: 0;        
       }
 
     &::before {
@@ -40,7 +40,145 @@ export const DivWrapperContentSC = styled.div`
         filter: blur(225px);
         z-index: -1;
         top: 1100px;
-      } 
+      }
+
+      @media(max-width: 1000px){
+        &::after {
+        content: "";
+        position: absolute;
+        display: grid;
+        width: 470.251px;
+        height: 534.922px;
+        transform: rotate(-55.885deg);
+        flex-shrink: 0;
+        border-radius: 578.948px;
+        background: #4AFFC9;
+        transform: rotate(-32.495deg);
+        filter: blur(225px);
+        z-index: -1;
+        top: 0;
+        left: 0;          
+        }
+
+        &::before {
+        content: "";
+        position: absolute;
+        display: grid;
+        justify-self: center;
+        width: 150px;
+        height: 780px;
+        transform: rotate(-90deg);
+        flex-shrink: 0;
+        border-radius: 780px;
+        background: #4AFFC9;
+        filter: blur(225px);
+        z-index: -1;
+        top: 1000px;
+      }
+      }
+
+
+      @media(max-width: 999px){
+        &::after {
+        content: "";
+        position: absolute;
+        display: grid;
+        width: 470.251px;
+        height: 534.922px;
+        transform: rotate(-32.885deg);
+        flex-shrink: 0;
+        border-radius: 578.948px;
+        background: #4AFFC9;
+        transform: rotate(-32.495deg);
+        filter: blur(225px);
+        z-index: -1;
+        top: 0;
+        left: 0;          
+        }
+
+        &::before {
+        content: "";
+        position: absolute;
+        display: grid;
+        justify-self: center;
+        width: 150px;
+        height: 780px;
+        transform: rotate(-90deg);
+        flex-shrink: 0;
+        border-radius: 780px;
+        background: #4AFFC9;
+        filter: blur(225px);
+        z-index: -1;
+        top: 1500px;
+      }
+      }
+      
+      @media(max-width: 765px){
+        &::after {
+        content: "";
+        position: absolute;
+        display: grid;
+        width: 470.251px;
+        height: 534.922px;
+        transform: rotate(-32.885deg);
+        flex-shrink: 0;
+        border-radius: 578.948px;
+        background: #4AFFC9;
+        transform: rotate(-32.495deg);
+        filter: blur(225px);
+        z-index: -1;
+        top: 0;
+        left: 0;          
+        }
+
+        &::before {
+        content: "";
+        position: absolute;
+        display: grid;
+        justify-self: center;
+        width: 150px;
+        height: 780px;
+        transform: rotate(-90deg);
+        flex-shrink: 0;
+        border-radius: 780px;
+        background: #4AFFC9;
+        filter: blur(225px);
+        z-index: -1;
+        top: 1700px;
+      }
+      }
+
+      @media(max-width: 750px){
+        &::after {
+        content: "";
+        position: absolute;
+        display: grid;
+        width: 410.251px;
+        height: 624.922px;
+        flex-shrink: 0;
+        border-radius: 578.948px;
+        background: #4AFFC9;
+        filter: blur(225px);
+        z-index: -1;
+        top: 200px;
+        left: 25%;          
+        }
+
+        &::before {
+        content: "";
+        position: absolute;
+        display: grid;
+        justify-self: center;
+        width: 163px;
+        height: 779px;
+        flex-shrink: 0;
+        border-radius: 780px;
+        background: #4AFFC9;
+        filter: blur(225px);
+        z-index: -1;
+        top: 2500px;
+      }
+      }
 `;
 
 export const H2SC = styled.h2`
@@ -239,4 +377,44 @@ export const H2StepsTitleSC = styled.h2`
     @media(max-width: 768px){
         margin-top: 70px;
       }
+`;
+
+export const DivForThirdGradientSC = styled.div`
+  position: relative;
+
+  @media(max-width: 1000px){
+    &::after {
+        content: "";
+        position: absolute;
+        display: grid;
+        width: 406.434px;
+        height: 523.069px;
+        transform: rotate(-55.885deg);
+        flex-shrink: 0;
+        border-radius: 523.948px;
+        background: #4AFFC9;
+        filter: blur(225px);
+        z-index: -1;
+        top: 0;
+        right: 0;        
+      }
+    }
+
+    @media(max-width: 666px){
+    &::after {
+        content: "";
+        position: absolute;
+        display: grid;
+        width: 0;
+        height: 0;
+        transform: rotate(-55.885deg);
+        flex-shrink: 0;
+        border-radius: 523.948px;
+        background: #4AFFC9;
+        filter: blur(225px);
+        z-index: -1;
+        top: 0;
+        right: 0;        
+      }
+    }
 `;

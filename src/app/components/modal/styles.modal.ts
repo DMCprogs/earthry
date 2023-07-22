@@ -23,6 +23,9 @@ transform:translate(-50%, -50%);
 grid-auto-rows: max-content;
 justify-items: center;
 gap: 80px;
+@media(max-width: 630px){
+  padding: 50px 20px;
+}
 `;
 export const DivBgContainerSC = styled.div`
    position: absolute;

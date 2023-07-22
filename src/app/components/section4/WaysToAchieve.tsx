@@ -17,7 +17,7 @@ import ButtonWrapper from "../custom_button";
 import Link from "next/link";
 import { motion } from "framer-motion";
 const WaysToAchieve = () => {
-  const [width, setWidth] = useState<number>(0);
+  const [width, setWidth] = useState<number>(1200);
   useEffect(() => {
     window.onload = handleResize;
     setWidth(window.innerWidth);
@@ -198,7 +198,7 @@ const WaysToAchieve = () => {
             whileInView="visible"
             variants={{
               hidden: {
-                x: -250,
+                x: -100,
                 scale: 1,
                 opacity: 0,
               },
@@ -223,7 +223,7 @@ const WaysToAchieve = () => {
             variants={{
               hidden: {
                 scale: 1,
-                x: width >= 1000 ? -100 : 100,
+                x: -100,
                 opacity: 0,
               },
               visible: {
@@ -284,13 +284,13 @@ const WaysToAchieve = () => {
           whileInView="visible"
           variants={{
             hidden: {
-              x: width >= 1000 ? 100 : -250,
-              scale: width >= 1000 ? 1 : 1.5,
+              x: 100,
+              scale: 1,
               opacity: 0,
             },
             visible: {
               x: 0,
-              scale: width >= 1000 ? 1 : 1.5,
+              scale: 1,
               opacity: 1,
               transition: { duration: 0.7, delay: 0.5 },
             },

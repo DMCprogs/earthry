@@ -4,14 +4,9 @@ export const DivCourseEthSC = styled.div`
   display: grid;
   grid-template-columns: 100%;
   grid-template-rows: repeat(3, 1fr);
-  margin: 50px auto 20px;
-  padding-left: 15px;
-  max-width: 320px;
+  max-width: 292px;
   width: 100%;
-
-  @media(min-width: 480px){
-  margin-top: 70px;
-}
+  margin: 0 auto;
 `;
 
 export const DivCourceTitleWrapperSC = styled.div`

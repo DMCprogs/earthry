@@ -22,22 +22,25 @@ const ConvertDiagram = () => {
             <DivConvertDiagramTokensSC>
                 <DivRoundConvertDiagramBigSC></DivRoundConvertDiagramBigSC>
                 <DivConvertDiagramLeftTextContainerSC>
+                    <DivConvertDiagramLeftLogoSC path={earthyLogo.src}></DivConvertDiagramLeftLogoSC>
                     <PConvertDiagramTextSC>1000 <PConvertDiagramCaptionSC>Earthy
                         tokens</PConvertDiagramCaptionSC></PConvertDiagramTextSC>
                 </DivConvertDiagramLeftTextContainerSC>
-                <DivConvertDiagramLeftLogoSC path={earthyLogo.src}></DivConvertDiagramLeftLogoSC>
+                
             </DivConvertDiagramTokensSC>
 
             <DivConvertDiagramChainsSC>
                 <DivRoundConvertDiagramSmallSC></DivRoundConvertDiagramSmallSC>
                 <DivConvertDiagramRightTextContainerSC>
+                <DivConvertDiagramRightLogoSC path={earthyLogo.src}></DivConvertDiagramRightLogoSC>
                     <PConvertDiagramTextSC>200 <PConvertDiagramCaptionSC>Earthy
                         Chain</PConvertDiagramCaptionSC></PConvertDiagramTextSC>
                 </DivConvertDiagramRightTextContainerSC>
-                <DivConvertDiagramRightLogoSC path={earthyLogo.src}></DivConvertDiagramRightLogoSC>
+
             </DivConvertDiagramChainsSC>
 
             <DivConvertDiagramArrowSC path={arrowRight.src}></DivConvertDiagramArrowSC>
+
         </DivConvertDiagramWrapperSC>
     )
 }

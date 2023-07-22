@@ -13,7 +13,6 @@ export const DivBoxHeaderSC = styled.div<{
     $isBgColor ? " #4affc9" : "rgba(255, 255, 255, 0.70)"};
   padding: 0px 25px 0px 25px;
   position: fixed;
-  top: 0;
   z-index: 999;
   box-shadow: 0px 0px 24px rgba(0, 0, 0, 0.6);
 `;

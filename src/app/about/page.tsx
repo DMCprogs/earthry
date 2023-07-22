@@ -105,11 +105,15 @@ const About: FC = () => (
           }}
         >
           {" "}
-          <Link href={"https://www.linkedin.com/"}>
-            <ButtonJoinSC>
-              Join the community <BsArrowRight color={"white"} size={24} />{" "}
-            </ButtonJoinSC>
-          </Link>{" "}
+          <Link href={"#"}>
+            <ButtonWrapper
+                primary={true}
+                width={326}
+                height={84}
+                directionRadius={"rtl"}>
+                  <span>Join the community</span>
+            </ButtonWrapper>
+            </Link>
         </div>
       </DivJoinSC>
     </DivContainerTeamSC>

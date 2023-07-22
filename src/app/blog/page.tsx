@@ -1,6 +1,6 @@
 "use client";
 
-import { FC } from "react";
+import { FC,useState } from "react";
 import Link from "next/link";
 import { DivDefaultContainerSC } from "../styles.page";
 import image from "../images/ItemBlogExample.png";
@@ -23,6 +23,8 @@ const Blog: FC = () => {
     marginTop: '-20px',
     justifyContent: 'end'
   }
+  
+ 
   return (
     <DivDefaultContainerSC style={{ marginTop: "140px" }}>
       <DivBlogContainerSC>
@@ -47,8 +49,9 @@ const Blog: FC = () => {
 
         </DivContentSC>
         <DivH1SC>Subscribe for updates</DivH1SC>
-        <Link style={styles} href={'/'}>
+        {/* <Link style={styles} href={'/'}> */}
           <ButtonWrapper
+         
             directionRadius="center"
             primary={true}
             height={84}
@@ -56,9 +59,9 @@ const Blog: FC = () => {
           >
             <span> Subscribe </span>
           </ButtonWrapper>
-        </Link>
+        {/* </Link> */}
       </DivBlogContainerSC>
-
+   
     </DivDefaultContainerSC >
   );
 };

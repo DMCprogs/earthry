@@ -136,7 +136,7 @@ export const DivWrapperTwoSectionsSC = styled.div`
   @media (min-width: 1000px) {
     gap: 175px;
     grid-template-rows: 100%;
-    grid-template-columns: max-content max-content;
+    grid-template-columns: max-content max-content max-content;
   }
 `
 
@@ -215,4 +215,21 @@ export const DivImageCenterSC = styled.div<{
   height: 19px;
   display: grid;
   background: url(${({$img}) => ($img)});
+`
+
+export const DivImageBoxSC = styled.div<{
+    $img: string
+}>`
+  display: grid;
+  width: 308px;
+  height: 454px;
+  background: url(${({$img}) => ($img)});
+  background-position: center;
+  background-size: contain;
+`
+
+export const DivTempHeSC = styled.div`
+  display: grid;
+  width: 100%;
+  height: 10px;
 `

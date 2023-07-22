@@ -26,7 +26,7 @@ import ConvertDiagram from "./convertDiagram/ConvertDiagram";
 import EstimatedPrice from "./estimatedPrice/EstimatedPrice";
 import Table from "../components/table";
 
-import earthyImg from '../images/eth_logo.svg';
+import earthyImg from "../images/eth_logo.svg";
 import StepsBuyToken from "./stepsBuyToken/StepsBuyToken";
 import Image from '../images/Team.jpg'
 

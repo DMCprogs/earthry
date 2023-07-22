@@ -60,6 +60,4 @@ export const ButtonWrapperSC = styled.button<{
       ? `border-radius: 35px 0px`
       : `border-top-right-radius: 30px 30px;
   border-bottom-right-radius: 30px 30px;`}
-
-
 `;

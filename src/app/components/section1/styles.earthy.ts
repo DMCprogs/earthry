@@ -9,6 +9,14 @@ export const DivSectionSC = styled.div`
   align-content: center;
   background-color: #4affc9;
 `;
+export const DivContentSectionSC = styled.div`
+  display: grid;
+  height: 100vh;
+  width: 100vw;
+  justify-content: center;
+  align-content: center;
+ grid-template-rows: max-content max-content;
+`;
 export const DivContentWrapSC = styled.div`
   display: grid;
   grid-template-areas: "A B";

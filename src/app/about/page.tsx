@@ -15,15 +15,7 @@ import teamLogo from "../images/Team.jpg";
 import CardTeam from "./cardTeam";
 import { BsArrowRight } from "react-icons/bs";
 import ButtonWrapper from "../components/custom_button";
-const styles = {
-  justifySelf: 'center',
-  borderRadius: '35px 0px',
-  marginTop: '-20px',
-  backgroundColor:'white',
-  color:'black',
-  border:' 2px solid #000',
 
-}
 const About: FC = () => (
   <DivDefaultContainerSC style={{ marginTop: "140px" }}>
     <DivH1SC>Our vision and motivation</DivH1SC>
@@ -87,10 +79,9 @@ const About: FC = () => (
         }}
       >
         {" "}
-        <Link href={"https://www.linkedin.com/"}>
+        <Link style={{marginTop: '15px'}} href={"https://www.linkedin.com/"}>
             <ButtonWrapper
-                styles={styles}
-                primary={true}
+                primary={false}
                 width={326}
                 height={84}
                 directionRadius={"rtl"}>

@@ -97,7 +97,7 @@ const Project: React.FC = () => {
         for (let i = 0; i <= +countDays; i++) {
             array.push({
                 year: i,
-                tokens: _dayData,
+                tokens: rounded(_dayData),
             });
             const s = (+countTokens * 8 * trackData / 360) / 100
             _dayData += s
@@ -111,6 +111,9 @@ const Project: React.FC = () => {
         setDataChart(array);
     }, [countDays, countTokens]);
 
+    const rounded = (number: number) => {
+        return +number.toFixed(2);
+    }
 
 
     const handleInputChange = (event: ChangeEvent<HTMLInputElement>): void => {

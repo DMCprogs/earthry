@@ -20,23 +20,11 @@ const RootLayout: FC<{ children: ReactNode }> = (props) => {
     const {children} = props;
     let bottomRefHome = useRef<any>();
     let bottomRefTokenomics = useRef<any>();
-    let bottomRefAbout = useRef<any>();
-    let bottomRefLeaderboard = useRef<any>();
-    let bottomRefNFT = useRef<any>();
-    let bottomRefBlog = useRef<any>();
-    let bottomRefFAQ = useRef<any>();
-    let bottomRefExchange = useRef<any>();
 
     function getRef(refs: IRefObj) {
         // console.log(`Hello from  the child`, refs);
         bottomRefHome = refs.bottomRefHome;
         bottomRefTokenomics = refs.bottomRefTokenomics;
-        bottomRefAbout = refs.bottomRefAbout;
-        bottomRefLeaderboard = refs.bottomRefLeaderboard;
-        bottomRefNFT = refs.bottomRefNFT;
-        bottomRefBlog = refs.bottomRefBlog;
-        bottomRefFAQ = refs.bottomRefFAQ;
-        bottomRefExchange = refs.bottomRefExchange;
     }
 
     useEffect(() => {
@@ -62,24 +50,6 @@ const RootLayout: FC<{ children: ReactNode }> = (props) => {
         console.log("><>>>>>>>");
         bottomRefTokenomics?.current?.scrollIntoView({behavior: "smooth"});
     };
-    const onClickScrollAbout = () => {
-        bottomRefAbout?.current?.scrollIntoView({behavior: "smooth"});
-    };
-    const onClickScrollLeaderboard = () => {
-        bottomRefLeaderboard?.current?.scrollIntoView({behavior: "smooth"});
-    };
-    const onClickScrollNFT = () => {
-        bottomRefNFT?.current?.scrollIntoView({behavior: "smooth"});
-    };
-    const onClickScrollBlog = () => {
-        bottomRefBlog?.current?.scrollIntoView({behavior: "smooth"});
-    };
-    const onClickScrollFAQ = () => {
-        bottomRefFAQ?.current?.scrollIntoView({behavior: "smooth"});
-    };
-    const onClickScrollExchange = () => {
-        bottomRefExchange?.current?.scrollIntoView({behavior: "smooth"});
-    };
 
     // const childrenWithProps = React.Children.map(children, (child) => {
     //     // Checking isValidElement is the safe way and avoids a
@@ -104,23 +74,11 @@ const RootLayout: FC<{ children: ReactNode }> = (props) => {
             getRef({
                 bottomRefHome,
                 bottomRefTokenomics,
-                bottomRefAbout,
-                bottomRefLeaderboard,
-                bottomRefNFT,
-                bottomRefBlog,
-                bottomRefFAQ,
-                bottomRefExchange,
             }),
 
         [
             bottomRefHome,
             bottomRefTokenomics,
-            bottomRefAbout,
-            bottomRefLeaderboard,
-            bottomRefNFT,
-            bottomRefBlog,
-            bottomRefFAQ,
-            bottomRefExchange,
         ]
     );
 
@@ -132,12 +90,6 @@ const RootLayout: FC<{ children: ReactNode }> = (props) => {
                 <Header
                     onClickScrollHome={onClickScrollHome}
                     onClickScrollTokenomics={onClickScrollTokenomics}
-                    onClickScrollAbout={onClickScrollAbout}
-                    onClickScrollLeaderboard={onClickScrollLeaderboard}
-                    onClickScrollNFT={onClickScrollNFT}
-                    onClickScrollFAQ={onClickScrollFAQ}
-                    onClickScrollBlog={onClickScrollBlog}
-                    onClickScrollExchange={onClickScrollExchange}
                 />
                 {children}
                 <Footer/>

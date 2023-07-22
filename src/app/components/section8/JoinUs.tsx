@@ -1,4 +1,4 @@
-/* eslint-disable react/no-unescaped-entities */
+"use client"
 import React, {FC, MutableRefObject, useState, useEffect} from "react";
 import {
     DivWrapperGlobalSection3SC,

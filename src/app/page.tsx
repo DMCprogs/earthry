@@ -19,21 +19,15 @@ const Landing = (props: any) => {
     const {
         bottomRefHome,
         bottomRefTokenomics,
-        bottomRefAbout,
-        bottomRefLeaderboard,
-        bottomRefNFT,
-        bottomRefBlog,
-        bottomRefFAQ,
-        bottomRefExchange,
     } = props;
     return (
         <DivContentSC>
-            <Section1/>
+            <Section1 forRefW={bottomRefHome}/>
             <DivSectionsContainerSC>
                 <Section2/>
                 <Section3/>
                 <Section4/>
-                <Section5/>
+                <Section5 forRefW={bottomRefTokenomics}/>
                 <Section6/>
                 <Section7/>
                 <Section8/>

@@ -23,12 +23,6 @@ const Header = (props: any) => {
     const {
         onClickScrollHome,
         onClickScrollTokenomics,
-        onClickScrollAbout,
-        onClickScrollLeaderboard,
-        onClickScrollNFT,
-        onClickScrollFAQ,
-        onClickScrollBlog,
-        onClickScrollExchange,
     } = props;
     const [isScrollFooter, setIsScrollFooter] = useState(true);
     const [width, setWidth] = useState<number>(0);
@@ -46,11 +40,12 @@ const Header = (props: any) => {
             case "/about":
             case "/faq":
             case "/tokenomics":
+            case "/leaderboard":
             case "/buy_token":
             case "/airdrop":
             case "/airdrop/success":
             case "/profile":
-            case "/projects":
+            case "/project":
                 setIsBgColor(false);
                 setIsScrollFooter(false);
                 break;
@@ -111,32 +106,28 @@ const Header = (props: any) => {
                                 {" "}
                                 <DivBoxTabsSC>
                                     <DivBoxTabSC onClick={onClickScrollHome}>Home</DivBoxTabSC>
-                                    <DivBoxLinkSC href={"/projects"}>Projects</DivBoxLinkSC>
+                                    <DivBoxLinkSC href={"/project"}>Projects</DivBoxLinkSC>
                                     <DivBoxTabSC onClick={onClickScrollTokenomics}>
                                         Tokenomics
                                     </DivBoxTabSC>
                                     <DivBoxLinkSC href={"/about"}>About</DivBoxLinkSC>
-                                    <DivBoxTabSC onClick={onClickScrollLeaderboard}>
-                                        Leaderboard
-                                    </DivBoxTabSC>
-                                    <DivBoxTabSC onClick={onClickScrollBlog}>Blog</DivBoxTabSC>
-                                    <DivBoxTabSC onClick={onClickScrollFAQ}>FAQ</DivBoxTabSC>
+                                    <DivBoxLinkSC href={"/leaderboard"}>Leaderboard</DivBoxLinkSC>
+                                    <DivBoxLinkSC href={"/blog"}>Blog</DivBoxLinkSC>
+                                    <DivBoxLinkSC href={"/faq"}>FAQ</DivBoxLinkSC>
                                     <DivBoxLinkSC href={"/profile"}>Profile</DivBoxLinkSC>
                                 </DivBoxTabsSC>
                             </motion.div>
                         ) : (
                             <DivBoxTabsSC>
                                 <DivBoxTabSC onClick={onClickScrollHome}>Home</DivBoxTabSC>
-                                <DivBoxLinkSC href={"/projects"}>Projects</DivBoxLinkSC>
+                                <DivBoxLinkSC href={"/project"}>Projects</DivBoxLinkSC>
                                 <DivBoxTabSC onClick={onClickScrollTokenomics}>
                                     Tokenomics
                                 </DivBoxTabSC>
                                 <DivBoxLinkSC href={"/about"}>About</DivBoxLinkSC>
-                                <DivBoxTabSC onClick={onClickScrollLeaderboard}>
-                                    Leaderboard
-                                </DivBoxTabSC>
-                                <DivBoxTabSC onClick={onClickScrollBlog}>Blog</DivBoxTabSC>
-                                <DivBoxTabSC onClick={onClickScrollFAQ}>FAQ</DivBoxTabSC>
+                                <DivBoxLinkSC href={"/leaderboard"}>Leaderboard</DivBoxLinkSC>
+                                <DivBoxLinkSC href={"/blog"}>Blog</DivBoxLinkSC>
+                                <DivBoxLinkSC href={"/faq"}>FAQ</DivBoxLinkSC>
                                 <DivBoxLinkSC href={"/profile"}>Profile</DivBoxLinkSC>
                             </DivBoxTabsSC>
                         )}
@@ -159,7 +150,6 @@ const Header = (props: any) => {
                             <DivBoxButtonsSC>
                                 <Link href={"/buy_token"}>
                                     <ButtonWrapper
-                                        onClick={onClickScrollExchange}
                                         width={233}
                                         primary={true}
                                         directionRadius="center"
@@ -186,16 +176,14 @@ const Header = (props: any) => {
                             <div className={styles.menu__box}>
                                 <DivBoxBurgerSC className={styles.menu}>
                                     <DivBoxTabSC onClick={onClickScrollHome}>Home</DivBoxTabSC>
-                                    <DivBoxLinkSC href={"/projects"}>Projects</DivBoxLinkSC>
+                                    <DivBoxLinkSC href={"/project"}>Projects</DivBoxLinkSC>
                                     <DivBoxTabSC onClick={onClickScrollTokenomics}>
                                         Tokenomics
                                     </DivBoxTabSC>
                                     <DivBoxLinkSC href={"/about"}>About</DivBoxLinkSC>
-                                    <DivBoxTabSC onClick={onClickScrollLeaderboard}>
-                                        Leaderboard
-                                    </DivBoxTabSC>
-                                    <DivBoxTabSC onClick={onClickScrollBlog}>Blog</DivBoxTabSC>
-                                    <DivBoxTabSC onClick={onClickScrollFAQ}>FAQ</DivBoxTabSC>
+                                    <DivBoxLinkSC href={"/leaderboard"}>Leaderboard</DivBoxLinkSC>
+                                    <DivBoxLinkSC href={"/blog"}>Blog</DivBoxLinkSC>
+                                    <DivBoxLinkSC href={"/faq"}>FAQ</DivBoxLinkSC>
                                     <DivBoxLinkSC href={"/profile"}>Profile</DivBoxLinkSC>
                                     <DivBoxButtonsMenuSC>
                                         <Link href={"/buy_token"}>
@@ -204,7 +192,6 @@ const Header = (props: any) => {
                                                 primary={true}
                                                 directionRadius="center"
                                                 height={64}
-                                                onClick={onClickScrollExchange}
                                             >
                                                 <span>Buy Earthy token</span>
                                             </ButtonWrapper>
@@ -243,7 +230,7 @@ const Header = (props: any) => {
                                 {" "}
                                 <DivBoxTabsSC>
                                     <DivBoxLinkSC href={"/"}>Home</DivBoxLinkSC>
-                                    <DivBoxLinkSC href={"/projects"}>Projects</DivBoxLinkSC>
+                                    <DivBoxLinkSC href={"/project"}>Projects</DivBoxLinkSC>
                                     <DivBoxLinkSC href={"/tokenomics"}>Tokenomics</DivBoxLinkSC>
                                     <DivBoxLinkSC href={"/about"}>About</DivBoxLinkSC>
                                     <DivBoxLinkSC href={"/leaderboard"}>Leaderboard</DivBoxLinkSC>
@@ -255,7 +242,7 @@ const Header = (props: any) => {
                         ) : (
                             <DivBoxTabsSC>
                                 <DivBoxLinkSC href={"/"}>Home</DivBoxLinkSC>
-                                <DivBoxLinkSC href={"/projects"}>Projects</DivBoxLinkSC>
+                                <DivBoxLinkSC href={"/project"}>Projects</DivBoxLinkSC>
                                 <DivBoxLinkSC href={"/tokenomics"}>Tokenomics</DivBoxLinkSC>
                                 <DivBoxLinkSC href={"/about"}>About</DivBoxLinkSC>
                                 <DivBoxLinkSC href={"/leaderboard"}>Leaderboard</DivBoxLinkSC>
@@ -311,7 +298,7 @@ const Header = (props: any) => {
                             <div className={styles.menu__box}>
                                 <DivBoxBurgerSC className={styles.menu}>
                                     <DivBoxLinkSC href={"/"}>Home</DivBoxLinkSC>
-                                    <DivBoxLinkSC href={"/projects"}>Projects</DivBoxLinkSC>
+                                    <DivBoxLinkSC href={"/project"}>Projects</DivBoxLinkSC>
                                     <DivBoxLinkSC href={"/tokenomics"}>Tokenomics</DivBoxLinkSC>
                                     <DivBoxLinkSC href={"/about"}>About</DivBoxLinkSC>
                                     <DivBoxLinkSC href={"/leaderboard"}>Leaderboard</DivBoxLinkSC>

@@ -15,7 +15,6 @@ import {
 import { DivDefaultContainerSC } from "../styles.page";
 import ButtonWrapper from "../components/custom_button";
 
-import SwapBlock from "../components/swapBlock/SwapBlock";
 import EarthyCourse from "./earthyCourse/EarthyCourse";
 import ChainConvert from "./chainConvert/ChainConvert";
 import ConvertDiagram from "./convertDiagram/ConvertDiagram";
@@ -33,7 +32,7 @@ const BuyToken = () => {
                     You can purchase these tokens to invest in the development
                     of the Earthy platform
                 </H2SC>
-                <SwapBlock />
+                {/*<SwapBlock />*/}
                 <EarthyCourse />
             </DivWrapperGradientSC>
             <ChainConvert />

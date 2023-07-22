@@ -15,32 +15,26 @@ import Section10 from "./components/section10/Form";
 import Section11 from "./components/section11/Contacts";
 
 const Landing = (props: any) => {
-  const {
-    bottomRefHome,
-    bottomRefTokenomics,
-    bottomRefAbout,
-    bottomRefLeaderboard,
-    bottomRefNFT,
-    bottomRefBlog,
-    bottomRefFAQ,
-    bottomRefExchange,
-  } = props;
-  return (
-    <DivContentSC>
-      <Section1 />
-      <DivSectionsContainerSC>
-        <Section2 />
-        <Section3 />
-        <Section4 />
-        <Section5 />
-        <Section6 />
-        <Section7 />
-        <Section8 />
-        <Section9 />
-        <Section10 />
-        <Section11 />
-      </DivSectionsContainerSC>
-    </DivContentSC>
-  );
+    const {
+        bottomRefHome,
+        bottomRefTokenomics,
+    } = props;
+    return (
+        <DivContentSC>
+            <Section1 forRefW={bottomRefHome}/>
+            <DivSectionsContainerSC>
+                <Section2/>
+                <Section3/>
+                <Section4/>
+                <Section5 forRefW={bottomRefTokenomics}/>
+                <Section6/>
+                <Section7/>
+                <Section8/>
+                <Section9/>
+                <Section10/>
+                <Section11/>
+            </DivSectionsContainerSC>
+        </DivContentSC>
+    );
 };
 export default Landing;

@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect, useState } from "react";
+import React, {FC, MutableRefObject, useEffect, useState} from "react";
 import {
   DivButtonsBlockSC,
   DivContentWrapSC,
@@ -18,7 +18,10 @@ import { DivOneRowSC } from "@/app/airdrop/styles.airdrop";
 import { AiOutlineArrowRight } from "react-icons/ai";
 import { motion } from "framer-motion";
 import ParallaxText from "../ParallaxText";
-const Earthy = () => {
+const Earthy: FC<{
+  forRefW: MutableRefObject<undefined | any>;
+}> = (props) => {
+  const { forRefW } = props;
   const [width, setWidth] = useState<number>(0);
   useEffect(() => {
     window.onload = handleResize;
@@ -30,7 +33,7 @@ const Earthy = () => {
     setWidth(window.innerWidth);
   };
   return (
-    <DivContentSectionSC>
+    <DivContentSectionSC ref={forRefW}>
     <DivSectionSC>
       <DivContentWrapSC>
         <DivLeftBlockSC>

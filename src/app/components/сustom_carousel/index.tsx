@@ -14,6 +14,7 @@ import CarouselProjects from "../section3/FundedProjectCard";
 
 type CarouselProps = {
   items?: any;
+  itemsImg?: any;
   responsive?: any;
   carouselState?: any;
 }
@@ -35,7 +36,7 @@ const ButtonGroup: FC<ButtonGroupProps> = ({ carouselState, next, previous, goTo
   );
 };
 
-const CarouselCustom: FC<CarouselProps> = ({ carouselState, items, responsive }) => {
+const CarouselCustom: FC<CarouselProps> = ({ carouselState, items, responsive, itemsImg }) => {
   return (
     <Carousel
       customButtonGroup={<ButtonGroup carouselState={carouselState} />}
@@ -47,6 +48,7 @@ const CarouselCustom: FC<CarouselProps> = ({ carouselState, items, responsive })
       sliderClass="carousel-sliderProjects"
     >
       {items}
+      {itemsImg}
     </Carousel>
   );
 };

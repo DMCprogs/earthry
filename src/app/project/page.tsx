@@ -36,6 +36,7 @@ import Image from "next/image";
 import coin2 from "@/app/images/coin2.gif";
 import RadioButton from "@/app/project/components/custom_radio_button";
 import CustomLineChart from "@/app/project/components/LineChart";
+import SwapBlock from "@/app/components/swapBlock/SwapBlock";
 
 
 interface ArrayInfo {
@@ -45,7 +46,7 @@ interface ArrayInfo {
 }
 
 const Project: React.FC = () => {
-    // const [result, setResult] = useState<number>(0);
+    const [result, setResult] = useState<number>(0);
     const [countTokens, setCountTokens] = useState<string>("0");
     const [countDays, setCountDays] = useState<string>("14");
     const [graph, setGraph] = useState(Math.trunc((10 * 40 * 775) / 30));
@@ -56,20 +57,6 @@ const Project: React.FC = () => {
             tokens: number;
         }[]
     >([]);
-    useEffect(() => {
-        let array: {
-            year: number;
-            tokens: number;
-        }[] = [];
-        for (let i = 0; i <= 365; i++) {
-            array.push({
-                year: i,
-                tokens: graph * i,
-            });
-        }
-
-        setDataChart(array);
-    }, [trackData]);
     const [listInfo, setListInfo] = useState<ArrayInfo[]>([
         {titleNum: "64 332", textSmallBold: "Earthy token", textSmallNorm: "Raised"},
         {titleNum: "49", textSmallNorm: "Investors"},
@@ -84,20 +71,54 @@ const Project: React.FC = () => {
         {img: image},
         {img: image},
     ]);
-    // const handleInputChange = (event: ChangeEvent<HTMLInputElement>): void => {
-    //     setCountTokens(event.target.value);
-    //     setCountDays(event.target.value);
-    // }
-    // const hanInputChange = (event: ChangeEvent<HTMLInputElement>): void => {
-    //     const newVal = event.target.value;
-    //     setCountTokens(newVal);
-    //     // Проверка на то что введенное значение является числом
-    //     if (!isNaN(Number(newVal))) {
-    //         setResult(Number(newVal) * 0.08);
-    //     } else {
-    //         setResult(0);
-    //     }
-    // }
+    useEffect(() => {
+        let array: {
+            year: number;
+            tokens: number;
+        }[] = [];
+
+        let _dayData = +countTokens
+        for (let i = 0; i <= +countDays; i++) {
+            array.push({
+                year: i,
+                tokens: _dayData,
+            });
+            const s = (+countTokens * 8 * trackData / 360) / 100
+            _dayData += s
+            // array.push({
+            //     year: i,
+            //     tokens: graph * i,
+            // });
+
+        }
+
+        setDataChart(array);
+    }, [countDays, countTokens]);
+
+
+
+    const handleInputChange = (event: ChangeEvent<HTMLInputElement>): void => {
+        // setCountTokens(event.target.value);
+        setCountDays(event.target.value);
+        // const newVal = event.target.value;
+        // setCountTokens(newVal);
+        // // Проверка на то что введенное значение является числом
+        // if (!isNaN(Number(newVal))) {
+        //     setResult(Number(newVal) * 0.08);
+        // } else {
+        //     setResult(0);
+        // }
+    }
+    const hanInputChange = (event: ChangeEvent<HTMLInputElement>): void => {
+        const newVal = event.target.value;
+        setCountTokens(newVal);
+        // Проверка на то что введенное значение является числом
+        if (!isNaN(Number(newVal))) {
+            setResult(Number(newVal) * 0.08);
+        } else {
+            setResult(0);
+        }
+    }
     const responsive = {
         desktop: {
             // the naming can be any, depends on you.
@@ -210,6 +231,7 @@ const Project: React.FC = () => {
                 profitability</DivSmallNormalTextSC>
             <DivBoxBigElementsSC>
                 {/*<SwapBlock/>*/}
+                <SwapBlock/>
                 <CustomLineChart data={data} />
                 <div style={{width: "500px"}}>
                     <h1>График зависимости</h1>
@@ -230,7 +252,7 @@ const Project: React.FC = () => {
                         type="tel"
                         name="count_tokens"
                         value={countTokens}
-                        // onChange={handleInputChange}
+                        onChange={hanInputChange}
                     />
                     <RadioButton group="group1" width={"124px"} label={"10 %"}></RadioButton>
                     <RadioButton group="group1" width={"127px"} label={"25 %"}></RadioButton>
@@ -244,9 +266,7 @@ const Project: React.FC = () => {
                             placeholder={"14"}
                             name={"count_days"}
                             value={countDays}
-                            // onChange={() => {(
-                            //     handleInputChange,
-                            //     hanInputChange)}}
+                            onChange={handleInputChange}
                         />
                         <RadioButton  group="group2" width={"120px"} label={"30d"}></RadioButton>
                         <RadioButton  group="group2" width={"121px"} label={"90d"}></RadioButton>

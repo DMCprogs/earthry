@@ -71,15 +71,19 @@ interface ArrayInfo {
     textSmallBold?: string;
     textSmallNorm: string;
 }
+interface ArrayRadio {
+    group: string;
+    width: string;
+    label: string;
+}
 
 const Project: React.FC = () => {
     const [isOpen, setIsOpen] = useState(false);
     const handleOpen = () => setIsOpen(true);
     const handleClose = () => setIsOpen(false);
     const [result, setResult] = useState<number>(0);
-    const [countTokens, setCountTokens] = useState<string>("0");
-    const [countDays, setCountDays] = useState<string>("14");
-    const [graph, setGraph] = useState(Math.trunc((10 * 40 * 775) / 30));
+    const [countTokens, setCountTokens] = useState<string>("");
+    const [countDays, setCountDays] = useState<string>("");
     const [trackData, setTrackData] = useState(14);
     const [data, setDataChart] = useState<
         {
@@ -150,6 +154,18 @@ const Plus = () => {
         { titleNum: "1", textSmallBold: "Earthy token", textSmallNorm: "Min investment" },
         { titleNum: "1,000,000", textSmallBold: "Earthy token", textSmallNorm: "Required quantity" },
     ]);
+    const [listRadio, setListRadio] = useState<ArrayRadio[]>([
+        {group:"group1", width:"124px", label: "10 %"},
+        {group:"group1", width:"127px", label: "25 %"},
+        {group:"group1", width:"132px", label: "50 %"},
+        {group:"group1", width:"143px", label: "100 %"},
+    ]);
+    const [listRadio2, setListRadio2] = useState<ArrayRadio[]>([
+        {group:"group2", width:"120px", label: "30d"},
+        {group:"group2", width:"121px", label: "90d"},
+        {group:"group2", width:"139px", label: "180d"},
+        {group:"group2", width:"143px", label: "360d"},
+    ]);
     const [listItemCar, setListItemCar] = useState([
         { img: image },
         { img: image },
@@ -168,7 +184,7 @@ const Plus = () => {
         for (let i = 0; i <= +countDays; i++) {
             array.push({
                 year: i,
-                tokens: _dayData,
+                tokens: rounded(_dayData),
             });
             const s = (+countTokens * 8 * trackData / 360) / 100
             _dayData += s
@@ -182,6 +198,9 @@ const Plus = () => {
         setDataChart(array);
     }, [countDays, countTokens]);
 
+    const rounded = (number: number) => {
+        return +number.toFixed(2);
+    }
 
 
     const handleInputChange = (event: ChangeEvent<HTMLInputElement>): void => {
@@ -271,28 +290,28 @@ const Plus = () => {
             </DivBoxButtonsSC>
             <DivBoxIconsSC>
                 <BsTwitter
-                    style={{ cursor: "pointer" }}
+                    style={{cursor: "pointer"}}
                     size={40}
-                    color={'#195946'} />
+                    color={'#195946'}/>
                 <PiTelegramLogoFill
-                    style={{ cursor: "pointer" }}
+                    style={{cursor: "pointer"}}
                     size={40}
-                    color={'#195946'} />
+                    color={'#195946'}/>
                 <BsLinkedin
-                    style={{ cursor: "pointer" }}
+                    style={{cursor: "pointer"}}
                     size={40}
-                    color={'#195946'} />
+                    color={'#195946'}/>
                 <GrReddit
-                    style={{ cursor: "pointer" }}
+                    style={{cursor: "pointer"}}
                     size={40}
-                    color={'#195946'} />
+                    color={'#195946'}/>
                 <AiFillMessage
-                    style={{ cursor: "pointer" }}
+                    style={{cursor: "pointer"}}
                     size={40}
-                    color={'#195946'} />
+                    color={'#195946'}/>
             </DivBoxIconsSC>
             <CarouselCustom responsive={responsive}
-                itemsImg={CarouselItems()} />
+                            itemsImg={CarouselItems()}/>
             <DivBoxTitleSC>
                 <DivAverageBoldTextSC>About</DivAverageBoldTextSC>
                 <DivTextNormalSC>Regenerate Communitiy is a community-driven initiative dedicated to turning the region
@@ -318,70 +337,69 @@ const Plus = () => {
                 profitability</DivSmallNormalTextSC>
             <DivBoxBigElementsSC>
                 {/*<SwapBlock/>*/}
-                <SwapBlock />
+                <SwapBlock/>
                 <CustomLineChart data={data} />
-                <div style={{ width: "500px" }}>
-                    <h1>График зависимости</h1>
-                    <DivContainerGif>
-                        <Image src={coin2}
-                            width={260}
-                            height={383}
-                            alt="Picture of the author" />
-                    </DivContainerGif>
-                </div>
+                <DivContainerGif>
+                    <Image src={coin2}
+                           width={260}
+                           height={383}
+                           alt="Picture of the author"/>
+                </DivContainerGif>
             </DivBoxBigElementsSC>
             <div>
-                <DivBoxCalcSC>
-                    <DivBoxBoxOptionSC>
-                        <DivBoxOptionSC>
-                            <InputTokensSC
-                                placeholder="0"
-                                type="tel"
-                                name="count_tokens"
-                                value={countTokens}
-                                onChange={hanInputChange}
-                            />
-                            <RadioButton group="group1" width={"124px"} label={"10 %"}></RadioButton>
-                            <RadioButton group="group1" width={"127px"} label={"25 %"}></RadioButton>
-                            <RadioButton group="group1" width={"132px"} label={"50 %"}></RadioButton>
-                            <RadioButton group="group1" width={"143px"} label={"100 %"}></RadioButton>
+            <DivBoxCalcSC>
+                <DivBoxBoxOptionSC>
+                <DivBoxOptionSC>
+                    <InputTokensSC
+                        placeholder="0 tokens"
+                        type="tel"
+                        name="count_tokens"
+                        value={countTokens}
+                        onChange={hanInputChange}
+                    />
+                    {listRadio.map((buttRad, i) => {
+                        return(
+                            <RadioButton key={`deghghffffhhdefda${i}`} group={buttRad.group} width={buttRad.width} label={buttRad.label}></RadioButton>
+                        )
+                    })}
 
-                        </DivBoxOptionSC>
-                        <DivBoxOptionSC>
-                            <InputTokensSC
-                                type="text"
-                                placeholder={"14"}
-                                name={"count_days"}
-                                value={countDays}
-                                onChange={handleInputChange}
-                            />
-                            <RadioButton group="group2" width={"120px"} label={"30d"}></RadioButton>
-                            <RadioButton group="group2" width={"121px"} label={"90d"}></RadioButton>
-                            <RadioButton group="group2" width={"139px"} label={"180d"}></RadioButton>
-                            <RadioButton group="group2" width={"143px"} label={"360d"}></RadioButton>
-                        </DivBoxOptionSC>
-                    </DivBoxBoxOptionSC>
-                    <DivBoxConclusionSC>
-                        <DivSmallNormalTextSC>You donate to the project in the project (8%
-                            profitability)</DivSmallNormalTextSC>
-                        <DivBoxColumnCalcColcSC>
-                            <DivInputConclusionSC>8</DivInputConclusionSC>
-                            <DivSmallBoldTextSC>Earthy tokens</DivSmallBoldTextSC>
-                        </DivBoxColumnCalcColcSC>
-                    </DivBoxConclusionSC>
-                </DivBoxCalcSC>
-                <div style={{ width: "max-content" }}>
-                    <ButtonWrapper
-                        onClick={handleOpen}
-                        width={177}
-                        height={74}
-                        primary={true}
-                        directionRadius={"center"}>
-                        <span>Continue</span>
-                    </ButtonWrapper>
+                </DivBoxOptionSC>
+                    <DivBoxOptionSC>
+                        <InputTokensSC
+                            type="text"
+                            placeholder={"14 days"}
+                            name={"count_days"}
+                            value={countDays}
+                            onChange={handleInputChange}
+                        />
+                        {listRadio2.map((buttRad, i) => {
+                            return(
+                                <RadioButton key={`deghghffffhhdefda${i}`} group={buttRad.group} width={buttRad.width} label={buttRad.label}></RadioButton>
+                            )
+                        })}
+                    </DivBoxOptionSC>
+                </DivBoxBoxOptionSC>
+                <DivBoxConclusionSC>
+                    <DivSmallNormalTextSC>You donate to the project in the project (8%
+                        profitability)</DivSmallNormalTextSC>
+                    <DivBoxColumnCalcColcSC>
+                        <DivInputConclusionSC>{result}</DivInputConclusionSC>
+                        <DivSmallBoldTextSC>Earthy tokens</DivSmallBoldTextSC>
+                    </DivBoxColumnCalcColcSC>
+                </DivBoxConclusionSC>
+            </DivBoxCalcSC>
+                <div style={{width: "max-content"}}>
+            <ButtonWrapper
+            onClick={handleOpen}
+                width={177}
+                height={74}
+                primary={true}
+                directionRadius={"center"}>
+                <span>Continue</span>
+            </ButtonWrapper>
                 </div>
-            </div>
-            <Modal isOpen={isOpen} onClose={handleClose}>
+                </div>
+                <Modal isOpen={isOpen} onClose={handleClose}>
                 <DivContainerGrafic>
                     <DivTexStacingSC>Select the percentage of APY  to maintain the project (min 1%)</DivTexStacingSC>
                     <DivHeightfixSC>

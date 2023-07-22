@@ -12,7 +12,7 @@ interface LineChartProps {
 
 const CustomLineChart: React.FC<LineChartProps> = ({ data }) => {
     return (
-        <ResponsiveContainer width={500} height={400}>
+        <ResponsiveContainer width={400} height={319}>
             <LineChart
                 data={data}
                 margin={{ top: 20, right: 30, left: 20, bottom: 10 }}

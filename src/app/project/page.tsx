@@ -44,12 +44,16 @@ interface ArrayInfo {
     textSmallBold?: string;
     textSmallNorm: string;
 }
+interface ArrayRadio {
+    group: string;
+    width: string;
+    label: string;
+}
 
 const Project: React.FC = () => {
     const [result, setResult] = useState<number>(0);
-    const [countTokens, setCountTokens] = useState<string>("0");
-    const [countDays, setCountDays] = useState<string>("14");
-    const [graph, setGraph] = useState(Math.trunc((10 * 40 * 775) / 30));
+    const [countTokens, setCountTokens] = useState<string>("");
+    const [countDays, setCountDays] = useState<string>("");
     const [trackData, setTrackData] = useState(14);
     const [data, setDataChart] = useState<
         {
@@ -62,6 +66,18 @@ const Project: React.FC = () => {
         {titleNum: "49", textSmallNorm: "Investors"},
         {titleNum: "1", textSmallBold: "Earthy token", textSmallNorm: "Min investment"},
         {titleNum: "1,000,000", textSmallBold: "Earthy token", textSmallNorm: "Required quantity"},
+    ]);
+    const [listRadio, setListRadio] = useState<ArrayRadio[]>([
+        {group:"group1", width:"124px", label: "10 %"},
+        {group:"group1", width:"127px", label: "25 %"},
+        {group:"group1", width:"132px", label: "50 %"},
+        {group:"group1", width:"143px", label: "100 %"},
+    ]);
+    const [listRadio2, setListRadio2] = useState<ArrayRadio[]>([
+        {group:"group2", width:"120px", label: "30d"},
+        {group:"group2", width:"121px", label: "90d"},
+        {group:"group2", width:"139px", label: "180d"},
+        {group:"group2", width:"143px", label: "360d"},
     ]);
     const [listItemCar, setListItemCar] = useState([
         {img: image},
@@ -233,52 +249,51 @@ const Project: React.FC = () => {
                 {/*<SwapBlock/>*/}
                 <SwapBlock/>
                 <CustomLineChart data={data} />
-                <div style={{width: "500px"}}>
-                    <h1>График зависимости</h1>
                 <DivContainerGif>
                     <Image src={coin2}
                            width={260}
                            height={383}
                            alt="Picture of the author"/>
                 </DivContainerGif>
-                </div>
             </DivBoxBigElementsSC>
             <div>
             <DivBoxCalcSC>
                 <DivBoxBoxOptionSC>
                 <DivBoxOptionSC>
                     <InputTokensSC
-                        placeholder="0"
+                        placeholder="0 tokens"
                         type="tel"
                         name="count_tokens"
                         value={countTokens}
                         onChange={hanInputChange}
                     />
-                    <RadioButton group="group1" width={"124px"} label={"10 %"}></RadioButton>
-                    <RadioButton group="group1" width={"127px"} label={"25 %"}></RadioButton>
-                    <RadioButton group="group1"  width={"132px"} label={"50 %"}></RadioButton>
-                    <RadioButton group="group1"width={"143px"} label={"100 %"}></RadioButton>
+                    {listRadio.map((buttRad, i) => {
+                        return(
+                            <RadioButton key={`deghghffffhhdefda${i}`} group={buttRad.group} width={buttRad.width} label={buttRad.label}></RadioButton>
+                        )
+                    })}
 
                 </DivBoxOptionSC>
                     <DivBoxOptionSC>
                         <InputTokensSC
                             type="text"
-                            placeholder={"14"}
+                            placeholder={"14 days"}
                             name={"count_days"}
                             value={countDays}
                             onChange={handleInputChange}
                         />
-                        <RadioButton  group="group2" width={"120px"} label={"30d"}></RadioButton>
-                        <RadioButton  group="group2" width={"121px"} label={"90d"}></RadioButton>
-                        <RadioButton   group="group2" width={"139px"} label={"180d"}></RadioButton>
-                        <RadioButton  group="group2" width={"143px"} label={"360d"}></RadioButton>
+                        {listRadio2.map((buttRad, i) => {
+                            return(
+                                <RadioButton key={`deghghffffhhdefda${i}`} group={buttRad.group} width={buttRad.width} label={buttRad.label}></RadioButton>
+                            )
+                        })}
                     </DivBoxOptionSC>
                 </DivBoxBoxOptionSC>
                 <DivBoxConclusionSC>
                     <DivSmallNormalTextSC>You donate to the project in the project (8%
                         profitability)</DivSmallNormalTextSC>
                     <DivBoxColumnCalcColcSC>
-                        <DivInputConclusionSC>8</DivInputConclusionSC>
+                        <DivInputConclusionSC>{result}</DivInputConclusionSC>
                         <DivSmallBoldTextSC>Earthy tokens</DivSmallBoldTextSC>
                     </DivBoxColumnCalcColcSC>
                 </DivBoxConclusionSC>

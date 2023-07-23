@@ -190,6 +190,7 @@ display: grid;
   grid-template-columns: repeat(4, max-content);
   grid-template-rows: 100%;
   gap: 50px;
+  margin: 20px 0;
   @media(max-width: 1180px) {
     grid-template-columns: repeat(2, max-content);
     grid-template-rows:  repeat(2, max-content);
@@ -197,12 +198,13 @@ display: grid;
     column-gap: 80px;
     justify-self: center;
   }
-  @media(max-width: 1180px) {
+  @media(max-width: 768px) {
     grid-template-columns: 100%;
     grid-template-rows:  repeat(4, max-content);
     row-gap: 15px;
     column-gap: 0;
     justify-self: start;
+    margin: 0 0;
   }
 `;
 

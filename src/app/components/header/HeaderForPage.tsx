@@ -19,13 +19,7 @@ import {motion} from "framer-motion";
 import {usePathname} from "next/navigation";
 import Link from "next/link";
 
-const Header = (props: any) => {
-    const {
-        onClickScrollHome,
-        onClickScrollTokenomics,
-        onClickScrollBlog,
-        onClickScrollProject
-    } = props;
+const HeaderForPage = (props: any) => {
     const [width, setWidth] = useState<number>(0);
     const [isBgColor, setIsBgColor] = useState<boolean>(true);
     const [isFixed, setIsFixed] = useState<boolean>(true);
@@ -106,28 +100,24 @@ const Header = (props: any) => {
                             >
                                 {" "}
                                 <DivBoxTabsSC>
-                                    <DivBoxTabSC onClick={onClickScrollHome}>Home</DivBoxTabSC>
-                                    <DivBoxTabSC onClick={onClickScrollProject}>Projects</DivBoxTabSC>
-                                    <DivBoxTabSC onClick={onClickScrollTokenomics}>
-                                        Tokenomics
-                                    </DivBoxTabSC>
+                                    <DivBoxLinkSC href={"/"}>Home</DivBoxLinkSC>
+                                    <DivBoxLinkSC href={"/project"}>Projects</DivBoxLinkSC>
+                                    <DivBoxLinkSC href={"/tokenomics"}>Tokenomics</DivBoxLinkSC>
                                     <DivBoxLinkSC href={"/about"}>About</DivBoxLinkSC>
                                     <DivBoxLinkSC href={"/leaderboard"}>Leaderboard</DivBoxLinkSC>
-                                    <DivBoxTabSC onClick={onClickScrollBlog}>Blog</DivBoxTabSC>
+                                    <DivBoxLinkSC href={"/blog"}>Blog</DivBoxLinkSC>
                                     <DivBoxLinkSC href={"/faq"}>FAQ</DivBoxLinkSC>
                                     <DivBoxLinkSC href={"/profile"}>Profile</DivBoxLinkSC>
                                 </DivBoxTabsSC>
                             </motion.div>
                         ) : (
                             <DivBoxTabsSC>
-                                <DivBoxTabSC onClick={onClickScrollHome}>Home</DivBoxTabSC>
-                                <DivBoxTabSC onClick={onClickScrollProject}>Projects</DivBoxTabSC>
-                                <DivBoxTabSC onClick={onClickScrollTokenomics}>
-                                    Tokenomics
-                                </DivBoxTabSC>
+                                <DivBoxLinkSC href={"/"}>Home</DivBoxLinkSC>
+                                <DivBoxLinkSC href={"/project"}>Projects</DivBoxLinkSC>
+                                <DivBoxLinkSC href={"/tokenomics"}>Tokenomics</DivBoxLinkSC>
                                 <DivBoxLinkSC href={"/about"}>About</DivBoxLinkSC>
                                 <DivBoxLinkSC href={"/leaderboard"}>Leaderboard</DivBoxLinkSC>
-                                <DivBoxTabSC  onClick={onClickScrollBlog}>Blog</DivBoxTabSC>
+                                <DivBoxLinkSC href={"/blog"}>Blog</DivBoxLinkSC>
                                 <DivBoxLinkSC href={"/faq"}>FAQ</DivBoxLinkSC>
                                 <DivBoxLinkSC href={"/profile"}>Profile</DivBoxLinkSC>
                             </DivBoxTabsSC>
@@ -149,9 +139,9 @@ const Header = (props: any) => {
                             }}
                         >
                             <DivBoxButtonsSC>
-                                <Link href={"/buy_token"}>
+                                <Link href="/buy_token">
                                     <ButtonWrapper
-                                        width={233}
+                                        width={222}
                                         primary={true}
                                         directionRadius="center"
                                         height={64}
@@ -159,14 +149,16 @@ const Header = (props: any) => {
                                         <span>Buy Earthy token</span>
                                     </ButtonWrapper>
                                 </Link>
-                                <ButtonWrapper
-                                    width={222}
-                                    primary={true}
-                                    directionRadius="center"
-                                    height={64}
-                                >
-                                    <span>Buy with card</span>
-                                </ButtonWrapper>
+                                <Link href="#">
+                                    <ButtonWrapper
+                                        width={222}
+                                        primary={true}
+                                        directionRadius="center"
+                                        height={64}
+                                    >
+                                        <span>Buy with card</span>
+                                    </ButtonWrapper>
+                                </Link>
                             </DivBoxButtonsSC>
                         </motion.div>
                         <div className={styles.hamburger_menu}>
@@ -176,18 +168,16 @@ const Header = (props: any) => {
                             </label>
                             <div className={styles.menu__box}>
                                 <DivBoxBurgerSC className={styles.menu}>
-                                    <DivBoxTabSC onClick={onClickScrollHome}>Home</DivBoxTabSC>
-                                    <DivBoxTabSC onClick={onClickScrollProject}>Projects</DivBoxTabSC>
-                                    <DivBoxTabSC onClick={onClickScrollTokenomics}>
-                                        Tokenomics
-                                    </DivBoxTabSC>
+                                    <DivBoxLinkSC href={"/"}>Home</DivBoxLinkSC>
+                                    <DivBoxLinkSC href={"/project"}>Projects</DivBoxLinkSC>
+                                    <DivBoxLinkSC href={"/tokenomics"}>Tokenomics</DivBoxLinkSC>
                                     <DivBoxLinkSC href={"/about"}>About</DivBoxLinkSC>
                                     <DivBoxLinkSC href={"/leaderboard"}>Leaderboard</DivBoxLinkSC>
-                                    <DivBoxTabSC onClick={onClickScrollBlog}>Blog</DivBoxTabSC>
+                                    <DivBoxLinkSC href={"/blog"}>Blog</DivBoxLinkSC>
                                     <DivBoxLinkSC href={"/faq"}>FAQ</DivBoxLinkSC>
                                     <DivBoxLinkSC href={"/profile"}>Profile</DivBoxLinkSC>
                                     <DivBoxButtonsMenuSC>
-                                        <Link href={"/buy_token"}>
+                                        <Link href="/buy_token">
                                             <ButtonWrapper
                                                 width={222}
                                                 primary={true}
@@ -197,14 +187,16 @@ const Header = (props: any) => {
                                                 <span>Buy Earthy token</span>
                                             </ButtonWrapper>
                                         </Link>
-                                        <ButtonWrapper
-                                            width={222}
-                                            primary={true}
-                                            directionRadius="center"
-                                            height={64}
-                                        >
-                                            <span>Buy with card</span>
-                                        </ButtonWrapper>
+                                        <Link href="#">
+                                            <ButtonWrapper
+                                                width={222}
+                                                primary={true}
+                                                directionRadius="center"
+                                                height={64}
+                                            >
+                                                <span>Buy with card</span>
+                                            </ButtonWrapper>
+                                        </Link>
                                     </DivBoxButtonsMenuSC>
                                 </DivBoxBurgerSC>
                             </div>
@@ -215,4 +207,4 @@ const Header = (props: any) => {
     );
 };
 
-export default Header;
+export default HeaderForPage;

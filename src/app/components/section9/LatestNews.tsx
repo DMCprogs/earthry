@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, {FC, MutableRefObject, useState} from "react";
 import BlogCard from "../blog/BlogCard";
 import {
   DivContainerBlogSC,
@@ -12,9 +12,12 @@ import image from "../../images/ItemBlogExample.png";
 import Link from "next/link";
 import ButtonWrapper from "../custom_button";
 import { motion } from "framer-motion";
-const LatestNews = () => {
+const LatestNews: FC<{
+    forRefW: MutableRefObject<undefined | any>;
+}> = (props) => {
+    const { forRefW } = props;
   return (
-    <DivContainerSectionSC>
+    <DivContainerSectionSC ref={forRefW}>
       <DivContainerBlogSC>
         <motion.div
           initial="hidden"

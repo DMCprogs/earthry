@@ -1,5 +1,5 @@
+'use client'
 import "./styles.css";
-import { useRef } from "react";
 import {
   motion,
   useScroll,
@@ -10,6 +10,7 @@ import {
   useAnimationFrame,
 } from "framer-motion";
 import { wrap } from "@motionone/utils";
+import React, {useRef} from "react";
 
 interface ParallaxProps {
   children: string;

@@ -17,6 +17,7 @@ type CarouselProps = {
   itemsImg?: any;
   responsive?: any;
   carouselState?: any;
+  isProject?: any;
 }
 
 type ButtonGroupProps = {
@@ -24,22 +25,23 @@ type ButtonGroupProps = {
   previous?: any;
   goToSlide?: any;
   carouselState?: any;
+  isProject?: any;
 }
 
-const ButtonGroup: FC<ButtonGroupProps> = ({ carouselState, next, previous, goToSlide, ...rest }) => {
+const ButtonGroup: FC<ButtonGroupProps> = ({ carouselState, next, previous, goToSlide, isProject, ...rest }) => {
   const { currentSlide } = carouselState;
   return (
-    <DivCustomArrowsSC>
+    <DivCustomArrowsSC isProject={isProject}>
       <DivCustomArrowLeft className={currentSlide === 0 ? 'disable' : ''} onClick={() => previous()} />
       <DivCustomArrowRight className="disable" onClick={() => next()} />
     </DivCustomArrowsSC>
   );
 };
 
-const CarouselCustom: FC<CarouselProps> = ({ carouselState, items, responsive, itemsImg }) => {
+const CarouselCustom: FC<CarouselProps> = ({ carouselState, items, responsive, itemsImg, isProject }) => {
   return (
     <Carousel
-      customButtonGroup={<ButtonGroup carouselState={carouselState} />}
+      customButtonGroup={<ButtonGroup carouselState={carouselState} isProject={isProject}/>}
       renderButtonGroupOutside
       containerClass="carousel-containerProjects"
       responsive={responsive}

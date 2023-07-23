@@ -55,11 +55,14 @@ gap: 50px;
   justify-items: center;
 }
 `;
-export const DivContainerGif = styled.div`
+export const DivContainerGif = styled.div<{
+    $display?: string;
+}>`
   width: 100%;
   height: 100%;
-  width: 345px;
-height: 509px;
+  @media(max-width: 1330px){
+    display: ${({$display}) => $display};
+  }
 @media(max-width:780px){
     display: none;
 }

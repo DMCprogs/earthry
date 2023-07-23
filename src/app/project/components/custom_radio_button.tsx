@@ -8,7 +8,6 @@ interface RadioButtonProps {
 }
 const StyledButton = styled.div<{ width: string;}>`
     width: ${props => props.width};
-    height: 74px;
     
     input[type='radio'] {
       display: none;
@@ -24,7 +23,7 @@ const StyledButton = styled.div<{ width: string;}>`
       color: #201E1C;
       background-color: #fff; // Меняйте этот цвет на тот, который вы хотите
       cursor: pointer;
-      padding: 25px;
+      padding: 23px;
       border-radius: 20px;
       border: 3px solid #195946;
       font-family: Montserrat;
@@ -34,7 +33,11 @@ const StyledButton = styled.div<{ width: string;}>`
       line-height: 24px; /* 120% */
       letter-spacing: 0.2px;
       text-align: center;
-
+      height: 74px;
+      @media(max-width: 880px) {
+        height: 62px;
+        padding: 16px;
+      }
     }
   label:hover{
     box-shadow: 0px 2px 12px 0px rgba(0, 0, 0, 0.60);

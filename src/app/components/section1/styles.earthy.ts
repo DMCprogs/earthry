@@ -79,10 +79,10 @@ export const DivGifSC = styled(Image)`
   grid-area: B;
   display: grid;
   // border: 1px solid red;
-  width: 375px;
+  width: 385px;
   height: 470px;
   @media (max-width: 1250px) {
-    width: 265px;
+    width: 275px;
     height: 320px;
   }
 `;

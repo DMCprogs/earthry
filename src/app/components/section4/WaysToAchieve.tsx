@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 "use client";
 import React, { useEffect, useState } from "react";
 import {
@@ -119,7 +120,7 @@ const WaysToAchieve = () => {
                 },
               }}
             >
-              <Link style={{width:'fit-content'}} href={"/non_profit1"}>
+              <Link style={{ width: "fit-content" }} href={"/non_profit1"}>
                 <ButtonWrapper
                   directionRadius={"center"}
                   width={201}
@@ -180,7 +181,7 @@ const WaysToAchieve = () => {
               }}
             >
               <DivBoxButtonSC>
-                <Link style={{width:'fit-content'}} href={"/non_profit1"}>
+                <Link style={{ width: "fit-content" }} href={"/non_profit1"}>
                   <ButtonWrapper
                     directionRadius={"center"}
                     width={201}
@@ -266,7 +267,7 @@ const WaysToAchieve = () => {
             }}
           >
             <DivBoxButtonSC>
-              <Link style={{width:'fit-content'}} href={"/non_profit2"}>
+              <Link style={{ width: "fit-content" }} href={"/non_profit2"}>
                 <ButtonWrapper
                   directionRadius={"center"}
                   width={201}

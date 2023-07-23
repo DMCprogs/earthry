@@ -4,72 +4,124 @@ import { StaticImageData } from "next/image";
 type Propsi = {
   $images: StaticImageData;
 }
+
+export const DivContainerBox = styled.div`
+  width: 100%;
+  height: 100%;
+  display: grid;
+`;
+export const BoxPaddingSC = styled.div`
+  padding: 120px 20px 0 20px;
+  max-width: 1280px;
+  display: grid;
+  justify-self: center;
+  @media(max-width: 1000px) {
+    padding: 100px 20px 0 20px;
+  }
+  @media(max-width: 480px) {
+    padding: 70px 20px 0 20px;
+  }
+  @media(max-width: 360px) {
+    padding: 81px 20px 0 20px;
+  }
+`;
 export const DivBoxProjectSC = styled.div`
   width: 100%;
-  max-width: 1300px;
   display: grid;
   grid-template-rows: repeat(11, max-content);
   gap: 40px;
-  justify-self: center;
-  margin-top: 140px;
   @media(max-width: 768px) {
     gap: 20px;
   }
 `;
-export const DivBoxTitleSC = styled.div`
+export const DivBoxTitleSC = styled.div<{
+    $positionText?: string;
+}>`
   width: 100%;
   display: grid;
   grid-template-rows: repeat(2, max-content);
   gap: 10px;
+  @media(max-width: 1180px) {
+  justify-items: ${({ $positionText }) => $positionText};
+}
+  
+  @media(max-width: 768px) {
+    gap: 20px;
+  }
+
 `;
 export const DivTitleBoldSC = styled.div`
   color: #201E1C;
-  font-family: Montserrat;
+  font-family: Montserrat,serif;
   font-size: 55px;
   font-style: normal;
   font-weight: 600;
   line-height: normal;
+  @media(max-width: 480px) {
+    font-size: 36px;
+  }
 `;
 
-export const DivTextNormalSC = styled.div`
+export const DivTextNormalSC = styled.div<{
+    $positionText?: string;
+}>`
   color: #5C5A58;
-  font-family: Montserrat;
-  font-size: 32px;
+  font-family: Montserrat,serif;
+  font-size: 26px;
   font-style: normal;
   font-weight: 500;
   line-height: normal;
   max-width: 1029px;
+  @media(max-width: 1180px) {
+   text-align:  ${({ $positionText }) => $positionText};
+  }
+  @media(max-width: 360px) {
+    font-size: 24px;
+  }
 `;
 export const DivBoxButtonsSC = styled.div`
 display: grid;
   grid-template-columns: repeat(2, max-content);
+  grid-template-rows: 100%;
   gap: 20px;
+  @media(max-width: 620px) {
+    grid-template-columns: 100%;
+    grid-template-rows: repeat(2, max-content);
+  }
 `;
 
 export const DivBoxIconsSC = styled.div`
 display: grid;
   grid-template-columns: repeat(5, max-content);
   gap: 40px;
+  @media(max-width: 400px) {
+    gap: 32px;
+  }
 `;
+
+
 type Props = {
     img?: any;
 };
 export const CarouselImageSC = styled.div<Props>`
   background-image: url(${(props) => props.img.src});
-  border-radius: 18px;
+  border-radius: 30px;
   display: grid;
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-  height: 397px;
+  width: 100%;
+  height: 100%;
+  aspect-ratio: 1 / 1;
+  justify-self: center;
 `;
 
 export const CarouselItemContainerSC = styled.div`
   display: grid;
   border-radius: 18px;
   transition: 0.1s;
-  width: 100%;
-  height: 100%;
+  max-width: 397px;
+  max-height: 397px;
 `;
 
 export const DivAverageBoldTextSC = styled.div<{
@@ -77,11 +129,14 @@ export const DivAverageBoldTextSC = styled.div<{
 }>`
   color: #201E1C;
   text-align: ${({ $positionText }) => $positionText};
-  font-family: Montserrat;
+  font-family: Montserrat,serif;
   font-size: 36px;
   font-style: normal;
   font-weight: 600;
   line-height: normal;
+  @media(max-width: 440px) {
+    font-size: 32px;
+  }
 `;
 export const DivBoxRowsItemSC = styled.div`
   display: grid;
@@ -98,8 +153,25 @@ export const DivSmallNormalTextSC = styled.div<{
 }>`
   color: #646464;
   text-align: ${({ $positionText }) => $positionText};
-  font-family: Montserrat;
+  font-family: Montserrat,serif;
   font-size: 25px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 135%;
+  max-width: 608px;
+  display: grid;
+  justify-self: ${({ $positionText }) => $positionText};
+  @media(max-width: 440px) {
+    font-size: 22px;
+  }
+`;
+export const DivUltraSmallNormalTextSC = styled.div<{
+    $positionText?: string;
+}>`
+  color: #646464;
+  text-align: ${({ $positionText }) => $positionText};
+  font-family: Montserrat,serif;
+  font-size: 22px;
   font-style: normal;
   font-weight: 400;
   line-height: 135%;
@@ -110,33 +182,80 @@ export const DivSmallNormalTextSC = styled.div<{
 
 export const DivSmallBoldTextSC = styled.div`
   color: #201E1C;
-  font-family: Montserrat;
+  font-family: Montserrat,serif;
   font-size: 25px;
   font-style: normal;
   font-weight: 600;
   line-height: 135%;
+  @media(max-width: 440px) {
+    font-size: 20px;
+  }
 `;
 export const DivBoxColumnsItemsSC = styled.div`
 display: grid;
   grid-template-columns: repeat(4, max-content);
+  grid-template-rows: 100%;
   gap: 50px;
+  margin: 20px 0;
+  @media(max-width: 1180px) {
+    grid-template-columns: repeat(2, max-content);
+    grid-template-rows:  repeat(2, max-content);
+    row-gap: 25px;
+    column-gap: 80px;
+    justify-self: center;
+  }
+  @media(max-width: 768px) {
+    grid-template-columns: 100%;
+    grid-template-rows:  repeat(4, max-content);
+    row-gap: 15px;
+    column-gap: 0;
+    justify-self: start;
+    margin: 0 0;
+  }
 `;
 
 export const DivBoxBigElementsSC = styled.div`
 display: grid;
   grid-template-columns: repeat(3, max-content);
   gap: 115px;
+  @media(max-width: 1330px) {
+    grid-template-columns: repeat(2, max-content);
+    justify-content: center;
+    gap: 0;
+  }
+  @media(max-width: 768px) {
+    grid-template-columns: 100%;
+    grid-template-rows: repeat(2, max-content);
+  justify-items: center;
+    gap: 40px;
+  }
+  @media(max-width: 480px) {
+    gap: 20px;
+  }
 `;
 
 export const DivBoxCalcSC = styled.div`
   display: grid;
   grid-template-columns: repeat(2, max-content);
-  gap: 118px;
+  gap: 110px;
+  @media(max-width: 1330px) {
+    grid-template-columns: 100%;
+    grid-template-rows: repeat(2, max-content);
+    gap: 40px;
+  }
+  @media(max-width: 768px) {
+    justify-items: center;
+  }
 `;
 export const DivBoxOptionSC = styled.div`
   display: grid;
   grid-template-columns: repeat(5, max-content);
   gap: 19px;
+  @media(max-width: 768px) {
+    grid-template-columns: 100%;
+    grid-template-rows: repeat(5, max-content);
+    justify-items: center;
+  }
 `;
 export const DivBoxConclusionSC = styled.div`
   display: grid;
@@ -154,7 +273,7 @@ export const DivBoxColumnCalcColcSC = styled.div`
 export const DivInputConclusionSC = styled.div`
   display: grid;
   color: #000;
-  font-family: Montserrat;
+  font-family: Montserrat,serif;
   font-size: 24px;
   font-style: normal;
   font-weight: 500;
@@ -176,35 +295,25 @@ export const InputTokensSC = styled.input`
   background: #FFF;
   outline: none;
     color: #201E1C;
-    font-family: Montserrat;
+    font-family: Montserrat,serif;
     font-size: 20px;
     font-style: normal;
     font-weight: 600;
     line-height: 24px; /* 120% */
     letter-spacing: 0.2px;
-`;
-
-export const DivGraphSC = styled.div`
-  display: grid;
-  justify-self: right;
-  align-self: center;
-  width: 500px;
-  height: 300px;
-  // border: 1px solid red;
-  @media (max-width: 1100px) {
-    justify-self: center;
-    grid-row: 1;
+  @media(max-width: 880px) {
+    height: 62px;
+    width: 200px;
   }
-  @media (max-width: 700px) {
-    width: 70vw;
-    height: 50vw;
-  }
-  //border: 1px solid blue;
 `;
 export const DivBoxBoxOptionSC = styled.div`
   display: grid;
 grid-template-rows: repeat(2,max-content);
   row-gap: 30px;
+  @media(max-width: 768px) {
+    row-gap: 66px;
+  }
+
 `;
 
 export const DivContainerGrafic = styled.div`
@@ -378,10 +487,30 @@ gap: 12px;
 align-items: center;
 
 `;
+
 export const DivNumbers = styled.div`
 display: grid;
 width: 40px;
 justify-content: right;
 
+
+`;
+
+
+export const DivBoxColumnCalcSC = styled.div`
+  display: grid;
+grid-template-rows: repeat(2,max-content);
+  row-gap: 50px;
+  @media(max-width: 768px) {
+justify-items: center;
+    row-gap: 39px;
+  }
+`;
+
+export const DivBoxCarouseItemSC = styled.div`
+padding: 0 2px;
+  @media(max-width: 1248px) {
+    padding: 0 12.5px;
+  }
 
 `;

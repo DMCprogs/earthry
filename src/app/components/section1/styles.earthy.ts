@@ -10,7 +10,7 @@ export const DivSectionSC = styled.div`
   background-color: #4affc9;
   min-height: 725px;
   @media(max-width:765px){
-    margin-top: 280px;
+    margin-top: 160px;
   }
 `;
 export const DivContentSectionSC = styled.div`
@@ -83,10 +83,10 @@ export const DivGifSC = styled(Image)`
   grid-area: B;
   display: grid;
   // border: 1px solid red;
-  width: 355px;
+  width: 385px;
   height: 470px;
   @media (max-width: 1250px) {
-    width: 255px;
+    width: 275px;
     height: 320px;
   }
 `;

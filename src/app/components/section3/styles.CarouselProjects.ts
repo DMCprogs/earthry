@@ -139,20 +139,26 @@ export const DivCustomArrowLeft = styled(TbChevronLeft)`
   } */
 `;
 
-export const DivCustomArrowsSC = styled.div`
+export const DivCustomArrowsSC = styled.div<{
+  isProject?: boolean
+}>`
   align-self: start;
   display: flex;
   grid-template-columns: repeat(2, 1fr);
-  width: 110%;
+  width: ${({isProject}) => isProject ? "120%" : "110%"};
+  margin-right: ${({isProject}) => isProject ? "11px" : "0"};
   justify-content: space-between;
   align-content: center;
   margin-top: -250px;
   justify-self: center;
-
+  @media (max-width: 1520px) {
+    margin-top: ${({isProject}) => isProject ? "10px" : "-250px"} ;
+    width: ${({isProject}) => isProject ? "192px" : "110%"};
+    margin-right: 0;
+  }
   @media (max-width: 1000px) {
-    margin-top: 50px;
-    width: 200px;
-
+    margin-top: ${({isProject}) => isProject ? "10px" : "50px"} ;
+    width: ${({isProject}) => isProject ? "192px" : "200px"};
   }
 `;
 

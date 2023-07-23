@@ -11,7 +11,7 @@ export const DivContentSC = styled.div`
   display: grid;
   margin-top: 0px;
   @media(max-width:765px){
-    gap: 180px;
+    margin-top: 40px;
   }
 `;
 

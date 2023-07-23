@@ -17,7 +17,7 @@ import { BsArrowRight } from "react-icons/bs";
 import ButtonWrapper from "../components/custom_button";
 
 const About: FC = () => (
-  <DivDefaultContainerSC style={{ marginTop: "140px" }}>
+  <DivDefaultContainerSC style={{ marginTop: "40px" }}>
     <DivH1SC>Our vision and motivation</DivH1SC>
     <ContainerSC>
       <DivDetailTextSC>

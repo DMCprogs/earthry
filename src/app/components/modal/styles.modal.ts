@@ -16,10 +16,6 @@ padding: 50px 0;
  border-radius: 30px;
 background: #FFF;
 z-index: 99999;
-position: absolute;
-top:50%;
-left:50%;
-transform:translate(-50%, -50%);
 grid-auto-rows: max-content;
 justify-items: center;
 gap: 80px;
@@ -208,6 +204,11 @@ align-items: center;
 
 `;
 export const DivContentModal = styled.div`
+ position: absolute;
+top: 80%;
+left: 50%;
+transform: translate(-50%, -50%);
+    display:flex;
 display: grid;
 grid-template-rows: max-content max-content;
 height: 100%;
@@ -230,6 +231,10 @@ justify-content: right;
 font-size: 26px;
 @media(max-width:1000px){
     left: 96%;
+   display: block;
+}
+@media(max-width:480px){
+    left: 94%;
    display: block;
 }
 `;

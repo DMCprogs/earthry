@@ -10,6 +10,9 @@ export const DivWrapperSC = styled.div`
 export const DivContentSC = styled.div`
   display: grid;
   margin-top: 0px;
+  @media(max-width:765px){
+    gap: 180px;
+  }
 `;
 
 export const DivSectionsContainerSC = styled.div`

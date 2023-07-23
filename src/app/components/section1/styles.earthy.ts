@@ -8,6 +8,10 @@ export const DivSectionSC = styled.div`
   justify-content: center;
   align-content: center;
   background-color: #4affc9;
+  min-height: 725px;
+  @media(max-width:765px){
+    margin-top: 280px;
+  }
 `;
 export const DivContentSectionSC = styled.div`
   display: grid;

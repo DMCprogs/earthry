@@ -247,8 +247,11 @@ export const DivNumberBoxSC = styled.div`
   justify-content: center;
   align-content: center;
   background:  #04896C;
- 
+ grid-template-columns: max-content max-content;
+ gap: 5px;
   color: white;
+  justify-items: center;
+  align-items: center;
 `;
 export const DivSliderSC = styled.div`
   display: grid;
@@ -371,7 +374,14 @@ display: grid;
 export const DivContainer = styled.div`
 display: grid;
 grid-template-columns: max-content max-content;
-gap: 8px;
+gap: 12px;
 align-items: center;
+
+`;
+export const DivNumbers = styled.div`
+display: grid;
+width: 40px;
+justify-content: right;
+
 
 `;

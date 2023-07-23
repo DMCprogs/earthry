@@ -52,7 +52,7 @@ const Blog: FC = () => {
         {/* <Link style={styles} href={'/'}> */}
           <ButtonWrapper
          
-            directionRadius="center"
+            directionRadius="ltr"
             primary={true}
             height={84}
             width={260}

@@ -36,6 +36,7 @@ import {
     DivPlus,
     DiMunus,
     DivContainer,
+    DivNumbers,
 } from "./styles.project";
 import ButtonWrapper from "@/app/components/custom_button";
 import Link from "next/link";
@@ -65,7 +66,8 @@ import plant4 from"../images/plants4.png";
 import plant3 from"../images/plants3.png";
 import plant2 from"../images/plants2.png";
 import plant1 from"../images/plants1.png";
-
+import { DivCourceTitleImgSC } from '../buy_token/earthyCourse/styles.EarthyCourse';
+import courceImg from '../images/eth_logo.svg';
 interface ArrayInfo {
     titleNum: string;
     textSmallBold?: string;
@@ -403,7 +405,7 @@ const Plus = () => {
                 <DivContainerGrafic>
                     <DivTexStacingSC>Select the percentage of APY  to maintain the project (min 1%)</DivTexStacingSC>
                     <DivHeightfixSC>
-                        <DivNumberBoxSC>{amount}</DivNumberBoxSC>
+                        <DivNumberBoxSC><DivCourceTitleImgSC path={courceImg.src}></DivCourceTitleImgSC><div>{amount}</div></DivNumberBoxSC>
                         <DivSliderSC>
                             <Slider
                                 min={1}
@@ -436,11 +438,13 @@ const Plus = () => {
                 <DivContainerGrafic2>
                     <DivContainerInput>
                         <DivTexStacingSC style={{ fontSize: '18px' }}>Select the percentage of APY  to maintain the project (min 1%)</DivTexStacingSC>
-                        <div style={{ display: 'flex', alignItems: 'center' }}><InputPercent onChange={Percen} ><DivContainer>{trackDatas} <div style={{ display: 'flex', flexDirection: 'column', gap: '5px', }}><DivPlus onClick={Plus}><BsArrowUpShort size={20} /></DivPlus> <DiMunus onClick={Minus}><BsArrowDownShort size={20} /></DiMunus></div></DivContainer></InputPercent><BsPercent size={28} /></div>
+                        <div style={{ display: 'flex', alignItems: 'center',gap: '10px' }}><InputPercent onChange={Percen} ><DivContainer><DivNumbers>{trackDatas}</DivNumbers>
+                        <div style={{ display: 'flex', flexDirection: 'column', gap: '5px', }}><DivPlus onClick={Plus}><BsArrowUpShort size={20} /></DivPlus> 
+                        <DiMunus onClick={Minus}><BsArrowDownShort size={20} /></DiMunus></div></DivContainer></InputPercent><BsPercent size={28} /></div>
                     </DivContainerInput>
                     <DivContainerInput>
                         <DivTexStacingSC style={{ fontSize: '18px' }}>You donate to the project in the project</DivTexStacingSC>
-                        <div style={{ display: 'flex' }}><InputPercent  >{amount} </InputPercent><DivText>Earthy tokens</DivText></div>
+                        <div style={{ display: 'flex',gap: '10px'  }}><InputPercent  >{amount} </InputPercent><DivText>Earthy tokens</DivText></div>
 
                     </DivContainerInput>
                 </DivContainerGrafic2>

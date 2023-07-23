@@ -38,6 +38,7 @@ import {
     DivContainer,
     DivUltraSmallNormalTextSC,
     DivBoxColumnCalcSC,
+    BoxPaddingSC, DivBoxCarouseItemSC
 } from "./styles.project";
 import ButtonWrapper from "@/app/components/custom_button";
 import Link from "next/link";
@@ -68,6 +69,7 @@ import plant3 from "../images/plants3.png";
 import plant2 from "../images/plants2.png";
 import plant1 from "../images/plants1.png";
 import {usePathname} from "next/navigation";
+import {TbBoxPadding} from "react-icons/tb";
 
 interface ArrayInfo {
     titleNum: string;
@@ -186,16 +188,16 @@ const Project: React.FC = () => {
         },
     ]);
     const [listRadio, setListRadio] = useState<ArrayRadio[]>([
-        {group: "group1", width: "124px", width880: "107px", label: "10 %"},
-        {group: "group1", width: "127px", width880: "108px", label: "25 %"},
-        {group: "group1", width: "132px", width880: "115px", label: "50 %"},
-        {group: "group1", width: "143px", width880: "122px", label: "100 %"},
+        {group: "group1", width: "118px", width880: "107px", label: "10 %"},
+        {group: "group1", width: "121px", width880: "108px", label: "25 %"},
+        {group: "group1", width: "126px", width880: "115px", label: "50 %"},
+        {group: "group1", width: "136px", width880: "122px", label: "100 %"},
     ]);
     const [listRadio2, setListRadio2] = useState<ArrayRadio[]>([
-        {group: "group2", width: "120px", width880: "106px", label: "30d"},
-        {group: "group2", width: "121px", width880: "109px", label: "90d"},
-        {group: "group2", width: "139px", width880: "113px", label: "180d"},
-        {group: "group2", width: "143px", width880: "120px", label: "360d"},
+        {group: "group2", width: "114px", width880: "106px", label: "30d"},
+        {group: "group2", width: "115px", width880: "109px", label: "90d"},
+        {group: "group2", width: "133px", width880: "113px", label: "180d"},
+        {group: "group2", width: "136px", width880: "120px", label: "360d"},
     ]);
     const [listItemCar, setListItemCar] = useState([
         {img: image},
@@ -297,14 +299,15 @@ const Project: React.FC = () => {
     const CarouselItems = () => {
         return listItemCar.map((item, i) => {
             return (
-                <div key={`ssssadasda${i}`} style={{padding: "0 10px"}}>
+                <DivBoxCarouseItemSC key={`ssssadasda${i}`}>
                     <CarouselProjects img={item.img}/>
-                </div>
+                </DivBoxCarouseItemSC>
             );
         });
     };
 
     return (
+        <BoxPaddingSC>
         <DivBoxProjectSC>
             <DivBoxTitleSC>
                 <DivTitleBoldSC>Project name</DivTitleBoldSC>
@@ -545,6 +548,7 @@ const Project: React.FC = () => {
                 </ButtonWrapper>
             </Modal>
         </DivBoxProjectSC>
+        </BoxPaddingSC>
     );
 };
 

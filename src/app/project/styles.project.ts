@@ -4,15 +4,28 @@ import { StaticImageData } from "next/image";
 type Propsi = {
   $images: StaticImageData;
 }
+
+
+export const BoxPaddingSC = styled.div`
+  padding: 120px 20px 0 20px;
+  max-width: 1280px;
+  display: grid;
+  justify-self: center;
+  @media(max-width: 1000px) {
+    padding: 100px 20px 0 20px;
+  }
+  @media(max-width: 480px) {
+    padding: 70px 20px 0 20px;
+  }
+  @media(max-width: 360px) {
+    padding: 81px 20px 0 20px;
+  }
+`;
 export const DivBoxProjectSC = styled.div`
   width: 100%;
-  padding: 20px;
-  max-width: max-content;
   display: grid;
   grid-template-rows: repeat(11, max-content);
   gap: 40px;
-  justify-self: center;
-  margin-top: 140px;
   @media(max-width: 768px) {
     gap: 20px;
   }
@@ -93,29 +106,18 @@ export const CarouselImageSC = styled.div<Props>`
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-  width: 397px;
-  height: 397px;
-  @media(max-width: 1430px) {
-    width: 307px;
-    height: 307px;
-    justify-self: center;
-  }
-  @media(max-width: 1000px) {
-    width: 229px;
-    height: 229px;
-  }
-  @media(max-width: 480px) {
-    width: 150px;
-    height: 150px;
-  }
+  width: 100%;
+  height: 100%;
+  aspect-ratio: 1 / 1;
+  justify-self: center;
 `;
 
 export const CarouselItemContainerSC = styled.div`
   display: grid;
   border-radius: 18px;
   transition: 0.1s;
-  width: 100%;
-  height: 100%;
+  max-width: 397px;
+  max-height: 397px;
 `;
 
 export const DivAverageBoldTextSC = styled.div<{
@@ -128,7 +130,7 @@ export const DivAverageBoldTextSC = styled.div<{
   font-style: normal;
   font-weight: 600;
   line-height: normal;
-  @media(max-width: 420px) {
+  @media(max-width: 440px) {
     font-size: 32px;
   }
 `;
@@ -155,7 +157,7 @@ export const DivSmallNormalTextSC = styled.div<{
   max-width: 608px;
   display: grid;
   justify-self: ${({ $positionText }) => $positionText};
-  @media(max-width: 420px) {
+  @media(max-width: 440px) {
     font-size: 22px;
   }
 `;
@@ -181,7 +183,7 @@ export const DivSmallBoldTextSC = styled.div`
   font-style: normal;
   font-weight: 600;
   line-height: 135%;
-  @media(max-width: 420px) {
+  @media(max-width: 440px) {
     font-size: 20px;
   }
 `;
@@ -231,7 +233,7 @@ display: grid;
 export const DivBoxCalcSC = styled.div`
   display: grid;
   grid-template-columns: repeat(2, max-content);
-  gap: 118px;
+  gap: 110px;
   @media(max-width: 1330px) {
     grid-template-columns: 100%;
     grid-template-rows: repeat(2, max-content);
@@ -487,5 +489,12 @@ grid-template-rows: repeat(2,max-content);
   @media(max-width: 768px) {
 justify-items: center;
     row-gap: 39px;
+  }
+`;
+
+export const DivBoxCarouseItemSC = styled.div`
+padding: 0 2px;
+  @media(max-width: 1248px) {
+    padding: 0 12.5px;
   }
 `;

@@ -38,7 +38,7 @@ const FundedProjectCard: FC<BlogCardProps> = ({
   const styles = {
     justifySelf: "end",
   };
-  return (
+  return ( 
     <motion.div
       initial="hidden"
       whileInView="visible"

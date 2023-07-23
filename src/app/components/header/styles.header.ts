@@ -14,7 +14,6 @@ export const DivBoxHeaderSC = styled.div<{
   padding: 0px 25px 0px 25px;
   position: fixed;
   z-index: 999;
-  box-shadow: 0px 0px 24px rgba(0, 0, 0, 0.6);
 `;
 
 export const DivBoxColumnsSC = styled.div`

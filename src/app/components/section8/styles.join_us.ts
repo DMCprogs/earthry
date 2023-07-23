@@ -91,6 +91,7 @@ export const DivBoxText1SC = styled.div`
   grid-template-rows: repeat(2, auto);
   justify-items: center;
   gap: 20px;
+  margin-bottom:50px;
 `;
 
 export const SpanTextSC = styled.span`
@@ -190,6 +191,7 @@ export const DivWrapperImageSC = styled.div<{
   background-position: center;
   background-repeat: no-repeat;
   background-size: 60%;
+  height: 100%;
   border-radius: ${({ $direct }) =>
     $direct === "ltr" ? "0px 40px 40px 40px" : "40px 40px 0px 40px"};
   @media (max-width: 1070px) {

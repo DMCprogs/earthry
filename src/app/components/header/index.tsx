@@ -20,17 +20,22 @@ import { usePathname } from "next/navigation";
 import Link from "next/link";
 
 const Header = (props: any) => {
-  const { onClickScrollHome, onClickScrollTokenomics } = props;
-  const [isScrollFooter, setIsScrollFooter] = useState(true);
+  const {
+    onClickScrollHome,
+    onClickScrollTokenomics,
+    onClickScrollBlog,
+    onClickScrollProject,
+  } = props;
   const [width, setWidth] = useState<number>(0);
   const [isBgColor, setIsBgColor] = useState<boolean>(true);
+  const [isFixed, setIsFixed] = useState<boolean>(true);
   const pathname = usePathname();
 
   useEffect(() => {
     switch (pathname) {
       case "/":
         setIsBgColor(true);
-        setIsScrollFooter(true);
+        setIsFixed(true);
         break;
       case "/non_profit1":
       case "/non_profit2":
@@ -44,7 +49,7 @@ const Header = (props: any) => {
       case "/profile":
       case "/project":
         setIsBgColor(false);
-        setIsScrollFooter(false);
+        setIsFixed(false);
         break;
     }
   }, [pathname]);
@@ -60,7 +65,7 @@ const Header = (props: any) => {
   };
 
   return (
-    <DivBoxHeaderSC $isBgColor={isBgColor}>
+    <DivBoxHeaderSC $isBgColor={isBgColor} $isFixed={isFixed}>
       <DivBoxColumnsSC>
         <motion.div
           initial="hidden"
@@ -82,200 +87,120 @@ const Header = (props: any) => {
             <IconLogoSC src={logo} alt="logo"></IconLogoSC>
           </Link>
         </motion.div>
-        {isScrollFooter ? (
-          <DivBoxTabsButtonsSC>
-            {width === 0 ? null : width >= 1301 ? (
-              <motion.div
-                initial="hidden"
-                animate="visible"
-                variants={{
-                  hidden: {
-                    opacity: 1,
-                  },
-                  visible: {
-                    y: 0,
-                    opacity: 1,
-
-                    transition: { duration: 0.7, delay: 0 },
-                  },
-                }}
-              >
-                {" "}
-                <DivBoxTabsSC>
-                  <DivBoxTabSC onClick={onClickScrollHome}>Home</DivBoxTabSC>
-                  <DivBoxLinkSC href={"/project"}>Projects</DivBoxLinkSC>
-                  <DivBoxTabSC onClick={onClickScrollTokenomics}>
-                    Tokenomics
-                  </DivBoxTabSC>
-                  <DivBoxLinkSC href={"/about"}>About</DivBoxLinkSC>
-                  <DivBoxLinkSC href={"/leaderboard"}>Leaderboard</DivBoxLinkSC>
-                  <DivBoxLinkSC href={"/blog"}>Blog</DivBoxLinkSC>
-                  <DivBoxLinkSC href={"/faq"}>FAQ</DivBoxLinkSC>
-                  <DivBoxLinkSC href={"/profile"}>Profile</DivBoxLinkSC>
-                </DivBoxTabsSC>
-              </motion.div>
-            ) : (
-              <DivBoxTabsSC>
-                <DivBoxTabSC onClick={onClickScrollHome}>Home</DivBoxTabSC>
-                <DivBoxLinkSC href={"/project"}>Projects</DivBoxLinkSC>
-                <DivBoxTabSC onClick={onClickScrollTokenomics}>
-                  Tokenomics
-                </DivBoxTabSC>
-                <DivBoxLinkSC href={"/about"}>About</DivBoxLinkSC>
-                <DivBoxLinkSC href={"/leaderboard"}>Leaderboard</DivBoxLinkSC>
-                <DivBoxLinkSC href={"/blog"}>Blog</DivBoxLinkSC>
-                <DivBoxLinkSC href={"/faq"}>FAQ</DivBoxLinkSC>
-                <DivBoxLinkSC href={"/profile"}>Profile</DivBoxLinkSC>
-              </DivBoxTabsSC>
-            )}
-
+        <DivBoxTabsButtonsSC>
+          {width === 0 ? null : width >= 1301 ? (
             <motion.div
               initial="hidden"
               animate="visible"
               variants={{
                 hidden: {
-                  y: -85,
                   opacity: 1,
                 },
                 visible: {
                   y: 0,
                   opacity: 1,
+
                   transition: { duration: 0.7, delay: 0 },
                 },
               }}
             >
-              <DivBoxButtonsSC>
-                <Link href={"/buy_token"}>
-                  <ButtonWrapper
-                    width={233}
-                    primary={true}
-                    directionRadius="center"
-                    height={64}
-                  >
-                    <span>Buy Earthy token</span>
-                  </ButtonWrapper>
-                </Link>
+              {" "}
+              <DivBoxTabsSC>
+                <DivBoxTabSC onClick={onClickScrollHome}>Home</DivBoxTabSC>
+                <DivBoxTabSC onClick={onClickScrollProject}>
+                  Projects
+                </DivBoxTabSC>
+                <DivBoxTabSC onClick={onClickScrollTokenomics}>
+                  Tokenomics
+                </DivBoxTabSC>
+                <DivBoxLinkSC href={"/about"}>About</DivBoxLinkSC>
+                <DivBoxLinkSC href={"/leaderboard"}>Leaderboard</DivBoxLinkSC>
+                <DivBoxTabSC onClick={onClickScrollBlog}>Blog</DivBoxTabSC>
+                <DivBoxLinkSC href={"/faq"}>FAQ</DivBoxLinkSC>
+                <DivBoxLinkSC href={"/profile"}>Profile</DivBoxLinkSC>
+              </DivBoxTabsSC>
+            </motion.div>
+          ) : (
+            <DivBoxTabsSC>
+              <DivBoxTabSC onClick={onClickScrollHome}>Home</DivBoxTabSC>
+              <DivBoxTabSC onClick={onClickScrollProject}>Projects</DivBoxTabSC>
+              <DivBoxTabSC onClick={onClickScrollTokenomics}>
+                Tokenomics
+              </DivBoxTabSC>
+              <DivBoxLinkSC href={"/about"}>About</DivBoxLinkSC>
+              <DivBoxLinkSC href={"/leaderboard"}>Leaderboard</DivBoxLinkSC>
+              <DivBoxTabSC onClick={onClickScrollBlog}>Blog</DivBoxTabSC>
+              <DivBoxLinkSC href={"/faq"}>FAQ</DivBoxLinkSC>
+              <DivBoxLinkSC href={"/profile"}>Profile</DivBoxLinkSC>
+            </DivBoxTabsSC>
+          )}
+
+          <motion.div
+            initial="hidden"
+            animate="visible"
+            variants={{
+              hidden: {
+                y: -85,
+                opacity: 1,
+              },
+              visible: {
+                y: 0,
+                opacity: 1,
+                transition: { duration: 0.7, delay: 0 },
+              },
+            }}
+          >
+            <DivBoxButtonsSC>
+              <Link href={"/buy_token"}>
                 <ButtonWrapper
-                  width={222}
+                  width={233}
                   primary={true}
                   directionRadius="center"
                   height={64}
                 >
-                  <span>Buy with card</span>
+                  <span>Buy Earthy token</span>
                 </ButtonWrapper>
-              </DivBoxButtonsSC>
-            </motion.div>
-            <div className={styles.hamburger_menu}>
-              <input id={styles.menu__toggle} type="checkbox" />
-              <label className={styles.menu__btn} htmlFor={styles.menu__toggle}>
-                <span></span>
-              </label>
-              <div className={styles.menu__box}>
-                <DivBoxBurgerSC className={styles.menu}>
-                  <DivBoxTabSC onClick={onClickScrollHome}>Home</DivBoxTabSC>
-                  <DivBoxLinkSC href={"/project"}>Projects</DivBoxLinkSC>
-                  <DivBoxTabSC onClick={onClickScrollTokenomics}>
-                    Tokenomics
-                  </DivBoxTabSC>
-                  <DivBoxLinkSC href={"/about"}>About</DivBoxLinkSC>
-                  <DivBoxLinkSC href={"/leaderboard"}>Leaderboard</DivBoxLinkSC>
-                  <DivBoxLinkSC href={"/blog"}>Blog</DivBoxLinkSC>
-                  <DivBoxLinkSC href={"/faq"}>FAQ</DivBoxLinkSC>
-                  <DivBoxLinkSC href={"/profile"}>Profile</DivBoxLinkSC>
-                  <DivBoxButtonsMenuSC>
-                    <Link href={"/buy_token"}>
-                      <ButtonWrapper
-                        width={222}
-                        primary={true}
-                        directionRadius="center"
-                        height={64}
-                      >
-                        <span>Buy Earthy token</span>
-                      </ButtonWrapper>
-                    </Link>
+              </Link>
+              <ButtonWrapper
+                width={222}
+                primary={true}
+                directionRadius="center"
+                height={64}
+              >
+                <span>Buy with card</span>
+              </ButtonWrapper>
+            </DivBoxButtonsSC>
+          </motion.div>
+          <div className={styles.hamburger_menu}>
+            <input id={styles.menu__toggle} type="checkbox" />
+            <label className={styles.menu__btn} htmlFor={styles.menu__toggle}>
+              <span></span>
+            </label>
+            <div className={styles.menu__box}>
+              <DivBoxBurgerSC className={styles.menu}>
+                <DivBoxTabSC onClick={onClickScrollHome}>Home</DivBoxTabSC>
+                <DivBoxTabSC onClick={onClickScrollProject}>
+                  Projects
+                </DivBoxTabSC>
+                <DivBoxTabSC onClick={onClickScrollTokenomics}>
+                  Tokenomics
+                </DivBoxTabSC>
+                <DivBoxLinkSC href={"/about"}>About</DivBoxLinkSC>
+                <DivBoxLinkSC href={"/leaderboard"}>Leaderboard</DivBoxLinkSC>
+                <DivBoxTabSC onClick={onClickScrollBlog}>Blog</DivBoxTabSC>
+                <DivBoxLinkSC href={"/faq"}>FAQ</DivBoxLinkSC>
+                <DivBoxLinkSC href={"/profile"}>Profile</DivBoxLinkSC>
+                <DivBoxButtonsMenuSC>
+                  <Link href={"/buy_token"}>
                     <ButtonWrapper
                       width={222}
                       primary={true}
                       directionRadius="center"
                       height={64}
                     >
-                      <span>Buy with card</span>
+                      <span>Buy Earthy token</span>
                     </ButtonWrapper>
-                  </DivBoxButtonsMenuSC>
-                </DivBoxBurgerSC>
-              </div>
-            </div>
-          </DivBoxTabsButtonsSC>
-        ) : (
-          <DivBoxTabsButtonsSC>
-            {width === 0 ? null : width >= 1301 ? (
-              <motion.div
-                initial="hidden"
-                animate="visible"
-                variants={{
-                  hidden: {
-                    opacity: 1,
-                  },
-                  visible: {
-                    y: 0,
-                    opacity: 1,
-
-                    transition: { duration: 0.7, delay: 0 },
-                  },
-                }}
-              >
-                {" "}
-                <DivBoxTabsSC>
-                  <DivBoxLinkSC href={"/"}>Home</DivBoxLinkSC>
-                  <DivBoxLinkSC href={"/project"}>Projects</DivBoxLinkSC>
-                  <DivBoxLinkSC href={"/tokenomics"}>Tokenomics</DivBoxLinkSC>
-                  <DivBoxLinkSC href={"/about"}>About</DivBoxLinkSC>
-                  <DivBoxLinkSC href={"/leaderboard"}>Leaderboard</DivBoxLinkSC>
-                  <DivBoxLinkSC href={"/blog"}>Blog</DivBoxLinkSC>
-                  <DivBoxLinkSC href={"/faq"}>FAQ</DivBoxLinkSC>
-                  <DivBoxLinkSC href={"/profile"}>Profile</DivBoxLinkSC>
-                </DivBoxTabsSC>
-              </motion.div>
-            ) : (
-              <DivBoxTabsSC>
-                <DivBoxLinkSC href={"/"}>Home</DivBoxLinkSC>
-                <DivBoxLinkSC href={"/project"}>Projects</DivBoxLinkSC>
-                <DivBoxLinkSC href={"/tokenomics"}>Tokenomics</DivBoxLinkSC>
-                <DivBoxLinkSC href={"/about"}>About</DivBoxLinkSC>
-                <DivBoxLinkSC href={"/leaderboard"}>Leaderboard</DivBoxLinkSC>
-                <DivBoxLinkSC href={"/blog"}>Blog</DivBoxLinkSC>
-                <DivBoxLinkSC href={"/faq"}>FAQ</DivBoxLinkSC>
-                <DivBoxLinkSC href={"/profile"}>Profile</DivBoxLinkSC>
-              </DivBoxTabsSC>
-            )}
-
-            <motion.div
-              initial="hidden"
-              animate="visible"
-              variants={{
-                hidden: {
-                  y: -85,
-                  opacity: 1,
-                },
-                visible: {
-                  y: 0,
-                  opacity: 1,
-                  transition: { duration: 0.7, delay: 0 },
-                },
-              }}
-            >
-              <DivBoxButtonsSC>
-                <Link href="/buy_token">
-                  <ButtonWrapper
-                    width={222}
-                    primary={true}
-                    directionRadius="center"
-                    height={64}
-                  >
-                    <span>Buy Earthy token</span>
-                  </ButtonWrapper>
-                </Link>
-                <Link href="#">
+                  </Link>
                   <ButtonWrapper
                     width={222}
                     primary={true}
@@ -284,51 +209,11 @@ const Header = (props: any) => {
                   >
                     <span>Buy with card</span>
                   </ButtonWrapper>
-                </Link>
-              </DivBoxButtonsSC>
-            </motion.div>
-            <div className={styles.hamburger_menu}>
-              <input id={styles.menu__toggle} type="checkbox" />
-              <label className={styles.menu__btn} htmlFor={styles.menu__toggle}>
-                <span></span>
-              </label>
-              <div className={styles.menu__box}>
-                <DivBoxBurgerSC className={styles.menu}>
-                  <DivBoxLinkSC href={"/"}>Home</DivBoxLinkSC>
-                  <DivBoxLinkSC href={"/project"}>Projects</DivBoxLinkSC>
-                  <DivBoxLinkSC href={"/tokenomics"}>Tokenomics</DivBoxLinkSC>
-                  <DivBoxLinkSC href={"/about"}>About</DivBoxLinkSC>
-                  <DivBoxLinkSC href={"/leaderboard"}>Leaderboard</DivBoxLinkSC>
-                  <DivBoxLinkSC href={"/blog"}>Blog</DivBoxLinkSC>
-                  <DivBoxLinkSC href={"/faq"}>FAQ</DivBoxLinkSC>
-                  <DivBoxLinkSC href={"/profile"}>Profile</DivBoxLinkSC>
-                  <DivBoxButtonsMenuSC>
-                    <Link href="/buy_token">
-                      <ButtonWrapper
-                        width={222}
-                        primary={true}
-                        directionRadius="center"
-                        height={64}
-                      >
-                        <span>Buy Earthy token</span>
-                      </ButtonWrapper>
-                    </Link>
-                    <Link href="#">
-                      <ButtonWrapper
-                        width={222}
-                        primary={true}
-                        directionRadius="center"
-                        height={64}
-                      >
-                        <span>Buy with card</span>
-                      </ButtonWrapper>
-                    </Link>
-                  </DivBoxButtonsMenuSC>
-                </DivBoxBurgerSC>
-              </div>
+                </DivBoxButtonsMenuSC>
+              </DivBoxBurgerSC>
             </div>
-          </DivBoxTabsButtonsSC>
-        )}
+          </div>
+        </DivBoxTabsButtonsSC>
       </DivBoxColumnsSC>
     </DivBoxHeaderSC>
   );

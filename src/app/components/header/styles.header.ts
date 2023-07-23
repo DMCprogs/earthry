@@ -5,6 +5,7 @@ import styled from "styled-components";
 
 export const DivBoxHeaderSC = styled.div<{
   $isBgColor: boolean;
+  $isFixed: boolean;
 }>`
   width: 100%;
   display: grid;
@@ -12,7 +13,7 @@ export const DivBoxHeaderSC = styled.div<{
   background-color: ${({ $isBgColor }) =>
     $isBgColor ? " #4affc9" : "rgba(255, 255, 255, 0.70)"};
   padding: 0px 25px 0px 25px;
-  position: fixed;
+  position: ${({$isFixed}) => $isFixed ? "fixed" : "relative"};
   z-index: 999;
 `;
 

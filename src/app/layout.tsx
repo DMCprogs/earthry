@@ -8,6 +8,7 @@ import { DivContentSC, DivWrapperSC } from "./styles.page";
 import Header from "./components/header";
 import { IRefObj } from "./interfaces/interfaces";
 import Footer from "./components/footer";
+import HeaderForPage from "@/app/components/header/HeaderForPage";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -18,77 +19,13 @@ const metadata = {
 
 const RootLayout: FC<{ children: ReactNode }> = (props) => {
   const { children } = props;
-  let bottomRefHome = useRef<any>();
-  let bottomRefTokenomics = useRef<any>();
-
-  function getRef(refs: IRefObj) {
-    // console.log(`Hello from  the child`, refs);
-    bottomRefHome = refs.bottomRefHome;
-    bottomRefTokenomics = refs.bottomRefTokenomics;
-  }
-
-  useEffect(() => {
-    window.onscroll = onScroll;
-  }, []);
-
-  const onScroll = () => {
-    var winScroll =
-      document.body.scrollTop || document.documentElement.scrollTop;
-    var height =
-      document.documentElement.scrollHeight -
-      document.documentElement.clientHeight;
-    var scrolled = (winScroll / height) * 100;
-    if (document.getElementById("myBar")) {
-      document.getElementById("myBar")!.style.width = scrolled + "%";
-    }
-  };
-  const onClickScrollHome = () => {
-    console.log("><>>>>>>>");
-    bottomRefHome?.current?.scrollIntoView({ behavior: "smooth" });
-  };
-  const onClickScrollTokenomics = () => {
-    console.log("><>>>>>>>");
-    bottomRefTokenomics?.current?.scrollIntoView({ behavior: "smooth" });
-  };
-
-  // const childrenWithProps = React.Children.map(children, (child) => {
-  //     // Checking isValidElement is the safe way and avoids a
-  //     // typescript error too.
-  //     if (React.isValidElement(child)) {
-  //         return React.cloneElement(child, {
-  //             getRef,
-  //             onClickScrollTokenomics,
-  //             onClickScrollAbout,
-  //             onClickScrollRoudmap,
-  //             onClickScrollHowToBy,
-  //             onClickScrollFAQ,
-  //             onClickScrollContacts,
-  //             onClickScrollExchange
-  //         });
-  //     }
-  //     return child;
-  // });
-
-  useEffect(
-    () =>
-      getRef({
-        bottomRefHome,
-        bottomRefTokenomics,
-      }),
-
-    [bottomRefHome, bottomRefTokenomics]
-  );
-
   return (
     <html lang="en">
       <title>Earthy</title>
       <body className={inter.className}>
         <StyledComponentsRegistry>
           <DivWrapperSC>
-            <Header
-              onClickScrollHome={onClickScrollHome}
-              onClickScrollTokenomics={onClickScrollTokenomics}
-            />
+            <HeaderForPage/>
             {children}
             <Footer />
           </DivWrapperSC>

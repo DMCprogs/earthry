@@ -1,5 +1,5 @@
 "use client";
-import { FC } from "react";
+import { FC,useState } from "react";
 import Link from "next/link";
 import { DivDefaultContainerSC } from "../styles.page";
 import YouTube, { YouTubeProps } from "react-youtube";
@@ -39,93 +39,97 @@ const options = {
   },
 };
 
-const BlogDetail: FC = () => (
 
-
+const BlogDetail: FC = () => {
+  
+ return (
   <DivDefaultContainerSC style={{ marginTop: '83px', maxWidth: 'none', width: '100%', }}>
-    <DivBackgroundImgSC images={ImgBlog} />
-    <DivDetailContentSC>
-      <ContainerSC>
-        <DivBlogInfoSC>
-          <DivCaptionConteinerSC>
-            <DivTitleSC>Lorem ipsum dolor sit amet, consectetur adipiscing elit</DivTitleSC>
-            <DivDateSC>June 12, 2023</DivDateSC>
-          </DivCaptionConteinerSC>
-          <DivTextSC>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis.</DivTextSC>
-          <DivContainerVideoSC>
-            <YouTube
-              style={{
-                position: 'absolute',
-                top: '0',
-                left: '0',
-                right: '0',
-                bottom: '0',
-              }}
-              videoId="RzVvThhjAKw" // defaults -> ''
-              id="RzVvThhjAKw" // defaults -> ''
-              onPlay={() => {
-                console.log("test");
-                // setMute(0);
-              }}
-              opts={options}
+<DivBackgroundImgSC $images={ImgBlog} />
+<DivDetailContentSC>
+  <ContainerSC>
+    <DivBlogInfoSC>
+      <DivCaptionConteinerSC>
+        <DivTitleSC>Lorem ipsum dolor sit amet, consectetur adipiscing elit</DivTitleSC>
+        <DivDateSC>June 12, 2023</DivDateSC>
+      </DivCaptionConteinerSC>
+      <DivTextSC>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis.</DivTextSC>
+      <DivContainerVideoSC>
+        <YouTube
+          style={{
+            position: 'absolute',
+            top: '0',
+            left: '0',
+            right: '0',
+            bottom: '0',
+          }}
+          videoId="RzVvThhjAKw" // defaults -> ''
+          id="RzVvThhjAKw" // defaults -> ''
+          onPlay={() => {
+            console.log("test");
+            // setMute(0);
+          }}
+          opts={options}
 
-            /> </DivContainerVideoSC>
-          <DivTextSC>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-            Nunc vulputate libero et velit interdum, ac aliquet odio mattis. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-            Nunc vulputate libero et velit interdum, ac aliquet odio mattis.
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis. </DivTextSC>
+        /> </DivContainerVideoSC>
+      <DivTextSC>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        Nunc vulputate libero et velit interdum, ac aliquet odio mattis. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        Nunc vulputate libero et velit interdum, ac aliquet odio mattis.
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis. </DivTextSC>
 
-        </DivBlogInfoSC>
-      </ContainerSC>
-    </DivDetailContentSC>
-    <DivBlogContent>
-      <DivContainerAllBlogSC>
-        <DivTexLatest>Latest posts</DivTexLatest>
-        <Link href={"/blog"}>
-          
-          <ButtonJoin>
-            ALL POSTS<BsArrowRight color={"white"} size={24} />{" "}
-          </ButtonJoin>
-        </Link>
-      </DivContainerAllBlogSC>
-      <DivContainerBlogSC>
-        <DivTexLatestSC>Latest posts</DivTexLatestSC>
-        <DivGridSC>
-          <BlogCard
-            img={image}
-            title={"Lorem ipsum dolor sit amet, consectetur adipiscing elit"}
-            description={"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis."} />
-          <BlogCard
-            img={image}
-            title={"Lorem ipsum dolor sit amet, consectetur adipiscing elit"}
-            description={"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis."} />
-          <BlogCard
-            img={image}
-            title={"Lorem ipsum dolor sit amet, consectetur adipiscing elit"}
-            description={"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis."} />
-        </DivGridSC>
-        <Link href={"/blog"}>
-          <ButtonJoinSC>
-            ALL POSTS<BsArrowRight color={"white"} size={24} />{" "}
-          </ButtonJoinSC>
-        </Link>
-      </DivContainerBlogSC>
-    </DivBlogContent>
-    <div style={{ display: 'grid', justifyItems: 'center' }}>
-      <DivH1SC>Subscribe for updates</DivH1SC>
-      <Link href={"/"}>
-        <ButtonWrapper
-          directionRadius={"ltr"}
-          primary={true}
-          height={84}
-          width={260}
-        >
-          <span> Subscribe </span>
-        </ButtonWrapper>
-      </Link>
-    </div>
-  </DivDefaultContainerSC>
+    </DivBlogInfoSC>
+  </ContainerSC>
+</DivDetailContentSC>
+<DivBlogContent>
+  <DivContainerAllBlogSC>
+    <DivTexLatest>Latest posts</DivTexLatest>
+    <Link href={"/blog"}>
+      
+      <ButtonJoin>
+        ALL POSTS<BsArrowRight color={"white"} size={24} />{" "}
+      </ButtonJoin>
+    </Link>
+  </DivContainerAllBlogSC>
+  <DivContainerBlogSC>
+    <DivTexLatestSC>Latest posts</DivTexLatestSC>
+    <DivGridSC>
+      <BlogCard
+        img={image}
+        title={"Lorem ipsum dolor sit amet, consectetur adipiscing elit"}
+        description={"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis."} />
+      <BlogCard
+        img={image}
+        title={"Lorem ipsum dolor sit amet, consectetur adipiscing elit"}
+        description={"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis."} />
+      <BlogCard
+        img={image}
+        title={"Lorem ipsum dolor sit amet, consectetur adipiscing elit"}
+        description={"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis."} />
+    </DivGridSC>
+    <Link href={"/blog"}>
+      <ButtonJoinSC>
+        ALL POSTS<BsArrowRight color={"white"} size={24} />{" "}
+      </ButtonJoinSC>
+    </Link>
+  </DivContainerBlogSC>
+</DivBlogContent>
+<div style={{ display: 'grid', justifyItems: 'center' }}>
+  <DivH1SC>Subscribe for updates</DivH1SC>
+  <Link href={"/"}>
+    <ButtonWrapper
+      directionRadius={"ltr"}
+      primary={true}
+      height={84}
+      width={260}
+    >
+      <span> Subscribe </span>
+    </ButtonWrapper>
+  </Link>
+</div>
 
+</DivDefaultContainerSC>
 );
+  
+
+ };
 
 export default BlogDetail;

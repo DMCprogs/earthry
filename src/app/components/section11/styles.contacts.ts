@@ -1,8 +1,8 @@
-"use client"
-import {styled} from "styled-components";
+"use client";
+import { styled } from "styled-components";
 
 export const DivWrapperContactsImageSC = styled.div<{
-    $path: string;
+  $path: string;
 }>`
   display: grid;
   width: 35px;
@@ -19,7 +19,7 @@ export const DivWrapperContactsImageSC = styled.div<{
 `;
 
 export const TitleContactsSC = styled.div`
-  color: #201E1C;
+  color: #201e1c;
   text-align: center;
   font-family: Montserrat;
   font-size: 48px;
@@ -27,7 +27,7 @@ export const TitleContactsSC = styled.div`
   font-weight: 600;
   line-height: normal;
   letter-spacing: 1.44px;
-  @media(max-width: 480px) {
+  @media (max-width: 480px) {
     font-size: 40px;
     letter-spacing: 1.2px;
   }
@@ -46,7 +46,7 @@ export const DivBoxItemTitles = styled.div`
   display: grid;
   grid-template-rows: repeat(2, max-content);
   gap: 6px;
-  @media(max-width: 480px) {
+  @media (max-width: 480px) {
     justify-items: center;
     gap: 0;
   }
@@ -68,7 +68,7 @@ export const TitleSC = styled.div`
 `;
 
 export const TitleBoldSC = styled.div`
-  color: #201E1C;
+  color: #201e1c;
   font-family: Montserrat;
   font-size: 24px;
   font-style: normal;
@@ -100,7 +100,15 @@ export const DivContainerContactsSC = styled.div`
   justify-self: center;
   grid-template-rows: repeat(3, max-content);
   gap: 50px;
+ // border: 1px solid red;
   @media (max-width: 480px) {
     gap: 40px;
   }
 `;
+export const DivWrapPageSC = styled.div`
+  display: grid;
+  width: 100%;
+ // border: 1px solid red;
+  justify-content: center;
+`;
+

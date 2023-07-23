@@ -47,6 +47,13 @@ height: 100%;
 display: grid;
 align-items: center;
 justify-items: center;
+display: grid;
+grid-template-rows: max-content max-content;
+justify-items: left;
+gap: 50px;
+@media(max-width:768px){
+  justify-items: center;
+}
 `;
 export const DivContainerGif = styled.div`
   width: 100%;

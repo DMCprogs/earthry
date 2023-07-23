@@ -1,6 +1,9 @@
 "use client";
+import { StaticImageData } from "next/image";
 import { styled } from "styled-components";
-
+type Props = {
+  $images: StaticImageData;
+}
 export const DivBlogContainerSC = styled.div`
   display: grid;
   justify-content: center;
@@ -27,3 +30,5 @@ export const DivContentSC = styled.div`
     grid-template-columns: repeat(1, 1fr);
   }
 `;
+
+

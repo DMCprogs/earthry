@@ -5,6 +5,7 @@ type Props = {
     $images: StaticImageData;
   }
   export const DivModalContainerSC = styled.div`
+
 padding: 50px 0;
   display: grid;
   height: 100vh;

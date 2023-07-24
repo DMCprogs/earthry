@@ -421,9 +421,7 @@ const SwapBlock = () => {
           </div>
         )}
 
-        <div style={{ color: "black", cursor: "pointer" }} onClick={Logout}>
-          Logout
-        </div>
+       
       </DivSwapBlockSC>
     </>
   );

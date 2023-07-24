@@ -32,6 +32,8 @@ display: grid;
 grid-template-columns: 1fr 1fr;
 align-items: center;
 justify-items: center;
+gap: 150px;
+padding: 0 50px;
 @media(max-width:780px){
     grid-template-columns: 1fr ;
     text-align: center;

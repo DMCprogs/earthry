@@ -36,6 +36,7 @@ import plant2 from"../../images/plants2.png";
 import plant1 from"../../images/plants1.png";
 import { DivCourceTitleImgSC } from '@/app/buy_token/earthyCourse/styles.EarthyCourse';
 import courceImg from '../../images/eth_logo.svg';
+import "./style.css";
   const ModalProject: FC<ModalProps> = ({ }) => {
     
     const [trackDatas, setTrackDatas] = useState(1);

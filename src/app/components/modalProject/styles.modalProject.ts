@@ -72,6 +72,7 @@ export const DivNumberBoxSC = styled.div`
  grid-template-columns: max-content max-content;
  gap: 5px;
   color: white;
+  align-items: center;
 `;
 export const DivSliderSC = styled.div`
   display: grid;

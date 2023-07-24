@@ -13,6 +13,12 @@ import {
 } from "./styles.about";
 import teamLogo from "../images/Team.jpg";
 import Bogati from "../images/Bogati.jpg";
+import Edward from "../images/Edward.jpg";
+import Ryan from "../images/Ryan.jpg";
+import Capitan from "../images/Capitan.jpg";
+import Jackob from "../images/Jackob.jpg";
+import Joe from "../images/Joe.jpg";
+import Mirko from "../images/Mirko.jpg";
 import CardTeam from "./cardTeam";
 import { BsArrowRight } from "react-icons/bs";
 import ButtonWrapper from "../components/custom_button";
@@ -34,26 +40,21 @@ const About: FC = () => (
     <DivContainerTeamSC>
       <DivH1SC >Our team</DivH1SC>
       <DivTeamSC>
+       
         <CardTeam
-          images={teamLogo}
-          links={"https://www.linkedin.com/in/sam-singer/"}
-          name={"Sam Singer"}
-          post={"General director"}
-        />
-        <CardTeam
-          images={teamLogo}
+          images={Edward}
           links={"https://www.linkedin.com/in/edward-hinson-90975419/"}
           name={"Edward Hinson"}
           post={"CMO"}
         />
         <CardTeam
-          images={teamLogo}
+          images={Ryan}
           links={"https://www.linkedin.com/in/tagg-ryan-14229671/"}
           name={"Ryan Tag AR"}
           post={"VR Engineer"}
         />
         <CardTeam
-          images={teamLogo}
+          images={Capitan}
           links={"https://www.linkedin.com/in/captain-haiti-816b59208/"}
           name={"Captain Haiti"}
           post={"Community Development"}
@@ -65,37 +66,21 @@ const About: FC = () => (
           post={"Metaverse Lead"}
         />
         <CardTeam
-          images={teamLogo}
+          images={Jackob}
           links={"https://www.linkedin.com/in/jakob-von-rosen-imig-38b278204/"}
           name={"Jakob Von Rosen "}
           post={"COO"}
         />
+         
+         
           <CardTeam
-          images={teamLogo}
-          links={"https://www.linkedin.com/in/scottbayless/"}
-          name={"Scott Bayless"}
-          post={"CSO"}
-        />
-          <CardTeam
-          images={teamLogo}
-          links={"https://www.linkedin.com/in/paul-bronstein-589132a8/"}
-          name={"Paul Bronstein AR "}
-          post={"VR Engineer"}
-        />
-          <CardTeam
-          images={teamLogo}
-          links={"https://www.linkedin.com/in/joseph-reiben-4b380a7/"}
-          name={"Joseph Reiben "}
-          post={"Attorney"}
-        />
-          <CardTeam
-          images={teamLogo}
+          images={Mirko}
           links={"https://www.linkedin.com/in/mirko-tancredi-6898a9280/"}
           name={"Mirko Tancredi"}
           post={"Attorney"}
         />
           <CardTeam
-          images={teamLogo}
+          images={Joe}
           links={"https://www.linkedin.com/in/joseph-singer-332506223/"}
           name={"Joseph Singer"}
           post={"Engineering lead"}

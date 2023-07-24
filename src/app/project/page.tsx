@@ -76,7 +76,7 @@ const Project: React.FC = () => {
     const [result, setResult] = useState<number>(0);
     const [countTokens, setCountTokens] = useState<string>("");
     const [countDays, setCountDays] = useState<string>("");
-    const [trackData, setTrackData] = useState(14);
+    const [trackData, setTrackData] = useState(1);
     const [data, setDataChart] = useState<
         {
             year: number;
@@ -157,8 +157,9 @@ const Project: React.FC = () => {
                 year: i,
                 tokens: rounded(_dayData),
             });
-            const s = (+countTokens * 8 * trackData) / 360 / 100;
+            const s = ((+countTokens * 8 * trackData) / 360) / 100;
             _dayData += s;
+            setResult( (_dayData - s) - +countTokens)
         }
 
         setDataChart(array);
@@ -177,11 +178,6 @@ const Project: React.FC = () => {
     const hanInputChange = (event: ChangeEvent<HTMLInputElement>): void => {
         const newVal = event.target.value;
         setCountTokens(newVal);
-        if (!isNaN(Number(newVal))) {
-            setResult(Number(newVal) * 0.08);
-        } else {
-            setResult(0);
-        }
     };
     const responsive = {
         desktop: {

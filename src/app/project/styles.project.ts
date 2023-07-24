@@ -286,12 +286,12 @@ export const DivInputConclusionSC = styled.div`
   padding: 23px 80% 23px 20%;
 `;
 
-export const InputTokensSC = styled.input`
+export const InputTokensSC = styled.input<{ error?: boolean }>`
   border-radius: 20px;
   width: 235px;
   height: 74px;
   padding: 25px;
-  border: 3px solid #195946;
+  border: ${props => (props.error ? '3px solid red' : '3px solid #195946')};
   background: #FFF;
   outline: none;
     color: #201E1C;

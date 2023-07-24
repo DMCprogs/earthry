@@ -45,6 +45,8 @@ import CustomLineChart from "@/app/project/components/LineChart";
 import SwapBlock from "@/app/components/swapBlock/SwapBlock";
 import Modal from "../components/modal/modal";
 import "rc-slider/assets/index.css";
+import { toast, ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 import {usePathname} from "next/navigation";
 import ModalProject from "../components/modalProject/modalProject";
@@ -68,6 +70,7 @@ interface SocialItem {
 }
 
 const Project: React.FC = () => {
+    const [inputError, setInputError] = useState(false);
     const [isOpen, setIsOpen] = useState(false);
     const handleOpen = () => setIsOpen(true);
     const handleClose = () => setIsOpen(false);
@@ -153,13 +156,14 @@ const Project: React.FC = () => {
 
         let _dayData = +countTokens;
         for (let i = 0; i <= +countDays; i++) {
+            const roundedTokens = rounded(_dayData);
             array.push({
                 year: i,
-                tokens: rounded(_dayData),
+                tokens: roundedTokens,
             });
             const s = ((+countTokens * 8 * trackData) / 360) / 100;
             _dayData += s;
-            setResult( (_dayData - s) - +countTokens)
+            setResult(parseFloat(((_dayData - s) - +countTokens).toFixed(2)));
         }
 
         setDataChart(array);
@@ -172,12 +176,21 @@ const Project: React.FC = () => {
     const handleResize = () => {
         setWidth(window.innerWidth);
     };
-    const handleInputChange = (event: ChangeEvent<HTMLInputElement>): void => {
-        setCountDays(event.target.value);
-    };
+
+    const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        const value = e.target.value.replace(/\D/g, '');
+
+        // Check if the input is a number
+        if (!isNaN(Number(value))) {
+            setCountDays(value);
+            setInputError(true);
+    } else {
+        setInputError(true);
+        toast.error('Введите число 14 или больше');
+    }
+};
     const hanInputChange = (event: ChangeEvent<HTMLInputElement>): void => {
-        const newVal = event.target.value;
-        setCountTokens(newVal);
+        setCountTokens(event.target.value);
     };
     const responsive = {
         desktop: {
@@ -287,25 +300,25 @@ const Project: React.FC = () => {
             <DivSmallNormalTextSC $positionText={width > 768 ? "center" : "start"}>
                 Select the number of tokens for staking to see the profitability
             </DivSmallNormalTextSC>
-            <DivBoxBigElementsSC>
-                <SwapBlock/>
-                <CustomLineChart data={data}/>
-                <DivContainerGif $display={"none"}>
-                    <Image
-                        src={coin2}
-                        width={260}
-                        height={383}
-                        alt="Picture of the author"
-                    />
-                </DivContainerGif>
-            </DivBoxBigElementsSC>
+            {/*<DivBoxBigElementsSC>*/}
+            {/*    <SwapBlock/>*/}
+            {/*    <CustomLineChart data={data}/>*/}
+            {/*    <DivContainerGif $display={"none"}>*/}
+            {/*        <Image*/}
+            {/*            src={coin2}*/}
+            {/*            width={260}*/}
+            {/*            height={383}*/}
+            {/*            alt="Picture of the author"*/}
+            {/*        />*/}
+            {/*    </DivContainerGif>*/}
+            {/*</DivBoxBigElementsSC>*/}
             <DivBoxColumnCalcSC>
                 <DivBoxCalcSC>
                     <DivBoxBoxOptionSC>
                         <DivBoxOptionSC>
                             <InputTokensSC
                                 placeholder="0 tokens"
-                                type="tel"
+                                type="text"
                                 name="count_tokens"
                                 value={countTokens}
                                 onChange={hanInputChange}
@@ -327,31 +340,35 @@ const Project: React.FC = () => {
                                 );
                             })}
                         </DivBoxOptionSC>
-                        <DivBoxOptionSC>
-                            <InputTokensSC
-                                type="text"
-                                placeholder={"14 days"}
-                                name={"count_days"}
-                                value={countDays}
-                                onChange={handleInputChange}
-                            />
-                            {listRadio2.map((buttRad, i) => {
-                                return (
-                                    <RadioButton
-                                        key={`deghghffffhhdefda${i}`}
-                                        group={buttRad.group}
-                                        width={
-                                            width > 880
-                                                ? buttRad.width
-                                                : width > 768
-                                                    ? buttRad.width880
-                                                    : "200px"
-                                        }
-                                        label={buttRad.label}
-                                    ></RadioButton>
-                                );
-                            })}
-                        </DivBoxOptionSC>
+                        {/*<DivBoxOptionSC>*/}
+                        {/*    <>*/}
+                        {/*    <InputTokensSC*/}
+                        {/*        type="text"*/}
+                        {/*        placeholder={"14 days"}*/}
+                        {/*        name={"count_days"}*/}
+                        {/*        value={countDays}*/}
+                        {/*        onChange={handleInputChange}*/}
+                        {/*        error={inputError}*/}
+                        {/*    />*/}
+                        {/*    <ToastContainer/>*/}
+                        {/*    </>*/}
+                        {/*    {listRadio2.map((buttRad, i) => {*/}
+                        {/*        return (*/}
+                        {/*            <RadioButton*/}
+                        {/*                key={`deghghffffhhdefda${i}`}*/}
+                        {/*                group={buttRad.group}*/}
+                        {/*                width={*/}
+                        {/*                    width > 880*/}
+                        {/*                        ? buttRad.width*/}
+                        {/*                        : width > 768*/}
+                        {/*                            ? buttRad.width880*/}
+                        {/*                            : "200px"*/}
+                        {/*                }*/}
+                        {/*                label={buttRad.label}*/}
+                        {/*            ></RadioButton>*/}
+                        {/*        );*/}
+                        {/*    })}*/}
+                        {/*</DivBoxOptionSC>*/}
                     </DivBoxBoxOptionSC>
                     <DivBoxConclusionSC>
                         <DivUltraSmallNormalTextSC>

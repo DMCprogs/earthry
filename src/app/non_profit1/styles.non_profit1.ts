@@ -6,7 +6,7 @@ export const DivRowsWrapSC = styled.div`
   width: 100%;
   max-width: 1240px;
   display: grid;
-  grid-template-rows: repeat(8, max-content);
+  grid-template-rows: repeat(10, max-content);
   gap: 96px;
   margin-top: clamp(140px,20vw, 170px);
   justify-self: center;
@@ -191,4 +191,9 @@ export const DivNormalTextSC = styled.div`
     font-size: 20px;
     line-height: 37px;
   }
+`;
+
+export const DivBoxButtonNPSC = styled.div`
+  display: grid;
+  justify-content: center;
 `;

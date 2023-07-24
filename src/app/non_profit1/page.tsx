@@ -11,10 +11,14 @@ import {
   DivNormalTextSC,
   ImageEcologySC,
   ImagePeopleEcologySC,
+  DivBoxButtonNPSC
 } from "./styles.non_profit1";
 import ecology from "../images/ecology.jpg";
 import doc_ecology from "../images/doc_ecology.jpg";
 import people_ecology from "../images/people_ecology.jpg";
+import Link from "next/link";
+import ButtonWrapper from "@/app/components/custom_button";
+import {DivBoxButtonSC} from "@/app/components/section4/styles.ways_to_achieve";
 const Non_profit1 = () => {
   const [width, setWidth] = useState<number>(0);
   useEffect(() => {
@@ -51,7 +55,18 @@ const Non_profit1 = () => {
             <ImageEcologySC path={ecology.src} alt="ecology" />
           </DivColumnsContentSC>
         )}
-
+        <DivBoxButtonNPSC>
+        <Link style={{ width: "fit-content" }} href={"https://forms.gle/fxEcSnhQArMr4WW9A"}>
+          <ButtonWrapper
+              directionRadius={"center"}
+              width={200}
+              height={74}
+              primary={true}
+          >
+            <span>Open form</span>
+          </ButtonWrapper>
+        </Link>
+        </DivBoxButtonNPSC>
         <DivColumnsContentSC>
           <DivNormalTextSC>
             1.  Non-profit organizations interested in registering and listing
@@ -86,6 +101,18 @@ const Non_profit1 = () => {
             support from the community through the staking of Earthy tokens.
           </DivNormalTextSC>
         </DivColumnsContentSC>
+        <DivBoxButtonNPSC>
+        <Link style={{ width: "fit-content" }} href={"https://forms.gle/fxEcSnhQArMr4WW9A"}>
+          <ButtonWrapper
+              directionRadius={"center"}
+              width={200}
+              height={74}
+              primary={true}
+          >
+            <span>Open form</span>
+          </ButtonWrapper>
+        </Link>
+        </DivBoxButtonNPSC>
         <ImagePeopleEcologySC path={people_ecology.src} alt="ecology" />
         <DivBoldTextSC $positionText={"center"}>
           By investing their Earthy tokens in these organizations, the community

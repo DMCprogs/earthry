@@ -11,9 +11,10 @@ import {
   TextBoldSC,
   TextNormalSC,
   DivBoxButtonSC,
+  DivBoxButtonsWaysSC
 } from "./styles.ways_to_achieve";
-import Img1 from "../../images/img2_section4.svg";
-import Img2 from "../../images/img1_section4.svg";
+import Img1 from "../../images/img1_section4.svg";
+import Img2 from "../../images/img2_section4.svg";
 import ButtonWrapper from "../custom_button";
 import Link from "next/link";
 import { motion } from "framer-motion";
@@ -120,6 +121,7 @@ const WaysToAchieve = () => {
                 },
               }}
             >
+              <DivBoxButtonsWaysSC>
               <Link style={{ width: "fit-content" }} href={"/non_profit1"}>
                 <ButtonWrapper
                   directionRadius={"center"}
@@ -130,6 +132,17 @@ const WaysToAchieve = () => {
                   <span>Learn more</span>
                 </ButtonWrapper>
               </Link>
+                <Link style={{ width: "fit-content" }} href={"https://forms.gle/fxEcSnhQArMr4WW9A"}>
+                  <ButtonWrapper
+                      directionRadius={"center"}
+                      width={200}
+                      height={74}
+                      primary={true}
+                  >
+                    <span>Open form</span>
+                  </ButtonWrapper>
+                </Link>
+              </DivBoxButtonsWaysSC>
             </motion.div>
           </DivBoxRowsTextSC>
         </DivWrapperContentSC>
@@ -180,18 +193,28 @@ const WaysToAchieve = () => {
                 },
               }}
             >
-              <DivBoxButtonSC>
+              <DivBoxButtonsWaysSC>
                 <Link style={{ width: "fit-content" }} href={"/non_profit1"}>
                   <ButtonWrapper
-                    directionRadius={"center"}
-                    width={201}
-                    height={74}
-                    primary={true}
+                      directionRadius={"center"}
+                      width={201}
+                      height={74}
+                      primary={true}
                   >
                     <span>Learn more</span>
                   </ButtonWrapper>
                 </Link>
-              </DivBoxButtonSC>
+                <Link style={{ width: "fit-content" }} href={"https://forms.gle/fxEcSnhQArMr4WW9A"}>
+                  <ButtonWrapper
+                      directionRadius={"center"}
+                      width={200}
+                      height={74}
+                      primary={true}
+                  >
+                    <span>Open form</span>
+                  </ButtonWrapper>
+                </Link>
+              </DivBoxButtonsWaysSC>
             </motion.div>
           </DivBoxRowsTextSC>
           <motion.div

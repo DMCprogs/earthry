@@ -11,6 +11,9 @@ export const DivContainerAirdrop = styled.div`
   @media(max-width:780px){
     justify-items: center;
 }
+@media(max-width:768px){
+  padding: 0;
+}
 `;
 export const DivTitleAirdrop = styled.div`
   width: 100%;

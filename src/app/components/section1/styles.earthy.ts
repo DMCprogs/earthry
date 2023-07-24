@@ -8,18 +8,16 @@ export const DivSectionSC = styled.div`
   justify-content: center;
   align-content: center;
   background-color: #4affc9;
-<<<<<<< HEAD
+
   min-height: 725px;
-  @media(max-width:765px){
-    margin-top: 160px;
-=======
+
   @media(max-height: 900px) {
     padding-top: 100px;
   }
   @media(max-height: 800px) {
     padding-bottom: 82px;
     height: max-content;
->>>>>>> 008194eeb15950f8c00c478070e96e6a12c8105a
+
   }
 `;
 export const DivContentSectionSC = styled.div`

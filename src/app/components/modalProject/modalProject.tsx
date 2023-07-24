@@ -1,7 +1,7 @@
 import React, { FC,useState } from 'react';
 import ButtonWrapper from '../custom_button';
 type ModalProps = {
-  
+  Profits:number
   }
   import { 
    
@@ -23,6 +23,9 @@ type ModalProps = {
     DivModalContainerSC,
     DivNumbers,
     Body,
+    DivContainer2,
+    InputPercent2,
+    DivNumbers2
  } from "./styles.modalProject";
  import Slider from "rc-slider";
  import { BsPercent,BsArrowDownShort,BsArrowUpShort } from 'react-icons/bs';
@@ -38,10 +41,15 @@ import plant1 from"../../images/plants1.png";
 import { DivCourceTitleImgSC } from '@/app/buy_token/earthyCourse/styles.EarthyCourse';
 import courceImg from '../../images/eth_logo.svg';
 import "./style.css";
-  const ModalProject: FC<ModalProps> = ({ }) => {
-    
+  const ModalProject: FC<ModalProps> = ({Profits }) => {
+    const round = (Profits: number) => {
+        return  +Profits.toFixed(2);
+    };
+    let profit= Profits/8;
+    let AllProfit=Profits;
+    let income=round(profit);
     const [trackDatas, setTrackDatas] = useState(1);
-    const [amount, setAmount] = useState(1 * 40);
+    const [amount, setAmount] = useState(income);
     const pit = (trackDatas: number) => {
         const plantImages = [
             plant1,
@@ -72,7 +80,7 @@ import "./style.css";
     };
     const handleChange = (e: any) => {
         setTrackDatas(e);
-        setAmount(e * 40);
+        setAmount(e * income);
     };
     const Percen = (e: any) => {
         const inputValue = parseInt(e.target.value);
@@ -88,7 +96,7 @@ import "./style.css";
             setTrackDatas(8);
         } else {
             setTrackDatas(inputValue);
-            setAmount(inputValue * 40);
+            setAmount(inputValue * profit);
         }
     };
     const Minus = () => {
@@ -96,6 +104,8 @@ import "./style.css";
             return;
         } else {
             setTrackDatas(trackDatas - 1);
+            let munis=amount - income
+            setAmount(round(munis));
         }
     };
     const Plus = () => {
@@ -103,6 +113,26 @@ import "./style.css";
             return;
         } else {
             setTrackDatas(trackDatas + 1);
+            let sum=amount + income;
+            setAmount(round(sum));
+        }
+    };
+    const MinusTokens = () => {
+        if (amount <= income) {
+            return;
+        } else {
+            setTrackDatas(trackDatas - 1);
+            let munis=amount - income
+            setAmount(round(munis));
+        }
+    };
+    const PlusTokens = () => {
+        if (amount >=round(AllProfit) ) {
+            return;
+        } else {
+            setTrackDatas(trackDatas + 1);
+            let sum=amount + income;
+            setAmount(round(sum));
         }
     };
   
@@ -158,9 +188,9 @@ import "./style.css";
    <DivContainerInput>
        <DivTexStacingSC style={{ fontSize: '18px' }}>You donate to the project in the project</DivTexStacingSC>
 
-       <div style={{ display: 'flex', alignItems: 'center',gap: '10px' }}><InputPercent onChange={Percen} ><DivContainer><DivNumbers>{amount}</DivNumbers>
-       <div style={{ display: 'flex', flexDirection: 'column', gap: '5px', }}><DivPlus onClick={Plus}><BsArrowUpShort size={20} /></DivPlus> 
-       <DiMunus onClick={Minus}><BsArrowDownShort size={20} /></DiMunus></div></DivContainer></InputPercent><DivText>Earthy tokens</DivText></div>
+       <div style={{ display: 'flex', alignItems: 'center',gap: '10px' }}><InputPercent2 onChange={Percen} ><DivContainer2><DivNumbers2>{amount}</DivNumbers2>
+       <div style={{ display: 'flex', flexDirection: 'column', gap: '5px', }}><DivPlus onClick={PlusTokens}><BsArrowUpShort size={20} /></DivPlus> 
+       <DiMunus onClick={MinusTokens}><BsArrowDownShort size={20} /></DiMunus></div></DivContainer2></InputPercent2><DivText>Earthy tokens</DivText></div>
        
 
 

@@ -31,6 +31,13 @@ justify-content: right;
 
 
 `;
+export const DivNumbers2 = styled.div`
+display: grid;
+width: 50px;
+justify-content: right;
+
+
+`;
 export const Body = styled.body`
   background: none;
 backdrop-filter: blur(26px);
@@ -162,6 +169,23 @@ font-style: normal;
 font-weight: 500;
 line-height: normal;
 `;
+export const InputPercent2 = styled.div`
+display: grid;
+justify-content: center;
+align-items: center;
+  border-radius: 8px;
+border: 2px solid #A6A6A6;
+background: #FFF;
+width: 100px;
+height: 74px;
+flex-shrink: 0;
+color: #000;
+font-family: Montserrat;
+font-size: 24px;
+font-style: normal;
+font-weight: 500;
+line-height: normal;
+`;
 export const DivText = styled.div`
  color: #000;
 font-family: Montserrat;
@@ -202,6 +226,13 @@ export const DivContainer = styled.div`
 display: grid;
 grid-template-columns: max-content max-content;
 gap: 8px;
+align-items: center;
+
+`;
+export const DivContainer2 = styled.div`
+display: grid;
+grid-template-columns: max-content max-content;
+gap: 2px;
 align-items: center;
 
 `;

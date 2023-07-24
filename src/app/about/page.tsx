@@ -12,6 +12,7 @@ import {
   ButtonJoinSC,
 } from "./styles.about";
 import teamLogo from "../images/Team.jpg";
+import Bogati from "../images/Bogati.jpg";
 import CardTeam from "./cardTeam";
 import { BsArrowRight } from "react-icons/bs";
 import ButtonWrapper from "../components/custom_button";
@@ -35,39 +36,69 @@ const About: FC = () => (
       <DivTeamSC>
         <CardTeam
           images={teamLogo}
-          links={"https://www.linkedin.com/"}
+          links={"https://www.linkedin.com/in/sam-singer/"}
           name={"Sam Singer"}
           post={"General director"}
         />
         <CardTeam
           images={teamLogo}
-          links={"https://www.linkedin.com/"}
-          name={"Sam Singer"}
-          post={"General director"}
+          links={"https://www.linkedin.com/in/edward-hinson-90975419/"}
+          name={"Edward Hinson"}
+          post={"CMO"}
         />
         <CardTeam
           images={teamLogo}
-          links={"https://www.linkedin.com/"}
-          name={"Sam Singer"}
-          post={"General director"}
+          links={"https://www.linkedin.com/in/tagg-ryan-14229671/"}
+          name={"Ryan Tag AR"}
+          post={"VR Engineer"}
         />
         <CardTeam
           images={teamLogo}
-          links={"https://www.linkedin.com/"}
-          name={"Sam Singer"}
-          post={"General director"}
+          links={"https://www.linkedin.com/in/captain-haiti-816b59208/"}
+          name={"Captain Haiti"}
+          post={"Community Development"}
+        />
+        <CardTeam
+          images={Bogati}
+          links={"https://www.linkedin.com/in/boogatti/"}
+          name={"CJ NFT"}
+          post={"Metaverse Lead"}
         />
         <CardTeam
           images={teamLogo}
-          links={"https://www.linkedin.com/"}
-          name={"Sam Singer"}
-          post={"General director"}
+          links={"https://www.linkedin.com/in/jakob-von-rosen-imig-38b278204/"}
+          name={"Jakob Von Rosen "}
+          post={"COO"}
         />
-        <CardTeam
+          <CardTeam
           images={teamLogo}
-          links={"https://www.linkedin.com/"}
-          name={"Sam Singer"}
-          post={"General director"}
+          links={"https://www.linkedin.com/in/scottbayless/"}
+          name={"Scott Bayless"}
+          post={"CSO"}
+        />
+          <CardTeam
+          images={teamLogo}
+          links={"https://www.linkedin.com/in/paul-bronstein-589132a8/"}
+          name={"Paul Bronstein AR "}
+          post={"VR Engineer"}
+        />
+          <CardTeam
+          images={teamLogo}
+          links={"https://www.linkedin.com/in/joseph-reiben-4b380a7/"}
+          name={"Joseph Reiben "}
+          post={"Attorney"}
+        />
+          <CardTeam
+          images={teamLogo}
+          links={"https://www.linkedin.com/in/mirko-tancredi-6898a9280/"}
+          name={"Mirko Tancredi"}
+          post={"Attorney"}
+        />
+          <CardTeam
+          images={teamLogo}
+          links={"https://www.linkedin.com/in/joseph-singer-332506223/"}
+          name={"Joseph Singer"}
+          post={"Engineering lead"}
         />
       </DivTeamSC>
       <div
@@ -79,7 +110,7 @@ const About: FC = () => (
         }}
       >
         {" "}
-        <Link style={{marginTop: '15px'}} href={"https://www.linkedin.com/"}>
+        <Link style={{marginTop: '15px'}} href={"https://www.linkedin.com/company/earthyinc/mycompany/?viewAsMember=true"}>
             <ButtonWrapper
                 primary={false}
                 width={326}

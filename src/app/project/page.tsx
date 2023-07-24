@@ -168,7 +168,9 @@ const Project: React.FC = () => {
     const rounded = (number: number) => {
         return +number.toFixed(2);
     };
-
+    const round = (result: number) => {
+        return  +result.toFixed(2);
+    };
     const handleResize = () => {
         setWidth(window.innerWidth);
     };
@@ -358,7 +360,7 @@ const Project: React.FC = () => {
                             You donate to the project in the project (8% profitability)
                         </DivUltraSmallNormalTextSC>
                         <DivBoxColumnCalcColcSC>
-                            <DivInputConclusionSC>{result}</DivInputConclusionSC>
+                            <DivInputConclusionSC>{round(result)}</DivInputConclusionSC>
                             <DivSmallBoldTextSC>Earthy tokens</DivSmallBoldTextSC>
                         </DivBoxColumnCalcColcSC>
                     </DivBoxConclusionSC>
@@ -381,7 +383,7 @@ const Project: React.FC = () => {
         </BoxPaddingSC>
        
         <Modal isOpen={isOpen} onClose={handleClose}>
-             <ModalProject/>
+             <ModalProject Profits={result}/>
             </Modal>
         </DivContainerBox>
       

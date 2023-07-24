@@ -3,12 +3,14 @@
 import StyledComponentsRegistry from "@/lib/registry";
 import "./globals.css";
 import { Inter } from "next/font/google";
-import React, { FC, ReactNode, useEffect, useRef } from "react";
+import React, {FC, ReactNode, useEffect, useRef, useState} from "react";
 import { DivContentSC, DivWrapperSC } from "./styles.page";
 import Header from "./components/header";
 import { IRefObj } from "./interfaces/interfaces";
 import Footer from "./components/footer";
 import HeaderForPage from "@/app/components/header/HeaderForPage";
+import {usePathname} from "next/navigation";
+import Menu from "@/app/components/header/Menu/Menu";
 
 const inter = Inter({ subsets: ["latin"] });
 

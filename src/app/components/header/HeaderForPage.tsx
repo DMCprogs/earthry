@@ -12,24 +12,25 @@ import {
     DivBoxBurgerSC,
     DivBoxButtonsMenuSC,
     DivBoxLinkSC,
+    DivBoxHeaderForPageSC
 } from "./styles.header";
 import logo from "../../images/Logo.svg";
 import ButtonWrapper from "../custom_button";
 import {motion} from "framer-motion";
 import {usePathname} from "next/navigation";
 import Link from "next/link";
+import Menu from "@/app/components/header/Menu/Menu";
 
 const HeaderForPage = (props: any) => {
     const [width, setWidth] = useState<number>(0);
-    const [isBgColor, setIsBgColor] = useState<boolean>(true);
-    const [isFixed, setIsFixed] = useState<boolean>(true);
+    const [isPages, setIsPages] = useState(true)
+    const [menuActive, setMenuActive] = useState(false)
     const pathname = usePathname();
 
     useEffect(() => {
         switch (pathname) {
             case "/":
-                setIsBgColor(true);
-                setIsFixed(true)
+                setIsPages(false)
                 break;
             case "/non_profit1":
             case "/non_profit2":
@@ -42,8 +43,7 @@ const HeaderForPage = (props: any) => {
             case "/airdrop/success":
             case "/profile":
             case "/project":
-                setIsBgColor(false);
-                setIsFixed(false)
+                setIsPages(true)
                 break;
         }
     }, [pathname]);
@@ -59,7 +59,7 @@ const HeaderForPage = (props: any) => {
     };
 
     return (
-        <DivBoxHeaderSC $isBgColor={isBgColor} $isFixed={isFixed}>
+        <DivBoxHeaderForPageSC $isPages={isPages}>
             <DivBoxColumnsSC>
                 <motion.div
                     initial="hidden"
@@ -161,49 +161,14 @@ const HeaderForPage = (props: any) => {
                                 </Link>
                             </DivBoxButtonsSC>
                         </motion.div>
-                        <div className={styles.hamburger_menu}>
-                            <input id={styles.menu__toggle} type="checkbox"/>
-                            <label className={styles.menu__btn} htmlFor={styles.menu__toggle}>
-                                <span></span>
-                            </label>
-                            <div className={styles.menu__box}>
-                                <DivBoxBurgerSC className={styles.menu}>
-                                    <DivBoxLinkSC href={"/"}>Home</DivBoxLinkSC>
-                                    <DivBoxLinkSC href={"/project"}>Projects</DivBoxLinkSC>
-                                    <DivBoxLinkSC href={"/tokenomics"}>Tokenomics</DivBoxLinkSC>
-                                    <DivBoxLinkSC href={"/about"}>About</DivBoxLinkSC>
-                                    <DivBoxLinkSC href={"/leaderboard"}>Leaderboard</DivBoxLinkSC>
-                                    <DivBoxLinkSC href={"/blog"}>Blog</DivBoxLinkSC>
-                                    <DivBoxLinkSC href={"/faq"}>FAQ</DivBoxLinkSC>
-                                    <DivBoxLinkSC href={"/profile"}>Profile</DivBoxLinkSC>
-                                    <DivBoxButtonsMenuSC>
-                                        <Link href="/buy_token">
-                                            <ButtonWrapper
-                                                width={222}
-                                                primary={true}
-                                                directionRadius="center"
-                                                height={64}
-                                            >
-                                                <span>Buy Earthy token</span>
-                                            </ButtonWrapper>
-                                        </Link>
-                                        <Link href="#">
-                                            <ButtonWrapper
-                                                width={222}
-                                                primary={true}
-                                                directionRadius="center"
-                                                height={64}
-                                            >
-                                                <span>Buy with card</span>
-                                            </ButtonWrapper>
-                                        </Link>
-                                    </DivBoxButtonsMenuSC>
-                                </DivBoxBurgerSC>
-                            </div>
+                        <div className={styles.burger_btn} onClick={() => setMenuActive(!menuActive)}>
+                            <span/>
                         </div>
+                        <Menu
+                            active={menuActive} setActive={setMenuActive}/>
                     </DivBoxTabsButtonsSC>
             </DivBoxColumnsSC>
-        </DivBoxHeaderSC>
+        </DivBoxHeaderForPageSC>
     );
 };
 

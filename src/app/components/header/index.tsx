@@ -18,6 +18,7 @@ import ButtonWrapper from "../custom_button";
 import { motion } from "framer-motion";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
+import Menu from "@/app/components/header/Menu/Menu";
 
 const Header = (props: any) => {
   const {
@@ -27,15 +28,14 @@ const Header = (props: any) => {
     onClickScrollProject,
   } = props;
   const [width, setWidth] = useState<number>(0);
-  const [isBgColor, setIsBgColor] = useState<boolean>(true);
-  const [isFixed, setIsFixed] = useState<boolean>(true);
+  const [isLanding, setIsLanding] = useState(true)
+  const [menuActive, setMenuActive] = useState(false)
   const pathname = usePathname();
 
   useEffect(() => {
     switch (pathname) {
       case "/":
-        setIsBgColor(true);
-        setIsFixed(true);
+        setIsLanding(true)
         break;
       case "/non_profit1":
       case "/non_profit2":
@@ -48,8 +48,7 @@ const Header = (props: any) => {
       case "/airdrop/success":
       case "/profile":
       case "/project":
-        setIsBgColor(false);
-        setIsFixed(false);
+        setIsLanding(false)
         break;
     }
   }, [pathname]);
@@ -65,7 +64,7 @@ const Header = (props: any) => {
   };
 
   return (
-    <DivBoxHeaderSC $isBgColor={isBgColor} $isFixed={isFixed}>
+    <DivBoxHeaderSC $isLanding={isLanding}>
       <DivBoxColumnsSC>
         <motion.div
           initial="hidden"
@@ -171,48 +170,15 @@ const Header = (props: any) => {
               </ButtonWrapper>
             </DivBoxButtonsSC>
           </motion.div>
-          <div className={styles.hamburger_menu}>
-            <input id={styles.menu__toggle} type="checkbox" />
-            <label className={styles.menu__btn} htmlFor={styles.menu__toggle}>
-              <span></span>
-            </label>
-            <div className={styles.menu__box}>
-              <DivBoxBurgerSC className={styles.menu}>
-                <DivBoxTabSC onClick={onClickScrollHome}>Home</DivBoxTabSC>
-                <DivBoxTabSC onClick={onClickScrollProject}>
-                  Projects
-                </DivBoxTabSC>
-                <DivBoxTabSC onClick={onClickScrollTokenomics}>
-                  Tokenomics
-                </DivBoxTabSC>
-                <DivBoxLinkSC href={"/about"}>About</DivBoxLinkSC>
-                <DivBoxLinkSC href={"/leaderboard"}>Leaderboard</DivBoxLinkSC>
-                <DivBoxTabSC onClick={onClickScrollBlog}>Blog</DivBoxTabSC>
-                <DivBoxLinkSC href={"/faq"}>FAQ</DivBoxLinkSC>
-                <DivBoxLinkSC href={"/profile"}>Profile</DivBoxLinkSC>
-                <DivBoxButtonsMenuSC>
-                  <Link href={"/buy_token"}>
-                    <ButtonWrapper
-                      width={222}
-                      primary={true}
-                      directionRadius="center"
-                      height={64}
-                    >
-                      <span>Buy Earthy token</span>
-                    </ButtonWrapper>
-                  </Link>
-                  <ButtonWrapper
-                    width={222}
-                    primary={true}
-                    directionRadius="center"
-                    height={64}
-                  >
-                    <span>Buy with card</span>
-                  </ButtonWrapper>
-                </DivBoxButtonsMenuSC>
-              </DivBoxBurgerSC>
-            </div>
+          <div className={styles.burger_btn} onClick={() => setMenuActive(!menuActive)}>
+            <span/>
           </div>
+          <Menu
+              active={menuActive} setActive={setMenuActive}
+              onClickScrollHome={onClickScrollHome}
+              onClickScrollTokenomics={onClickScrollTokenomics}
+              onClickScrollBlog={onClickScrollBlog}
+              onClickScrollProject={onClickScrollProject}/>
         </DivBoxTabsButtonsSC>
       </DivBoxColumnsSC>
     </DivBoxHeaderSC>

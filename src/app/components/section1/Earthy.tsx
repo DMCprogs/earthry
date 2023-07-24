@@ -18,6 +18,7 @@ import { DivOneRowSC } from "@/app/airdrop/styles.airdrop";
 import { AiOutlineArrowRight } from "react-icons/ai";
 import { motion } from "framer-motion";
 import ParallaxText from "../ParallaxText";
+import Link from "next/link";
 const Earthy: FC<{
   forRefW: MutableRefObject<undefined | any>;
 }> = (props) => {
@@ -102,18 +103,21 @@ const Earthy: FC<{
               >
                 <span>Buy Earthy Token</span>
               </ButtonWrapper>
-              <ButtonWrapper
-                colorButton="3px solid #201E1C"
-                primary={false}
-                width={326}
-                directionRadius={"center"}
-                height={74}
-              >
-                <DivOneRowSC>
-                  Join the community
-                  <AiOutlineArrowRight color={"black"} size={20} />
-                </DivOneRowSC>
-              </ButtonWrapper>
+              <Link href={"https://discord.gg/rT6p247U"}>
+                <ButtonWrapper
+                    colorButton="3px solid #201E1C"
+                    primary={false}
+                    width={326}
+                    directionRadius={"center"}
+                    height={74}
+                >
+                  <DivOneRowSC>
+                    Join the community
+                    <AiOutlineArrowRight color={"black"} size={20} />
+                  </DivOneRowSC>
+                </ButtonWrapper>
+              </Link>
+
             </DivButtonsBlockSC>
           </motion.div>
         </DivLeftBlockSC>

@@ -140,21 +140,29 @@ export const DivWrapperTwoSectionsSC = styled.div`
   }
 `
 
-export const DivWrapperHarvestSC = styled.div`
+export const DivWrapperHarvestSC = styled.div<{
+    $isProject: boolean;
+}>`
   display: grid;
   width: 100%;
   height: max-content;
-  grid-template-columns: 100%;
-  grid-template-rows: 139px 19px 139px;
+  grid-template-columns: ${({$isProject}) => $isProject ? "repeat(3, max-content)" : "100%"};
+  grid-template-rows: ${({$isProject}) => $isProject ? "100%" : "139px 19px 139px"};
   justify-items: center;
   align-items: center;
   gap: 27px;
   @media (min-width: 1000px) {
     padding-top: 37px;
   }
+  @media (max-width: 768px) {
+    grid-template-columns: ${({$isProject}) => $isProject ? "100%" : null};
+    grid-template-rows: ${({$isProject}) => $isProject ? "repeat(3, max-content)" : null};
+  }
 `
 
-export const DivDashSC = styled.div`
+export const DivDashSC = styled.div<{
+    $isProject: boolean;
+}>`
   display: grid;
   width: 320px;
   height: 139px;
@@ -165,9 +173,14 @@ export const DivDashSC = styled.div`
   align-items: center;
   padding: 35px;
   gap: 7px;
+  @media(max-width: 768px) {
+    width: ${({$isProject}) => $isProject ? "100%" : "320px"};
+  }
 `
 
-export const DivDash2SC = styled.div`
+export const DivDash2SC = styled.div<{
+    $isProject: boolean;
+}>`
   display: grid;
   width: 320px;
   height: 139px;
@@ -175,6 +188,9 @@ export const DivDash2SC = styled.div`
   background: #DBFFF4;
   align-items: center;
   padding: 35px;
+  @media(max-width: 768px) {
+    width: ${({$isProject}) => $isProject ? "100%" : "320px"};
+  }
 `
 
 export const DivLogoSC = styled.div<{
@@ -214,7 +230,9 @@ export const DivImageCenterSC = styled.div<{
   width: 16px;
   height: 19px;
   display: grid;
-  background: url(${({$img}) => ($img)});
+  background: url(${({$img}) => ($img)}) no-repeat;
+  background-position: center;
+  background-size: contain;
 `
 
 export const DivImageBoxSC = styled.div<{

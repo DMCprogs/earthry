@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import {
     DivDash2SC,
     DivDashSC,
@@ -9,10 +9,22 @@ import {
 } from "@/app/profile/styles.profile";
 import Image from '../../images/eth_logo.svg'
 import Image2 from '../../images/rvno.svg'
-const HarvestElement = () => {
+import Image3 from '../../images/path343.svg'
+const HarvestElement = (props: any) => {
+    const {isProject} = props;
+    const [width, setWidth] = useState<number>(0);
+    useEffect(() => {
+        window.onload = handleResize;
+        setWidth(window.innerWidth);
+        window.addEventListener("resize", handleResize);
+        return () => window.removeEventListener("resize", handleResize);
+    }, []);
+    const handleResize = () => {
+        setWidth(window.innerWidth);
+    };
     return (
-        <DivWrapperHarvestSC>
-            <DivDashSC>
+        <DivWrapperHarvestSC $isProject={isProject}>
+            <DivDashSC $isProject={isProject}>
                 <DivLogoSC
                     $image={Image.src}
                 >
@@ -22,9 +34,9 @@ const HarvestElement = () => {
                 </SpanNumSC>
             </DivDashSC>
             <DivImageCenterSC
-                $img={Image2.src}
+                $img={width > 768 ? isProject ? Image3.src : Image2.src : Image2.src}
             ></DivImageCenterSC>
-            <DivDash2SC>
+            <DivDash2SC $isProject={isProject}>
                 <SpanNumSC>
                     $12,000
                 </SpanNumSC>

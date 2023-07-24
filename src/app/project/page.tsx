@@ -314,7 +314,7 @@ const Project: React.FC = () => {
             <DivBoxColumnCalcSC>
                 <DivBoxLeftSc>
                 <DivAverageBoldTextSC>Your balance </DivAverageBoldTextSC>
-                    <HarvestElement></HarvestElement>
+                    <HarvestElement isProject={isProject}></HarvestElement>
                         <DivBoxOptionSC>
                             <InputTokensSC
                                 placeholder="0 tokens"

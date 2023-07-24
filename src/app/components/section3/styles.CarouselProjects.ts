@@ -57,10 +57,10 @@ export const CarouselItemGridContainerSC = styled.div`
   display: grid;
   grid-template-columns: repeat(3, max-content);
   justify-content: space-between;
-  @media (max-width: 1000px) {
+  /* @media (max-width: 1000px) {
     grid-row-gap: 10px;
     grid-template-columns: max-content;
-  }
+  } */
   @media (max-width: 768px) {
     grid-template-columns: repeat(3, max-content);
   }

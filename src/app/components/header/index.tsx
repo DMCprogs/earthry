@@ -81,7 +81,6 @@ const Header = (props: any) => {
             },
           }}
         >
-          {" "}
           <Link href={"/"}>
             <IconLogoSC src={logo} alt="logo"></IconLogoSC>
           </Link>
@@ -93,7 +92,8 @@ const Header = (props: any) => {
               animate="visible"
               variants={{
                 hidden: {
-                  opacity: 1,
+                  y: -85,
+                  opacity: 0,
                 },
                 visible: {
                   y: 0,
@@ -103,7 +103,6 @@ const Header = (props: any) => {
                 },
               }}
             >
-              {" "}
               <DivBoxTabsSC>
                 <DivBoxTabSC onClick={onClickScrollHome}>Home</DivBoxTabSC>
                 <DivBoxTabSC onClick={onClickScrollProject}>

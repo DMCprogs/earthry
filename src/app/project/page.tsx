@@ -5,6 +5,7 @@ import {
     DivBoxTitleSC,
     DivTitleBoldSC,
     DivBoxIconsSC,
+    DivBoxDisplayNSC,
     DivBoxButtonsSC,
     DivTextNormalSC,
     DivAverageBoldTextSC,
@@ -26,6 +27,8 @@ import {
     BoxPaddingSC, 
     DivBoxCarouseItemSC,
     DivContainerBox,
+    DivBoxLeftSc,
+    DivBoxRightSC
 } from "./styles.project";
 import ButtonWrapper from "@/app/components/custom_button";
 import Link from "next/link";
@@ -50,6 +53,7 @@ import 'react-toastify/dist/ReactToastify.css';
 
 import {usePathname} from "next/navigation";
 import ModalProject from "../components/modalProject/modalProject";
+import HarvestElement from "@/app/profile/companents/harvest_element";
 
 
 interface ArrayInfo {
@@ -271,7 +275,7 @@ const Project: React.FC = () => {
             <CarouselCustom
                 isProject={isProject}
                 responsive={responsive}
-                itemsImg={CarouselItems()}
+                items={CarouselItems()}
             />
             <DivBoxTitleSC $positionText={width > 768 ? "center" : "start"}>
                 <DivAverageBoldTextSC>About</DivAverageBoldTextSC>
@@ -297,26 +301,20 @@ const Project: React.FC = () => {
                 })}
             </DivBoxColumnsItemsSC>
             <DivAverageBoldTextSC $positionText={width > 768 ? "center" : "start"}>
-                Stake token now
+                Plant token now
             </DivAverageBoldTextSC>
             <DivSmallNormalTextSC $positionText={width > 768 ? "center" : "start"}>
-                Select the number of tokens for staking to see the profitability
+                Select the number of tokens for planting to see the profitability
             </DivSmallNormalTextSC>
             {/*<DivBoxBigElementsSC>*/}
             {/*    <SwapBlock/>*/}
             {/*    <CustomLineChart data={data}/>*/}
-            {/*    <DivContainerGif $display={"none"}>*/}
-            {/*        <Image*/}
-            {/*            src={coin2}*/}
-            {/*            width={260}*/}
-            {/*            height={383}*/}
-            {/*            alt="Picture of the author"*/}
-            {/*        />*/}
-            {/*    </DivContainerGif>*/}
+
             {/*</DivBoxBigElementsSC>*/}
             <DivBoxColumnCalcSC>
-                <DivBoxCalcSC>
-                    <DivBoxBoxOptionSC>
+                <DivBoxLeftSc>
+                <DivAverageBoldTextSC>Your balance </DivAverageBoldTextSC>
+                    <HarvestElement></HarvestElement>
                         <DivBoxOptionSC>
                             <InputTokensSC
                                 placeholder="0 tokens"
@@ -342,7 +340,32 @@ const Project: React.FC = () => {
                                 );
                             })}
                         </DivBoxOptionSC>
-                        {/*<DivBoxOptionSC>*/}
+
+                </DivBoxLeftSc>
+                <DivBoxRightSC>
+                    <DivBoxDisplayNSC>
+                    <DivContainerGif $display={"none"}>
+                        <Image
+                            src={coin2}
+                            width={260}
+                            height={383}
+                            alt="Picture of the author"
+                        />
+                    </DivContainerGif>
+                    </DivBoxDisplayNSC>
+                    <DivBoxConclusionSC>
+                    <DivUltraSmallNormalTextSC>
+                        You donate to the project in the project (8% profitability)
+                    </DivUltraSmallNormalTextSC>
+                    <DivBoxColumnCalcColcSC>
+                        <DivInputConclusionSC>{round(result)}</DivInputConclusionSC>
+                        <DivSmallBoldTextSC>Earthy tokens</DivSmallBoldTextSC>
+                    </DivBoxColumnCalcColcSC>
+                </DivBoxConclusionSC>
+                </DivBoxRightSC>
+
+                {/*<DivBoxCalcSC>*/}
+
                         {/*    <>*/}
                         {/*    <InputTokensSC*/}
                         {/*        type="text"*/}
@@ -371,30 +394,22 @@ const Project: React.FC = () => {
                         {/*        );*/}
                         {/*    })}*/}
                         {/*</DivBoxOptionSC>*/}
-                    </DivBoxBoxOptionSC>
-                    <DivBoxConclusionSC>
-                        <DivUltraSmallNormalTextSC>
-                            You donate to the project in the project (8% profitability)
-                        </DivUltraSmallNormalTextSC>
-                        <DivBoxColumnCalcColcSC>
-                            <DivInputConclusionSC>{round(result)}</DivInputConclusionSC>
-                            <DivSmallBoldTextSC>Earthy tokens</DivSmallBoldTextSC>
-                        </DivBoxColumnCalcColcSC>
-                    </DivBoxConclusionSC>
-                </DivBoxCalcSC>
+                {/*    </DivBoxBoxOptionSC>*/}
+
+                {/*</DivBoxCalcSC>*/}
                
             </DivBoxColumnCalcSC>
             <div style={{width: "max-content"}}>
-                    <ButtonWrapper
-                       onClick={() => setIsOpen(true)}
-                        width={177}
-                        height={74}
-                        primary={true}
-                        directionRadius={"center"}
-                    >
-                        <span>Continue</span>
-                    </ButtonWrapper>
-                </div>
+                <ButtonWrapper
+                    onClick={() => setIsOpen(true)}
+                    width={177}
+                    height={74}
+                    primary={true}
+                    directionRadius={"center"}
+                >
+                    <span>Continue</span>
+                </ButtonWrapper>
+            </div>
         </DivBoxProjectSC>
         
         </BoxPaddingSC>

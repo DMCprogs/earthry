@@ -84,7 +84,7 @@ const CarouselCustom: FC<CarouselProps> = ({
   carouselState,
   items,
   responsive,
-  itemsImg,
+  // itemsImg,
   isProject,
 }) => {
   return (
@@ -100,7 +100,7 @@ const CarouselCustom: FC<CarouselProps> = ({
       sliderClass="carousel-sliderProjects"
     >
       {items}
-      {itemsImg}
+      {/* {itemsImg} */}
     </Carousel>
   );
 };

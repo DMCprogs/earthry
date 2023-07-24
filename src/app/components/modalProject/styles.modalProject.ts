@@ -30,6 +30,11 @@ justify-content: right;
 
 
 `;
+export const Body = styled.body`
+  background: none;
+backdrop-filter: blur(26px);
+
+`;
 export const DivContainerGrafic = styled.div`
   width: 100%;
   height: 100%;

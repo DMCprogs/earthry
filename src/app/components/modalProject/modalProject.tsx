@@ -22,6 +22,7 @@ type ModalProps = {
     DivContainer,
     DivModalContainerSC,
     DivNumbers,
+    Body,
  } from "./styles.modalProject";
  import Slider from "rc-slider";
  import { BsPercent,BsArrowDownShort,BsArrowUpShort } from 'react-icons/bs';
@@ -110,6 +111,7 @@ import "./style.css";
 
 
   return (
+ 
    <DivModalContainerSC>   <DivContainerGrafic>
    <DivTexStacingSC>
        Select the percentage of APY to maintain the project (min 1%)

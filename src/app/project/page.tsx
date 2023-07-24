@@ -271,7 +271,7 @@ const Project: React.FC = () => {
             <CarouselCustom
                 isProject={isProject}
                 responsive={responsive}
-                itemsImg={CarouselItems()}
+                items={CarouselItems()}
             />
             <DivBoxTitleSC $positionText={width > 768 ? "center" : "start"}>
                 <DivAverageBoldTextSC>About</DivAverageBoldTextSC>

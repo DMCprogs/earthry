@@ -130,7 +130,7 @@ export const DivCustomArrowLeft = styled(TbChevronLeft)`
   /* left: calc(50vw - 800px); */
   color: #fff;
   /* position: relative; */
-  z-index: 100;
+  z-index: 100000000;
   justify-self: left;
   cursor: pointer;
   /* @media (max-width: 1000px) {
@@ -144,6 +144,7 @@ export const DivCustomArrowsSC = styled.div<{
 }>`
   align-self: start;
   display: flex;
+  z-index: 10000000000000;
   grid-template-columns: repeat(2, 1fr);
   width: ${({isProject}) => isProject ? "120%" : "110%"};
   margin-right: ${({isProject}) => isProject ? "11px" : "0"};

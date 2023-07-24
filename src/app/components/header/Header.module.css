@@ -1,9 +1,20 @@
 .burger_btn {
+    display: none;
     width: 35px;
     height: 25px;
     margin-right: 20px;
     position: relative;
     cursor: pointer;
+}
+@media(max-width: 1420px) {
+    .burger_btn {
+        display: block;
+        width: 35px;
+        height: 25px;
+        margin-right: 20px;
+        position: relative;
+        cursor: pointer;
+    }
 }
 .burger_btn:before {
     content:  "";

@@ -38,8 +38,7 @@ export const DivBoxHeaderForPageSC = styled.div<{
 export const DivBoxColumnsSC = styled.div`
   width: 100%;
   display: grid;
-  grid-template-columns: repeat(2, max-content);
-  justify-content: space-between;
+  grid-template-columns: 1fr 1.7fr;
   align-items: center;
   @media (max-width: 1400px) {
     margin-right: 20px;
@@ -54,19 +53,27 @@ export const IconLogoSC = styled(Image)`
 `;
 
 export const DivBoxTabsButtonsSC = styled.div`
-  width: max-content;
+  width: 100%;
   display: grid;
-  grid-template-columns: repeat(3, max-content);
-  gap: 67px;
+  grid-template-columns: max-content max-content max-content;
+  justify-content: space-between;
   height: max-content;
+  padding-right: 20px;
+  column-gap: 67px;
   align-items: center;
   align-self: center;
   @media (max-width: 1550px) {
-    gap: 30px;
+    column-gap: 30px;
+  }
+  @media (max-width: 1420px) {
+    justify-content: end;
+    padding-right: 0px;
   }
   @media (max-width: 768px) {
     grid-template-columns: 100%;
     gap: 0px;
+    width: max-content;
+    justify-self: end;
   }
 `;
 
@@ -76,6 +83,7 @@ export const DivBoxTabsSC = styled.div`
   grid-template-columns: repeat(8, auto);
   gap: 20px;
   height: max-content;
+  width: max-content;
   @media (max-width: 1420px) {
     gap: 10px;
     display: none;
@@ -90,6 +98,7 @@ export const DivBoxTabSC = styled.div`
   line-height: 23px;
   color: #201e1c;
   cursor: pointer;
+  width: max-content;
 `;
 
 export const DivBoxLinkSC = styled(Link)`
@@ -120,6 +129,7 @@ export const DivBoxBurgerSC = styled.div`
   gap: 20px;
   padding: 100px 20px 50px 20px;
   justify-items: center;
+  width: max-content;
   @media (max-width: 768px) {
     grid-template-rows: repeat(9, max-content);
   }
@@ -146,7 +156,7 @@ export const DivBoxButtonsMenuSC = styled.div`
 const fadeIn = keyframes`
   from {
     opacity: 0;
-    transform: scale(0.2);
+    transform: scale(0.8);
   }
   to {
     opacity: 1;
@@ -156,7 +166,7 @@ const fadeIn = keyframes`
 
 // Примените анимацию в вашем Styled Component
 export const AnimatedComponent = styled.div`
-  animation: 2s ${fadeIn}  ease-in;
+  animation: 0.7s ${fadeIn} ;
 `;
 
 export const DivButtonCloseSC = styled.div<{

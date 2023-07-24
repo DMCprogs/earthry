@@ -1,5 +1,5 @@
 "use client";
-import { FC, useState } from "react";
+import {FC, MutableRefObject, useState} from "react";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import { TbChevronRight, TbChevronLeft } from "react-icons/tb";
@@ -18,8 +18,12 @@ import {
   DivSection3SC,
 } from "./styles.CarouselProjects";
 import CarouselCustom from "../сustom_carousel";
+import Link from "next/link";
 
-const section3: FC = () => {
+const section3: FC<{
+  forRefW: MutableRefObject<undefined | any>;
+}> = (props) => {
+  const { forRefW } = props;
   const responsive = {
     desktop: {
       // the naming can be any, depends on you.
@@ -62,6 +66,7 @@ const section3: FC = () => {
         investors: 49,
         min_investment: "1 Earthy token",
         additional_image: image2,
+
       },
       {
         title: "sdasdsa",
@@ -97,6 +102,7 @@ const section3: FC = () => {
     return carouselArray.map((item, i) => {
       return (
         <div key={`ssssadasda${i}`} style={{ padding: "0 10px" }}>
+          <Link href={"/project"}>
           <CarouselProjects
             title={item.title}
             description={item.description}
@@ -106,12 +112,13 @@ const section3: FC = () => {
             min_investment={item.min_investment}
             additional_image={item.additional_image}
           />
+          </Link>
         </div>
       );
     });
   };
   return (
-    <DivSection3SC>
+    <DivSection3SC ref={forRefW}>
       <motion.div
         initial="hidden"
         whileInView="visible"
@@ -131,7 +138,7 @@ const section3: FC = () => {
           Funded projects that are already in partnership with us
         </DivH1SC>
       </motion.div>
-      <CarouselCustom responsive={responsive} items={CarouselItems()} />
+     <CarouselCustom responsive={responsive} items={CarouselItems()} />
     </DivSection3SC>
   );
 };

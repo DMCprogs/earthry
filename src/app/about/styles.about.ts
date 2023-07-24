@@ -9,7 +9,7 @@ type Props = {
 
 export const DivH1SC = styled.div`
 margin-top: 100px;
-margin-bottom: 70px;
+margin-bottom: 50px;
   width: 100%;
   display: grid;
   height: 100%;

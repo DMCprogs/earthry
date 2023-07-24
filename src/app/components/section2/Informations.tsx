@@ -21,31 +21,32 @@ const options = {
 };
 
 const Informations = () => {
-  return (
-    <DivContainerSectionSC>
-      <DivTitleSC>
-        Welcome to the Earthy platform: Co-creation of the Future
-      </DivTitleSC>
-      <DivContainerVideoSC>
-        <YouTube
-          style={{
-            position: "absolute",
-            top: "0",
-            left: "0",
-            right: "0",
-            bottom: "0",
-          }}
-          videoId="RzVvThhjAKw" // defaults -> ''
-          id="RzVvThhjAKw" // defaults -> ''
-          onPlay={() => {
-            console.log("test");
-            // setMute(0);
-          }}
-          opts={options}
-        />{" "}
-      </DivContainerVideoSC>
+ 
 
-      <ContainerSC>
+
+   
+    return (
+       <DivContainerSectionSC>
+         <DivTitleSC>Welcome to the Earthy platform: Co-creation of the Future</DivTitleSC>
+          <DivContainerVideoSC>
+            <YouTube
+              style={{
+                position: 'absolute',
+                top: '0',
+                left: '0',
+                right: '0',
+                bottom: '0',
+              }}
+              videoId="oDddMxHtnPQ" // defaults -> ''
+              id="oDddMxHtnPQ" // defaults -> ''
+              onPlay={() => {
+                console.log("test");
+                // setMute(0);
+              }}
+              opts={options}
+
+            /> </DivContainerVideoSC>
+<ContainerSC>
         <motion.div
           initial="hidden"
           whileInView="visible"
@@ -75,8 +76,12 @@ const Informations = () => {
           </DivTextSC>
         </motion.div>
       </ContainerSC>
-    </DivContainerSectionSC>
-  );
+       </DivContainerSectionSC>
+    );
+
+      
+  
+
 };
 
 export default Informations;

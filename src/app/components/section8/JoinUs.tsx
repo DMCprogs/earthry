@@ -40,11 +40,11 @@ const JoinUs = () => {
         <div style={{ display: "grid", justifyItems: "center" }}>
           <DivBoxText1SC>
             <H1SC>Join our community</H1SC>
-            <SpanTextSC>
-              Forem ipsum dolor sit amet, consectetur adipiscing elit.
-            </SpanTextSC>
+            {/*<SpanTextSC>*/}
+            {/*  Forem ipsum dolor sit amet, consectetur adipiscing elit.*/}
+            {/*</SpanTextSC>*/}
           </DivBoxText1SC>
-          <Link href={"#"}>
+          <Link href={"https://discord.gg/rT6p247U"}>
             <ButtonWrapper
               primary={true}
               width={326}

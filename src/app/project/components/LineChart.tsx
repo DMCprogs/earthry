@@ -24,8 +24,8 @@ const CustomLineChart: React.FC<LineChartProps> = ({data}) => {
 
 
     return (
-        <ResponsiveContainer width={width > 880 ? 450 : width > 768 ? 390 : width > 410 ? 400 : 320}
-                             height={width > 880 ? 400 : width > 768 ? 350 : width > 410 ? 370 : 300}>
+        <ResponsiveContainer width={width > 880 ? 425 : width > 768 ? 390 : width > 440 ? 400 : 320}
+                             height={width > 880 ? 400 : width > 768 ? 350 : width > 440 ? 370 : 300}>
             <LineChart
                 data={data}
                 margin={{top: 20, right: 30, left: 20, bottom: 10}}

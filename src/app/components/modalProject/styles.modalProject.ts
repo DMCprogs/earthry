@@ -4,7 +4,8 @@ import {styled} from "styled-components";
 type Props = {
     $images: StaticImageData;
   }
-export const DivModalContainerSC = styled.div`
+  export const DivModalContainerSC = styled.div`
+
 padding: 50px 0;
   display: grid;
   height: 100vh;
@@ -23,18 +24,24 @@ gap: 80px;
   padding: 50px 20px;
 }
 `;
-export const DivBgContainerSC = styled.div`
-   position: absolute;
-top: 50%;
-left: 50%;
-transform: translate(-50%, -50%);
-    display:flex;
-    width:100%;
-    height:100%;
-    justify-content:center;
-    align-items:center;
-    background:rgba(0,0,0,.7);
-    z-index:9999;
+export const DivNumbers = styled.div`
+display: grid;
+width: 40px;
+justify-content: right;
+
+
+`;
+export const DivNumbers2 = styled.div`
+display: grid;
+width: 50px;
+justify-content: right;
+
+
+`;
+export const Body = styled.body`
+  background: none;
+backdrop-filter: blur(26px);
+
 `;
 export const DivContainerGrafic = styled.div`
   width: 100%;
@@ -75,8 +82,10 @@ export const DivNumberBoxSC = styled.div`
   justify-content: center;
   align-content: center;
   background:  #04896C;
- 
+ grid-template-columns: max-content max-content;
+ gap: 5px;
   color: white;
+  align-items: center;
 `;
 export const DivSliderSC = styled.div`
   display: grid;
@@ -160,6 +169,23 @@ font-style: normal;
 font-weight: 500;
 line-height: normal;
 `;
+export const InputPercent2 = styled.div`
+display: grid;
+justify-content: center;
+align-items: center;
+  border-radius: 8px;
+border: 2px solid #A6A6A6;
+background: #FFF;
+width: 100px;
+height: 74px;
+flex-shrink: 0;
+color: #000;
+font-family: Montserrat;
+font-size: 24px;
+font-style: normal;
+font-weight: 500;
+line-height: normal;
+`;
 export const DivText = styled.div`
  color: #000;
 font-family: Montserrat;
@@ -203,38 +229,10 @@ gap: 8px;
 align-items: center;
 
 `;
-export const DivContentModal = styled.div`
- position: absolute;
-top: 80%;
-left: 50%;
-transform: translate(-50%, -50%);
-    display:flex;
+export const DivContainer2 = styled.div`
 display: grid;
-grid-template-rows: max-content max-content;
-height: 100%;
-    width: 100%;
-    box-sizing: border-box;
-    max-width: 966px;
-    max-height: 1054px;
+grid-template-columns: max-content max-content;
+gap: 2px;
+align-items: center;
 
-`;
-export const DivClose = styled.div`
-cursor: pointer;
-position: absolute;
-z-index: 99999999;
-margin-right: auto;
-margin-top: 20px;
-width: 100%;
-max-width: 944px;
-display: grid;
-justify-content: right;
-font-size: 26px;
-@media(max-width:1000px){
-    left: 96%;
-   display: block;
-}
-@media(max-width:480px){
-    left: 94%;
-   display: block;
-}
 `;

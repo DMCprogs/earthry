@@ -4,7 +4,10 @@ export const DivContainerAirdrop = styled.div`
   width: 100%;
   height: 100%;
   display: grid;
+  max-width: 1400px;
+  padding: 0 50px;
   grid-template-rows: max-content max-content max-content;
+  gap: 50px;
   @media(max-width:780px){
     justify-items: center;
 }
@@ -29,6 +32,8 @@ display: grid;
 grid-template-columns: 1fr 1fr;
 align-items: center;
 justify-items: center;
+gap: 150px;
+padding: 0 50px;
 @media(max-width:780px){
     grid-template-columns: 1fr ;
     text-align: center;

@@ -177,3 +177,17 @@ export const DivBoxButtonSC = styled.div`
   }
 
 `;
+export const DivBoxButtonsWaysSC = styled.div`
+  display: grid;
+  grid-template-columns: repeat(2, max-content);
+  gap: 58px;
+  @media(max-width: 1000px) {
+    gap: 35px;
+    justify-content: center;
+  }
+  @media(max-width: 490px) {
+    grid-template-columns: 100%;
+    grid-template-rows: repeat(2, max-content);
+    justify-items: center;
+  }
+`;

@@ -3,19 +3,33 @@ import Image from "next/image";
 import { styled } from "styled-components";
 export const DivSectionSC = styled.div`
   display: grid;
-  height: 100vh;
+  height: 105vh;
   width: 100vw;
   justify-content: center;
   align-content: center;
   background-color: #4affc9;
+
+  min-height: 725px;
+
+  @media(max-height: 900px) {
+    padding-top: 100px;
+  }
+  @media(max-height: 800px) {
+    padding-bottom: 82px;
+    height: max-content;
+
+  }
 `;
 export const DivContentSectionSC = styled.div`
   display: grid;
-  height: 100vh;
+  height: 105vh;
   width: 100vw;
   justify-content: center;
   align-content: center;
  grid-template-rows: max-content max-content;
+  @media(max-height: 800px) {
+    height: max-content;
+  }
 `;
 export const DivContentWrapSC = styled.div`
   display: grid;

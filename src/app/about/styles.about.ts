@@ -66,22 +66,22 @@ export const DivTeamSC = styled.div`
  grid-template-columns: max-content max-content;
  justify-content: center;
  gap: 20px;
- @media (min-width: 720px){  grid-template-columns: max-content max-content max-content;}
+ @media (min-width: 780px){  grid-template-columns: max-content max-content max-content;}
 `;
 export const DivContainerCardSC = styled.div`
  display: grid;
  width: 100%;
  height: 100%;
  grid-template-rows:max-content max-content max-content;
- min-height: 252px;
- min-width: 150px;
+ height: 252px;
+ width: 150px;
  justify-content: center;
  justify-items: center;
- @media (min-width: 720px){  min-width: 229px;
-min-height: 384px;
+ @media (min-width: 720px){  width: 229px;
+height: 384px;
 }
-@media (min-width: 1280px){  min-width: 308px;
-min-height: 505px;
+@media (min-width: 1280px){  width: 308px;
+height: 505px;
 
 }
 @media (min-width: 1920px){  min-width: 398px;
@@ -200,20 +200,22 @@ export const DivImageSC = styled.div<Props>`
   justify-items: center;
   border-radius: 40px 0px;
   background: url(${props => props.img.src}), lightgray -72.713px 0px / 176.592% 103.067% no-repeat;
-  min-width: 150px;
-  min-height: 175.925px;
-  background-size:cover;
+  width: 150px;
+  height: 150px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
   @media (min-width: 720px){ 
-    min-width: 229px;
-min-height: 268.075px;
+    width: 229px;
+height: 228px;
 
 }
-@media (min-width: 1280px){  min-width: 308px;
-min-height: 351.151px;
+@media (min-width: 1280px){  width: 308px;
+height: 308px;
 
 }
-@media (min-width: 1920px){  min-width: 398px;
-min-height: 455.17px;
+@media (min-width: 1920px){  width: 398px;
+height: 398px;
 
 }
 

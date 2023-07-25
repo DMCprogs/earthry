@@ -286,12 +286,12 @@ export const DivInputConclusionSC = styled.div`
   padding: 23px 80% 23px 20%;
 `;
 
-export const InputTokensSC = styled.input`
+export const InputTokensSC = styled.input<{ error?: boolean }>`
   border-radius: 20px;
   width: 235px;
   height: 74px;
   padding: 25px;
-  border: 3px solid #195946;
+  border: ${props => (props.error ? '3px solid red' : '3px solid #195946')};
   background: #FFF;
   outline: none;
     color: #201E1C;
@@ -499,11 +499,12 @@ justify-content: right;
 
 export const DivBoxColumnCalcSC = styled.div`
   display: grid;
-grid-template-rows: repeat(2,max-content);
-  row-gap: 50px;
-  @media(max-width: 768px) {
-justify-items: center;
-    row-gap: 39px;
+grid-template-columns: repeat(2,max-content);
+  gap: 110px;
+  @media(max-width: 1420px) {
+    grid-template-columns: 100%;
+    grid-template-rows: repeat(4, max-content);
+    gap: 0px;
   }
 `;
 
@@ -512,5 +513,25 @@ padding: 0 2px;
   @media(max-width: 1248px) {
     padding: 0 12.5px;
   }
+
+`;
+
+export const DivBoxLeftSc = styled.div`
+display: grid;
+  grid-template-rows: repeat(4, max-content);
+  gap: 50px
+
+`;
+export const DivBoxRightSC = styled.div`
+display: grid;
+  grid-template-rows: repeat(2, max-content);
+  gap: 26px
+
+`;
+export const DivBoxDisplayNSC = styled.div`
+display: grid;
+@media(max-width: 1430px) {
+  display: none;
+}
 
 `;

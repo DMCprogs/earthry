@@ -5,6 +5,7 @@ import {
     DivBoxTitleSC,
     DivTitleBoldSC,
     DivBoxIconsSC,
+    DivBoxDisplayNSC,
     DivBoxButtonsSC,
     DivTextNormalSC,
     DivAverageBoldTextSC,
@@ -26,6 +27,8 @@ import {
     BoxPaddingSC, 
     DivBoxCarouseItemSC,
     DivContainerBox,
+    DivBoxLeftSc,
+    DivBoxRightSC
 } from "./styles.project";
 import ButtonWrapper from "@/app/components/custom_button";
 import Link from "next/link";
@@ -45,9 +48,12 @@ import CustomLineChart from "@/app/project/components/LineChart";
 import SwapBlock from "@/app/components/swapBlock/SwapBlock";
 import Modal from "../components/modal/modal";
 import "rc-slider/assets/index.css";
+import { toast, ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 import {usePathname} from "next/navigation";
 import ModalProject from "../components/modalProject/modalProject";
+import HarvestElement from "@/app/profile/companents/harvest_element";
 
 
 interface ArrayInfo {
@@ -68,6 +74,7 @@ interface SocialItem {
 }
 
 const Project: React.FC = () => {
+    const [inputError, setInputError] = useState(false);
     const [isOpen, setIsOpen] = useState(false);
     const handleOpen = () => setIsOpen(true);
     const handleClose = () => setIsOpen(false);
@@ -153,13 +160,14 @@ const Project: React.FC = () => {
 
         let _dayData = +countTokens;
         for (let i = 0; i <= +countDays; i++) {
+            const roundedTokens = rounded(_dayData);
             array.push({
                 year: i,
-                tokens: rounded(_dayData),
+                tokens: roundedTokens,
             });
             const s = ((+countTokens * 8 * trackData) / 360) / 100;
             _dayData += s;
-            setResult( (_dayData - s) - +countTokens)
+            setResult(parseFloat(((_dayData - s) - +countTokens).toFixed(2)));
         }
 
         setDataChart(array);
@@ -168,16 +176,27 @@ const Project: React.FC = () => {
     const rounded = (number: number) => {
         return +number.toFixed(2);
     };
-
+    const round = (result: number) => {
+        return  +result.toFixed(2);
+    };
     const handleResize = () => {
         setWidth(window.innerWidth);
     };
-    const handleInputChange = (event: ChangeEvent<HTMLInputElement>): void => {
-        setCountDays(event.target.value);
-    };
+
+    const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        const value = e.target.value.replace(/\D/g, '');
+
+        // Check if the input is a number
+        if (!isNaN(Number(value))) {
+            setCountDays(value);
+            setInputError(true);
+    } else {
+        setInputError(true);
+        toast.error('Введите число 14 или больше');
+    }
+};
     const hanInputChange = (event: ChangeEvent<HTMLInputElement>): void => {
-        const newVal = event.target.value;
-        setCountTokens(newVal);
+        setCountTokens(event.target.value);
     };
     const responsive = {
         desktop: {
@@ -256,7 +275,7 @@ const Project: React.FC = () => {
             <CarouselCustom
                 isProject={isProject}
                 responsive={responsive}
-                itemsImg={CarouselItems()}
+                items={CarouselItems()}
             />
             <DivBoxTitleSC $positionText={width > 768 ? "center" : "start"}>
                 <DivAverageBoldTextSC>About</DivAverageBoldTextSC>
@@ -282,30 +301,24 @@ const Project: React.FC = () => {
                 })}
             </DivBoxColumnsItemsSC>
             <DivAverageBoldTextSC $positionText={width > 768 ? "center" : "start"}>
-                Stake token now
+                Plant token now
             </DivAverageBoldTextSC>
             <DivSmallNormalTextSC $positionText={width > 768 ? "center" : "start"}>
-                Select the number of tokens for staking to see the profitability
+                Select the number of tokens for planting to see the profitability
             </DivSmallNormalTextSC>
-            <DivBoxBigElementsSC>
-                <SwapBlock/>
-                <CustomLineChart data={data}/>
-                <DivContainerGif $display={"none"}>
-                    <Image
-                        src={coin2}
-                        width={260}
-                        height={383}
-                        alt="Picture of the author"
-                    />
-                </DivContainerGif>
-            </DivBoxBigElementsSC>
+            {/*<DivBoxBigElementsSC>*/}
+            {/*    <SwapBlock/>*/}
+            {/*    <CustomLineChart data={data}/>*/}
+
+            {/*</DivBoxBigElementsSC>*/}
             <DivBoxColumnCalcSC>
-                <DivBoxCalcSC>
-                    <DivBoxBoxOptionSC>
+                <DivBoxLeftSc>
+                <DivAverageBoldTextSC>Your balance </DivAverageBoldTextSC>
+                    <HarvestElement isProject={isProject}></HarvestElement>
                         <DivBoxOptionSC>
                             <InputTokensSC
                                 placeholder="0 tokens"
-                                type="tel"
+                                type="text"
                                 name="count_tokens"
                                 value={countTokens}
                                 onChange={hanInputChange}
@@ -327,61 +340,82 @@ const Project: React.FC = () => {
                                 );
                             })}
                         </DivBoxOptionSC>
-                        <DivBoxOptionSC>
-                            <InputTokensSC
-                                type="text"
-                                placeholder={"14 days"}
-                                name={"count_days"}
-                                value={countDays}
-                                onChange={handleInputChange}
-                            />
-                            {listRadio2.map((buttRad, i) => {
-                                return (
-                                    <RadioButton
-                                        key={`deghghffffhhdefda${i}`}
-                                        group={buttRad.group}
-                                        width={
-                                            width > 880
-                                                ? buttRad.width
-                                                : width > 768
-                                                    ? buttRad.width880
-                                                    : "200px"
-                                        }
-                                        label={buttRad.label}
-                                    ></RadioButton>
-                                );
-                            })}
-                        </DivBoxOptionSC>
-                    </DivBoxBoxOptionSC>
+
+                </DivBoxLeftSc>
+                <DivBoxRightSC>
+                    <DivBoxDisplayNSC>
+                    <DivContainerGif $display={"none"}>
+                        <Image
+                            src={coin2}
+                            width={260}
+                            height={383}
+                            alt="Picture of the author"
+                        />
+                    </DivContainerGif>
+                    </DivBoxDisplayNSC>
                     <DivBoxConclusionSC>
-                        <DivUltraSmallNormalTextSC>
-                            You donate to the project in the project (8% profitability)
-                        </DivUltraSmallNormalTextSC>
-                        <DivBoxColumnCalcColcSC>
-                            <DivInputConclusionSC>{result}</DivInputConclusionSC>
-                            <DivSmallBoldTextSC>Earthy tokens</DivSmallBoldTextSC>
-                        </DivBoxColumnCalcColcSC>
-                    </DivBoxConclusionSC>
-                </DivBoxCalcSC>
+                    <DivUltraSmallNormalTextSC>
+                        You donate to the project in the project (8% profitability)
+                    </DivUltraSmallNormalTextSC>
+                    <DivBoxColumnCalcColcSC>
+                        <DivInputConclusionSC>{round(result)}</DivInputConclusionSC>
+                        <DivSmallBoldTextSC>Earthy tokens</DivSmallBoldTextSC>
+                    </DivBoxColumnCalcColcSC>
+                </DivBoxConclusionSC>
+                </DivBoxRightSC>
+
+                {/*<DivBoxCalcSC>*/}
+
+                        {/*    <>*/}
+                        {/*    <InputTokensSC*/}
+                        {/*        type="text"*/}
+                        {/*        placeholder={"14 days"}*/}
+                        {/*        name={"count_days"}*/}
+                        {/*        value={countDays}*/}
+                        {/*        onChange={handleInputChange}*/}
+                        {/*        error={inputError}*/}
+                        {/*    />*/}
+                        {/*    <ToastContainer/>*/}
+                        {/*    </>*/}
+                        {/*    {listRadio2.map((buttRad, i) => {*/}
+                        {/*        return (*/}
+                        {/*            <RadioButton*/}
+                        {/*                key={`deghghffffhhdefda${i}`}*/}
+                        {/*                group={buttRad.group}*/}
+                        {/*                width={*/}
+                        {/*                    width > 880*/}
+                        {/*                        ? buttRad.width*/}
+                        {/*                        : width > 768*/}
+                        {/*                            ? buttRad.width880*/}
+                        {/*                            : "200px"*/}
+                        {/*                }*/}
+                        {/*                label={buttRad.label}*/}
+                        {/*            ></RadioButton>*/}
+                        {/*        );*/}
+                        {/*    })}*/}
+                        {/*</DivBoxOptionSC>*/}
+                {/*    </DivBoxBoxOptionSC>*/}
+
+                {/*</DivBoxCalcSC>*/}
                
             </DivBoxColumnCalcSC>
             <div style={{width: "max-content"}}>
-                    <ButtonWrapper
-                       onClick={() => setIsOpen(true)}
-                        width={177}
-                        height={74}
-                        primary={true}
-                        directionRadius={"center"}
-                    >
-                        <span>Continue</span>
-                    </ButtonWrapper>
-                </div>
+                <ButtonWrapper
+                    onClick={() => setIsOpen(true)}
+                    width={177}
+                    height={74}
+                    primary={true}
+                    directionRadius={"center"}
+                >
+                    <span>Continue</span>
+                </ButtonWrapper>
+            </div>
         </DivBoxProjectSC>
         
         </BoxPaddingSC>
        
         <Modal isOpen={isOpen} onClose={handleClose}>
-             <ModalProject/>
+             <ModalProject Profits={result}/>
             </Modal>
         </DivContainerBox>
       

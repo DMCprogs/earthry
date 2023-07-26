@@ -205,7 +205,7 @@ align-items: center;
 `;
 export const DivContentModal = styled.div`
  position: absolute;
-top: 80%;
+top: 78%;
 left: 50%;
 transform: translate(-50%, -50%);
     display:flex;

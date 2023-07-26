@@ -45,7 +45,7 @@ type Props = {
   $media4?: any;
   $media5?: any;
 };
-export const DivBlogH1SC = styled.div<Props>`
+export const DivH1SC = styled.div<Props>`
   width: 100%;
   display: grid;
   height: max-content;

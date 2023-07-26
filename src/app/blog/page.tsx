@@ -9,7 +9,7 @@ import { useRouter } from 'next/navigation';
 import {
   DivContentSC,
   DivBlogContainerSC,
-  DivBlogH1SC
+  DivH1SC
 } from "./styles.blog";
 import teamLogo from "../images/Team.jpg";
 import BlogCard from "../components/blog/BlogCard";
@@ -29,7 +29,7 @@ const Blog: FC = () => {
     <DivDefaultContainerSC style={{ alignSelf: "start" }}>
       <DivBlogContainerSC>
 
-        <DivBlogH1SC
+        <DivH1SC
           $media1={"50px 0 10px 0"}
           $media2={"100px 0 6px 0"}
           $media3={"100px 0 4px 0"}
@@ -37,7 +37,7 @@ const Blog: FC = () => {
           $media5={"50px 0 0 0"}
 
         >Blog
-        </DivBlogH1SC>
+        </DivH1SC>
         <DivContentSC>
           <BlogCard
             title={"Lorem ipsum dolor sit amet, consectetur adipiscing elit"}
@@ -56,14 +56,14 @@ const Blog: FC = () => {
           />
 
         </DivContentSC>
-        <DivBlogH1SC
+        <DivH1SC
           $media1={"36px 0 0 0"}
           $media2="30px 0 0 0"
           $media4="60px 0 0 0"
           $media5="10px 0 0 0"
 
         >Subscribe for updates
-        </DivBlogH1SC>
+        </DivH1SC>
         {/* <Link style={styles} href={'/'}> */}
         <ButtonWrapper
 

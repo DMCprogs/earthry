@@ -6,6 +6,8 @@ export const DivWrapperSC = styled.div`
   margin: 0;
   padding: 0;
   min-height: 100vh;
+  overflow: auto;
+  height: 100vh;
 `;
 export const DivContentSC = styled.div`
   display: grid;

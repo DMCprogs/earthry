@@ -28,6 +28,19 @@ export const DivDetailContentSC = styled.div`
   width: 90vw;
   justify-items: center;
 `;
+export const DivButon = styled.div`
+margin-top: 20px;
+ width: fit-content;
+ height: max-content;
+ display: block;
+ @media(min-width: 600px){display:none}
+`;
+export const DivButonSC = styled.div`
+ width: fit-content;
+ height: max-content;
+ display: none;
+ @media(min-width: 600px){display:block}
+`;
 export const DivBlogInfoSC = styled.div`
 padding: 40px 30px;
 position: relative;

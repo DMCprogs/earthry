@@ -73,6 +73,7 @@ interface SocialItem {
     img: ReactElement;
 }
 
+
 const Project: React.FC = () => {
     const [inputError, setInputError] = useState(false);
     const [isOpen, setIsOpen] = useState(false);
@@ -80,8 +81,8 @@ const Project: React.FC = () => {
     const handleClose = () => setIsOpen(false);
     const [width, setWidth] = useState<number>(0);
     const [isProject, setIsProject] = useState(true);
-    const [result, setResult] = useState<number>(0);
-    const [countTokens, setCountTokens] = useState<string>("");
+    const [result, setResult] = useState< number>(0);
+    const [countTokens, setCountTokens] = useState<number>();
     const [countDays, setCountDays] = useState<string>("");
     const [trackData, setTrackData] = useState(1);
     const [data, setDataChart] = useState<
@@ -97,7 +98,7 @@ const Project: React.FC = () => {
             textSmallBold: "Earthy token",
             textSmallNorm: "Raised",
         },
-        {titleNum: "49", textSmallNorm: "Investors"},
+        {titleNum: "49", textSmallNorm: "Plantors"},
         {
             titleNum: "1",
             textSmallBold: "Earthy token",
@@ -158,17 +159,17 @@ const Project: React.FC = () => {
             tokens: number;
         }[] = [];
 
-        let _dayData = +countTokens;
-        for (let i = 0; i <= +countDays; i++) {
-            const roundedTokens = rounded(_dayData);
-            array.push({
-                year: i,
-                tokens: roundedTokens,
-            });
-            const s = ((+countTokens * 8 * trackData) / 360) / 100;
-            _dayData += s;
-            setResult(parseFloat(((_dayData - s) - +countTokens).toFixed(2)));
-        }
+        // let _dayData = +countTokens;
+        // for (let i = 0; i <= +countDays; i++) {
+        //     const roundedTokens = rounded(_dayData);
+        //     array.push({
+        //         year: i,
+        //         tokens: roundedTokens,
+        //     });
+        //     const s = ((+countTokens * 8 * trackData) / 360) / 100;
+        //     _dayData += s;
+        //     setResult(parseFloat(((_dayData - s) - +countTokens).toFixed(2)));
+        // }
 
         setDataChart(array);
     }, [countDays, countTokens]);
@@ -195,9 +196,18 @@ const Project: React.FC = () => {
             toast.error('Введите число 14 или больше');
         }
     };
+    
     const hanInputChange = (event: ChangeEvent<HTMLInputElement>): void => {
-        setCountTokens(event.target.value);
-    };
+        let count = parseFloat(event.target.value);
+    
+        // Обеспечиваем ввод только положительных чисел
+        setCountTokens(count);
+        if (!isNaN(count) && count >= 0) {
+           
+          count = (count / 100) * 8;
+          setResult(count);
+        }
+      };
     const responsive = {
         desktop: {
             // the naming can be any, depends on you.
@@ -318,7 +328,7 @@ const Project: React.FC = () => {
                             <DivBoxOptionSC>
                                 <InputTokensSC
                                     placeholder="0 tokens"
-                                    type="text"
+                                    type="number"
                                     name="count_tokens"
                                     value={countTokens}
                                     onChange={hanInputChange}
@@ -400,7 +410,8 @@ const Project: React.FC = () => {
 
                     </DivBoxColumnCalcSC>
                     <div style={{width: "max-content"}}>
-                        <ButtonWrapper
+                        {result?( <ButtonWrapper
+                         
                             onClick={() => setIsOpen(true)}
                             width={177}
                             height={74}
@@ -408,7 +419,16 @@ const Project: React.FC = () => {
                             directionRadius={"center"}
                         >
                             <span>Continue</span>
-                        </ButtonWrapper>
+                        </ButtonWrapper>):(<ButtonWrapper
+                         styles={{backgroundColor:'#104233'}}
+                            width={177}
+                            height={74}
+                            primary={true}
+                            directionRadius={"center"}
+                        >
+                            <span>Continue</span>
+                        </ButtonWrapper>)}
+                       
                     </div>
                 </DivBoxProjectSC>
 

@@ -31,8 +31,8 @@ export const DivBgContainerSC = styled.div`
   //bottom: 0;
   //transform: translate(-50%, -50%);
   display: grid;
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  height: 100%;
   justify-content: center;
   align-items: center;
   background: rgba(0, 0, 0, .7);

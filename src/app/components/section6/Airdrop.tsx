@@ -8,7 +8,6 @@ import {
   DivTextAirdrop,
   DivContainerGif,
 } from "./styles.airdrop";
-import Modal from "../modal/modal";
 import image from "../../images/ItemBlogExample.png";
 import coin2 from "../../images/coin2.gif";
 import Link from "next/link";

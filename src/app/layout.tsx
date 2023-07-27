@@ -27,6 +27,7 @@ const RootLayout: FC<{ children: ReactNode }> = (props) => {
       <body className={inter.className}>
         <StyledComponentsRegistry>
           <DivWrapperSC>
+            
             <HeaderForPage/>
             {children}
             <Footer />

@@ -51,4 +51,5 @@ export const BlogCardDescriptionSC = styled.span`
   font-style: normal;
   font-weight: 400;
   line-height: normal;
+  direction: ltr;
 `;

@@ -1,5 +1,5 @@
 'use client'
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import {
     DivBoxAvatarAndInputSC,
     DivSection1SC, DivWrapperInputsSC,
@@ -19,6 +19,29 @@ import image from "@/app/images/ItemBlogExample.png";
 import image2 from "@/app/images/Greenpeace.png";
 
 const Profile = () => {
+
+    const [
+        dataLayout,
+        setData
+    ] = useState({
+        w: 0,
+        h: 0
+    })
+
+    useEffect(() => {
+        setData({
+            w: window.outerWidth,
+            h: window.outerHeight
+        })
+        window.addEventListener('resize', resize)
+    }, [])
+
+    const resize = (e: any) => {
+        setData({
+            w: e.target.outerWidth,
+            h: e.target.outerHeight
+        })
+    }
     const responsive = {
         desktop: {
             // the naming can be any, depends on you.
@@ -115,9 +138,28 @@ const Profile = () => {
 
     };
 
+    const processMargins = () => {
+        if (dataLayout.w <= 1100) {
+            if (dataLayout.w <= 1000) {
+                if (dataLayout.w <= 768) {
+                    if (dataLayout.w <= 480) {
+                        if (dataLayout.w <= 360) {
+                            return{ marginTop: "40px"}
+                        }
+                        return{ marginTop: "50px"}
+                    }
+                    return{ marginTop: "70px"}
+                }
+                return{ marginTop: "60px"}
+            }
+            return{ marginTop: "60px"}
+        }
+        return{ marginTop: "80px"}
+    }
+
 
     return (
-        <DivDefaultContainerSC style={{ marginTop: "140px" }}>
+        <DivDefaultContainerSC style={processMargins()}>
             <DivWrapperPageProfileSC>
                 <DivSection1SC>
                     <H4SC>Your profile</H4SC>

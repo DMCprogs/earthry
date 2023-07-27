@@ -8,20 +8,31 @@ type Props = {
 
 padding: 50px 0;
   display: grid;
-  height: 100vh;
+  height: 80vh;
   width: 100vw;
   justify-content: center;
   align-content: center;
   max-width: 966px;
- min-height: 1054px;
+ min-height: 95vh;
  border-radius: 30px;
 background: #FFF;
 z-index: 99999;
 grid-auto-rows: max-content;
 justify-items: center;
 gap: 80px;
+box-sizing: border-box;
 @media(max-width: 630px){
   padding: 50px 20px;
+  gap: 30px;
+}
+@media(max-height: 880px){
+  padding: 50px 20px;
+  gap: 20px;
+}
+@media(max-width: 400px){
+  padding: 50px 20px;
+  gap: 15px;
+  min-height: 100vh;
 }
 `;
 export const DivNumbers = styled.div`
@@ -55,6 +66,14 @@ export const DivTexStacingSC = styled.div`
  color: #1A1A1B;
 font-family: Montserrat;
 font-size: clamp(10px, 2.5vw, 24px);
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+`;
+export const DivTexStacing = styled.div`
+ color: #1A1A1B;
+font-family: Montserrat;
+font-size: clamp(14px, 2.5vw, 18px);
 font-style: normal;
 font-weight: 400;
 line-height: normal;
@@ -137,6 +156,9 @@ export const DivContainerGrafic2 = styled.div`
     grid-template-columns: max-content ;
     gap: 30px;
   }
+  @media(max-width:480px){
+ margin-top: 15px;
+  }
 `;
 export const DivContainerInput = styled.div`
   width: 100%;
@@ -148,8 +170,9 @@ flex-direction: column;
   max-width: 288px;
   max-height: 133px;
   justify-content: space-between;
-  @media (max-width: 400px) {
+  @media (max-width: 480px) {
     margin-left: 15px;
+    gap: 0px;
   }
 `;
 export const InputPercent = styled.div`

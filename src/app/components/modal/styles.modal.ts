@@ -7,12 +7,12 @@ type Props = {
 export const DivModalContainerSC = styled.div`
 padding: 50px 0;
   display: grid;
-  height: 100vh;
+  height: 95vh;
   width: 100vw;
   justify-content: center;
   align-content: center;
   max-width: 966px;
- min-height: 1054px;
+ min-height: 80vh;
  border-radius: 30px;
 background: #FFF;
 z-index: 99999;
@@ -31,8 +31,8 @@ export const DivBgContainerSC = styled.div`
   //bottom: 0;
   //transform: translate(-50%, -50%);
   display: grid;
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  height: 100%;
   justify-content: center;
   align-items: center;
   background: rgba(0, 0, 0, .7);
@@ -216,7 +216,7 @@ height: 100%;
     width: 100%;
     box-sizing: border-box;
     max-width: 966px;
-    max-height: 1054px;
+    max-height: 95vh;
 
 `;
 export const DivClose = styled.div`

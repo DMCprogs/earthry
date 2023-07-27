@@ -9,11 +9,16 @@ import { useRouter } from 'next/navigation';
 import {
   DivContentSC,
   DivBlogContainerSC,
-  DivH1SC
+  DivH1SC,
+  DivGroupSC,
+  DivModalTextSC,
+  DivModalContainerSC
 } from "./styles.blog";
 import teamLogo from "../images/Team.jpg";
 import BlogCard from "../components/blog/BlogCard";
 import ButtonWrapper from "../components/custom_button";
+import { InputFormSC } from "../components/section10/styles.form";
+import Modal from "../components/modal/modal";
 
 const Blog: FC = () => {
   const router = useRouter();
@@ -23,8 +28,20 @@ const Blog: FC = () => {
     marginTop: '-20px',
     justifyContent: 'end'
   }
+  const [email, setEmail] = useState();
 
+  //modal state
+  const [isOpen, setIsOpen] = useState(false);
+  const handleClose = () => setIsOpen(false);
+  const handleOpen = () => setIsOpen(true);
 
+  const onChangeEmail = (e: any) => {
+    setEmail(e.target.value)
+  }
+  const Subcribe = () => {
+    console.log(email);
+    handleOpen();
+  };
   return (
     <DivDefaultContainerSC style={{ alignSelf: "start" }}>
       <DivBlogContainerSC>
@@ -57,6 +74,7 @@ const Blog: FC = () => {
 
         </DivContentSC>
         <DivH1SC
+          $font4="26px"
           $media1={"36px 0 0 0"}
           $media2="30px 0 0 0"
           $media4="60px 0 0 0"
@@ -64,19 +82,34 @@ const Blog: FC = () => {
 
         >Subscribe for updates
         </DivH1SC>
-        {/* <Link style={styles} href={'/'}> */}
-        <ButtonWrapper
 
-          directionRadius="ltr"
-          primary={true}
-          height={84}
-          width={260}
-        >
-          <span> Subscribe </span>
-        </ButtonWrapper>
-        {/* </Link> */}
+        <DivGroupSC>
+
+          <InputFormSC
+            style={{ width: '250px' }}
+            placeholder={'E-mail'}
+            name={'email'}
+            type="email"
+            onChange={onChangeEmail}
+          />
+
+          <ButtonWrapper
+            onClick={Subcribe}
+            directionRadius="center"
+            primary={true}
+            height={64}
+            width={160}
+          >
+            <span> Subscribe </span>
+          </ButtonWrapper>
+        </DivGroupSC>
       </DivBlogContainerSC>
-
+      <Modal $minHeight={'100%'} $Height={'300px'} isOpen={isOpen} onClose={handleClose}>
+        <DivModalContainerSC>
+          <DivModalTextSC>You have successfully subscribed.</DivModalTextSC>
+          <DivModalTextSC style={{fontWeight: 'bold'}}>Thanks!</DivModalTextSC>
+        </DivModalContainerSC>
+      </Modal>
     </DivDefaultContainerSC >
   );
 };

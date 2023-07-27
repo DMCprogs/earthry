@@ -1,58 +1,50 @@
-"use client"
+"use client";
 import { StaticImageData } from "next/image";
-import {styled} from "styled-components";
+import { styled } from "styled-components";
 type Props = {
-    $images: StaticImageData;
-  }
-  export const DivModalContainerSC = styled.div`
-
-padding: 50px 0;
+  $images: StaticImageData;
+};
+export const DivModalContainerSC = styled.div`
   display: grid;
-  height: 80vh;
+  height: max-content;
   width: 100vw;
   justify-content: center;
-  align-content: center;
   max-width: 966px;
- min-height: 95vh;
- border-radius: 30px;
-background: #FFF;
-z-index: 99999;
-grid-auto-rows: max-content;
-justify-items: center;
-gap: 80px;
-box-sizing: border-box;
-@media(max-width: 630px){
-  padding: 50px 20px;
-  gap: 30px;
-}
-@media(max-height: 880px){
-  padding: 50px 20px;
-  gap: 20px;
-}
-@media(max-width: 400px){
-  padding: 50px 20px;
-  gap: 15px;
-  min-height: 100vh;
-}
+  /* min-height: 95vh; */
+  border-radius: 30px;
+  background: #fff;
+  z-index: 99999;
+  grid-auto-rows: max-content;
+  justify-items: center;
+  gap: 80px;
+  box-sizing: border-box;
+  /* @media (max-width: 630px) {
+    padding: 50px 20px;
+    gap: 30px;
+  }
+  @media (max-height: 880px) {
+    padding: 50px 20px;
+    gap: 20px;
+  }
+  @media (max-width: 400px) {
+    padding: 50px 20px;
+    gap: 15px;
+    min-height: 100vh;
+  } */
 `;
 export const DivNumbers = styled.div`
-display: grid;
-width: 40px;
-justify-content: right;
-
-
+  display: grid;
+  width: 40px;
+  justify-content: right;
 `;
 export const DivNumbers2 = styled.div`
-display: grid;
-width: 50px;
-justify-content: right;
-
-
+  display: grid;
+  width: 50px;
+  justify-content: right;
 `;
 export const Body = styled.body`
   background: none;
-backdrop-filter: blur(26px);
-
+  backdrop-filter: blur(26px);
 `;
 export const DivContainerGrafic = styled.div`
   width: 100%;
@@ -63,20 +55,20 @@ export const DivContainerGrafic = styled.div`
   justify-items: center;
 `;
 export const DivTexStacingSC = styled.div`
- color: #1A1A1B;
-font-family: Montserrat;
-font-size: clamp(10px, 2.5vw, 24px);
-font-style: normal;
-font-weight: 400;
-line-height: normal;
+  color: #1a1a1b;
+  font-family: Montserrat;
+  font-size: clamp(10px, 2.5vw, 24px);
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
 `;
 export const DivTexStacing = styled.div`
- color: #1A1A1B;
-font-family: Montserrat;
-font-size: clamp(14px, 2.5vw, 18px);
-font-style: normal;
-font-weight: 400;
-line-height: normal;
+  color: #1a1a1b;
+  font-family: Montserrat;
+  font-size: clamp(14px, 2.5vw, 18px);
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
 `;
 
 export const DivHeightfixSC = styled.div`
@@ -100,9 +92,9 @@ export const DivNumberBoxSC = styled.div`
   justify-self: center;
   justify-content: center;
   align-content: center;
-  background:  #04896C;
- grid-template-columns: max-content max-content;
- gap: 5px;
+  background: #04896c;
+  grid-template-columns: max-content max-content;
+  gap: 5px;
   color: white;
   align-items: center;
 `;
@@ -122,16 +114,16 @@ export const DivMarksSC = styled.div`
   color: #000000;
 `;
 export const DivContainerPlantSC = styled.div`
-display: grid;
-justify-content: center;
+  display: grid;
+  justify-content: center;
   width: 100%;
   height: 100%;
   grid-template-columns: max-content max-content max-content max-content;
   gap: 20px;
 `;
 export const DivPlantsImgSC = styled.div<Props>`
-background-image: url(${props => props.$images.src});
-background-size: contain;
+  background-image: url(${(props) => props.$images.src});
+  background-size: contain;
   background-repeat: no-repeat;
   width: 100%;
   height: 100%;
@@ -140,31 +132,30 @@ background-size: contain;
   background-position: bottom;
   @media (max-width: 520px) {
     min-width: 80px;
-  min-height: 80px;
+    min-height: 80px;
   }
-
 `;
 export const DivContainerGrafic2 = styled.div`
   width: 100%;
   height: 100%;
   display: grid;
   grid-template-columns: max-content max-content;
- 
+
   justify-items: center;
   justify-content: space-between;
-  @media(max-width:650px){
-    grid-template-columns: max-content ;
+  @media (max-width: 650px) {
+    grid-template-columns: max-content;
     gap: 30px;
   }
-  @media(max-width:480px){
- margin-top: 15px;
+  @media (max-width: 480px) {
+    margin-top: 15px;
   }
 `;
 export const DivContainerInput = styled.div`
   width: 100%;
   height: 100%;
   display: flex;
-flex-direction: column;
+  flex-direction: column;
   gap: 20px;
   justify-items: center;
   max-width: 288px;
@@ -176,86 +167,82 @@ flex-direction: column;
   }
 `;
 export const InputPercent = styled.div`
-display: grid;
-justify-content: center;
-align-items: center;
+  display: grid;
+  justify-content: center;
+  align-items: center;
   border-radius: 8px;
-border: 2px solid #A6A6A6;
-background: #FFF;
-width: 90px;
-height: 74px;
-flex-shrink: 0;
-color: #000;
-font-family: Montserrat;
-font-size: 24px;
-font-style: normal;
-font-weight: 500;
-line-height: normal;
+  border: 2px solid #a6a6a6;
+  background: #fff;
+  width: 90px;
+  height: 74px;
+  flex-shrink: 0;
+  color: #000;
+  font-family: Montserrat;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
 `;
 export const InputPercent2 = styled.div`
-display: grid;
-justify-content: center;
-align-items: center;
+  display: grid;
+  justify-content: center;
+  align-items: center;
   border-radius: 8px;
-border: 2px solid #A6A6A6;
-background: #FFF;
-width: 100px;
-height: 74px;
-flex-shrink: 0;
-color: #000;
-font-family: Montserrat;
-font-size: 24px;
-font-style: normal;
-font-weight: 500;
-line-height: normal;
+  border: 2px solid #a6a6a6;
+  background: #fff;
+  width: 100px;
+  height: 74px;
+  flex-shrink: 0;
+  color: #000;
+  font-family: Montserrat;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
 `;
 export const DivText = styled.div`
- color: #000;
-font-family: Montserrat;
-font-size: 22px;
-font-style: normal;
-font-weight: 600;
-line-height: normal;
-max-width: 40px;
-margin-top: 10px;
-
+  color: #000;
+  font-family: Montserrat;
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  max-width: 40px;
+  margin-top: 10px;
 `;
 export const DivPlus = styled.div`
- border-radius: 8px;
-border: 1.5px solid #A6A6A6;
-background: #FFF;
-width: 30px;
-height: 30px;
-flex-shrink: 0;
-cursor: pointer;
-display: grid;
-    justify-items: center;
-    align-items: center;
-
+  border-radius: 8px;
+  border: 1.5px solid #a6a6a6;
+  background: #fff;
+  width: 30px;
+  height: 30px;
+  flex-shrink: 0;
+  cursor: pointer;
+  display: grid;
+  justify-items: center;
+  align-items: center;
 `;
 export const DiMunus = styled.div`
- border-radius: 8px;
-border: 1.5px solid #A6A6A6;
-background: #FFF;
-width: 30px;
-height: 30px;
-flex-shrink: 0;
-cursor: pointer;
-display: grid;
-    justify-items: center;
-    align-items: center;
+  border-radius: 8px;
+  border: 1.5px solid #a6a6a6;
+  background: #fff;
+  width: 30px;
+  height: 30px;
+  flex-shrink: 0;
+  cursor: pointer;
+  display: grid;
+  justify-items: center;
+  align-items: center;
 `;
 export const DivContainer = styled.div`
-display: grid;
-grid-template-columns: max-content max-content;
-gap: 8px;
-align-items: center;
-
+  display: grid;
+  grid-template-columns: max-content max-content;
+  gap: 8px;
+  align-items: center;
 `;
 export const DivContainer2 = styled.div`
-display: grid;
-grid-template-columns: max-content max-content;
-gap: 2px;
-align-items: center;
-
+  display: grid;
+  grid-template-columns: max-content max-content;
+  gap: 2px;
+  align-items: center;
 `;

@@ -44,6 +44,7 @@ type Props = {
   $media3?: any;
   $media4?: any;
   $media5?: any;
+  $font4?: any;
 };
 export const DivH1SC = styled.div<Props>`
   width: 100%;
@@ -67,8 +68,38 @@ export const DivH1SC = styled.div<Props>`
   }
   @media (max-width: 480px) {
     margin: ${({ $media4 }) => ($media4 ? $media4 : null)};
+    font-size: ${({ $font4 }) => ($font4 ? $font4 : null)};
   }
   @media (max-width: 360px) {
     margin: ${({ $media5 }) => ($media5 ? $media5 : null)};
   }
 `;
+export const DivGroupSC = styled.div`
+  display: flex;
+  gap: 10px;
+
+  @media (max-width: 480px) {
+    display: grid;
+    justify-items: center;
+  }
+`;
+
+//modal styles
+
+
+export const DivModalTextSC = styled.div`
+  color: #1a1a1b;
+  text-align: center;
+  font-family: Montserrat;
+  font-size: clamp(20px, 2.5vw, 32px); 
+  font-style: normal;
+  line-height: normal;
+
+`;
+
+export const DivModalContainerSC = styled.div`
+  display: grid;
+  gap: 10px;
+  width: 80vw;
+`;
+

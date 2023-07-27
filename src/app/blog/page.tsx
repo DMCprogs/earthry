@@ -1,6 +1,6 @@
 "use client";
 
-import { FC,useState } from "react";
+import { FC, useState } from "react";
 import Link from "next/link";
 import { DivDefaultContainerSC } from "../styles.page";
 import image from "../images/ItemBlogExample.png";
@@ -9,10 +9,10 @@ import { useRouter } from 'next/navigation';
 import {
   DivContentSC,
   DivBlogContainerSC,
+  DivH1SC
 } from "./styles.blog";
 import teamLogo from "../images/Team.jpg";
 import BlogCard from "../components/blog/BlogCard";
-import { DivH1SC } from "../about/styles.about";
 import ButtonWrapper from "../components/custom_button";
 
 const Blog: FC = () => {
@@ -23,13 +23,21 @@ const Blog: FC = () => {
     marginTop: '-20px',
     justifyContent: 'end'
   }
-  
- 
+
+
   return (
-    <DivDefaultContainerSC style={{ marginTop: "140px" }}>
+    <DivDefaultContainerSC style={{ alignSelf: "start" }}>
       <DivBlogContainerSC>
 
-        <DivH1SC style={{margin: '0px'}}>Blog</DivH1SC>
+        <DivH1SC
+          $media1={"50px 0 10px 0"}
+          $media2={"100px 0 6px 0"}
+          $media3={"100px 0 4px 0"}
+          $media4={"70px 0 0 0"}
+          $media5={"50px 0 0 0"}
+
+        >Blog
+        </DivH1SC>
         <DivContentSC>
           <BlogCard
             title={"Lorem ipsum dolor sit amet, consectetur adipiscing elit"}
@@ -48,20 +56,27 @@ const Blog: FC = () => {
           />
 
         </DivContentSC>
-        <DivH1SC>Subscribe for updates</DivH1SC>
+        <DivH1SC
+          $media1={"36px 0 0 0"}
+          $media2="30px 0 0 0"
+          $media4="60px 0 0 0"
+          $media5="10px 0 0 0"
+
+        >Subscribe for updates
+        </DivH1SC>
         {/* <Link style={styles} href={'/'}> */}
-          <ButtonWrapper
-         
-            directionRadius="ltr"
-            primary={true}
-            height={84}
-            width={260}
-          >
-            <span> Subscribe </span>
-          </ButtonWrapper>
+        <ButtonWrapper
+
+          directionRadius="ltr"
+          primary={true}
+          height={84}
+          width={260}
+        >
+          <span> Subscribe </span>
+        </ButtonWrapper>
         {/* </Link> */}
       </DivBlogContainerSC>
-   
+
     </DivDefaultContainerSC >
   );
 };

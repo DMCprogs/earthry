@@ -15,19 +15,20 @@ const Section2 = () => {
 
     useEffect(() => {
         setData({
-            w: window.outerWidth,
+            w: window.innerWidth,
             h: window.outerHeight
         })
         window.addEventListener('resize', resize)
     }, [])
 
     const resize = (e: any) => {
-        console.log('>>>>>>>>>>>>>>>>>>>>', e)
         setData({
-            w: e.target.outerWidth,
+            w: e.target.innerWidth,
             h: e.target.outerHeight
         })
     }
+
+
 
     return (
         <DivWrapperTwoSectionsSC>

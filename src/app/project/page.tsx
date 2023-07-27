@@ -420,13 +420,13 @@ const Project: React.FC = () => {
                         >
                             <span>Continue</span>
                         </ButtonWrapper>):(<ButtonWrapper
-                         styles={{backgroundColor:'#104233'}}
+                            disabled={true}
                             width={177}
                             height={74}
                             primary={true}
                             directionRadius={"center"}
                         >
-                            <span>Continue</span>
+                            <span>Enter tokens</span>
                         </ButtonWrapper>)}
                        
                     </div>

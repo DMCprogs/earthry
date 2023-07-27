@@ -25,7 +25,8 @@ type ModalProps = {
     Body,
     DivContainer2,
     InputPercent2,
-    DivNumbers2
+    DivNumbers2,
+    DivTexStacing
  } from "./styles.modalProject";
  import Slider from "rc-slider";
  import { BsPercent,BsArrowDownShort,BsArrowUpShort } from 'react-icons/bs';
@@ -180,13 +181,13 @@ import "./style.css";
 <DivContainerGrafic2>
    <DivContainerInput>
 
-       <DivTexStacingSC style={{ fontSize: '18px' }}>Select the percentage of APY  to maintain the project (min 1%)</DivTexStacingSC>
+       <DivTexStacing >Select the percentage of APY  to maintain the project (min 1%)</DivTexStacing>
        <div style={{ display: 'flex', alignItems: 'center',gap: '10px' }}><InputPercent onChange={Percen} ><DivContainer><DivNumbers>{trackDatas}</DivNumbers>
        <div style={{ display: 'flex', flexDirection: 'column', gap: '5px', }}><DivPlus onClick={Plus}><BsArrowUpShort size={20} /></DivPlus> 
        <DiMunus onClick={Minus}><BsArrowDownShort size={20} /></DiMunus></div></DivContainer></InputPercent><BsPercent size={28} /></div>
    </DivContainerInput>
    <DivContainerInput>
-       <DivTexStacingSC style={{ fontSize: '18px' }}>You donate to the project in the project</DivTexStacingSC>
+       <DivTexStacing >You donate to the project in the project</DivTexStacing>
 
        <div style={{ display: 'flex', alignItems: 'center',gap: '10px' }}><InputPercent2 onChange={Percen} ><DivContainer2><DivNumbers2>{amount}</DivNumbers2>
        <div style={{ display: 'flex', flexDirection: 'column', gap: '5px', }}><DivPlus onClick={PlusTokens}><BsArrowUpShort size={20} /></DivPlus> 

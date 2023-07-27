@@ -57,10 +57,10 @@ export const CarouselItemGridContainerSC = styled.div`
   display: grid;
   grid-template-columns: repeat(3, max-content);
   justify-content: space-between;
-  @media (max-width: 1000px) {
+  /* @media (max-width: 1000px) {
     grid-row-gap: 10px;
     grid-template-columns: max-content;
-  }
+  } */
   @media (max-width: 768px) {
     grid-template-columns: repeat(3, max-content);
   }
@@ -111,7 +111,7 @@ export const DivCustomArrowRight = styled(TbChevronRight)`
   /* position: absolute; */
   /* right: calc(50vw - 800px); */
   /* right: 0; */
-  z-index: 100;
+  z-index: 1;
   cursor: pointer;
   /* @media (max-width: 1000px) {
     margin-top: 60%;
@@ -130,7 +130,7 @@ export const DivCustomArrowLeft = styled(TbChevronLeft)`
   /* left: calc(50vw - 800px); */
   color: #fff;
   /* position: relative; */
-  z-index: 100000000;
+  z-index: 1;
   justify-self: left;
   cursor: pointer;
   /* @media (max-width: 1000px) {
@@ -144,7 +144,7 @@ export const DivCustomArrowsSC = styled.div<{
 }>`
   align-self: start;
   display: flex;
-  z-index: 10000000000000;
+  z-index: 1;
   grid-template-columns: repeat(2, 1fr);
   width: ${({isProject}) => isProject ? "120%" : "110%"};
   margin-right: ${({isProject}) => isProject ? "11px" : "0"};

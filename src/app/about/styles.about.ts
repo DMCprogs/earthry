@@ -8,7 +8,6 @@ type Props = {
 }
 
 export const DivH1SC = styled.div`
-margin-top: 100px;
 margin-bottom: 50px;
   width: 100%;
   display: grid;
@@ -81,11 +80,11 @@ export const DivContainerCardSC = styled.div`
 height: 384px;
 }
 @media (min-width: 1280px){  width: 308px;
-height: 505px;
+height: 100%;
 
 }
 @media (min-width: 1920px){  min-width: 398px;
-min-height: 652px;
+height: 100%;
 
 }
 `;
@@ -137,7 +136,7 @@ display: grid;
  justify-items: center;
  margin: 10px 0;
  grid-template-rows: max-content max-content max-content;
- 
+ gap:20px;
  
 `;
 export const ButtonLinkenInSC  = styled.button`

@@ -92,6 +92,7 @@ const About: FC = () => (
           height: "100%",
           display: "grid",
           justifyItems: "center",
+          margin:'40px 0 60px 0',
         }}
       >
         {" "}
@@ -108,8 +109,8 @@ const About: FC = () => (
       </div>
 
       <DivJoinSC>
-        <DivH1SC style={{marginBottom:'10px'}}>Join our community</DivH1SC>
-        <DivH1SC style={{ fontWeight: "400",margin:'10px 0' }}>
+        <DivH1SC style={{marginBottom:'0px'}}>Join our community</DivH1SC>
+        <DivH1SC style={{ fontWeight: "400",margin:'0px 0px 0px 0px' }}>
           Ready to improve the environment with us?
         </DivH1SC>
         <div
@@ -121,7 +122,7 @@ const About: FC = () => (
           }}
         >
           {" "}
-          <Link href={"#"}>
+          <Link href={"https://discord.gg/rT6p247U"}>
             <ButtonWrapper
                 primary={true}
                 width={326}

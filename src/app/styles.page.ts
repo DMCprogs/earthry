@@ -7,7 +7,7 @@ export const DivWrapperSC = styled.div`
   padding: 0;
   min-height: 100vh;
   overflow: auto;
-  height: 100vh;
+ // height: 100vh;
 `;
 export const DivContentSC = styled.div`
   display: grid;
@@ -43,4 +43,5 @@ export const DivDefaultContainerSC = styled.div`
   width: 90vw;
   height: fit-content;
   gap: 24px;
+  //border: 1px solid red;
 `;

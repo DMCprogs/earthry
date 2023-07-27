@@ -6,7 +6,23 @@ export const DivWrapperPageProfileSC = styled.div`
   height: 100%;
   grid-template-columns: 100%;
   grid-auto-rows: max-content;
-  gap: 70px;
+  gap: 120px;
+  @media (min-width: 1100px) {
+    gap: 120px;
+  }
+  @media (min-width: 1000px) and (max-width: 1100px){
+    gap: 100px;
+  }
+  @media (min-width: 768px) and (max-width: 999px){
+    gap: 70px;
+  }
+  @media (min-width: 480px) and (max-width: 767px) {
+    gap: 70px;
+  }
+
+  @media (min-width: 340px) and (max-width: 479px) {
+    gap: 70px;
+  }
 `
 
 export const DivSection1SC = styled.div`
@@ -114,6 +130,7 @@ export const H5SC = styled.h5`
   font-weight: 500;
   line-height: normal;
   letter-spacing: 0.2px;
+  text-align: center;
   @media (max-width: 767px) {
     text-align: center;
   }
@@ -135,6 +152,9 @@ export const DivWrapperTwoSectionsSC = styled.div`
   }
   @media (min-width: 1000px) {
     gap: 175px;
+  }
+  @media (min-width: 1350px) {
+    //gap: 175px;
     grid-template-rows: 100%;
     grid-template-columns: max-content max-content max-content;
   }

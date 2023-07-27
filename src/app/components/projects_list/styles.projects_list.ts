@@ -184,7 +184,7 @@ export const DivWrapperText2SC = styled.div`
   @media (max-width: 479px) {
     gap: 20px;
     grid-template-rows: 100%;
-    grid-template-columns: 50% 50%;
+    grid-template-columns: calc(50% - 10px) calc(50% - 10px);
   }
   @media (min-width: 480px) and  (max-width: 999px) {
     grid-template-rows: max-content max-content;
@@ -199,7 +199,7 @@ export const DivWrapperText2SC = styled.div`
   @media (min-width: 1900px) {
     gap: 20px;
     grid-template-rows: 100%;
-    grid-template-columns: 50% 50%;
+    grid-template-columns: calc(50% - 10px) calc(50% - 10px);
     justify-content: center;
     align-items: center;
   }

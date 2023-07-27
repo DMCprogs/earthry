@@ -81,7 +81,7 @@ export const DivWrapperContentSC = styled.div`
   min-height: 100vh;
   height: max-content;
   width: 97%;
-  margin-top: clamp(160px,20vw, 170px);
+  margin-top: clamp(45px,8vw, 83px);
 
   grid-template-rows: repeat(8, max-content);
   gap: 44px;

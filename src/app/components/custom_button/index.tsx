@@ -39,8 +39,21 @@ const ButtonWrapper: FC<{
 
     return (
       <div style={{width:'fit-content'}}>
-
-        <motion.div
+{disabled?( 
+            <ButtonWrapperSC
+                style={styles}
+                height={height}
+                width={width}
+                $weight={weight}
+                $primary={primary}
+                $colorButton={colorButton}
+                $directionRadius={directionRadius}
+                onClick={_onClick}
+                disabled={disabled}
+            >
+                {children}
+            </ButtonWrapperSC>
+        ):( <motion.div
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.9 }}
             transition={{ type: "spring", stiffness: 400, damping: 17 }}
@@ -58,7 +71,8 @@ const ButtonWrapper: FC<{
             >
                 {children}
             </ButtonWrapperSC>
-        </motion.div>
+        </motion.div>)}
+       
       </div>
     );
 };

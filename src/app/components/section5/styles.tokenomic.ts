@@ -6,7 +6,7 @@ export const DivContainerTokenomic = styled.div`
   display: grid;
   grid-template-rows: max-content max-content max-content;
   gap: 50px;
-
+box-sizing: border-box;
   justify-items: center;
 `;
 export const DivTitleTokenomic = styled.div`

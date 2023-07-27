@@ -24,7 +24,7 @@ import {
     InputTokensSC,
     DivUltraSmallNormalTextSC,
     DivBoxColumnCalcSC,
-    BoxPaddingSC, 
+    BoxPaddingSC,
     DivBoxCarouseItemSC,
     DivContainerBox,
     DivBoxLeftSc,
@@ -48,7 +48,7 @@ import CustomLineChart from "@/app/project/components/LineChart";
 import SwapBlock from "@/app/components/swapBlock/SwapBlock";
 import Modal from "../components/modal/modal";
 import "rc-slider/assets/index.css";
-import { toast, ToastContainer } from 'react-toastify';
+import {toast, ToastContainer} from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 import {usePathname} from "next/navigation";
@@ -73,6 +73,7 @@ interface SocialItem {
     img: ReactElement;
 }
 
+
 const Project: React.FC = () => {
     const [inputError, setInputError] = useState(false);
     const [isOpen, setIsOpen] = useState(false);
@@ -80,8 +81,8 @@ const Project: React.FC = () => {
     const handleClose = () => setIsOpen(false);
     const [width, setWidth] = useState<number>(0);
     const [isProject, setIsProject] = useState(true);
-    const [result, setResult] = useState<number>(0);
-    const [countTokens, setCountTokens] = useState<string>("");
+    const [result, setResult] = useState< number>(0);
+    const [countTokens, setCountTokens] = useState<number>();
     const [countDays, setCountDays] = useState<string>("");
     const [trackData, setTrackData] = useState(1);
     const [data, setDataChart] = useState<
@@ -90,14 +91,14 @@ const Project: React.FC = () => {
             tokens: number;
         }[]
     >([]);
-    
+
     const [listInfo, setListInfo] = useState<ArrayInfo[]>([
         {
             titleNum: "64 332",
             textSmallBold: "Earthy token",
             textSmallNorm: "Raised",
         },
-        {titleNum: "49", textSmallNorm: "Investors"},
+        {titleNum: "49", textSmallNorm: "Plantors"},
         {
             titleNum: "1",
             textSmallBold: "Earthy token",
@@ -158,17 +159,17 @@ const Project: React.FC = () => {
             tokens: number;
         }[] = [];
 
-        let _dayData = +countTokens;
-        for (let i = 0; i <= +countDays; i++) {
-            const roundedTokens = rounded(_dayData);
-            array.push({
-                year: i,
-                tokens: roundedTokens,
-            });
-            const s = ((+countTokens * 8 * trackData) / 360) / 100;
-            _dayData += s;
-            setResult(parseFloat(((_dayData - s) - +countTokens).toFixed(2)));
-        }
+        // let _dayData = +countTokens;
+        // for (let i = 0; i <= +countDays; i++) {
+        //     const roundedTokens = rounded(_dayData);
+        //     array.push({
+        //         year: i,
+        //         tokens: roundedTokens,
+        //     });
+        //     const s = ((+countTokens * 8 * trackData) / 360) / 100;
+        //     _dayData += s;
+        //     setResult(parseFloat(((_dayData - s) - +countTokens).toFixed(2)));
+        // }
 
         setDataChart(array);
     }, [countDays, countTokens]);
@@ -177,7 +178,7 @@ const Project: React.FC = () => {
         return +number.toFixed(2);
     };
     const round = (result: number) => {
-        return  +result.toFixed(2);
+        return +result.toFixed(2);
     };
     const handleResize = () => {
         setWidth(window.innerWidth);
@@ -190,14 +191,23 @@ const Project: React.FC = () => {
         if (!isNaN(Number(value))) {
             setCountDays(value);
             setInputError(true);
-    } else {
-        setInputError(true);
-        toast.error('Введите число 14 или больше');
-    }
-};
-    const hanInputChange = (event: ChangeEvent<HTMLInputElement>): void => {
-        setCountTokens(event.target.value);
+        } else {
+            setInputError(true);
+            toast.error('Введите число 14 или больше');
+        }
     };
+    
+    const hanInputChange = (event: ChangeEvent<HTMLInputElement>): void => {
+        let count = parseFloat(event.target.value);
+    
+        // Обеспечиваем ввод только положительных чисел
+        setCountTokens(count);
+        if (!isNaN(count) && count >= 0) {
+           
+          count = (count / 100) * 8;
+          setResult(count);
+        }
+      };
     const responsive = {
         desktop: {
             // the naming can be any, depends on you.
@@ -238,133 +248,133 @@ const Project: React.FC = () => {
 
     return (
         <DivContainerBox>
-        <BoxPaddingSC>
-        <DivBoxProjectSC>
-            <DivBoxTitleSC>
-                <DivTitleBoldSC>Project name</DivTitleBoldSC>
-                <DivTextNormalSC>Organization name</DivTextNormalSC>
-            </DivBoxTitleSC>
-            <DivBoxButtonsSC>
-                <Link href={"#"}>
-                    <ButtonWrapper
-                        width={290}
-                        height={74}
-                        primary={true}
-                        directionRadius={"center"}
-                    >
-                        <span>Go to the website</span>
-                    </ButtonWrapper>
-                </Link>
-                <Link href={"#"}>
-                    <ButtonWrapper width={290} height={74} directionRadius={"center"}>
-                        <span>Read the document</span>
-                    </ButtonWrapper>
-                </Link>
-            </DivBoxButtonsSC>
-            <DivBoxIconsSC>
-                {listSocialIco.map((socialItem, i) => (
-                    <div key={`dsahjaba${i}`}>
-                        {React.cloneElement(socialItem.img, {
-                            style: {cursor: "pointer"},
-                            size: 37,
-                            color: "#195946",
+            <BoxPaddingSC>
+                <DivBoxProjectSC>
+                    <DivBoxTitleSC>
+                        <DivTitleBoldSC>Project name</DivTitleBoldSC>
+                        <DivTextNormalSC>Organization name</DivTextNormalSC>
+                    </DivBoxTitleSC>
+                    <DivBoxButtonsSC>
+                        <Link href={"#"}>
+                            <ButtonWrapper
+                                width={290}
+                                height={74}
+                                primary={true}
+                                directionRadius={"center"}
+                            >
+                                <span>Go to the website</span>
+                            </ButtonWrapper>
+                        </Link>
+                        <Link href={"#"}>
+                            <ButtonWrapper width={290} height={74} directionRadius={"center"}>
+                                <span>Read the document</span>
+                            </ButtonWrapper>
+                        </Link>
+                    </DivBoxButtonsSC>
+                    <DivBoxIconsSC>
+                        {listSocialIco.map((socialItem, i) => (
+                            <div key={`dsahjaba${i}`}>
+                                {React.cloneElement(socialItem.img, {
+                                    style: {cursor: "pointer"},
+                                    size: 37,
+                                    color: "#195946",
+                                })}
+                            </div>
+                        ))}
+                    </DivBoxIconsSC>
+                    <CarouselCustom
+                        isProject={isProject}
+                        responsive={responsive}
+                        items={CarouselItems()}
+                    />
+                    <DivBoxTitleSC $positionText={width > 768 ? "center" : "start"}>
+                        <DivAverageBoldTextSC>About</DivAverageBoldTextSC>
+                        <DivTextNormalSC $positionText={width > 768 ? "center" : "start"}>
+                            Regenerate Community is a community-driven initiative dedicated to
+                            turning the region into a model for sustainable urban living. Launched
+                            in 2023, the project leverages the power of local residents,
+                            businesses, and government agencies to create a greener, cleaner, and
+                            more equitable city.
+                        </DivTextNormalSC>
+                    </DivBoxTitleSC>
+                    <DivBoxColumnsItemsSC>
+                        {listInfo.map((item, i) => {
+                            return (
+                                <DivBoxRowsItemSC key={`ssssadaghghsda${i}`}>
+                                    <DivBoxColumnsBoldSC>
+                                        <DivAverageBoldTextSC>{item.titleNum}</DivAverageBoldTextSC>
+                                        <DivSmallBoldTextSC>{item.textSmallBold}</DivSmallBoldTextSC>
+                                    </DivBoxColumnsBoldSC>
+                                    <DivSmallNormalTextSC>{item.textSmallNorm}</DivSmallNormalTextSC>
+                                </DivBoxRowsItemSC>
+                            );
                         })}
-                    </div>
-                ))}
-            </DivBoxIconsSC>
-            <CarouselCustom
-                isProject={isProject}
-                responsive={responsive}
-                items={CarouselItems()}
-            />
-            <DivBoxTitleSC $positionText={width > 768 ? "center" : "start"}>
-                <DivAverageBoldTextSC>About</DivAverageBoldTextSC>
-                <DivTextNormalSC $positionText={width > 768 ? "center" : "start"}>
-                    Regenerate Community is a community-driven initiative dedicated to
-                    turning the region into a model for sustainable urban living. Launched
-                    in 2023, the project leverages the power of local residents,
-                    businesses, and government agencies to create a greener, cleaner, and
-                    more equitable city.
-                </DivTextNormalSC>
-            </DivBoxTitleSC>
-            <DivBoxColumnsItemsSC>
-                {listInfo.map((item, i) => {
-                    return (
-                        <DivBoxRowsItemSC key={`ssssadaghghsda${i}`}>
-                            <DivBoxColumnsBoldSC>
-                                <DivAverageBoldTextSC>{item.titleNum}</DivAverageBoldTextSC>
-                                <DivSmallBoldTextSC>{item.textSmallBold}</DivSmallBoldTextSC>
-                            </DivBoxColumnsBoldSC>
-                            <DivSmallNormalTextSC>{item.textSmallNorm}</DivSmallNormalTextSC>
-                        </DivBoxRowsItemSC>
-                    );
-                })}
-            </DivBoxColumnsItemsSC>
-            <DivAverageBoldTextSC $positionText={width > 768 ? "center" : "start"}>
-                Plant token now
-            </DivAverageBoldTextSC>
-            <DivSmallNormalTextSC $positionText={width > 768 ? "center" : "start"}>
-                Select the number of tokens for planting to see the profitability
-            </DivSmallNormalTextSC>
-            {/*<DivBoxBigElementsSC>*/}
-            {/*    <SwapBlock/>*/}
-            {/*    <CustomLineChart data={data}/>*/}
+                    </DivBoxColumnsItemsSC>
+                    <DivAverageBoldTextSC $positionText={width > 768 ? "center" : "start"}>
+                        Plant token now
+                    </DivAverageBoldTextSC>
+                    <DivSmallNormalTextSC $positionText={width > 768 ? "center" : "start"}>
+                        Select the number of tokens for planting to see the profitability
+                    </DivSmallNormalTextSC>
+                    {/*<DivBoxBigElementsSC>*/}
+                    {/*    <SwapBlock/>*/}
+                    {/*    <CustomLineChart data={data}/>*/}
 
-            {/*</DivBoxBigElementsSC>*/}
-            <DivBoxColumnCalcSC>
-                <DivBoxLeftSc>
-                <DivAverageBoldTextSC>Your balance </DivAverageBoldTextSC>
-                    <HarvestElement isProject={isProject}></HarvestElement>
-                        <DivBoxOptionSC>
-                            <InputTokensSC
-                                placeholder="0 tokens"
-                                type="text"
-                                name="count_tokens"
-                                value={countTokens}
-                                onChange={hanInputChange}
-                            />
-                            {listRadio.map((buttRad, i) => {
-                                return (
-                                    <RadioButton
-                                        key={`deghghffffhhdefda${i}`}
-                                        group={buttRad.group}
-                                        width={
-                                            width > 880
-                                                ? buttRad.width
-                                                : width > 768
-                                                    ? buttRad.width880
-                                                    : "200px"
-                                        }
-                                        label={buttRad.label}
-                                    ></RadioButton>
-                                );
-                            })}
-                        </DivBoxOptionSC>
+                    {/*</DivBoxBigElementsSC>*/}
+                    <DivBoxColumnCalcSC>
+                        <DivBoxLeftSc>
+                            <DivAverageBoldTextSC>Your balance </DivAverageBoldTextSC>
+                            <HarvestElement isProject={isProject}></HarvestElement>
+                            <DivBoxOptionSC>
+                                <InputTokensSC
+                                    placeholder="0 tokens"
+                                    type="number"
+                                    name="count_tokens"
+                                    value={countTokens}
+                                    onChange={hanInputChange}
+                                />
+                                {listRadio.map((buttRad, i) => {
+                                    return (
+                                        <RadioButton
+                                            key={`deghghffffhhdefda${i}`}
+                                            group={buttRad.group}
+                                            width={
+                                                width > 880
+                                                    ? buttRad.width
+                                                    : width > 768
+                                                        ? buttRad.width880
+                                                        : "200px"
+                                            }
+                                            label={buttRad.label}
+                                        ></RadioButton>
+                                    );
+                                })}
+                            </DivBoxOptionSC>
 
-                </DivBoxLeftSc>
-                <DivBoxRightSC>
-                    <DivBoxDisplayNSC>
-                    <DivContainerGif $display={"none"}>
-                        <Image
-                            src={coin2}
-                            width={260}
-                            height={383}
-                            alt="Picture of the author"
-                        />
-                    </DivContainerGif>
-                    </DivBoxDisplayNSC>
-                    <DivBoxConclusionSC>
-                    <DivUltraSmallNormalTextSC>
-                        You donate to the project in the project (8% profitability)
-                    </DivUltraSmallNormalTextSC>
-                    <DivBoxColumnCalcColcSC>
-                        <DivInputConclusionSC>{round(result)}</DivInputConclusionSC>
-                        <DivSmallBoldTextSC>Earthy tokens</DivSmallBoldTextSC>
-                    </DivBoxColumnCalcColcSC>
-                </DivBoxConclusionSC>
-                </DivBoxRightSC>
+                        </DivBoxLeftSc>
+                        <DivBoxRightSC>
+                            <DivBoxDisplayNSC>
+                                <DivContainerGif $display={"none"}>
+                                    <Image
+                                        src={coin2}
+                                        width={260}
+                                        height={383}
+                                        alt="Picture of the author"
+                                    />
+                                </DivContainerGif>
+                            </DivBoxDisplayNSC>
+                            <DivBoxConclusionSC>
+                                <DivUltraSmallNormalTextSC>
+                                    You donate to the project in the project (8% profitability)
+                                </DivUltraSmallNormalTextSC>
+                                <DivBoxColumnCalcColcSC>
+                                    <DivInputConclusionSC>{round(result)}</DivInputConclusionSC>
+                                    <DivSmallBoldTextSC>Earthy tokens</DivSmallBoldTextSC>
+                                </DivBoxColumnCalcColcSC>
+                            </DivBoxConclusionSC>
+                        </DivBoxRightSC>
 
-                {/*<DivBoxCalcSC>*/}
+                        {/*<DivBoxCalcSC>*/}
 
                         {/*    <>*/}
                         {/*    <InputTokensSC*/}
@@ -394,31 +404,41 @@ const Project: React.FC = () => {
                         {/*        );*/}
                         {/*    })}*/}
                         {/*</DivBoxOptionSC>*/}
-                {/*    </DivBoxBoxOptionSC>*/}
+                        {/*    </DivBoxBoxOptionSC>*/}
 
-                {/*</DivBoxCalcSC>*/}
-               
-            </DivBoxColumnCalcSC>
-            <div style={{width: "max-content"}}>
-                <ButtonWrapper
-                    onClick={() => setIsOpen(true)}
-                    width={177}
-                    height={74}
-                    primary={true}
-                    directionRadius={"center"}
-                >
-                    <span>Continue</span>
-                </ButtonWrapper>
-            </div>
-        </DivBoxProjectSC>
-        
-        </BoxPaddingSC>
-       
-        <Modal isOpen={isOpen} onClose={handleClose}>
-             <ModalProject Profits={result}/>
+                        {/*</DivBoxCalcSC>*/}
+
+                    </DivBoxColumnCalcSC>
+                    <div style={{width: "max-content"}}>
+                        {result?( <ButtonWrapper
+                         
+                            onClick={() => setIsOpen(true)}
+                            width={177}
+                            height={74}
+                            primary={true}
+                            directionRadius={"center"}
+                        >
+                            <span>Continue</span>
+                        </ButtonWrapper>):(<ButtonWrapper
+                            disabled={true}
+                            width={177}
+                            height={74}
+                            primary={true}
+                            directionRadius={"center"}
+                        >
+                            <span>Enter tokens</span>
+                        </ButtonWrapper>)}
+                       
+                    </div>
+                </DivBoxProjectSC>
+
+            </BoxPaddingSC>
+
+            <Modal isOpen={isOpen} onClose={handleClose}>
+                <ModalProject Profits={result}/>
             </Modal>
         </DivContainerBox>
-      
+
     );
 };
 

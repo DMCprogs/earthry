@@ -9,7 +9,7 @@ export const DivWrapSec6SC = styled.div`
   height: max-content;
   width: 97%;
   //border: 1px solid red;
-  margin-top: clamp(140px, 20vw, 170px);
+  /* margin-top: clamp(140px, 20vw, 170px); */
 `;
 export const DivContentSC = styled.div`
   display: grid;
@@ -18,6 +18,9 @@ export const DivContentSC = styled.div`
   justify-content: center;
   max-width: 1030px;
   height: max-content;
+    @media(max-width:768px){
+      gap: 20px;
+  }
   //border: 1px solid green;
 `;
 

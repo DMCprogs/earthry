@@ -62,6 +62,7 @@ export const SpanSC = styled.span`
   align-items: center;
   letter-spacing: 0.2px;
   color: #323232;
+  direction: ltr;
   @media (max-width: 1300px) {
     max-width: 486px;
     font-size: 18px;

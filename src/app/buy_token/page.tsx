@@ -31,6 +31,7 @@ import coin from '../images/coin.gif';
 import coin2 from '../images/coin2.gif';
 import StepsBuyToken from "./stepsBuyToken/StepsBuyToken";
 import Image from '../images/Team.jpg'
+import Link from "next/link";
 
 const listData = [
     {
@@ -153,14 +154,17 @@ const BuyToken = () => {
 
                 <DivForThirdGradientSC>
                     <DivForButtonContain>
-                        <ButtonWrapper
-                            width={202}
-                            height={84}
-                            directionRadius={"rtl"}
-                            primary={true}
-                        >
-                            <span>View all</span>
-                        </ButtonWrapper>
+                        <Link href={"/leaderboard"}>
+                            <ButtonWrapper
+                                width={202}
+                                height={84}
+                                directionRadius={"rtl"}
+                                primary={true}
+                            >
+                                <span>View all</span>
+                            </ButtonWrapper>
+                        </Link>
+
                     </DivForButtonContain>
 
                     <H2StepsTitleSC>How to buy Earthy token?</H2StepsTitleSC>

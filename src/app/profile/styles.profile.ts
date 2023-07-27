@@ -1,26 +1,42 @@
-import {styled} from "styled-components";
-
+import { styled } from "styled-components";
+import { MdOutlinePhotoCamera } from "react-icons/md";
 export const DivWrapperPageProfileSC = styled.div`
   display: grid;
   width: 100%;
   height: 100%;
   grid-template-columns: 100%;
   grid-auto-rows: max-content;
-  gap: 70px;
+  gap: 120px;
+  @media (min-width: 1100px) {
+    gap: 120px;
+  }
+  @media (min-width: 1000px) and (max-width: 1100px){
+    gap: 100px;
+  }
+  @media (min-width: 768px) and (max-width: 999px){
+    gap: 70px;
+  }
+  @media (min-width: 480px) and (max-width: 767px) {
+    gap: 70px;
+  }
+
+  @media (min-width: 340px) and (max-width: 479px) {
+    gap: 70px;
+  }
 `
 
 export const DivSection1SC = styled.div`
-    display: grid;
+  display: grid;
   grid-template-columns: 100%;
   //grid-template-rows: repeat(4, max-content);
   grid-auto-rows: max-content;
   width: 100%;
   height: max-content;
   gap: 70px;
-`
+`;
 
 export const H4SC = styled.h4`
-  color: #201E1C;
+  color: #201e1c;
   font-family: Montserrat;
   font-size: 40px;
   font-style: normal;
@@ -31,7 +47,7 @@ export const H4SC = styled.h4`
   @media (max-width: 1000px) {
     text-align: center;
   }
-`
+`;
 
 export const DivBoxAvatarAndInputSC = styled.div`
   display: grid;
@@ -47,24 +63,67 @@ export const DivBoxAvatarAndInputSC = styled.div`
   justify-content: center;
   @media (min-width: 768px) {
     grid-template-rows: 100%;
-    grid-template-columns: repeat(2, max-content) 107px ;
+    grid-template-columns: repeat(2, max-content) 107px;
     justify-items: center;
     align-items: center;
     gap: 25px;
   }
-`
+`;
 
+export const IconImgSC = styled(MdOutlinePhotoCamera)`
+  display: none;
+  justify-self: center;
+`;
 export const DivWrapperProfileAvatarSC = styled.div<{
-    $img: string
+  $img: string;
 }>`
+  cursor: pointer;
+  position: relative;
   width: 187px;
   height: 187px;
   border-radius: 187px;
-  background: linear-gradient(0deg, rgba(0, 0, 0, 0.50) 0%, rgba(0, 0, 0, 0.50) 100%), url(${({$img}) => ($img)}), lightgray 50% / cover no-repeat;
+  background: linear-gradient(
+      0deg,
+      rgba(0, 0, 0, 0.5) 0%,
+      rgba(0, 0, 0, 0.5) 100%
+    ),
+    url(${({ $img }) => $img}), lightgray 50% / cover no-repeat;
   background-size: cover;
   background-position: center;
+  display: grid;
+  justify-content: center;
+  align-content: center;
+  z-index: 10;
 
-`
+  &:hover {
+    scale: 0.98;
+    transition: 0.3s;
+    text-indent: 0%;
+  }
+
+  &:hover ${IconImgSC} {
+    display: grid;
+    opacity: 0.3;
+  }
+`;
+
+export const DivBackgroundSC = styled.div`
+  background: #000;
+  display: grid;
+  justify-content: center;
+  align-content: center;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  opacity: 0;
+  border-radius: 187px;
+  transition: 0.2s;
+  &:hover {
+    opacity: 0.1;
+  }
+`;
 
 export const DivWrapperInputsSC = styled.div`
   display: grid;
@@ -75,7 +134,7 @@ export const DivWrapperInputsSC = styled.div`
   @media (max-width: 768px) {
     width: 250px;
   }
-`
+`;
 
 export const SpanSC = styled.span`
   color: #111;
@@ -84,11 +143,11 @@ export const SpanSC = styled.span`
   font-style: normal;
   font-weight: 500;
   line-height: 145.02%;
-`
+`;
 export const InputSC = styled.input`
   border-radius: 16px;
-  border: 2px solid #A6A6A6;
-  background: #FFF;
+  border: 2px solid #a6a6a6;
+  background: #fff;
   padding: 20px;
   color: black;
   font-family: Montserrat;
@@ -107,17 +166,18 @@ export const InputSC = styled.input`
 `;
 
 export const H5SC = styled.h5`
-  color: #201E1C;
+  color: #201e1c;
   font-family: Montserrat;
   font-size: 40px;
   font-style: normal;
   font-weight: 500;
   line-height: normal;
   letter-spacing: 0.2px;
+  text-align: center;
   @media (max-width: 767px) {
     text-align: center;
   }
-`
+`;
 
 export const DivWrapperTwoSectionsSC = styled.div`
   display: grid;
@@ -135,19 +195,24 @@ export const DivWrapperTwoSectionsSC = styled.div`
   }
   @media (min-width: 1000px) {
     gap: 175px;
+  }
+  @media (min-width: 1350px) {
+    //gap: 175px;
     grid-template-rows: 100%;
     grid-template-columns: max-content max-content max-content;
   }
-`
+`;
 
 export const DivWrapperHarvestSC = styled.div<{
-    $isProject: boolean;
+  $isProject: boolean;
 }>`
   display: grid;
   width: 100%;
   height: max-content;
-  grid-template-columns: ${({$isProject}) => $isProject ? "repeat(3, max-content)" : "100%"};
-  grid-template-rows: ${({$isProject}) => $isProject ? "100%" : "139px 19px 139px"};
+  grid-template-columns: ${({ $isProject }) =>
+    $isProject ? "repeat(3, max-content)" : "100%"};
+  grid-template-rows: ${({ $isProject }) =>
+    $isProject ? "100%" : "139px 19px 139px"};
   justify-items: center;
   align-items: center;
   gap: 27px;
@@ -155,52 +220,53 @@ export const DivWrapperHarvestSC = styled.div<{
     padding-top: 37px;
   }
   @media (max-width: 768px) {
-    grid-template-columns: ${({$isProject}) => $isProject ? "100%" : null};
-    grid-template-rows: ${({$isProject}) => $isProject ? "repeat(3, max-content)" : null};
+    grid-template-columns: ${({ $isProject }) => ($isProject ? "100%" : null)};
+    grid-template-rows: ${({ $isProject }) =>
+      $isProject ? "repeat(3, max-content)" : null};
   }
-`
+`;
 
 export const DivDashSC = styled.div<{
-    $isProject: boolean;
+  $isProject: boolean;
 }>`
   display: grid;
   width: 320px;
   height: 139px;
   border-radius: 20px;
-  background: #DBFFF4;
+  background: #dbfff4;
   grid-template-rows: 100%;
   grid-template-columns: 26px auto;
   align-items: center;
   padding: 35px;
   gap: 7px;
-  @media(max-width: 768px) {
-    width: ${({$isProject}) => $isProject ? "100%" : "320px"};
+  @media (max-width: 768px) {
+    width: ${({ $isProject }) => ($isProject ? "100%" : "320px")};
   }
-`
+`;
 
 export const DivDash2SC = styled.div<{
-    $isProject: boolean;
+  $isProject: boolean;
 }>`
   display: grid;
   width: 320px;
   height: 139px;
   border-radius: 20px;
-  background: #DBFFF4;
+  background: #dbfff4;
   align-items: center;
   padding: 35px;
-  @media(max-width: 768px) {
-    width: ${({$isProject}) => $isProject ? "100%" : "320px"};
+  @media (max-width: 768px) {
+    width: ${({ $isProject }) => ($isProject ? "100%" : "320px")};
   }
-`
+`;
 
 export const DivLogoSC = styled.div<{
-    $image: string
+  $image: string;
 }>`
   display: grid;
   width: 26px;
   height: 38px;
-  background: url(${({$image}) => ($image)}) no-repeat;
-`
+  background: url(${({ $image }) => $image}) no-repeat;
+`;
 
 export const SpanNumSC = styled.span`
   color: #000;
@@ -210,11 +276,11 @@ export const SpanNumSC = styled.span`
   font-weight: 500;
   line-height: normal;
   letter-spacing: 0.2px;
-`
+`;
 
 export const DivTempBoxSC = styled.div`
   display: grid;
-  
+
   @media (min-width: 768px) {
     grid-template-columns: 100%;
     grid-template-rows: 100%;
@@ -222,32 +288,32 @@ export const DivTempBoxSC = styled.div`
     height: 100%;
     padding-top: 82px;
   }
-`
+`;
 
 export const DivImageCenterSC = styled.div<{
-    $img: string
+  $img: string;
 }>`
   width: 16px;
   height: 19px;
   display: grid;
-  background: url(${({$img}) => ($img)}) no-repeat;
+  background: url(${({ $img }) => $img}) no-repeat;
   background-position: center;
   background-size: contain;
-`
+`;
 
 export const DivImageBoxSC = styled.div<{
-    $img: string
+  $img: string;
 }>`
   display: grid;
   width: 308px;
   height: 454px;
-  background: url(${({$img}) => ($img)});
+  background: url(${({ $img }) => $img});
   background-position: center;
   background-size: contain;
-`
+`;
 
 export const DivTempHeSC = styled.div`
   display: grid;
   width: 100%;
   height: 10px;
-`
+`;

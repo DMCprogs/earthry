@@ -8,6 +8,7 @@ export const DivContainerAirdrop = styled.div`
   padding: 0 50px;
   grid-template-rows: max-content max-content max-content;
   gap: 50px;
+
   @media(max-width:780px){
     justify-items: center;
 }
@@ -37,7 +38,7 @@ align-items: center;
 justify-items: center;
 gap: 150px;
 padding: 0 50px;
-@media(max-width:780px){
+@media(max-width:960px){
     grid-template-columns: 1fr ;
     text-align: center;
 }
@@ -59,7 +60,7 @@ display: grid;
 grid-template-rows: max-content max-content;
 justify-items: left;
 gap: 50px;
-@media(max-width:768px){
+@media(max-width:960px){
   justify-items: center;
 }
 `;
@@ -71,7 +72,7 @@ export const DivContainerGif = styled.div<{
   @media(max-width: 1330px){
     display: ${({$display}) => $display};
   }
-@media(max-width:780px){
+@media(max-width:960px){
     display: none;
 }
 `;

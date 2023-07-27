@@ -8,8 +8,9 @@ export const DivRowsWrapSC = styled.div`
   display: grid;
   grid-template-rows: repeat(10, max-content);
   gap: 96px;
-  margin-top: clamp(140px,20vw, 170px);
+  margin-top: clamp(77px,12vw, 120px);
   justify-self: center;
+  //border:1px solid red;
   @media (max-width: 1000px) {
     gap: 72px;
   }
@@ -17,7 +18,7 @@ export const DivRowsWrapSC = styled.div`
     gap: 40px;
   }
   @media (max-width: 480px) {
-    gap: 30px;
+    gap: 10px;
   }
 `;
 
@@ -71,15 +72,16 @@ export const ImageDocEcologySC = styled.div<{
   max-width: 1078px;
   height: 611px;
   background-image: url(${({ path }) => path});
-  background-size: contain;
+  background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
   border-radius: 30px;
+  //border:1px solid red;
   @media (max-width: 1000px) {
     height: 544px;
   }
   @media (max-width: 768px) {
-    height: 412px;
+    height: 342px;
   }
   @media (max-width: 480px) {
     height: 249px;
@@ -98,10 +100,11 @@ export const ImageEcologySC = styled.div<{
   max-width: 527px;
   height: 340px;
   background-image: url(${({ path }) => path});
-  background-size: contain;
+  background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
   border-radius: 20px;
+//  border:1px solid red;
   @media (max-width: 1000px) {
     height: 304px;
   }
@@ -128,18 +131,19 @@ export const ImagePeopleEcologySC = styled.div<{
   max-width: 900px;
   height: 812px;
   background-image: url(${({ path }) => path});
-  background-size: contain;
+  background-size:contain;
   background-repeat: no-repeat;
   background-position: center;
   justify-self: center;
+ // border:1px solid red;
   @media (max-width: 1000px) {
-    height: 593px;
+    height: 453px;
   }
   @media (max-width: 480px) {
-    height: 397px;
+    height: 337px;
   }
   @media (max-width: 360px) {
-    height: 289px;
+    height: 259px;
   }
 `;
 

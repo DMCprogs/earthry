@@ -25,6 +25,8 @@ import {
   ButtonJoin,
   DivTexLatest,
   DivGridSC,
+  DivButon,
+  DivButonSC
 } from "./styles.blogDetail";
 import { BsArrowRight } from "react-icons/bs";
 import ButtonWrapper from "../components/custom_button";
@@ -43,7 +45,7 @@ const options = {
 const BlogDetail: FC = () => {
   
  return (
-  <DivDefaultContainerSC style={{ marginTop: '83px', maxWidth: 'none', width: '100%', }}>
+  <DivDefaultContainerSC style={{  maxWidth: 'none', width: '100%', }}>
 <DivBackgroundImgSC $images={ImgBlog} />
 <DivDetailContentSC>
   <ContainerSC>
@@ -83,10 +85,16 @@ const BlogDetail: FC = () => {
   <DivContainerAllBlogSC>
     <DivTexLatest>Latest posts</DivTexLatest>
     <Link href={"/blog"}>
-      
-      <ButtonJoin>
-        ALL POSTS<BsArrowRight color={"white"} size={24} />{" "}
-      </ButtonJoin>
+    <DivButonSC> 
+    <ButtonWrapper
+      directionRadius={"ltr"}
+      primary={true}
+      height={72}
+      width={142}
+    >
+      <span> ALL POSTS </span>
+    </ButtonWrapper>
+    </DivButonSC>
     </Link>
   </DivContainerAllBlogSC>
   <DivContainerBlogSC>
@@ -106,9 +114,16 @@ const BlogDetail: FC = () => {
         description={"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis."} />
     </DivGridSC>
     <Link href={"/blog"}>
-      <ButtonJoinSC>
-        ALL POSTS<BsArrowRight color={"white"} size={24} />{" "}
-      </ButtonJoinSC>
+      <DivButon>
+    <ButtonWrapper
+      directionRadius={"ltr"}
+      primary={true}
+      height={72}
+      width={142}
+    >
+      <span> ALL POSTS </span>
+    </ButtonWrapper>
+    </DivButon>
     </Link>
   </DivContainerBlogSC>
 </DivBlogContent>

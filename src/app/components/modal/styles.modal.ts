@@ -7,12 +7,12 @@ type Props = {
 export const DivModalContainerSC = styled.div`
 padding: 50px 0;
   display: grid;
-  height: 100vh;
+  height: 95vh;
   width: 100vw;
   justify-content: center;
   align-content: center;
   max-width: 966px;
- min-height: 1054px;
+ min-height: 80vh;
  border-radius: 30px;
 background: #FFF;
 z-index: 99999;
@@ -24,17 +24,19 @@ gap: 80px;
 }
 `;
 export const DivBgContainerSC = styled.div`
-   position: absolute;
-top: 50%;
-left: 50%;
-transform: translate(-50%, -50%);
-    display:flex;
-    width:100%;
-    height:100%;
-    justify-content:center;
-    align-items:center;
-    background:rgba(0,0,0,.7);
-    z-index:9999;
+  position: absolute;
+  top: 0;
+  left: 0;
+  //right: 0;
+  //bottom: 0;
+  //transform: translate(-50%, -50%);
+  display: grid;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0, 0, 0, .7);
+  z-index: 999999999;
 `;
 export const DivContainerGrafic = styled.div`
   width: 100%;
@@ -204,18 +206,17 @@ align-items: center;
 
 `;
 export const DivContentModal = styled.div`
- position: absolute;
-top: 80%;
+ //position: absolute;
+top: 78%;
 left: 50%;
-transform: translate(-50%, -50%);
-    display:flex;
+//transform: translate(-50%, -50%);
 display: grid;
 grid-template-rows: max-content max-content;
 height: 100%;
     width: 100%;
     box-sizing: border-box;
     max-width: 966px;
-    max-height: 1054px;
+    max-height: 95vh;
 
 `;
 export const DivClose = styled.div`

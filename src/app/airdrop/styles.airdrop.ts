@@ -9,8 +9,8 @@ export const DivWrapSC = styled.div`
   min-height: 100vh;
   height: max-content;
   width: 100%;
-  //border: 1px solid red;
-  margin-top: clamp(140px, 20vw, 170px);
+ // border: 1px solid red;
+  margin-top: clamp(60px, 8vw, 120px);
 `;
 export const DivWrapSucсessSC = styled.div`
   display: grid;
@@ -30,7 +30,7 @@ export const DivTextSC = styled.p`
   line-height: 29px;
   letter-spacing: 0.20000000298023224px;
 `;
-export const DivFormWrapSC = styled.p`
+export const DivFormWrapSC = styled.div`
   width: 100%;
   // border: 1px solid yellow;
 `;
